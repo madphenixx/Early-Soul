@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
+  m_Name: Faucheuse
+  m_EditorClassIdentifier: Assembly-CSharp::CharaSO
+  nom: Reaper
+  avatar: {fileID: 21300000, guid: fa1c04377d63c0a48902f1e6fbaf66eb, type: 3}

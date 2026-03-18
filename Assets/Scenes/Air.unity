@@ -725,9 +725,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   distanceRef: {fileID: 4086502887128850588, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  meleeRef: {fileID: -3806868234933470170, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   speed: 10
   spawnPos: {x: 0, y: 0}
+  reach: 7
 --- !u!114 &2543761478720404954
 MonoBehaviour:
   m_ObjectHideFlags: 0

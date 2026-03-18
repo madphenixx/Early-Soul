@@ -1,18 +1,22 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class CameraGround : MonoBehaviour
+[CreateAssetMenu]
+public class DialogueSO : ScriptableObject
 {
-    public GameObject player;
+    public CharaSO[] characters;
+    [InspectorTextArea]
+    public string[] dialogues;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + 6, 3.55f, -10); 
+        
     }
 }
