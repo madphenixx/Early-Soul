@@ -69,8 +69,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: -0.061641835, y: -0.009354076}
+  m_Radius: 2.172874
 --- !u!50 &202409815392673137
 Rigidbody2D:
   serializedVersion: 5
@@ -174,3 +174,4 @@ MonoBehaviour:
   launchDir: {x: 0, y: 0}
   launchDirNorm: {x: 0, y: 0}
   speed: 10
+  gameManager: {fileID: 0}

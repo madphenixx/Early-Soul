@@ -19,6 +19,7 @@ public class ProjectileEnnemi : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
+
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
     }
