@@ -4,7 +4,7 @@ public class CharaDialogue : MonoBehaviour
 {
     public DialogueSO[] conversations;
     public DialogueManager dialogueManager;
-    public bool dialogueActive;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,13 +19,10 @@ public class CharaDialogue : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) //On modifiera pour que cela se lance quand on attaeint autre chose mais la c'est pas important
     {
-        dialogueManager.InitiateDialogue(this);
-        dialogueActive = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        dialogueManager.TurnOffDialogue();
-        dialogueActive = false;
+        if (collision.gameObject.CompareTag("DialogueTrigger"))
+        { 
+            dialogueManager.InitiateDialogue(this);
+            Destroy(collision.gameObject);
+        }
     }
 }

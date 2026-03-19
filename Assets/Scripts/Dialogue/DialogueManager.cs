@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    public InputActionReference distanceRef;
+    public InputActionReference interactRef;
     public DialogueSO currentConversation;
     public GameObject dialogueCanvas;
     public Text charaName;
@@ -12,7 +12,8 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
 
     public bool dialogueActive;
-    public int stepNum;
+    public bool dialogueEnter;
+    public int stepNum = 0;
     public string currentSpeaker;
     public Sprite currentAvatar;
     public CharaSO[] charaSO;
@@ -20,19 +21,24 @@ public class DialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // dialogueCanvas = GameObject.Find("DialogueCanvas");
-        // charaName = GameObject.Find("CharaText").GetComponent<Text>();
-        // charaAvatar = GameObject.Find("Avatar").GetComponent<Image>();
-        // dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
+        dialogueCanvas = GameObject.Find("DialogueUI");
+        charaName = GameObject.Find("CharaText").GetComponent<Text>();
+        charaAvatar = GameObject.Find("Avatar").GetComponent<Image>();
+        dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
+
+        dialogueCanvas.SetActive(false);
+
+        interactRef.action.started += DialogueEnter;
+        interactRef.action.canceled += DialogueEnter;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (dialogueActive && distanceRef.started)
+         if (dialogueActive && dialogueEnter)
         {
             Debug.Log("Interact");
-            if (stepNum >= currentConversation.characters.Length)
+            if (stepNum >= currentConversation.dialogues.Length)
             {
                 TurnOffDialogue();
             }
@@ -62,9 +68,9 @@ public class DialogueManager : MonoBehaviour
         SetActorInfo();
         dialogueText.text = currentConversation.dialogues[stepNum];
         dialogueCanvas.SetActive(true);
-        stepNum += 1;
         charaName.text = currentSpeaker;
         charaAvatar.sprite = currentAvatar;
+        stepNum += 1;
     }
 
     public void SetActorInfo()
@@ -75,7 +81,16 @@ public class DialogueManager : MonoBehaviour
             {
                 currentSpeaker = charaSO[i].nom;
                 currentAvatar = charaSO[i].avatar;
+                break;
             }
+        }
+    }
+
+    void DialogueEnter(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.canceled)
+        {
+            dialogueEnter = true;
         }
     }
 }
