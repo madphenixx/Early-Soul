@@ -34,7 +34,7 @@ public class ProjectileEnnemi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.pv = GameManager.pv - 1;
+            GameManager.pv +=  - 1;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;

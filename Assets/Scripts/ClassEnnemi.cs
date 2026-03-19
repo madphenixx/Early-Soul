@@ -18,7 +18,7 @@ public class ClassEnnemi : MonoBehaviour
         if (pv <= 0)
         {
             //On détruit l'objet, ajoute des points au score et actionne l'animation de mort
-            GameManager.score = GameManager.score+50;
+            GameManager.score += 50;
             //enemyAnimator.SetTrigger("IsDead");
 
             //Faudra aussi faire une coroutine pour attendre la fin de l'animation pour mourir

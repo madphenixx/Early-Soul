@@ -8,7 +8,7 @@ public class Bonus : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.pv = GameManager.pv + heal;
+            GameManager.pv += heal;
             GameManager.pvSlider.value = GameManager.pv;
             Destroy(gameObject);
         }

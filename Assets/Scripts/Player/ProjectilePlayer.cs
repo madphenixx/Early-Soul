@@ -59,16 +59,16 @@ public class ProjectilePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemi"))
         {
-            int produit = 1+(GameManager.combo/5); //A modifier et équilibrer (multiplicateur de combo)}
+            int produit = 1 + (GameManager.combo/5); //A modifier et équilibrer (multiplicateur de combo)}
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
-            collision.gameObject.GetComponent<ClassEnnemi>().pv = collision.gameObject.GetComponent<ClassEnnemi>().pv - produit;
+            collision.gameObject.GetComponent<ClassEnnemi>().pv += - produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
 
-            GameManager.combo = GameManager.combo + 1;
+            GameManager.combo += 1;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
 
-            GameManager.score  =GameManager.score + 10 * produit;
+            GameManager.score = GameManager.score + 10 * produit;
             // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 
