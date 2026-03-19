@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
 
     public bool dialogueActive;
-    public bool dialogueEnter;
+    public bool dialogueNext;
     public int stepNum = 0;
     public string currentSpeaker;
     public Sprite currentAvatar;
@@ -35,9 +35,8 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (dialogueActive && dialogueEnter)
+         if (dialogueActive && dialogueNext)
         {
-            Debug.Log("Interact");
             if (stepNum >= currentConversation.dialogues.Length)
             {
                 TurnOffDialogue();
@@ -46,6 +45,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 PlayDialogue();
+                dialogueNext = false;
             }
         }
     }
@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
     {
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
+        dialogueNext = true;
     }
 
     public void TurnOffDialogue()
@@ -66,10 +67,10 @@ public class DialogueManager : MonoBehaviour
     public void PlayDialogue()
     {
         SetActorInfo();
-        dialogueText.text = currentConversation.dialogues[stepNum];
-        dialogueCanvas.SetActive(true);
         charaName.text = currentSpeaker;
         charaAvatar.sprite = currentAvatar;
+        dialogueText.text = currentConversation.dialogues[stepNum];
+        dialogueCanvas.SetActive(true);
         stepNum += 1;
     }
 
@@ -77,7 +78,7 @@ public class DialogueManager : MonoBehaviour
     {
         for (int i = 0; i < charaSO.Length; i++)
         {
-            if (charaSO[i].nom == currentConversation.characters[stepNum].ToString())
+            if (charaSO[i].nom == currentConversation.characters[stepNum].nom.ToString())
             {
                 currentSpeaker = charaSO[i].nom;
                 currentAvatar = charaSO[i].avatar;
@@ -90,7 +91,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!ctx.canceled)
         {
-            dialogueEnter = true;
+            dialogueNext = true;
         }
     }
 }
