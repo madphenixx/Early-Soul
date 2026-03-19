@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Bonus
   - DialogueTrigger
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

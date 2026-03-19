@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public InputActionReference meleeRef;
 
     public GameObject projectile;
+    public GameObject meleeRange;
     
     public float speed = 10;
     public Vector2 spawnPos;
@@ -35,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
         if (!ctx.canceled)
         {
             spawnPos = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
-            Instantiate(projectile, spawnPos, Quaternion.identity);
+            Instantiate(projectile, spawnPos, Quaternion.identity, transform);
         } 
     }
 
@@ -43,20 +44,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!ctx.canceled)
         {
-            StartCoroutine(MeleeTime());
+            //transform.position += new Vector3(1, 0, 0);
+            spawnPos = new Vector2(transform.position.x, gameObject.transform.position.y);
+            Instantiate(meleeRange, spawnPos, Quaternion.identity);
         }
-    }
-
-    private IEnumerator MeleeTime()
-    {
-        //gameObject.transform.position.x += 1;
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        float time = -1f;
-        while (time < 0)
-        {
-            time += Time.deltaTime;
-            yield return null;
-        }
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 }
