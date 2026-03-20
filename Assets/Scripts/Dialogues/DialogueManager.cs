@@ -61,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
         dialogueNext = true;
+        GameManager.movementAllowed = false;
     }
 
     public void TurnOffDialogue()
@@ -68,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
+        GameManager.movementAllowed = true;
     }
 
     public void PlayDialogue()

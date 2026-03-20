@@ -7,7 +7,6 @@ TagManager:
   - Ennemi
   - Ground
   - Bonus
-  - DialogueTrigger
   - PlayerAttack
   layers:
   - Default

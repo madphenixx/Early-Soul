@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static int score;
     public static int combo;
 
+    public static bool movementAllowed = true;
+
     // public List<GameObject> slots = new List<GameObject>();
     // public List<GameObject> scoreAdd = new List<GameObject>();
     // public int nextFreeSlot = 0;

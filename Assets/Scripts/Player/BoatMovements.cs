@@ -26,7 +26,10 @@ public class BoatMovements : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerTransform.position += new Vector3(direction.x * playerSpeed * Time.deltaTime, direction.y * playerSpeed * Time.deltaTime, 0);
+        if (GameManager.movementAllowed)
+        {
+            playerTransform.position += new Vector3(direction.x * playerSpeed * Time.deltaTime, direction.y * playerSpeed * Time.deltaTime, 0);
+        }
     }
 
     // Update is called once per frame
