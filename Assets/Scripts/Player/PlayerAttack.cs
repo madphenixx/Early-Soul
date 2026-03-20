@@ -10,7 +10,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
     
-    [SerializeField] private float speed = 10;
     private Vector2 spawnPos;
 
 

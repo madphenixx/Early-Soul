@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
-  m_Name: Lucy
+  m_Name: Archangel
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
-  nom: Lucy
-  avatar: {fileID: 21300000, guid: b1edce220b202b04d94ccaa49ca4f173, type: 3}
+  nom: Archangel
+  avatar: {fileID: 21300000, guid: 5d53e149a7ad88441a3eec61ba19d6b9, type: 3}

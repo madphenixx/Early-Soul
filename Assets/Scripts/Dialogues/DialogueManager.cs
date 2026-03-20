@@ -124,10 +124,3 @@ public class DialogueManager : MonoBehaviour
         canContinueText = true;
     }
 }
-
-
-public enum CharaSOs
-{
-    Faucheuse,
-    Lucy
-};
