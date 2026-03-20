@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class ProjectileEnnemi : MonoBehaviour
 {   
-    public GameObject cible;
-    public Rigidbody2D rb;
+    [SerializeField] private GameObject cible;
+    [SerializeField] private Rigidbody2D rb;
     // public Animator enemyAnimator;
 
-    public Vector2 launchDir;
-    public Vector2 launchDirNorm;
-    public float speed;
+    private Vector2 launchDir;
+    private Vector2 launchDirNorm;
+    [SerializeField] private float speed;
 
     public GameManager gameManager;
 

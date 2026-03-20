@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnnemiSol : MonoBehaviour
 {
-    public GameObject barreVie;
+    [SerializeField] private GameObject barreVie;
 
     void Start()
     {

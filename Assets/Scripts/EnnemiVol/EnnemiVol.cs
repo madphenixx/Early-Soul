@@ -3,11 +3,11 @@ using System.Collections;
 
 public class EnnemiVol : MonoBehaviour
 {
-    public GameObject projectile;
-    public GameObject barreVie;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject barreVie;
     
-    public Vector2 spawnPos;
-    public float spawnTime;
+    private Vector2 spawnPos;
+    [SerializeField] private float spawnTime;
 
     void Start()
     {

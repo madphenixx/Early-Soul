@@ -3,21 +3,19 @@ using UnityEngine.InputSystem;
 
 public class BoatMovements : MonoBehaviour
 {
-    public InputActionReference moveRef;
+    [SerializeField] private InputActionReference moveRef;
 
-    public float playerSpeed;
-    public Vector3 direction;
+    [SerializeField] private float playerSpeed;
+    [SerializeField] private Vector3 direction;
 
-    public SpriteRenderer spriteRenderer;
-    public Rigidbody2D rb;
-    public Transform playerTransform;
+    private SpriteRenderer spriteRenderer;
+    private Transform playerTransform;
     
-    public bool facingRight = true;
+    [SerializeField] private bool facingRight = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerTransform = GetComponent<Transform>();
 

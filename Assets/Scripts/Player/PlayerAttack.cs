@@ -4,15 +4,14 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 { 
-    public InputActionReference distanceRef;
-    public InputActionReference meleeRef;
+    [SerializeField] private InputActionReference distanceRef;
+    [SerializeField] private InputActionReference meleeRef;
 
-    public GameObject projectile;
-    public GameObject meleeRange;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject meleeRange;
     
-    public float speed = 10;
-    public Vector2 spawnPos;
-    public float reach = 7;
+    [SerializeField] private float speed = 10;
+    private Vector2 spawnPos;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

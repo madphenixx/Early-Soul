@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,12 +12,17 @@ public class DialogueManager : MonoBehaviour
     public Image charaAvatar;
     public Text dialogueText;
 
-    public bool dialogueActive;
-    public bool dialogueNext;
-    public int stepNum = 0;
-    public string currentSpeaker;
     public Sprite currentAvatar;
     public CharaSO[] charaSO;
+    public Coroutine typeWriterRoutine;
+
+    public int stepNum = 0;
+    public float typingSpeed = 0.02f;
+    public string currentSpeaker;
+    
+    public bool dialogueActive;
+    public bool dialogueNext;
+    public bool canContinueText = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (dialogueActive && dialogueNext)
+        if (dialogueActive && dialogueNext && canContinueText)
         {
             if (stepNum >= currentConversation.dialogues.Length)
             {
@@ -69,7 +75,11 @@ public class DialogueManager : MonoBehaviour
         SetActorInfo();
         charaName.text = currentSpeaker;
         charaAvatar.sprite = currentAvatar;
-        dialogueText.text = currentConversation.dialogues[stepNum];
+        if (typeWriterRoutine != null)
+        {
+            StopCoroutine(typeWriterRoutine);
+        }
+        typeWriterRoutine = StartCoroutine(typeWriterEffect(dialogueText.text = currentConversation.dialogues[stepNum]));
         dialogueCanvas.SetActive(true);
         stepNum += 1;
     }
@@ -93,6 +103,25 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueNext = true;
         }
+    }
+
+    private IEnumerator typeWriterEffect(string line)
+    {
+        dialogueText.text="";
+        canContinueText = false;
+        yield return new WaitForSeconds(0.5f);
+        foreach (char letter in line.ToCharArray())
+        {
+            if (dialogueNext == true)
+            {
+                dialogueText.text = line;
+                dialogueNext = false;
+                break;
+            }
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        canContinueText = true;
     }
 }
 

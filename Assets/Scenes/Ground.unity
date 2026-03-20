@@ -1560,14 +1560,16 @@ MonoBehaviour:
   charaName: {fileID: 1703213480}
   charaAvatar: {fileID: 1894454818}
   dialogueText: {fileID: 1926446850}
-  dialogueActive: 0
-  dialogueNext: 0
-  stepNum: 0
-  currentSpeaker: 
   currentAvatar: {fileID: 0}
   charaSO:
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  stepNum: 0
+  typingSpeed: 0.03
+  currentSpeaker: 
+  dialogueActive: 0
+  dialogueNext: 0
+  canContinueText: 1
 --- !u!1 &1599309721
 GameObject:
   m_ObjectHideFlags: 0

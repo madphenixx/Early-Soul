@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     public static Text scoreText;
     public static Text comboText;
     public static Transform scoreTr;
-    public GameObject bonusPrefab;
+    [SerializeField] private GameObject bonusPrefab;
 
     public static float pv;
-    public float maxPv;
+    [SerializeField] private float maxPv;
     public static int score;
     public static int combo;
 

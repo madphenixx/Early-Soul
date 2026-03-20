@@ -4,25 +4,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public InputActionReference moveRef;
-    public InputActionReference jumpRef;
-    public InputActionReference sprintRef;
-    public InputActionReference dodgeRef;
+    [SerializeField] private InputActionReference moveRef;
+    [SerializeField] private InputActionReference jumpRef;
+    [SerializeField] private InputActionReference sprintRef;
+    [SerializeField] private InputActionReference dodgeRef;
 
-    public float playerSpeed;
-    public float basePlayerSpeed;
-    public float jumpForce = 10;
-    public float direction;
-    public float sprintSpeed = 4f;
-    public float dodgeSpeed = 8f;
+    [SerializeField] private float playerSpeed;
+    [SerializeField] private float basePlayerSpeed;
+    [SerializeField] private float jumpForce = 10;
+    [SerializeField] private float direction;
+    [SerializeField] private float sprintSpeed = 4f;
+    [SerializeField] private float dodgeSpeed = 8f;
 
-    public SpriteRenderer spriteRenderer;
-    public Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
     // public Animator playerAnimator;
-    public Transform playerTransform;
     
-    public bool facingRight = true;
-    public bool isGrounded;
+    [SerializeField] private bool facingRight = true;
+    [SerializeField] private bool isGrounded;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        playerTransform = GetComponent<Transform>();
 
         moveRef.action.started += Move;
         moveRef.action.performed += Move;

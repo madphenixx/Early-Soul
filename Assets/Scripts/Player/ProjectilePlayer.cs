@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
-    public GameObject cible;
-    public Rigidbody2D rb;
+    [SerializeField] private GameObject cible;
+    private Rigidbody2D rb;
     
-    public Vector2 launchDir;
-    public Vector2 launchDirNorm;
-    public float speed = 10;
+    private Vector2 launchDir;
+    private Vector2 launchDirNorm;
+    [SerializeField] private float speed = 10;
 
-    public GameObject[] allEnnemies;
-    public float distanceMin = 20;
+    [SerializeField] private GameObject[] allEnnemies;
+    [SerializeField] private float distanceMin = 20;
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
