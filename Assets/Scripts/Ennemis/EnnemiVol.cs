@@ -11,7 +11,7 @@ public class EnnemiVol : ClassEnnemi
 
     void Start()
     {
-        StartCoroutine(LauchBlocksWait());
+        StartCoroutine(LaunchProjectiles());
         barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
     }
 
@@ -21,15 +21,15 @@ public class EnnemiVol : ClassEnnemi
         barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, gameObject.transform.position.y + 2, 0);
     }
 
-    public IEnumerator LauchBlocksWait()
+    public IEnumerator LaunchProjectiles()
     {
         while (true)
-            {
-                spawnTime = Random.Range(Time.deltaTime, 1.7f);
-                yield return new WaitForSeconds(spawnTime);
-                
-                spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-                Instantiate(projectile, spawnPos, Quaternion.identity);
-            }
+        {
+            spawnTime = Random.Range(Time.deltaTime, 1.7f);
+            yield return new WaitForSeconds(spawnTime);
+            
+            spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            Instantiate(projectile, spawnPos, Quaternion.identity);
+        }
     }
 }
