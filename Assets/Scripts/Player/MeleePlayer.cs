@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MeleePlayer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MeleePlayer : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        StartCoroutine(MeleeDestroy());
     }
 
     // Update is called once per frame
@@ -41,5 +43,11 @@ public class MeleePlayer : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator MeleeDestroy()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
