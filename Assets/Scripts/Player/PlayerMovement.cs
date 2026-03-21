@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool isGrounded;
+    [SerializeField] private bool isDodging;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,11 +57,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (direction < 0 && facingRight)
+        if (direction < 0 && facingRight && !isDodging)
         {
             Flip();
         } 
-        else if (direction > 0 && !facingRight)
+        else if (direction > 0 && !facingRight && !isDodging)
         {
             Flip();
         }
@@ -135,9 +137,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.started)
         {
+            isDodging = true;
             playerSpeed = basePlayerSpeed * dodgeSpeed;
             StartCoroutine(DodgeTime());
             // playerAnimator.SetTrigger("IsDodging");
+        }
+        if (ctx.canceled)
+        {
+            isDodging = false;
         }
     }
 

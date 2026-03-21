@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 720503701060218202}
   m_Layer: 0
   m_Name: EnnemiSol
-  m_TagString: Ennemi
+  m_TagString: EnnemiSol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
   barreVie: {fileID: 0}
+  meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
 --- !u!1 &6551276360540353958
 GameObject:
   m_ObjectHideFlags: 0

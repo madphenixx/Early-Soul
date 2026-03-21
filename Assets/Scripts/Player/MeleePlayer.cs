@@ -19,8 +19,13 @@ public class MeleePlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ennemi"))
+        if (collision.gameObject.CompareTag("Ennemi") || collision.gameObject.CompareTag("EnnemiSol"))
         {
+            if (collision.gameObject.CompareTag("EnnemiSol"))
+            {
+                EnnemiSol.tookDamage = true;
+            }
+
             int produit = 1 + (GameManager.combo / 5); //A modifier et équilibrer (multiplicateur de combo)}
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 

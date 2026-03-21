@@ -10,8 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
     
-    private Vector2 spawnPos;
-
+    public static Vector2 spawnPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
         if (!ctx.canceled)
         {
             spawnPos = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
-            Instantiate(projectile, spawnPos, Quaternion.identity, transform);
+            Instantiate(projectile, spawnPos, Quaternion.identity);
         } 
     }
 
@@ -43,8 +42,8 @@ public class PlayerAttack : MonoBehaviour
         if (!ctx.canceled)
         {
             //transform.position += new Vector3(1, 0, 0);
-            spawnPos = new Vector2(transform.position.x, gameObject.transform.position.y);
-            Instantiate(meleeRange, spawnPos, Quaternion.identity);
+            spawnPos = new Vector2(transform.position.x, transform.position.y);
+            Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
         }
     }
 }

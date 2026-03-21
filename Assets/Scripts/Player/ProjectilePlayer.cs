@@ -28,6 +28,17 @@ public class ProjectilePlayer : MonoBehaviour
                 distanceMin = distance;
             }
         }
+
+        allEnnemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
+        foreach (GameObject ennemi in allEnnemies)
+        {
+            float distance = Vector2.Distance(transform.position, ennemi.transform.position);
+            if (distance < distanceMin)
+            {
+                cible = ennemi;
+                distanceMin = distance;
+            }
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
@@ -73,8 +84,28 @@ public class ProjectilePlayer : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
 
+        if (collision.gameObject.CompareTag("EnnemiSol"))
+        {
+            Vector3 returnBase = PlayerAttack.spawnPos;
+            launchDir = returnBase - gameObject.transform.position;
+            launchDirNorm = launchDir.normalized;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.pv +=  - 1;
+            GameManager.pvSlider.value = GameManager.pv;
+
+            GameManager.combo = 0;
+            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+
+            GameManager.score = GameManager.score - 10;
+            GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
+            
+            Destroy(gameObject);
+        }
+    }
 
     void FixedUpdate()
     {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5880388945035870678}
   - component: {fileID: 1600462277275591364}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: PlayerAttack
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.356762, y: 2.2487998}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &5880388945035870678
 Rigidbody2D:

@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Bonus
   - PlayerAttack
+  - EnnemiSol
   layers:
   - Default
   - TransparentFX
