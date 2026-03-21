@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   bonusPrefab: {fileID: 4451826774797291111, guid: 27e975ac960ad8d47aed62405065bd95, type: 3}
+  triggerPrefab: {fileID: 7487027437801811660, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
   maxPv: 10
