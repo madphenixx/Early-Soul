@@ -22,15 +22,9 @@ public class PlayerAttack : MonoBehaviour
         meleeRef.action.canceled += MeleeAttack;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
-    }
-
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
-        if (!ctx.canceled)
+        if (!ctx.canceled && PauseMenu.isPaused == false)
         {
             spawnPos = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
             Instantiate(projectile, spawnPos, Quaternion.identity);
@@ -39,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     void MeleeAttack(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled)
+        if (!ctx.canceled && PauseMenu.isPaused == false)
         {
             //transform.position += new Vector3(1, 0, 0);
             spawnPos = new Vector2(transform.position.x, transform.position.y);

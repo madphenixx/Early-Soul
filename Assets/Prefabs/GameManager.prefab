@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3541311541583798238}
   - component: {fileID: 1965554917074469802}
+  - component: {fileID: 7784254715353436009}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,3 +48,20 @@ MonoBehaviour:
   bonusPrefab: {fileID: 4451826774797291111, guid: 27e975ac960ad8d47aed62405065bd95, type: 3}
   triggerPrefab: {fileID: 7487027437801811660, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
   maxPv: 10
+--- !u!114 &7784254715353436009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420788802028922014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cbeb3b093971846b47e096363f7b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  pauseRef: {fileID: 2257540636297086201, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  pauseMenuObject: {fileID: 0}
+  optionsMenuObject: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  isPaused: 0

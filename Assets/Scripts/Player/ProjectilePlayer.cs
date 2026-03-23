@@ -13,8 +13,9 @@ public class ProjectilePlayer : MonoBehaviour
     [SerializeField] private GameObject[] allEnnemies;
     [SerializeField] private float distanceMin = 20;
 
-    private GameManager gameManager;
+    [SerializeField] private bool boomerang;
 
+    private GameManager gameManager;
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
     {
@@ -87,13 +88,16 @@ public class ProjectilePlayer : MonoBehaviour
 
         if (collision.gameObject.CompareTag("EnnemiSol"))
         {
+            boomerang = true;
             Vector3 returnBase = PlayerAttack.spawnPos;
             launchDir = returnBase - gameObject.transform.position;
             launchDirNorm = launchDir.normalized;
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && boomerang == true)
         {
+            boomerang = false; 
+            
             GameManager.pv +=  - 1;
             GameManager.pvSlider.value = GameManager.pv;
 
