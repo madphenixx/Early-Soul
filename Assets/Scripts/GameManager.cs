@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
         {
             pv = 0;
             // Deathscreen et on peut reload la scene à laquelle on était avec le bouton retry
-            // Garder le même GameManager pendant toute la partie ??? -> Dontdestroyonload
             // Faire une variable currentScene pour pouvoir sauvegarder la dernière scène
         }
 

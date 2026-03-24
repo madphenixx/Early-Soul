@@ -24,10 +24,9 @@ public class ProjectileEnnemi : MonoBehaviour
         launchDirNorm = launchDir.normalized;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        rb.linearVelocity = launchDirNorm * speed;
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,11 +50,5 @@ public class ProjectileEnnemi : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-
-    void FixedUpdate()
-    {
-        rb.linearVelocity = launchDirNorm * speed;
     }
 }

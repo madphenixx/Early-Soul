@@ -52,7 +52,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sprint",
+                    "name": "Dash",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
                     "expectedControlType": "",
@@ -301,18 +301,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Sprint",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "8cbb2f4b-a784-49cc-8d5e-c010b8c7f4e6",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Sprint",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -323,7 +323,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Sprint",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -429,7 +429,7 @@
                 {
                     "name": "",
                     "id": "3d1dbcde-0ad4-4747-a43b-d65a02e8a57c",
-                    "path": "<Gamepad>/dpad/left",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -451,7 +451,7 @@
                 {
                     "name": "",
                     "id": "d8b9b6a1-bfef-4536-ac71-d25114f00822",
-                    "path": "<Gamepad>/dpad/right",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -473,7 +473,7 @@
                 {
                     "name": "",
                     "id": "888d3f7c-a5d7-4939-b8ac-73c87723ce95",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -495,7 +495,7 @@
                 {
                     "name": "",
                     "id": "e94c44f0-635b-4706-801f-826963771085",
-                    "path": "<Gamepad>/leftStick/left",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",

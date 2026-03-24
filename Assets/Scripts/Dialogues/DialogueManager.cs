@@ -125,4 +125,10 @@ public class DialogueManager : MonoBehaviour
         }
         canContinueText = true;
     }
+
+    void OnDisable()
+    {
+        interactRef.action.started += DialogueEnter;
+        interactRef.action.canceled += DialogueEnter;
+    }
 }

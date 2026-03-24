@@ -29,12 +29,9 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (!ctx.canceled)
         {
-            Debug.Log(pauseMenuObject);
-            Debug.Log(optionsMenuObject);
             isPaused = !isPaused;
-
             if (isPaused)
             {
                 pauseMenuObject.SetActive(true);
@@ -77,5 +74,11 @@ public class PauseMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("volume", sliderValue);
         AudioListener.volume = PlayerPrefs.GetFloat("volume");
+    }
+
+    void OnDisable()
+    {
+        pauseRef.action.started -= PauseGame;
+        pauseRef.action.canceled -= PauseGame;
     }
 }

@@ -1214,7 +1214,7 @@ MonoBehaviour:
   meleeRef: {fileID: -3806868234933470170, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   parryRef: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
-  meleeRange: {fileID: 0}
+  meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
   parry: {fileID: 8413523536311424509, guid: d2abd28754b0c3f4f8b86bd359addd89, type: 3}
 --- !u!114 &2543761478720404954
 MonoBehaviour:
@@ -1230,13 +1230,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveRef: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpRef: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  sprintRef: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  dashRef: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   dodgeRef: {fileID: -9163086645278252038, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerSpeed: 350
   basePlayerSpeed: 350
   jumpForce: 10
   direction: 0
-  sprintSpeed: 4
+  dashSpeed: 4
   dodgeSpeed: 8
   facingRight: 1
   isGrounded: 0

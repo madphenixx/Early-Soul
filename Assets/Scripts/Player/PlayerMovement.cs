@@ -10,16 +10,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    // public Animator playerAnimator;
+
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float direction;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
-
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb;
-    // public Animator playerAnimator;
     
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool isGrounded;
@@ -164,5 +164,21 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
+
+    void OnDisable()
+    {
+        moveRef.action.started -= Move;
+        moveRef.action.performed -= Move;
+        moveRef.action.canceled -= Move;
+
+        jumpRef.action.started -= Jump;
+        jumpRef.action.canceled -= Jump;
+
+        dashRef.action.started -= Dash;
+        dashRef.action.canceled -= Dash;
+
+        dodgeRef.action.started -= Dodge;
+        dodgeRef.action.canceled -= Dodge;
     }
 }

@@ -4,18 +4,19 @@ using UnityEngine.UI;
 public class ProjectilePlayer : MonoBehaviour
 {
     [SerializeField] private GameObject cible;
-    private Rigidbody2D rb;
+    [SerializeField] private GameObject[] allEnnemies;
+
+    private GameManager gameManager;
     
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
-    [SerializeField] private float speed = 10;
-
-    [SerializeField] private GameObject[] allEnnemies;
+    private Rigidbody2D rb;
     [SerializeField] private float distanceMin = 20;
+    [SerializeField] private float speed = 10;
 
     [SerializeField] private bool boomerang;
 
-    private GameManager gameManager;
+
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
     {
@@ -60,10 +61,9 @@ public class ProjectilePlayer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        rb.linearVelocity = launchDirNorm * speed;
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -114,11 +114,5 @@ public class ProjectilePlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void FixedUpdate()
-    {
-        rb.linearVelocity = launchDirNorm * speed;
-    }
-    
+    } 
 }

@@ -5,11 +5,11 @@ public class BoatMovements : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveRef;
 
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private Vector3 direction;
-
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
+
+    [SerializeField] private float playerSpeed;
+    [SerializeField] private Vector3 direction;
     
     [SerializeField] private bool facingRight = true;
 
@@ -61,5 +61,13 @@ public class BoatMovements : MonoBehaviour
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
+
+    void OnDisable()
+    {
+        
+        moveRef.action.started -= MoveBoat;
+        moveRef.action.performed -= MoveBoat;
+        moveRef.action.canceled -= MoveBoat;
     }
 }

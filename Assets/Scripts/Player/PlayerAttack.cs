@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
 
     public static Vector2 spawnPos;
 
-    private bool canParry;
+    private bool canParry; //couroutine à faire pour pas spam
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,5 +56,17 @@ public class PlayerAttack : MonoBehaviour
             spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
             Instantiate(parry, spawnPos, Quaternion.identity);
         }
+    }
+
+    void OnDisable()
+    {
+        distanceRef.action.started -= DistanceAttack;
+        distanceRef.action.canceled -= DistanceAttack;
+
+        meleeRef.action.started -= MeleeAttack;
+        meleeRef.action.canceled -= MeleeAttack;
+
+        parryRef.action.started -= Parry;
+        parryRef.action.canceled -= Parry;
     }
 }

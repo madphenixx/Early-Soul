@@ -13,12 +13,6 @@ public class MeleePlayer : MonoBehaviour
         StartCoroutine(MeleeDestroy());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ennemi") || collision.gameObject.CompareTag("EnnemiSol"))
@@ -47,7 +41,7 @@ public class MeleePlayer : MonoBehaviour
 
     private IEnumerator MeleeDestroy()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }
