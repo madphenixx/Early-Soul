@@ -15,23 +15,44 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        //Debug.Log("RAAAAAAAAAAAAAAAH");
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
         isPaused = false;
 
+        pauseMenuObject = GameObject.Find("PauseMenu");
+        optionsMenuObject = GameObject.Find("OptionsMenu");
+
+        Debug.Log(pauseMenuObject);
+        Debug.Log(optionsMenuObject);
+
+        pauseMenuObject.SetActive(false);
+        optionsMenuObject.SetActive(false);
+
+        Debug.Log(pauseMenuObject);
+        Debug.Log(optionsMenuObject);
+
         pauseRef.action.started += PauseGame;
         pauseRef.action.canceled += PauseGame;
+
+        Debug.Log(pauseRef);
+        Debug.Log(isPaused);
     }
+
     public void PauseGame(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled)
+        if (ctx.started)
         {
             isPaused = !isPaused;
+            Debug.Log(isPaused);
+            Debug.Log(pauseMenuObject);
+            Debug.Log(optionsMenuObject);
 
             if (isPaused)
             {
-                Time.timeScale = 0f; // Le temps s'arrete
                 pauseMenuObject.SetActive(true);
                 optionsMenuObject.SetActive(false);
+                Time.timeScale = 0f; // Le temps s'arrete
+               
             }
 
             if (isPaused == false)
@@ -50,6 +71,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         isPaused = false;
     }
+
     public void MainMenu()
     {
         Time.timeScale = 1.0f;

@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        PauseMenu.isPaused = false;
         SceneManager.LoadScene(1);
     }
 
