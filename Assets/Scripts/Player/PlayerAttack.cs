@@ -13,8 +13,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject parry;
 
     public static Vector2 spawnPos;
+    [SerializeField] private float ParryCooldownTime = 0.75f;
 
-    private bool canParry; //couroutine à faire pour pas spam
+    [SerializeField] private bool canParry = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,12 +51,20 @@ public class PlayerAttack : MonoBehaviour
 
     void Parry(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
         {
             //transform.position += new Vector3(1, 0, 0);
             spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
             Instantiate(parry, spawnPos, Quaternion.identity);
+            StartCoroutine(ParryCooldown());
         }
+    }
+
+    private IEnumerator ParryCooldown()
+    {
+        canParry = false;
+        yield return new WaitForSeconds(ParryCooldownTime);
+        canParry = true;
     }
 
     void OnDisable()

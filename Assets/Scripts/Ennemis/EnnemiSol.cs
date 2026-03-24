@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnnemiSol : MonoBehaviour
 {
-    [SerializeField] private GameObject barreVie;
+    // [SerializeField] private GameObject barreVie;
     [SerializeField] private GameObject meleeRange;
     
     [SerializeField] private float attackTime;
@@ -16,7 +16,7 @@ public class EnnemiSol : MonoBehaviour
     void Start()
     {
         tookDamage = false;
-        barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
+        // barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
         StartCoroutine(MeleeAttack());
         player = GameObject.Find("Player");
     }

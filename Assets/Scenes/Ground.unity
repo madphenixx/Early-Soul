@@ -1309,6 +1309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1629278446091435343, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: dashRef
+      value: 
+      objectReference: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     - target: {fileID: 3347080079921448248, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
