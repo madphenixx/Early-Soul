@@ -13,6 +13,6 @@ public class CameraGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + 6, 3.55f, -10); 
+        transform.position = new Vector3(player.transform.position.x + 6, 3, -10); 
     }
 }

@@ -24,7 +24,7 @@ public class EnnemiSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, transform.position.y + 10, 0); //à fix
+        //barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, transform.position.y + 10, 0); //à fix
 
         if (tookDamage)
         {
