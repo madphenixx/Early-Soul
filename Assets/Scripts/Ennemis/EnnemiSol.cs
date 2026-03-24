@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnnemiSol : ClassEnnemi
+public class EnnemiSol : MonoBehaviour
 {
     [SerializeField] private GameObject barreVie;
     [SerializeField] private GameObject meleeRange;

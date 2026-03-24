@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnnemiVol : ClassEnnemi
+public class EnnemiVol : MonoBehaviour
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject barreVie;
