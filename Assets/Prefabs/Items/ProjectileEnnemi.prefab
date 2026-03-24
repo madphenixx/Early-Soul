@@ -171,7 +171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   cible: {fileID: 0}
   rb: {fileID: 0}
-  launchDir: {x: 0, y: 0}
-  launchDirNorm: {x: 0, y: 0}
   speed: 10
   gameManager: {fileID: 0}

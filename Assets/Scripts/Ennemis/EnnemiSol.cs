@@ -53,7 +53,7 @@ public class EnnemiSol : MonoBehaviour
         float time = -distance;
         while (time < 0)
         {
-            transform.position += new Vector3(-distance/10, 0, 0);
+            transform.position += new Vector3(-distance/10, 0, 0); //a modif pour qu'il glisse pas dans la parade
             time += distance/10;
             yield return null;
         }

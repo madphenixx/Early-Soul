@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7591007028879704174, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00001
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 7591007028879704174, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1349,6 +1349,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3527666155236941623, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: parry
+      value: 
+      objectReference: {fileID: 8413523536311424509, guid: d2abd28754b0c3f4f8b86bd359addd89, type: 3}
+    - target: {fileID: 3527666155236941623, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: parryRef
+      value: 
+      objectReference: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     - target: {fileID: 4207038351988583543, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1453,6 +1461,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 194802285}
-  - {fileID: 1309010713}
   - {fileID: 4010721909483795786}
   - {fileID: 1317246051176401900}
+  - {fileID: 1309010713}

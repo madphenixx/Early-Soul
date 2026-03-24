@@ -7,14 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveRef;
     [SerializeField] private InputActionReference jumpRef;
-    [SerializeField] private InputActionReference sprintRef;
+    [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float direction;
-    [SerializeField] private float sprintSpeed = 4f;
+    [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
 
     private SpriteRenderer spriteRenderer;
@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
         jumpRef.action.started += Jump;
         jumpRef.action.canceled += Jump;
 
-        sprintRef.action.started += Sprint;
-        sprintRef.action.canceled += Sprint;
+        dashRef.action.started += Dash;
+        dashRef.action.canceled += Dash;
 
         dodgeRef.action.started += Dodge;
         dodgeRef.action.canceled += Dodge;
@@ -112,17 +112,17 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(new Vector2(0f, -jumpForce), ForceMode2D.Impulse);
     }
 
-    void Sprint(InputAction.CallbackContext ctx)
+    void Dash(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
         {
-            playerSpeed = playerSpeed * sprintSpeed;
-            StartCoroutine(SprintTime());
+            playerSpeed = playerSpeed * dashSpeed;
+            StartCoroutine(DashTime());
             // playerAnimator.SetTrigger("IsRunning");
         }
     }
 
-    private IEnumerator SprintTime()
+    private IEnumerator DashTime()
     {
         float time = -1;
         while (time < 0)

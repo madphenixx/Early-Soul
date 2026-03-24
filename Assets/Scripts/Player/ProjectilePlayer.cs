@@ -109,6 +109,11 @@ public class ProjectilePlayer : MonoBehaviour
             
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
