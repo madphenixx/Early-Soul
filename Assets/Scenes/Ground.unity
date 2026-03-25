@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2025297163}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &194802285
@@ -971,6 +971,11 @@ PrefabInstance:
 --- !u!1 &2025297162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7770772567039821547, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
+  m_PrefabInstance: {fileID: 2025297161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025297163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5599351889863925086, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
   m_PrefabInstance: {fileID: 2025297161}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027384665
