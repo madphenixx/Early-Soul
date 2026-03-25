@@ -6,6 +6,7 @@ using System.Collections;
 public class DialogueManager : MonoBehaviour
 {
     public InputActionReference interactRef;
+    
     public DialogueSO currentConversation;
     public GameObject dialogueCanvas;
     public Text charaName;
