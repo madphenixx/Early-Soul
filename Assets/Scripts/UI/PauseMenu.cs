@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
                 pauseMenuObject.SetActive(true);
                 optionsMenuObject.SetActive(false);
                 Time.timeScale = 0f; // Le temps s'arrete
+                //Cursor.lockState = CursorLockMode.Locked;
             }
 
             if (isPaused == false)
@@ -44,6 +45,7 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1f; // Le temps reprend
                 pauseMenuObject.SetActive(false);
                 optionsMenuObject.SetActive(false);
+                //Cursor.lockState = CursorLockMode.Confined;
             }
         }
     }
@@ -54,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         optionsMenuObject.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
+        //Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void MainMenu()
@@ -61,6 +64,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         isPaused = false;
         SceneManager.LoadScene(0);
+        //Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void QuitMenu()
