@@ -14,7 +14,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        if (PlayerPrefs.HasKey("savedScene"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
         //Cursor.lockState = CursorLockMode.Locked;
     }
 

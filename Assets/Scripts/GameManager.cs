@@ -1,7 +1,8 @@
 using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
+        PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
+
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         comboText = GameObject.Find("Combo").GetComponent<Text>();
@@ -49,8 +52,7 @@ public class GameManager : MonoBehaviour
         if (pv <= 0)
         {
             pv = 0;
-            // Deathscreen et on peut reload la scene à laquelle on était avec le bouton retry
-            // Faire une variable currentScene pour pouvoir sauvegarder la dernière scène
+            SceneManager.LoadScene("DeathScreen");
         }
 
         if (pv > maxPv)
