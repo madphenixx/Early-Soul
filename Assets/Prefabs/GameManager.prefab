@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   bonusPrefab: {fileID: 4451826774797291111, guid: 27e975ac960ad8d47aed62405065bd95, type: 3}
   triggerPrefab: {fileID: 7487027437801811660, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
+  gatePrefab: {fileID: 5329236331698083361, guid: 570cb26a832e1834d8038d2982979537, type: 3}
   maxPv: 10
 --- !u!114 &7784254715353436009
 MonoBehaviour:
@@ -64,4 +65,3 @@ MonoBehaviour:
   pauseMenuObject: {fileID: 0}
   optionsMenuObject: {fileID: 0}
   volumeSlider: {fileID: 0}
-  isPaused: 0

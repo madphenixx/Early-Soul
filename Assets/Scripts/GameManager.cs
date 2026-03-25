@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static Transform scoreTr;
     [SerializeField] private GameObject bonusPrefab;
     [SerializeField] private GameObject triggerPrefab;
+    [SerializeField] private GameObject gatePrefab;
 
     public static float pv;
     [SerializeField] private float maxPv;
@@ -107,5 +108,10 @@ public class GameManager : MonoBehaviour
     public void SpawnDialogueTrigger(Vector2 spawnPos) //On l'utilisera en mode "si le combat est terminé et que la scéne est la l°blabla, on faitt swpawn à cette position
     {
         Instantiate(triggerPrefab, spawnPos, Quaternion.identity);
+    }
+
+    public void SpawnGate(Vector2 spawnPos) //On l'utilisera en mode "si le combat est terminé et que la scéne est la l°blabla, on faitt swpawn à cette position
+    {
+        Instantiate(gatePrefab, spawnPos, Quaternion.identity);
     }
 }

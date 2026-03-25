@@ -67,6 +67,15 @@ public class PauseMenu : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Confined;
     }
 
+    public void MainMenuEnd()
+    {
+        Time.timeScale = 1.0f;
+        isPaused = false;
+        PlayerPrefs.DeleteKey("savedScene");
+        SceneManager.LoadScene(0);
+        //Cursor.lockState = CursorLockMode.Confined;
+    }
+
     public void Retry()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));
@@ -83,7 +92,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Time.timeScale = 1.0f;
-        PlayerPrefs.DeleteKey("savedScene");
+        
         Application.Quit();
     }
 
