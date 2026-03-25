@@ -92,7 +92,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Time.timeScale = 1.0f;
-        
+        PlayerPrefs.DeleteKey("savedScene");
         Application.Quit();
     }
 
