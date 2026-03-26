@@ -39,7 +39,7 @@ public class EnnemiSol : MonoBehaviour
         {
             attackTime = Random.Range(Time.deltaTime, 3f);
             yield return new WaitForSeconds(attackTime);
-            
+
             float distance = Vector2.Distance(player.transform.position, transform.position);
             StartCoroutine(MovementTime(distance - 2));
 
@@ -53,7 +53,7 @@ public class EnnemiSol : MonoBehaviour
         float time = -distance;
         while (time < 0)
         {
-            transform.position += new Vector3(-distance/10, 0, 0); //a modif pour qu'il glisse pas dans la parade
+            Move(-distance / 10); //a modif pour qu'il glisse pas dans la parade
             time += distance/10;
             yield return null;
         }

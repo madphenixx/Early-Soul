@@ -12,6 +12,7 @@ public class EnnemiVol : MonoBehaviour
     void Start()
     {
         StartCoroutine(LaunchProjectiles());
+
         // barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
     }
 
@@ -27,7 +28,7 @@ public class EnnemiVol : MonoBehaviour
         {
             spawnTime = Random.Range(Time.deltaTime, 1.7f);
             yield return new WaitForSeconds(spawnTime);
-            
+
             spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             Instantiate(projectile, spawnPos, Quaternion.identity);
         }
