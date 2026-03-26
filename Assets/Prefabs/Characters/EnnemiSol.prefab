@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
-  pv: 15
+  pv: 8
 --- !u!114 &720503701060218202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4e2eeb30f3ab44190ed20383f45e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
-  barreVie: {fileID: 0}
   meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
   attackTime: 0
   player: {fileID: 0}
@@ -672,9 +671,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8977272295002602111}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 15
+  m_MaxValue: 8
   m_WholeNumbers: 0
-  m_Value: 15
+  m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

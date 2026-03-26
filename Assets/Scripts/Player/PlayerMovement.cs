@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
     
-    [SerializeField] private bool facingRight = true;
+    public static bool facingRight = true;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isDodging;
 

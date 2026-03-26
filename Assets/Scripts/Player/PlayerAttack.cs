@@ -45,8 +45,19 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true)
         {
-            //transform.position += new Vector3(1, 0, 0);
-            spawnPos = new Vector2(transform.position.x, transform.position.y);
+            if (PlayerMovement.facingRight)
+            {
+                //transform.position += new Vector3(1, 0, 0);
+                spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
+            }
+
+            else
+            {
+                //transform.position += new Vector3(1, 0, 0);
+                spawnPos = new Vector2(transform.position.x - 1, transform.position.y);
+                
+            }
+
             Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
             StartCoroutine(MeleeCooldown());
         }
@@ -56,8 +67,18 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
         {
-            //transform.position += new Vector3(1, 0, 0);
-            spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.2f);
+            if (PlayerMovement.facingRight)
+            {
+                //transform.position += new Vector3(1, 0, 0);
+                spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.2f);
+            }
+
+            else
+            {
+                //transform.position += new Vector3(1, 0, 0);
+                spawnPos = new Vector2(transform.position.x - 1.5f, transform.position.y + 0.2f);
+            }
+
             Instantiate(parry, spawnPos, Quaternion.identity);
             StartCoroutine(ParryCooldown());
         }

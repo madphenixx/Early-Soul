@@ -31,6 +31,11 @@ public class EnnemiSol : MonoBehaviour
             Move(2);
             tookDamage = false;
         }
+
+        if (ParryPlayer.parryTime)
+        {
+            //en gros on fige le perso
+        }
     }
 
     private IEnumerator MeleeAttack()

@@ -10,6 +10,7 @@ TagManager:
   - PlayerAttack
   - EnnemiSol
   - Obstacle
+  - EnnemiAttack
   layers:
   - Default
   - TransparentFX

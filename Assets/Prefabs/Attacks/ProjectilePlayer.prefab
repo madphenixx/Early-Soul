@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1483551036856880071}
   m_Layer: 0
   m_Name: ProjectilePlayer
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,10 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePlayer
   cible: {fileID: 0}
-  rb: {fileID: 0}
-  launchDir: {x: 0, y: 0}
-  launchDirNorm: {x: 0, y: 0}
-  speed: 10
   allEnnemies: []
-  distanceMin: 20
   gameManager: {fileID: 0}
+  distanceMin: 20
+  speed: 10
+  boomerang: 0
