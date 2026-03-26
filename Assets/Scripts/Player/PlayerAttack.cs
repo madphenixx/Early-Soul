@@ -13,9 +13,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject parry;
 
     public static Vector2 spawnPos;
-    [SerializeField] private float ParryCooldownTime = 0.75f;
+    [SerializeField] private float parryCooldownTime = 0.3f;
+    [SerializeField] private float meleeCooldownTime = 0.3f;
 
     [SerializeField] private bool canParry = true;
+    [SerializeField] private bool canMelee = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,11 +43,12 @@ public class PlayerAttack : MonoBehaviour
 
     void MeleeAttack(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true)
         {
             //transform.position += new Vector3(1, 0, 0);
             spawnPos = new Vector2(transform.position.x, transform.position.y);
             Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
+            StartCoroutine(MeleeCooldown());
         }
     }
 
@@ -63,8 +66,15 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator ParryCooldown()
     {
         canParry = false;
-        yield return new WaitForSeconds(ParryCooldownTime);
+        yield return new WaitForSeconds(parryCooldownTime);
         canParry = true;
+    }
+
+    private IEnumerator MeleeCooldown()
+    {
+        canMelee = false;
+        yield return new WaitForSeconds(meleeCooldownTime);
+        canMelee = true;
     }
 
     void OnDisable()
