@@ -57,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
         if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
         {
             //transform.position += new Vector3(1, 0, 0);
-            spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y);
+            spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.2f);
             Instantiate(parry, spawnPos, Quaternion.identity);
             StartCoroutine(ParryCooldown());
         }
