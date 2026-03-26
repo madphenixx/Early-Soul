@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Start()
+    void Start()
     {
         PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
 

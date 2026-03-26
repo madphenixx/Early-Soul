@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
-    public InputActionReference helpRef;
+    [SerializeField] private InputActionReference helpRef;
 
-    public GameObject tutoObject;
-    
-    public bool tutoNext;
+    [SerializeField] private GameObject tutoObject;
+
+    [SerializeField] private bool tutoNext;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

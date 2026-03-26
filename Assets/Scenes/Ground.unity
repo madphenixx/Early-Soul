@@ -585,6 +585,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &445556586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1022434023414238462, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+  m_PrefabInstance: {fileID: 5487450218549365338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1477,7 @@ PrefabInstance:
     - target: {fileID: 1670593792385098234, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: tutoObject
       value: 
-      objectReference: {fileID: 5487450218549365339}
+      objectReference: {fileID: 445556586}
     - target: {fileID: 2978721979196509874, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1538,11 +1543,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
---- !u!1 &5487450218549365339 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2188943194927111366, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
-  m_PrefabInstance: {fileID: 5487450218549365338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class ProjectilePlayer : MonoBehaviour
     [SerializeField] private GameObject cible;
     [SerializeField] private GameObject[] allEnnemies;
 
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
     
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
@@ -15,8 +15,6 @@ public class ProjectilePlayer : MonoBehaviour
     [SerializeField] private float speed = 10;
 
     [SerializeField] private bool boomerang;
-
-
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
     {

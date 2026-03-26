@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-    public int heal = 10;
+    [SerializeField] private int heal = 10;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

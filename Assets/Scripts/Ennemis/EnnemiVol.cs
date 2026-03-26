@@ -21,7 +21,7 @@ public class EnnemiVol : MonoBehaviour
         // barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, gameObject.transform.position.y + 2, 0);
     }
 
-    public IEnumerator LaunchProjectiles()
+    private IEnumerator LaunchProjectiles()
     {
         while (true)
         {

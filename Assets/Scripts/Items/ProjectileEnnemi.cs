@@ -10,7 +10,7 @@ public class ProjectileEnnemi : MonoBehaviour
     private Vector2 launchDirNorm;
     [SerializeField] private float speed;
 
-    public GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()

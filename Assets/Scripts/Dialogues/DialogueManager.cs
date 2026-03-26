@@ -5,25 +5,25 @@ using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
-    public InputActionReference interactRef;
-    
-    public DialogueSO currentConversation;
-    public GameObject dialogueCanvas;
-    public Text charaName;
-    public Image charaAvatar;
-    public Text dialogueText;
+    [SerializeField] private InputActionReference interactRef;
 
-    public Sprite currentAvatar;
-    public CharaSO[] charaSO;
-    public Coroutine typeWriterRoutine;
+    [SerializeField] private DialogueSO currentConversation;
+    [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private Text charaName;
+    [SerializeField] private Image charaAvatar;
+    [SerializeField] private Text dialogueText;
 
-    public int stepNum = 0;
-    public float typingSpeed = 0.02f;
-    public string currentSpeaker;
+    [SerializeField] private Sprite currentAvatar;
+    [SerializeField] private CharaSO[] charaSO;
+    [SerializeField] private Coroutine typeWriterRoutine;
+
+    [SerializeField] private int stepNum = 0;
+    [SerializeField] private float typingSpeed = 0.02f;
+    [SerializeField] private string currentSpeaker;
     
-    public bool dialogueActive;
-    public bool dialogueNext;
-    public bool canContinueText = true;
+    [SerializeField] private bool dialogueActive;
+    [SerializeField] private bool dialogueNext;
+    [SerializeField] private bool canContinueText = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
         GameManager.movementAllowed = false;
     }
 
-    public void TurnOffDialogue()
+    private void TurnOffDialogue()
     {
         stepNum = 0;
         dialogueActive = false;
@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         GameManager.movementAllowed = true;
     }
 
-    public void PlayDialogue()
+    private void PlayDialogue()
     {
         SetActorInfo();
         charaName.text = currentSpeaker;
@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         stepNum += 1;
     }
 
-    public void SetActorInfo()
+    private void SetActorInfo()
     {
         for (int i = 0; i < charaSO.Length; i++)
         {

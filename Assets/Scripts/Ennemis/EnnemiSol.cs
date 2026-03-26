@@ -33,7 +33,7 @@ public class EnnemiSol : MonoBehaviour
         }
     }
 
-    public IEnumerator MeleeAttack()
+    private IEnumerator MeleeAttack()
     {
         while (true)
         {
