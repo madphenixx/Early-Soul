@@ -7,12 +7,12 @@ public class ParryPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(ParryDestroy());
+        StartCoroutine(ParryDestroy(0.2f));
     }
 
-    private IEnumerator ParryDestroy()
+    private IEnumerator ParryDestroy(float time)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 
@@ -26,6 +26,8 @@ public class ParryPlayer : MonoBehaviour
             GameManager.score = GameManager.score + 10;
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
             parryTime = true;
+
+            ParryDestroy(0.1f);
         }
     }
 }

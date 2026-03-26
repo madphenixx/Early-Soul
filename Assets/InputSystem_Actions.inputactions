@@ -404,6 +404,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f35f2278-4b6b-4eed-9698-85a55906ed05",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "423f2486-eb6b-453f-9512-06309ddde6fb",
                     "path": "<Keyboard>/alt",
                     "interactions": "",
