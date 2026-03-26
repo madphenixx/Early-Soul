@@ -28,13 +28,6 @@ public class DialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        dialogueCanvas = GameObject.Find("DialogueUI");
-        charaName = GameObject.Find("CharaText").GetComponent<Text>();
-        charaAvatar = GameObject.Find("Avatar").GetComponent<Image>();
-        dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
-
-        dialogueCanvas.SetActive(false);
-
         interactRef.action.started += DialogueEnter;
         interactRef.action.canceled += DialogueEnter;
     }

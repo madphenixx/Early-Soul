@@ -17,9 +17,6 @@ public class PauseMenu : MonoBehaviour
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
 
-        pauseMenuObject = GameObject.Find("PauseMenu");
-        optionsMenuObject = GameObject.Find("OptionsMenu");
-
         pauseMenuObject.SetActive(false);
         optionsMenuObject.SetActive(false);
 

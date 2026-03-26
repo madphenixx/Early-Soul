@@ -13,8 +13,6 @@ public class Tutorial : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        tutoObject = GameObject.Find("Tuto");
-
         helpRef.action.started += TutoReplay;
         helpRef.action.canceled += TutoReplay;
 
@@ -25,6 +23,7 @@ public class Tutorial : MonoBehaviour
 
         else
         {
+            tutoObject.SetActive(true);
             Time.timeScale = 0f;
         }
     }
