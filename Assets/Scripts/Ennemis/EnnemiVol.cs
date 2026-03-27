@@ -4,7 +4,6 @@ using System.Collections;
 public class EnnemiVol : MonoBehaviour
 {
     [SerializeField] private GameObject projectile;
-    // [SerializeField] private GameObject barreVie;
     
     private Vector2 spawnPos;
     [SerializeField] private float spawnTime;
@@ -12,14 +11,6 @@ public class EnnemiVol : MonoBehaviour
     void Start()
     {
         StartCoroutine(LaunchProjectiles());
-
-        // barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, gameObject.transform.position.y + 2, 0);
     }
 
     private IEnumerator LaunchProjectiles()

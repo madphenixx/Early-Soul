@@ -8,8 +8,8 @@ public class BoatMovements : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
 
-    [SerializeField] private float playerSpeed;
     [SerializeField] private Vector3 direction;
+    [SerializeField] private float playerSpeed;
     
     [SerializeField] private bool facingRight = true;
 

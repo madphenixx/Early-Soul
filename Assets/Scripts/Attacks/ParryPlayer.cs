@@ -4,6 +4,7 @@ using System.Collections;
 public class ParryPlayer : MonoBehaviour
 {
     public static bool parryTime;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

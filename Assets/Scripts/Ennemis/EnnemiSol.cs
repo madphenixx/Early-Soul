@@ -3,12 +3,11 @@ using System.Collections;
 
 public class EnnemiSol : MonoBehaviour
 {
-    // [SerializeField] private GameObject barreVie;
     [SerializeField] private GameObject meleeRange;
-    
-    [SerializeField] private float attackTime;
-    public static Vector2 spawnPos;
     [SerializeField] private GameObject player;
+    
+    public static Vector2 spawnPos;
+    [SerializeField] private float attackTime;
 
     public static bool tookDamage = false;
 
@@ -16,7 +15,6 @@ public class EnnemiSol : MonoBehaviour
     void Start()
     {
         tookDamage = false;
-        // barreVie = gameObject.transform.GetChild(0).GetChild(0).gameObject;
         StartCoroutine(MeleeAttack());
         player = GameObject.Find("Player");
     }
@@ -24,8 +22,6 @@ public class EnnemiSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //barreVie.GetComponent<RectTransform>().anchoredPosition = new Vector3(transform.position.x, transform.position.y + 10, 0); //à fix
-
         if (tookDamage)
         {
             Move(2);

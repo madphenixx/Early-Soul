@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float sliderValue)
     {
         PlayerPrefs.SetFloat("volume", sliderValue);
-        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
     }
 
     public void QuitGame()

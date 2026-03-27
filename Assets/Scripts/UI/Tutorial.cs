@@ -8,8 +8,6 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private GameObject tutoObject;
 
-    [SerializeField] private bool tutoNext;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +30,6 @@ public class Tutorial : MonoBehaviour
     {
         Time.timeScale = 1f;
         tutoObject.SetActive(false);
-        tutoNext = false;
         PlayerPrefs.SetInt("viewedTutos", SceneManager.GetActiveScene().buildIndex);
     }
 

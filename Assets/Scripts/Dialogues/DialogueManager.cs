@@ -6,14 +6,14 @@ using System.Collections;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference interactRef;
-
-    [SerializeField] private DialogueSO currentConversation;
+    
     [SerializeField] private GameObject dialogueCanvas;
     [SerializeField] private Text charaName;
     [SerializeField] private Image charaAvatar;
     [SerializeField] private Text dialogueText;
-
     [SerializeField] private Sprite currentAvatar;
+
+    [SerializeField] private DialogueSO currentConversation;
     [SerializeField] private CharaSO[] charaSO;
     [SerializeField] private Coroutine typeWriterRoutine;
 
