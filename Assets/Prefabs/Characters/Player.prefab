@@ -175,13 +175,12 @@ MonoBehaviour:
   jumpRef: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   dashRef: {fileID: 0}
   dodgeRef: {fileID: -9163086645278252038, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  playerSpeed: 350
-  basePlayerSpeed: 350
+  playerSpeed: 10
+  basePlayerSpeed: 10
   jumpForce: 7
   direction: 0
   dashSpeed: 4
   dodgeSpeed: 8
-  facingRight: 1
   isGrounded: 1
   isDodging: 0
 --- !u!114 &3527666155236941623
@@ -202,5 +201,7 @@ MonoBehaviour:
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
   parry: {fileID: 0}
-  ParryCooldownTime: 0.75
+  parryCooldownTime: 0.3
+  meleeCooldownTime: 0.3
   canParry: 1
+  canMelee: 1

@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraGround : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private float smoothSpeed = 0.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -10,9 +11,10 @@ public class CameraGround : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x + 6, 3, -10); 
+        Vector3 desiredPosition = new Vector3(player.transform.position.x + 6, player.transform.position.y + 3, -10);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }

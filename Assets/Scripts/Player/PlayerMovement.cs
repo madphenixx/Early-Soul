@@ -50,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameManager.movementAllowed)
         {
-            rb.linearVelocity = new Vector2(direction * playerSpeed * Time.deltaTime, rb.linearVelocityY);
+            // rb.linearVelocity = new Vector2(direction * playerSpeed * Time.deltaTime, rb.linearVelocityY);
+            transform.position += new Vector3(direction * playerSpeed * Time.deltaTime, 0, 0);
         }
     }
 
