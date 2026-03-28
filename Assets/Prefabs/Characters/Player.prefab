@@ -177,7 +177,7 @@ MonoBehaviour:
   dodgeRef: {fileID: -9163086645278252038, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerSpeed: 10
   basePlayerSpeed: 10
-  jumpForce: 7
+  jumpForce: 10
   direction: 0
   dashSpeed: 4
   dodgeSpeed: 8
