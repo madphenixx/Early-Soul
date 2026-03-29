@@ -3,16 +3,21 @@ using System.Collections;
 
 public class EnnemiSol : MonoBehaviour
 {
+    private GameObject[] allAttacks;
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject player;
     
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
     [SerializeField] private float attackTime;
+    [SerializeField] private int playerAttackCount;
 
     public static bool tookDamage = false;
+    public bool isAttacker = false;
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool canAttack = true;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,7 +38,7 @@ public class EnnemiSol : MonoBehaviour
             canAttack = false;
 
             Move(2);
-            
+
             tookDamage = false;
             canAttack = true;
         }
@@ -65,6 +70,9 @@ public class EnnemiSol : MonoBehaviour
         {
             Flip();
         }
+
+        allAttacks = GameObject.FindGameObjectsWithTag("PlayerAttack");
+        playerAttackCount = allAttacks.Length;
     }
 
     void Flip()
@@ -77,7 +85,7 @@ public class EnnemiSol : MonoBehaviour
     {
         while (true)
         {
-            if (canAttack)
+            if (canAttack && playerAttackCount == 0 && isAttacker)
             {
                 attackTime = Random.Range(Time.deltaTime, 3f);
                 yield return new WaitForSeconds(attackTime);
@@ -93,6 +101,11 @@ public class EnnemiSol : MonoBehaviour
                 {
                     StartCoroutine(MovementForward(distance + 2));
                 }
+            }
+
+            else
+            {
+                yield return new WaitUntil(() => canAttack && playerAttackCount == 0 && isAttacker);
             }
         }
     }

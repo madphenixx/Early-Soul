@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
-    private GameObject cible;
     private GameObject[] allEnnemies;
+    private GameObject cible;
 
     [SerializeField] private GameManager gameManager;
     

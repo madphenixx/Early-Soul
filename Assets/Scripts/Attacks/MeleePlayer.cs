@@ -10,6 +10,7 @@ public class MeleePlayer : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         StartCoroutine(MeleeDestroy());
     }
 
@@ -43,5 +44,5 @@ public class MeleePlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
-    }
+    } 
 }
