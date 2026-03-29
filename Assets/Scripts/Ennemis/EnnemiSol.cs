@@ -140,6 +140,7 @@ public class EnnemiSol : MonoBehaviour
 
     void Move(float distance)
     {
-        transform.position += new Vector3(distance, 0, 0);
+        Vector3 desiredPosition = transform.position + new Vector3(distance, 0, 0);
+        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, 1.5f);
     }
 }
