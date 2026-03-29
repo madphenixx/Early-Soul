@@ -12,7 +12,8 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private float attackTime;
     [SerializeField] private int playerAttackCount;
 
-    public static bool tookDamage = false;
+    public bool tookDamage = false;
+    public bool parryTime = false;
     public bool isAttacker = false;
     [SerializeField] private bool facingRight = true;
     [SerializeField] private bool canAttack = true;
@@ -25,8 +26,6 @@ public class EnnemiSol : MonoBehaviour
         player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        tookDamage = false;
-
         StartCoroutine(MeleeAttack()); 
     }
 
@@ -37,35 +36,43 @@ public class EnnemiSol : MonoBehaviour
         {
             canAttack = false;
 
-            Move(2);
+            if (player.transform.position.x < transform.position.x)
+            {
+                Move(2);
+            }
+
+            else
+            {
+                Move(-2);
+            }
 
             tookDamage = false;
             canAttack = true;
         }
 
-        if (ParryPlayer.parryTime)
+        if (parryTime && isAttacker)
         {
             canAttack = false;
 
             if (player.transform.position.x < transform.position.x)
             {
                 Move(2);
-                ParryPlayer.parryTime = false;
             }
 
             else
             {
                 Move(-2);
-                ParryPlayer.parryTime = false;
             }
 
             canAttack = true;
+            parryTime = false;
         }
 
         if (transform.position.x < player.transform.position.x && facingRight)
         {
             Flip();
         } 
+
         else if (transform.position.x > player.transform.position.x && !facingRight)
         {
             Flip();
@@ -94,46 +101,44 @@ public class EnnemiSol : MonoBehaviour
 
                 if (player.transform.position.x < transform.position.x)
                 {
-                    StartCoroutine(MovementBackwards(distance - 2));
+                    MoveAttack(-distance + 2);
                 }
 
                 else
                 {
-                    StartCoroutine(MovementForward(distance + 2));
+                    MoveAttack(distance - 2);
+                }
+            }
+
+            else if(canAttack && playerAttackCount == 0 && !isAttacker)
+            {
+                float moveTime = Random.Range(Time.deltaTime, 1.5f);
+                yield return new WaitForSeconds(moveTime);
+
+                float distance = Vector2.Distance(player.transform.position, transform.position);
+
+                if (player.transform.position.x < transform.position.x)
+                {
+                    Move(-distance + 2);
+                }
+
+                else
+                {
+                    Move(distance - 2);
                 }
             }
 
             else
             {
-                yield return new WaitUntil(() => canAttack && playerAttackCount == 0 && isAttacker);
+                yield return new WaitUntil(() => canAttack && playerAttackCount == 0);
             }
         }
     }
 
-    private IEnumerator MovementForward(float distance)
+    private void MoveAttack(float distance)
     {
-        float time = -distance;
-        while (time < 0)
-        {
-            Move(distance / 10); //a modif pour qu'il glisse pas dans la parade
-            time += distance/10;
-            yield return null;
-        }
-
-        spawnPos = new Vector2(transform.position.x, transform.position.y);
-        Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
-    }
-
-    private IEnumerator MovementBackwards(float distance)
-    {
-        float time = -distance;
-        while (time < 0)
-        {
-            Move(-distance / 10); //a modif pour qu'il glisse pas dans la parade
-            time += distance/10;
-            yield return null;
-        }
-
+        Move(distance);
+        
         spawnPos = new Vector2(transform.position.x, transform.position.y);
         Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
     }
@@ -141,6 +146,6 @@ public class EnnemiSol : MonoBehaviour
     void Move(float distance)
     {
         Vector3 desiredPosition = transform.position + new Vector3(distance, 0, 0);
-        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, 1.5f);
+        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, 10f);
     }
 }

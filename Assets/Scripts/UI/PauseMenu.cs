@@ -113,5 +113,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("volume", 5);
+        Debug.Log(PlayerPrefs.GetFloat("volume"));
     }
 }

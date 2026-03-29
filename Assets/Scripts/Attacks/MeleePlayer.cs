@@ -20,7 +20,8 @@ public class MeleePlayer : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("EnnemiSol"))
             {
-                EnnemiSol.tookDamage = true;
+                EnnemiSol ennemiSol = collision.gameObject.GetComponent<EnnemiSol>();
+                ennemiSol.tookDamage = true;
             }
 
             int produit = 1 + (GameManager.combo / 5); //A modifier et équilibrer (multiplicateur de combo)}

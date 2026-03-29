@@ -58,14 +58,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (direction < 0 && facingRight && !isDodging)
-        {
-            Flip();
-        } 
-        else if (direction > 0 && !facingRight && !isDodging)
-        {
-            Flip();
-        }
+        Flip();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -163,8 +156,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Flip()
     {
-        facingRight = !facingRight;
-        spriteRenderer.flipX = !spriteRenderer.flipX;
+        if (direction < 0 && facingRight && !isDodging)
+        {
+            facingRight = false;
+            spriteRenderer.flipX = true;
+        } 
+        else if (direction > 0 && !facingRight && !isDodging)
+        {
+            facingRight = true;
+            spriteRenderer.flipX = false;
+        }
     }
 
     void OnDisable()
