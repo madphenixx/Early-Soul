@@ -106,4 +106,12 @@ public class PauseMenu : MonoBehaviour
         pauseRef.action.started -= PauseGame;
         pauseRef.action.canceled -= PauseGame;
     }
+
+    public void AdminReset()
+    {
+        Debug.Log("Reset!");
+        Time.timeScale = 1.0f;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat("volume", 5);
+    }
 }
