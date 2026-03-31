@@ -117,6 +117,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
         canContinueText = true;
     }
 

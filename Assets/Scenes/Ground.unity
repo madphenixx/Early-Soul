@@ -906,15 +906,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2134960447794560251, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2134960447794560251, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6466295251054509672, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_Name
       value: EnnemiSol (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466295251054509672, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8606296412652271959, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_LocalPosition.x
@@ -958,15 +962,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8977272295002602111, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977272295002602111, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8977272295002602111, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -13,11 +13,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject parry;
 
     public static Vector2 spawnPos;
+    [SerializeField] private float distanceCooldownTime = 0.2f;
     [SerializeField] private float parryCooldownTime = 0.3f;
     [SerializeField] private float meleeCooldownTime = 0.3f;
 
+    [SerializeField] private bool canDistance = true;
     [SerializeField] private bool canParry = true;
     [SerializeField] private bool canMelee = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,10 +37,11 @@ public class PlayerAttack : MonoBehaviour
 
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
-        if (!ctx.canceled && PauseMenu.isPaused == false)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)
         {
             spawnPos = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
             Instantiate(projectile, spawnPos, Quaternion.identity);
+            StartCoroutine(DistanceCooldown());
         } 
     }
 
@@ -82,6 +86,13 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(parry, spawnPos, Quaternion.identity);
             StartCoroutine(ParryCooldown());
         }
+    }
+
+    private IEnumerator DistanceCooldown()
+    {
+        canDistance = false;
+        yield return new WaitForSeconds(distanceCooldownTime);
+        canDistance = true;
     }
 
     private IEnumerator ParryCooldown()

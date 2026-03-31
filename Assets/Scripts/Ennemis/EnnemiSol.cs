@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class EnnemiSol : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class EnnemiSol : MonoBehaviour
     public static Vector2 spawnPos;
     [SerializeField] private float attackTime;
     [SerializeField] private int playerAttackCount;
+    [SerializeField] private int moveCount = 0;
+
+    [SerializeField] private Coroutine defenseRoutine;
+
+    [SerializeField] private string currentState;
+    private readonly string stateAttaque = "Attaque";
+    private readonly string stateDefense = "Defense";
+    private readonly string stateApproche = "Approche";
 
     public bool tookDamage = false;
     public bool parryTime = false;
     public bool isAttacker = false;
-    [SerializeField] private bool facingRight = true;
     [SerializeField] private bool canAttack = true;
+    [SerializeField] private bool facingRight = true;
 
     
 
@@ -26,46 +35,27 @@ public class EnnemiSol : MonoBehaviour
         player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        StartCoroutine(MeleeAttack()); 
+        currentState = stateApproche;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (tookDamage)
+        if (currentState == stateApproche)
         {
-            canAttack = false;
-
-            if (player.transform.position.x < transform.position.x)
-            {
-                Move(2);
-            }
-
-            else
-            {
-                Move(-2);
-            }
-
-            tookDamage = false;
-            canAttack = true;
+            moveCount = 0;
+            ApproachState();
         }
 
-        if (parryTime && isAttacker)
+        else if (currentState == stateAttaque)
         {
-            canAttack = false;
+            moveCount = 0;
+            AttackState();
+        }
 
-            if (player.transform.position.x < transform.position.x)
-            {
-                Move(2);
-            }
-
-            else
-            {
-                Move(-2);
-            }
-
-            canAttack = true;
-            parryTime = false;
+        else if (currentState == stateDefense)
+        {
+            DefenseState();
         }
 
         if (transform.position.x < player.transform.position.x && facingRight)
@@ -82,57 +72,102 @@ public class EnnemiSol : MonoBehaviour
         playerAttackCount = allAttacks.Length;
     }
 
-    void Flip()
+    void ApproachState()
     {
-        facingRight = !facingRight;
-        spriteRenderer.flipX = !spriteRenderer.flipX;
-    }
+        float distance = Vector2.Distance(player.transform.position, transform.position);
 
-    private IEnumerator MeleeAttack()
-    {
-        while (true)
+        if (moveCount <= 0)
         {
-            if (canAttack && playerAttackCount == 0 && isAttacker)
+            if (player.transform.position.x < transform.position.x)
             {
-                attackTime = Random.Range(Time.deltaTime, 3f);
-                yield return new WaitForSeconds(attackTime);
-
-                float distance = Vector2.Distance(player.transform.position, transform.position);
-
-                if (player.transform.position.x < transform.position.x)
-                {
-                    MoveAttack(-distance + 2);
-                }
-
-                else
-                {
-                    MoveAttack(distance - 2);
-                }
-            }
-
-            else if(canAttack && playerAttackCount == 0 && !isAttacker)
-            {
-                float moveTime = Random.Range(Time.deltaTime, 1.5f);
-                yield return new WaitForSeconds(moveTime);
-
-                float distance = Vector2.Distance(player.transform.position, transform.position);
-
-                if (player.transform.position.x < transform.position.x)
-                {
-                    Move(-distance + 2);
-                }
-
-                else
-                {
-                    Move(distance - 2);
-                }
+                Move(-distance + 2);
             }
 
             else
             {
-                yield return new WaitUntil(() => canAttack && playerAttackCount == 0);
+                Move(distance - 2);
+            }
+
+            moveCount += 1;
+        }
+
+        if (!isAttacker)
+        {
+            currentState = stateDefense;
+        }
+
+        if (tookDamage)
+        {
+            currentState = stateDefense;
+            tookDamage = false;
+        }
+    }
+
+    void AttackState()
+    {
+        if (tookDamage || parryTime && isAttacker)
+        {
+            currentState = stateDefense;
+            parryTime = false;
+        }
+
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            MoveAttack(-distance + 2);
+        }
+
+        else
+        {
+            MoveAttack(distance - 2);
+        }
+
+        canAttack = false;
+        currentState = stateDefense;
+    }
+
+    void DefenseState()
+    {
+        if (moveCount <= 0)
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                Move(4);
+                moveCount += 1;
+            }
+
+            else if (player.transform.position.x >= transform.position.x)
+            {
+                Move(-4);
+                moveCount += 1;
             }
         }
+
+        if (defenseRoutine != null)
+        {
+            StopCoroutine(defenseRoutine);
+        }
+
+        defenseRoutine = StartCoroutine(DefenseWait());
+
+        if (isAttacker && canAttack)
+        {
+            currentState = stateAttaque;
+        }
+    }
+
+    private IEnumerator DefenseWait()
+    {
+        attackTime = Random.Range(Time.deltaTime, 4f);
+        yield return new WaitForSeconds(attackTime);
+        canAttack = true;
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
     private void MoveAttack(float distance)

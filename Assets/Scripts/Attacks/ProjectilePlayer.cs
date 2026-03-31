@@ -86,27 +86,32 @@ public class ProjectilePlayer : MonoBehaviour
 
         if (collision.gameObject.CompareTag("EnnemiSol"))
         {
-            boomerang = true;
-            Vector3 returnBase = PlayerAttack.spawnPos;
-            launchDir = returnBase - gameObject.transform.position;
-            launchDirNorm = launchDir.normalized;
-        }
-
-        if (collision.gameObject.CompareTag("Player") && boomerang == true)
-        {
-            boomerang = false; 
-            
-            GameManager.pv +=  - 1;
-            GameManager.pvSlider.value = GameManager.pv;
-
-            GameManager.combo = 0;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
-
-            GameManager.score = GameManager.score - 10;
-            GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
-            
             Destroy(gameObject);
         }
+
+        //if (collision.gameObject.CompareTag("EnnemiSol"))
+        //{
+        //    boomerang = true;
+        //    Vector3 returnBase = PlayerAttack.spawnPos;
+        //    launchDir = returnBase - gameObject.transform.position;
+        //    launchDirNorm = launchDir.normalized;
+        //}
+
+        //if (collision.gameObject.CompareTag("Player") && boomerang == true)
+        //{
+        //    boomerang = false; 
+
+        //    GameManager.pv +=  - 1;
+        //    GameManager.pvSlider.value = GameManager.pv;
+
+        //    GameManager.combo = 0;
+        //    GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+
+        //    GameManager.score = GameManager.score - 10;
+        //    GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
+
+        //    Destroy(gameObject);
+        //}
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
