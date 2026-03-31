@@ -12,12 +12,13 @@ public class EnnemiSol : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
     private float attackTime;
-    [SerializeField] private float reactivityTime;
+    [SerializeField] private float reactivityTime = 0.5f;
     [SerializeField] private float speed = 2;
     [SerializeField] private int moveCount = 0;
     [SerializeField] private int attackCount = 0;
 
     private Coroutine attackRoutine;
+    private Coroutine stateRoutine;
 
     [SerializeField] private string currentState;
     private readonly string stateAttaque = "Attaque";
@@ -44,7 +45,6 @@ public class EnnemiSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentState);
         if (currentState == stateApproche)
         {
             moveCount = 0;
@@ -100,30 +100,28 @@ public class EnnemiSol : MonoBehaviour
 
         if (!isAttacker)
         {
-            currentState = stateDefense;
+            if (stateRoutine == null)
+            {
+                stateRoutine = StartCoroutine(TimeState(stateDefense));
+            }
+            // currentState = stateDefense;
         }
 
-        if (tookDamage)
+        if (tookDamage || parryTime && isAttacker)
         {
             currentState = stateDefense;
             tookDamage = false;
+            parryTime = false;
         }
 
-        if (attackRoutine != null)
+        if (attackRoutine == null)
         {
-            StopCoroutine(attackRoutine);
+            attackRoutine = StartCoroutine(AttackWait());
         }
-
-        attackRoutine = StartCoroutine(AttackWait());
-
-        // if (attackRoutine == null)
-        // {
-        //     attackRoutine = StartCoroutine(AttackWait());
-        // }
 
         if (isAttacker && canAttack)
         {
-            currentState = stateAttaque;
+            stateRoutine = StartCoroutine(TimeState(stateAttaque));
             attackRoutine = null;
         }
     }
@@ -133,6 +131,7 @@ public class EnnemiSol : MonoBehaviour
         if (tookDamage || parryTime && isAttacker)
         {
             currentState = stateDefense;
+            
             tookDamage = false;
             parryTime = false;
         }
@@ -143,12 +142,12 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                MoveAttack(-distance + 2);
+                MoveAttack(-distance + 1);
             }
 
             else
             {
-                MoveAttack(distance - 2);
+                MoveAttack(distance - 1);
             }
 
             attackCount += 1;
@@ -157,16 +156,20 @@ public class EnnemiSol : MonoBehaviour
         else if (attackCount > 0)
         {
             canAttack = false;
-            currentState = stateDefense;
+
+            if (stateRoutine == null)
+            {
+                stateRoutine = StartCoroutine(TimeState(stateDefense));
+            }
         }
     }
 
     void DefenseState()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
-        if (distance > 7)
+        if (distance > 7 && stateRoutine == null)
         {
-            currentState = stateApproche;
+            StartCoroutine(TimeState(stateApproche));
         }
 
         if (moveCount <= 0)
@@ -189,17 +192,18 @@ public class EnnemiSol : MonoBehaviour
             attackRoutine = StartCoroutine(AttackWait());
         }
 
-        // if (attackRoutine != null)
-        // {
-        //     StopCoroutine(attackRoutine);
-        // }
-
-        attackRoutine = StartCoroutine(AttackWait());
-
         if (isAttacker && canAttack)
         {
             attackRoutine = null;
-            currentState = stateAttaque;
+            if (stateRoutine == null)
+            {
+                stateRoutine = StartCoroutine(TimeState(stateAttaque));
+            }
+        }
+
+         if (tookDamage || parryTime && isAttacker)
+        {
+            currentState = stateApproche;
         }
     }
 
@@ -208,6 +212,13 @@ public class EnnemiSol : MonoBehaviour
         attackTime = Random.Range(1, 4);
         yield return new WaitForSeconds(attackTime);
         canAttack = true;
+    }
+
+    private IEnumerator TimeState(string state)
+    {
+        yield return new WaitForSeconds(reactivityTime);
+        currentState = state;
+        stateRoutine = null;
     }
 
     void Flip()

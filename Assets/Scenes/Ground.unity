@@ -1470,8 +1470,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585545}
     - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: canAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: isAttacker
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: reactivityTime
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7311224682963888654, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1484,6 +1496,14 @@ PrefabInstance:
     - target: {fileID: 7311224682963888654, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821641638533897639, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: m_Size.x
+      value: 4.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821641638533897639, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
