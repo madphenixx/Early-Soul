@@ -44,6 +44,7 @@ public class EnnemiSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentState);
         if (currentState == stateApproche)
         {
             moveCount = 0;
@@ -77,24 +78,24 @@ public class EnnemiSol : MonoBehaviour
     void ApproachState()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
-        if (distance <= 7)
-        {
-            currentState = stateDefense;
-        }
-
         if (moveCount <= 0)
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(-distance + 2);
+                Move(-distance + 4);
             }
 
             else
             {
-                Move(distance - 2);
+                Move(distance - 4);
             }
 
             moveCount += 1;
+        }
+        
+        if (distance <= 7)
+        {
+            currentState = stateDefense;
         }
 
         if (!isAttacker)
@@ -115,9 +116,15 @@ public class EnnemiSol : MonoBehaviour
 
         attackRoutine = StartCoroutine(AttackWait());
 
+        // if (attackRoutine == null)
+        // {
+        //     attackRoutine = StartCoroutine(AttackWait());
+        // }
+
         if (isAttacker && canAttack)
         {
             currentState = stateAttaque;
+            attackRoutine = null;
         }
     }
 
@@ -136,12 +143,12 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                MoveAttack(-distance + 4);
+                MoveAttack(-distance + 2);
             }
 
             else
             {
-                MoveAttack(distance - 4);
+                MoveAttack(distance - 2);
             }
 
             attackCount += 1;
@@ -149,10 +156,9 @@ public class EnnemiSol : MonoBehaviour
 
         else if (attackCount > 0)
         {
-            currentState = stateDefense;
             canAttack = false;
+            currentState = stateDefense;
         }
-  
     }
 
     void DefenseState()
@@ -168,14 +174,14 @@ public class EnnemiSol : MonoBehaviour
             if (player.transform.position.x < transform.position.x)
             {
                 Move(5);
-                moveCount += 1;
             }
 
             else if (player.transform.position.x >= transform.position.x)
             {
                 Move(-5);
-                moveCount += 1;
             }
+
+            moveCount += 1;
         }
 
         if (attackRoutine == null)
@@ -183,10 +189,17 @@ public class EnnemiSol : MonoBehaviour
             attackRoutine = StartCoroutine(AttackWait());
         }
 
+        // if (attackRoutine != null)
+        // {
+        //     StopCoroutine(attackRoutine);
+        // }
+
+        attackRoutine = StartCoroutine(AttackWait());
+
         if (isAttacker && canAttack)
         {
-            currentState = stateAttaque;
             attackRoutine = null;
+            currentState = stateAttaque;
         }
     }
 
