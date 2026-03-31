@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Rendering.MaterialUpgrader;
 
@@ -10,11 +11,13 @@ public class EnnemiSol : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
-    [SerializeField] private float attackTime;
+    private float attackTime;
+    [SerializeField] private float reactivityTime;
+    [SerializeField] private float speed = 2;
     [SerializeField] private int moveCount = 0;
     [SerializeField] private int attackCount = 0;
 
-    [SerializeField] private Coroutine attackRoutine;
+    private Coroutine attackRoutine;
 
     [SerializeField] private string currentState;
     private readonly string stateAttaque = "Attaque";
@@ -74,6 +77,10 @@ public class EnnemiSol : MonoBehaviour
     void ApproachState()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
+        if (distance <= 7)
+        {
+            currentState = stateDefense;
+        }
 
         if (moveCount <= 0)
         {
@@ -129,18 +136,18 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                MoveAttack(-distance + 2);
+                MoveAttack(-distance + 4);
             }
 
             else
             {
-                MoveAttack(distance - 2);
+                MoveAttack(distance - 4);
             }
 
             attackCount += 1;
         }
 
-        else if(attackCount > 0)
+        else if (attackCount > 0)
         {
             currentState = stateDefense;
             canAttack = false;
@@ -150,41 +157,42 @@ public class EnnemiSol : MonoBehaviour
 
     void DefenseState()
     {
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        if (distance > 7)
+        {
+            currentState = stateApproche;
+        }
+
         if (moveCount <= 0)
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(4);
+                Move(5);
                 moveCount += 1;
             }
 
             else if (player.transform.position.x >= transform.position.x)
             {
-                Move(-4);
+                Move(-5);
                 moveCount += 1;
             }
         }
 
-        if (attackRoutine != null)
+        if (attackRoutine == null)
         {
             attackRoutine = StartCoroutine(AttackWait());
         }
 
-        else
-        {
-            StopCoroutine(attackRoutine);
-        }
-
-
         if (isAttacker && canAttack)
         {
             currentState = stateAttaque;
+            attackRoutine = null;
         }
     }
 
     private IEnumerator AttackWait()
     {
-        attackTime = Random.Range(Time.deltaTime, 4f);
+        attackTime = Random.Range(1, 4);
         yield return new WaitForSeconds(attackTime);
         canAttack = true;
     }
@@ -206,6 +214,7 @@ public class EnnemiSol : MonoBehaviour
     void Move(float distance)
     {
         Vector3 desiredPosition = transform.position + new Vector3(distance, 0, 0);
-        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, 10f);
+        Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, speed * Time.deltaTime);
+        transform.position = newPosition;
     }
 }
