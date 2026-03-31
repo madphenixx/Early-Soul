@@ -11,10 +11,10 @@ public class EnnemiSol : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
     [SerializeField] private float attackTime;
-    [SerializeField] private int playerAttackCount;
     [SerializeField] private int moveCount = 0;
+    [SerializeField] private int attackCount = 0;
 
-    [SerializeField] private Coroutine defenseRoutine;
+    [SerializeField] private Coroutine attackRoutine;
 
     [SerializeField] private string currentState;
     private readonly string stateAttaque = "Attaque";
@@ -44,6 +44,7 @@ public class EnnemiSol : MonoBehaviour
         if (currentState == stateApproche)
         {
             moveCount = 0;
+            attackCount = 0;
             ApproachState();
         }
 
@@ -55,6 +56,7 @@ public class EnnemiSol : MonoBehaviour
 
         else if (currentState == stateDefense)
         {
+            attackCount = 0;
             DefenseState();
         }
 
@@ -67,9 +69,6 @@ public class EnnemiSol : MonoBehaviour
         {
             Flip();
         }
-
-        allAttacks = GameObject.FindGameObjectsWithTag("PlayerAttack");
-        playerAttackCount = allAttacks.Length;
     }
 
     void ApproachState()
@@ -101,6 +100,18 @@ public class EnnemiSol : MonoBehaviour
             currentState = stateDefense;
             tookDamage = false;
         }
+
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+        }
+
+        attackRoutine = StartCoroutine(AttackWait());
+
+        if (isAttacker && canAttack)
+        {
+            currentState = stateAttaque;
+        }
     }
 
     void AttackState()
@@ -108,23 +119,33 @@ public class EnnemiSol : MonoBehaviour
         if (tookDamage || parryTime && isAttacker)
         {
             currentState = stateDefense;
+            tookDamage = false;
             parryTime = false;
         }
 
         float distance = Vector2.Distance(player.transform.position, transform.position);
 
-        if (player.transform.position.x < transform.position.x)
+        if (attackCount <= 0)
         {
-            MoveAttack(-distance + 2);
+            if (player.transform.position.x < transform.position.x)
+            {
+                MoveAttack(-distance + 2);
+            }
+
+            else
+            {
+                MoveAttack(distance - 2);
+            }
+
+            attackCount += 1;
         }
 
-        else
+        else if(attackCount > 0)
         {
-            MoveAttack(distance - 2);
+            currentState = stateDefense;
+            canAttack = false;
         }
-
-        canAttack = false;
-        currentState = stateDefense;
+  
     }
 
     void DefenseState()
@@ -144,12 +165,16 @@ public class EnnemiSol : MonoBehaviour
             }
         }
 
-        if (defenseRoutine != null)
+        if (attackRoutine != null)
         {
-            StopCoroutine(defenseRoutine);
+            attackRoutine = StartCoroutine(AttackWait());
         }
 
-        defenseRoutine = StartCoroutine(DefenseWait());
+        else
+        {
+            StopCoroutine(attackRoutine);
+        }
+
 
         if (isAttacker && canAttack)
         {
@@ -157,7 +182,7 @@ public class EnnemiSol : MonoBehaviour
         }
     }
 
-    private IEnumerator DefenseWait()
+    private IEnumerator AttackWait()
     {
         attackTime = Random.Range(Time.deltaTime, 4f);
         yield return new WaitForSeconds(attackTime);
