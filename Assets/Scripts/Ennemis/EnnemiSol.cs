@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class EnnemiSol : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class EnnemiSol : MonoBehaviour
     public static Vector2 spawnPos;
     private float attackTime;
     [SerializeField] private float reactivityTime = 0.5f;
-    [SerializeField] private float speed = 2;
+    [SerializeField] private float speed = 200;
     [SerializeField] private int moveCount = 0;
     [SerializeField] private int attackCount = 0;
 

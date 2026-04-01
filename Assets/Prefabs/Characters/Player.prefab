@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4207038351988583543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.15, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveRef: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpRef: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  dashRef: {fileID: 0}
+  dashRef: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   dodgeRef: {fileID: -9163086645278252038, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   playerSpeed: 10
   basePlayerSpeed: 10
@@ -181,6 +181,7 @@ MonoBehaviour:
   direction: 0
   dashSpeed: 4
   dodgeSpeed: 8
+  iframeTime: 1
   isGrounded: 1
   isDodging: 0
 --- !u!114 &3527666155236941623
@@ -197,11 +198,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   distanceRef: {fileID: 4086502887128850588, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   meleeRef: {fileID: -3806868234933470170, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  parryRef: {fileID: 0}
+  parryRef: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
-  parry: {fileID: 0}
+  parry: {fileID: 8413523536311424509, guid: d2abd28754b0c3f4f8b86bd359addd89, type: 3}
+  distanceCooldownTime: 0.2
   parryCooldownTime: 0.5
   meleeCooldownTime: 0.5
+  canDistance: 1
   canParry: 1
   canMelee: 1

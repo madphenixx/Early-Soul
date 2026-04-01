@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class ProjectileEnnemi : MonoBehaviour
+public class ProjectileEnnemiVol : MonoBehaviour
 {   
     [SerializeField] private GameObject cible;
     [SerializeField] private Rigidbody2D rb;
-    // public Animator enemyAnimator;
+    public int baseAttack = 1;
 
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 10;
 
     [SerializeField] private GameManager gameManager;
 
@@ -18,7 +18,6 @@ public class ProjectileEnnemi : MonoBehaviour
         cible = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
@@ -31,9 +30,9 @@ public class ProjectileEnnemi : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
         {
-            GameManager.pv +=  - 1;
+            GameManager.pv +=  - baseAttack;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;

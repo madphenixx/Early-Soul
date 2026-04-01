@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     // public Animator playerAnimator;
+    private Coroutine iTimeRoutine;
 
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
@@ -20,10 +21,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float direction;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
+    [SerializeField] private float iframeTime = 1;
     
     public static bool facingRight = true;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isDodging;
+    public static bool isInvicible = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -134,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
             isDodging = true;
             playerSpeed = basePlayerSpeed * dodgeSpeed;
             StartCoroutine(DodgeTime());
+            StartCoroutine(IframeTime());
+
             // playerAnimator.SetTrigger("IsDodging");
         }
         if (ctx.canceled)
@@ -152,6 +157,13 @@ public class PlayerMovement : MonoBehaviour
         }
         direction = 0;
         playerSpeed = basePlayerSpeed;
+    }
+
+    private IEnumerator IframeTime()
+    {
+        isInvicible = true;
+        yield return new WaitForSeconds(iframeTime);
+        isInvicible = false;
     }
 
     void Flip()

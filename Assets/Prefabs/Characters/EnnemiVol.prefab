@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiVol
   projectile: {fileID: 4002874529014856564, guid: 06aedb8aa981df1448bbd40ec08ef804, type: 3}
-  spawnTime: 3.5
+  spawnTime: 0
 --- !u!114 &2458197397254317592
 MonoBehaviour:
   m_ObjectHideFlags: 0

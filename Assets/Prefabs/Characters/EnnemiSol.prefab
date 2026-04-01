@@ -173,8 +173,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.2195015}
-  m_Size: {x: 11.26, y: 14.541517}
+  m_Offset: {x: 1.18, y: 0.2195015}
+  m_Size: {x: 4.59, y: 14.541517}
   m_Direction: 0
 --- !u!50 &2119503039585931672
 Rigidbody2D:
@@ -289,8 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
   meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
   player: {fileID: 0}
-  reactivityTime: 0
-  speed: 2
+  reactivityTime: 0.5
+  speed: 200
   moveCount: 0
   attackCount: 0
   currentState: 
