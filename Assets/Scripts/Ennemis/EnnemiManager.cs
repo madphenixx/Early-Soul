@@ -35,7 +35,10 @@ public class EnnemiManager : MonoBehaviour
             }
         }
 
-        attacker.isAttacker = true;
-        distanceMin = 1000;
+        if (attacker != null)
+        {
+            attacker.isAttacker = true;
+            distanceMin = 1000;
+        }
     }
 }
