@@ -3,7 +3,7 @@ using UnityEngine;
 public class ClassEnnemi : MonoBehaviour
 {
     // public Animator enemyAnimator;
-    public int pv = 10;
+    public float pv = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

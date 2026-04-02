@@ -24,16 +24,17 @@ public class MeleePlayer : MonoBehaviour
                 ennemiSol.tookDamage = true;
             }
 
-            int produit = 1 + (GameManager.combo / 5); //A modifier et équilibrer (multiplicateur de combo)}
+            float produit = 1 + (GameManager.combo * 0.5f); //A modifier et équilibrer (multiplicateur de combo)}
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
+
+            GameManager.combo += 1;
+            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.multiplicateurText.text = "x" + produit.ToString();
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += -produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
 
-            GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
-
-            GameManager.score = GameManager.score + 10 * produit;
+            GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
             // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 

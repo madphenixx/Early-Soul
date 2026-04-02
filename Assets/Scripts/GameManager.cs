@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static Slider pvSlider;
     public static Text scoreText;
     public static Text comboText;
+    public static Text multiplicateurText;
     public static Transform scoreTr;
     [SerializeField] private GameObject bonusPrefab;
     [SerializeField] private GameObject triggerPrefab;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         comboText = GameObject.Find("Combo").GetComponent<Text>();
+        multiplicateurText = GameObject.Find("Multiplicateur").GetComponent<Text>();
 
         // scoreTr = GameObject.Find("Score").transform;
 

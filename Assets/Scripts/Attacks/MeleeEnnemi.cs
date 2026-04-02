@@ -16,11 +16,14 @@ public class MeleeEnnemi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
         {
+            float produit = 1 + (GameManager.combo / 5); //A modifier et équilibrer (multiplicateur de combo)}
+
             GameManager.pv +=  - 1;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.multiplicateurText.text = "x1";
 
             GameManager.score = GameManager.score - 10;
             GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
