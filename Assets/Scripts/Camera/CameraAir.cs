@@ -15,7 +15,7 @@ public class CameraAir : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 desiredPosition = new Vector3(player.transform.position.x + 6, player.transform.position.y, -10);
+        Vector3 desiredPosition = new Vector3(player.transform.position.x + 13, player.transform.position.y + 3, -10);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
 

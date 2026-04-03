@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8080440144037283706}
   - component: {fileID: 8892635916506854345}
   - component: {fileID: 6045582479072819690}
-  - component: {fileID: 1483551036856880071}
+  - component: {fileID: -3672311510354938054}
   m_Layer: 0
   m_Name: ProjectilePlayer
   m_TagString: PlayerAttack
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1483551036856880071
+--- !u!114 &-3672311510354938054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,9 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc5f7668f762b541b7c7f87d755f78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePlayer
-  cible: {fileID: 0}
-  allEnnemies: []
   gameManager: {fileID: 0}
-  distanceMin: 20
+  distanceMin: 40
   speed: 10
+  duration: 3
   boomerang: 0

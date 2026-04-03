@@ -13,7 +13,7 @@ public class ProjectilePlayer : MonoBehaviour
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
     private Rigidbody2D rb;
-    [SerializeField] private float distanceMin = 20;
+    [SerializeField] private float distanceMin = 40;
     [SerializeField] private float speed = 10;
     [SerializeField] private float duration = 3;
 
