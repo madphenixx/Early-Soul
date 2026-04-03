@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class ProjectilePlayer : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ProjectilePlayer : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float distanceMin = 20;
     [SerializeField] private float speed = 10;
+    [SerializeField] private float duration = 3;
 
     [SerializeField] private bool boomerang;
 
@@ -47,7 +49,8 @@ public class ProjectilePlayer : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody2D>();
-        
+        StartCoroutine(ProjectileDestroy());
+
         if (cible == null)
         {
             Destroy(gameObject);
@@ -122,5 +125,12 @@ public class ProjectilePlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    } 
+
+    }
+
+    private IEnumerator ProjectileDestroy()
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(gameObject);
+    }
 }

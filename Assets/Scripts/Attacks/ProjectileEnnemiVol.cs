@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ProjectileEnnemiVol : MonoBehaviour
 {   
@@ -9,6 +10,7 @@ public class ProjectileEnnemiVol : MonoBehaviour
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
     [SerializeField] private float speed = 10;
+    [SerializeField] private float duration = 3;
 
     [SerializeField] private GameManager gameManager;
 
@@ -18,6 +20,7 @@ public class ProjectileEnnemiVol : MonoBehaviour
         cible = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        StartCoroutine(ProjectileDestroy());
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
@@ -50,5 +53,11 @@ public class ProjectileEnnemiVol : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator ProjectileDestroy()
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(gameObject);
     }
 }

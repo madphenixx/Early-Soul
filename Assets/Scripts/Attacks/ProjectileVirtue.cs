@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class ProjectileVirtue : MonoBehaviour
 {   
@@ -8,6 +9,7 @@ public class ProjectileVirtue : MonoBehaviour
 
     private Vector2 launchDir;
     [SerializeField] private float speed = 0.5f;
+    [SerializeField] private float duration = 1;
 
     public bool isLeftOne = true;
 
@@ -15,7 +17,7 @@ public class ProjectileVirtue : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        StartCoroutine(ProjectileDestroy());
 
         if (isLeftOne)
         {
@@ -54,5 +56,11 @@ public class ProjectileVirtue : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator ProjectileDestroy()
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(gameObject);
     }
 }
