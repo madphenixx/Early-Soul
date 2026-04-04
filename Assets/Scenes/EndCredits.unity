@@ -463,8 +463,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 205
+    m_Font: {fileID: 12800000, guid: 21068c1a9f3e5db4b8516e2c1ccf932f, type: 3}
+    m_FontSize: 158
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -475,8 +475,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Game Design : \nLoane Gicquel\nGame Art : \nLoane Gicquel\nProgrammation:\nLoane
-    Gicquel\nSound Design:\nLoane Gicquel\n"
+  m_Text: "Game Design : \nLoane Gicquel\n\nGame Art : \nLoane Gicquel\n\nProgrammation:\nLoane
+    Gicquel\n\nSound Design:\nLoane Gicquel\n"
 --- !u!222 &507140557
 CanvasRenderer:
   m_ObjectHideFlags: 0
