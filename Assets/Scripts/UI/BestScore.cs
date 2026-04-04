@@ -30,8 +30,6 @@ public class BestScore : MonoBehaviour
             scoreText = GameObject.Find("Score").GetComponent<Text>();
 
             scoreText.text = "Score: " + score.ToString();
-            Debug.Log(score);
-            Debug.Log(scoreText);
             bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("bestScore" + scene.ToString()).ToString();
         }
 
