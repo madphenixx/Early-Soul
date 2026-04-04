@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.SetInt("currentScore", score);
+
         if (pv <= 0)
         {
             pv = 0;
