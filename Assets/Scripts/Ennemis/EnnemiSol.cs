@@ -239,4 +239,20 @@ public class EnnemiSol : MonoBehaviour
         Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, speed * Time.deltaTime);
         transform.position = newPosition;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnnemiSol") && !isAttacker)
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                Move(2);
+            }
+
+            else if (player.transform.position.x >= transform.position.x)
+            {
+                Move(-2);
+            }
+        }
+    }
 }
