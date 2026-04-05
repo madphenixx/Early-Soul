@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4fdd1e8b17432614d8b550bd60a5a05f
+guid: fe3b24edb5026c745b5191db508ae574
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Props prologue_0
       rect:
         serializedVersion: 2
-        x: 59
+        x: 68
         y: 769
-        width: 325
-        height: 240
+        width: 315
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42d497076b9bfc142a80294ebf35f8f8
-      internalID: 793878403
+      spriteID: 300dd4b643ea7dd4796c41da947426c8
+      internalID: 457854121
       vertices: []
       indices: 
       edges: []
@@ -200,10 +200,10 @@ TextureImporter:
       name: Props prologue_1
       rect:
         serializedVersion: 2
-        x: 393
-        y: 743
-        width: 238
-        height: 83
+        x: 406
+        y: 757
+        width: 232
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bcc21dad11715f4a8efc405ebc24333
-      internalID: -348074921
+      spriteID: 84d1a13afd32f9343864ecddb900ec36
+      internalID: 260954611
       vertices: []
       indices: 
       edges: []
@@ -222,10 +222,10 @@ TextureImporter:
       name: Props prologue_2
       rect:
         serializedVersion: 2
-        x: 683
-        y: 602
-        width: 175
-        height: 218
+        x: 702
+        y: 615
+        width: 137
+        height: 191
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85b42d7070dc3fb4c91625deeada5981
-      internalID: 1888262797
+      spriteID: 844eb920be2661e4db9d5563a2f97ea4
+      internalID: 1841245112
       vertices: []
       indices: 
       edges: []
@@ -244,10 +244,10 @@ TextureImporter:
       name: Props prologue_3
       rect:
         serializedVersion: 2
-        x: 911
-        y: 587
-        width: 522
-        height: 160
+        x: 934
+        y: 585
+        width: 500
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5364d8d1148de2e4b9166e353dab9ef5
-      internalID: -298292100
+      spriteID: 4e0d96e221d21254d8e1af88af806911
+      internalID: -1992982499
       vertices: []
       indices: 
       edges: []
@@ -266,10 +266,10 @@ TextureImporter:
       name: Props prologue_4
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 770
-        width: 327
-        height: 287
+        x: 1081
+        y: 769
+        width: 317
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81b2144a09f6c046b9ea514090e26a3
-      internalID: -1475452904
+      spriteID: a65374b8d46138c4e851cf0489dcd8d5
+      internalID: -587934063
       vertices: []
       indices: 
       edges: []
@@ -288,10 +288,10 @@ TextureImporter:
       name: Props prologue_5
       rect:
         serializedVersion: 2
-        x: 1427
-        y: 724
-        width: 113
-        height: 342
+        x: 1429
+        y: 720
+        width: 108
+        height: 327
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12d5f218b2a03314fa7152601dec61af
-      internalID: 392639036
+      spriteID: 181ed05131b63864987d5ba92ae846a9
+      internalID: 2027704545
       vertices: []
       indices: 
       edges: []
@@ -310,10 +310,10 @@ TextureImporter:
       name: Props prologue_6
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 743
-        width: 344
-        height: 129
+        x: 1579
+        y: 746
+        width: 336
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,8 +322,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 525bb76fd07d4134d8aae06831c45d8b
-      internalID: -1723786322
+      spriteID: a8c8ba6ffc25965448d90e55ec7e1ea0
+      internalID: 723095239
       vertices: []
       indices: 
       edges: []
@@ -332,10 +332,10 @@ TextureImporter:
       name: Props prologue_7
       rect:
         serializedVersion: 2
-        x: 1564
-        y: 926
-        width: 339
-        height: 127
+        x: 1572
+        y: 930
+        width: 328
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,8 +344,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cd5a9d045a8f964384f49efe5722683
-      internalID: 560065945
+      spriteID: 565dd11d23a006b4890efd77e9d5551e
+      internalID: 294834109
       vertices: []
       indices: 
       edges: []
@@ -354,10 +354,10 @@ TextureImporter:
       name: Props prologue_8
       rect:
         serializedVersion: 2
-        x: 1513
-        y: 317
-        width: 370
-        height: 370
+        x: 1517
+        y: 316
+        width: 346
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,8 +366,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3aa07ec9f30cae4187b1a6e4a39f35f
-      internalID: 1227717443
+      spriteID: 7175448c98e0bff42a5c5618af170aa4
+      internalID: 1941345218
       vertices: []
       indices: 
       edges: []
@@ -376,10 +376,10 @@ TextureImporter:
       name: Props prologue_9
       rect:
         serializedVersion: 2
-        x: 1357
-        y: 153
-        width: 521
-        height: 112
+        x: 1380
+        y: 158
+        width: 491
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,8 +388,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d58188d87176a479f4a4857b68a2e0
-      internalID: -911081746
+      spriteID: 809ef39c73c73a44685cfcfaf7ae6212
+      internalID: -269249234
       vertices: []
       indices: 
       edges: []
@@ -398,10 +398,10 @@ TextureImporter:
       name: Props prologue_10
       rect:
         serializedVersion: 2
-        x: 568
-        y: 388
-        width: 447
-        height: 173
+        x: 572
+        y: 387
+        width: 445
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,8 +410,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cabf3e5f5b48d9441a69627d93760601
-      internalID: -165411459
+      spriteID: de46d8330bc9f9245a136584e956b198
+      internalID: 680255070
       vertices: []
       indices: 
       edges: []
@@ -420,10 +420,10 @@ TextureImporter:
       name: Props prologue_11
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 337
-        width: 477
-        height: 175
+        x: 1016
+        y: 338
+        width: 464
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,8 +432,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b36fef733eacd8a49b22399cc226fb48
-      internalID: 64038909
+      spriteID: 4910c4a1ef9a4634ca576016c12989fd
+      internalID: -1852303334
       vertices: []
       indices: 
       edges: []
@@ -442,10 +442,10 @@ TextureImporter:
       name: Props prologue_12
       rect:
         serializedVersion: 2
-        x: 63
-        y: 392
-        width: 442
-        height: 334
+        x: 69
+        y: 390
+        width: 435
+        height: 324
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,8 +454,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2058b39e724606f4d90169cc78bb9c70
-      internalID: -467359821
+      spriteID: b714571040174c441bdff56b096e1dc6
+      internalID: 1771382886
       vertices: []
       indices: 
       edges: []
@@ -464,10 +464,10 @@ TextureImporter:
       name: Props prologue_13
       rect:
         serializedVersion: 2
-        x: 80
-        y: 46
-        width: 360
-        height: 296
+        x: 98
+        y: 54
+        width: 334
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,8 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f536546ef39219947b85b61a73fb7254
-      internalID: -2098178056
+      spriteID: af8db9b9d6e28264b9f4554d33e6224e
+      internalID: 2087485083
       vertices: []
       indices: 
       edges: []
@@ -498,8 +498,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaf7b331c522432428c0cd63f3a9ded3
-      internalID: -169157077
+      spriteID: fd4e0b3516325b94c9295f33368a6511
+      internalID: -1324709635
       vertices: []
       indices: 
       edges: []
@@ -520,8 +520,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e6f112144f9eaa45adf17b9ca912630
-      internalID: -1482858344
+      spriteID: ff25ad9f289ad92479ac2d16bd695f60
+      internalID: -1129421063
       vertices: []
       indices: 
       edges: []
@@ -542,8 +542,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de1c63aff2192c04fa5457b369cf9a73
-      internalID: 1358172891
+      spriteID: 366aa00604dadaa43a01faa39a3b5b8f
+      internalID: -838281359
       vertices: []
       indices: 
       edges: []
@@ -564,8 +564,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 755657457a27f7940b9eb2a678e45210
-      internalID: -1495841541
+      spriteID: 7cffc39cc2a5366438ae1b45fe24e410
+      internalID: 1658074951
       vertices: []
       indices: 
       edges: []
@@ -574,7 +574,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 54697b195c319dc44b7d75a24144a9d3
+    spriteID: 6d9b431dbd7478d41be5d2079dbb8f62
     internalID: 0
     vertices: []
     indices: 
@@ -584,24 +584,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Props prologue_0: 793878403
-      Props prologue_1: -348074921
-      Props prologue_10: -165411459
-      Props prologue_11: 64038909
-      Props prologue_12: -467359821
-      Props prologue_13: -2098178056
-      Props prologue_14: -169157077
-      Props prologue_15: -1482858344
-      Props prologue_16: 1358172891
-      Props prologue_17: -1495841541
-      Props prologue_2: 1888262797
-      Props prologue_3: -298292100
-      Props prologue_4: -1475452904
-      Props prologue_5: 392639036
-      Props prologue_6: -1723786322
-      Props prologue_7: 560065945
-      Props prologue_8: 1227717443
-      Props prologue_9: -911081746
+      Props prologue_0: 457854121
+      Props prologue_1: 260954611
+      Props prologue_10: 680255070
+      Props prologue_11: -1852303334
+      Props prologue_12: 1771382886
+      Props prologue_13: 2087485083
+      Props prologue_14: -1324709635
+      Props prologue_15: -1129421063
+      Props prologue_16: -838281359
+      Props prologue_17: 1658074951
+      Props prologue_2: 1841245112
+      Props prologue_3: -1992982499
+      Props prologue_4: -587934063
+      Props prologue_5: 2027704545
+      Props prologue_6: 723095239
+      Props prologue_7: 294834109
+      Props prologue_8: 1941345218
+      Props prologue_9: -269249234
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
