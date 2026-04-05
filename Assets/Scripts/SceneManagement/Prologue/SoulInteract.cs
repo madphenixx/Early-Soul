@@ -16,9 +16,8 @@ public class SoulInteract : MonoBehaviour
         collectRef.action.canceled += Collect;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("RAAAAAAAAAAAAAAAA");
         if (collision.gameObject.CompareTag("Player"))
         {
             soulInteraction.SetActive(true);
@@ -27,7 +26,7 @@ public class SoulInteract : MonoBehaviour
         canInteract = true;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
