@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.02f;
     [SerializeField] private string currentSpeaker;
     
-    [SerializeField] private bool dialogueActive;
+    public static bool dialogueActive;
     [SerializeField] private bool dialogueNext;
     [SerializeField] private bool canContinueText = true;
 

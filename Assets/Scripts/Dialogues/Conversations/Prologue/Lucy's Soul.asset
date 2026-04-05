@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
+  m_Name: Lucy's Soul
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  characters:
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  dialogues:
+  - Who are you ?
+  - I am the Grimm Reaper.
+  - The Grimm Reaper ?
+  - Yes. The one in charge to collect souls like you.
+  - Where is Ivan ?
+  - 'Ivan ? '
+  - "My brother\u2026"
+  - "\u2026"
+  - "You\u2019re the only soul i collected here."
+  - '*sigh* What a relief.'
+  - "*There\u2019s something off about her. Is she...*"
+  - Follow me. I will guide you to afterlife.
