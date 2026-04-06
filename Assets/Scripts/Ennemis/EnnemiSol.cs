@@ -230,7 +230,8 @@ public class EnnemiSol : MonoBehaviour
         Move(distance);
         
         spawnPos = new Vector2(transform.position.x, transform.position.y);
-        Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
+        GameObject attacker = Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
+        attacker.GetComponent<MeleeEnnemi>().attacker = gameObject;
     }
 
     void Move(float distance)

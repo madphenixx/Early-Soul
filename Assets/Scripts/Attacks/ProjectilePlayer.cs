@@ -81,7 +81,7 @@ public class ProjectilePlayer : MonoBehaviour
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
-            collision.gameObject.GetComponent<ClassEnnemi>().pv += - produit;
+            collision.gameObject.GetComponent<ClassEnnemi>().pv += -1 * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
  
 
