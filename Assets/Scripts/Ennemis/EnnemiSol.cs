@@ -200,9 +200,9 @@ public class EnnemiSol : MonoBehaviour
         }
 
          if (tookDamage || parryTime && isAttacker)
-        {
+         {
             currentState = stateApproche;
-        }
+         }
     }
 
     private IEnumerator AttackWait()
@@ -247,12 +247,12 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(2);
+                currentState = stateDefense;
             }
 
             else if (player.transform.position.x >= transform.position.x)
             {
-                Move(-2);
+                currentState = stateDefense;
             }
         }
     }
