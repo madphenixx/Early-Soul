@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f446fff26ae8b2448e254d5f48e89d8
+guid: 891dbef7ea4fb0940b75dfded8d81fb4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,13 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackNorm_0
+      name: ContinueOff_0
       rect:
         serializedVersion: 2
-        x: 837
-        y: 490
-        width: 244
-        height: 136
+        x: 765
+        y: 477
+        width: 395
+        height: 163
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bfa2fda41db3b64e9e60dbca09b31d6
-      internalID: -1279590576
+      spriteID: 6f6475b9cab1f7940a7f03f928b9ed90
+      internalID: -320335360
       vertices: []
       indices: 
       edges: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2068ffc0315f7104ca4bceabebddc231
+    spriteID: 117a108e96ee69d44a7fff5195a4c5f5
     internalID: 0
     vertices: []
     indices: 
@@ -210,7 +210,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackNorm_0: -1279590576
+      ContinueOff_0: -320335360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

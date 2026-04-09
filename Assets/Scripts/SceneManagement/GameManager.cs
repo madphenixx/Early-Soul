@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
+        
+        if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
+        {
+            PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
+        }
 
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PrologueManager : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class PrologueManager : MonoBehaviour
 
     public static bool soulCollected;
     public static bool dialogueLucyPlay;
+
+    void Start()
+    {
+        PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
+        
+        if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
+        {
+            PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 
     void FixedUpdate()
     {

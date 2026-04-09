@@ -336,8 +336,8 @@ RectTransform:
   m_GameObject: {fileID: 386330909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6000001, y: 5.6521735, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3.51, y: 7.6304336, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1295889315}
   - {fileID: 533280569}
@@ -367,7 +367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &397123561
 Transform:
   m_ObjectHideFlags: 0
@@ -397,6 +397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   volumeSlider: {fileID: 1132528855}
+  scene1: {fileID: 533280570}
+  scene2: {fileID: 1655268203}
+  scene3: {fileID: 1195759143}
+  continueButton: {fileID: 1343783453}
+  progress: 0
 --- !u!1 &533280568
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +472,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
     m_PressedSprite: {fileID: 446510088, guid: 8b3e56a564b5c96469c34a9ffd0f2e16, type: 3}
     m_SelectedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
-    m_DisabledSprite: {fileID: -1592758289, guid: d43fcc214b2b1e847869793ddff51725, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -479,14 +484,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 397123562}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectCombat
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -716,7 +721,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 1026076147, guid: 3d4ef81e4696fb04d9aabb5988a47b64, type: 3}
     m_PressedSprite: {fileID: -155963033, guid: 3f29ebb29a1555246b39837f3f3331c4, type: 3}
     m_SelectedSprite: {fileID: 1026076147, guid: 3d4ef81e4696fb04d9aabb5988a47b64, type: 3}
-    m_DisabledSprite: {fileID: -856391120, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
+    m_DisabledSprite: {fileID: -1279590576, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -772,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -856391120, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
+  m_Sprite: {fileID: -1279590576, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1841,7 +1846,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
     m_PressedSprite: {fileID: 446510088, guid: 8b3e56a564b5c96469c34a9ffd0f2e16, type: 3}
     m_SelectedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
-    m_DisabledSprite: {fileID: -1592758289, guid: d43fcc214b2b1e847869793ddff51725, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1853,14 +1858,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 397123562}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectCombat
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1973,7 +1978,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 1026076147, guid: 3d4ef81e4696fb04d9aabb5988a47b64, type: 3}
     m_PressedSprite: {fileID: -155963033, guid: 3f29ebb29a1555246b39837f3f3331c4, type: 3}
     m_SelectedSprite: {fileID: 1026076147, guid: 3d4ef81e4696fb04d9aabb5988a47b64, type: 3}
-    m_DisabledSprite: {fileID: -856391120, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
+    m_DisabledSprite: {fileID: -1279590576, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2041,7 +2046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -856391120, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
+  m_Sprite: {fileID: -1279590576, guid: 6f446fff26ae8b2448e254d5f48e89d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2411,7 +2416,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 576381809, guid: 54fe1cd4c660da0448c83fd92bcf0260, type: 3}
     m_PressedSprite: {fileID: -1478416453, guid: 6353411df96f96942ada22e3325316c8, type: 3}
     m_SelectedSprite: {fileID: 576381809, guid: 54fe1cd4c660da0448c83fd92bcf0260, type: 3}
-    m_DisabledSprite: {fileID: 1897895151, guid: 8803f75d132a78145aed62028e55fbb6, type: 3}
+    m_DisabledSprite: {fileID: -320335360, guid: 891dbef7ea4fb0940b75dfded8d81fb4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2564,7 +2569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1578757077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,6 +2583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   volumeSlider: {fileID: 1132528855}
+  scene1: {fileID: 0}
+  scene2: {fileID: 0}
+  scene3: {fileID: 0}
+  continueButton: {fileID: 0}
+  progress: 0
 --- !u!4 &1578757078
 Transform:
   m_ObjectHideFlags: 0
@@ -2823,7 +2833,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
     m_PressedSprite: {fileID: 446510088, guid: 8b3e56a564b5c96469c34a9ffd0f2e16, type: 3}
     m_SelectedSprite: {fileID: 860653910, guid: a28cdbf7bee4242438622b448ed9aad5, type: 3}
-    m_DisabledSprite: {fileID: -1592758289, guid: d43fcc214b2b1e847869793ddff51725, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2835,14 +2845,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 397123562}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SelectCombat
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3471,13 +3481,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 397123562}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
