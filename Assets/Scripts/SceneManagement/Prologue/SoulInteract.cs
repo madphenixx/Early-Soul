@@ -7,7 +7,7 @@ public class SoulInteract : MonoBehaviour
 
     [SerializeField] private GameObject soulInteraction;
 
-    [SerializeField] private bool canInteract;
+    [SerializeField] private bool canInteract = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,9 +21,8 @@ public class SoulInteract : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             soulInteraction.SetActive(true);
+            canInteract = true;
         }
-
-        canInteract = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -36,7 +35,7 @@ public class SoulInteract : MonoBehaviour
 
     void Collect(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && canInteract)
+        if (!ctx.canceled && canInteract == true)
         {
             PrologueManager.soulCollected = true;
             Destroy(gameObject);
