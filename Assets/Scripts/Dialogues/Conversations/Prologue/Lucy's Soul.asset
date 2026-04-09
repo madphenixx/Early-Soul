@@ -27,9 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   dialogues:
   - Who are you ?
-  - I am the Grimm Reaper.
-  - The Grimm Reaper ?
-  - Yes. The one in charge to collect souls like you.
+  - I am the Grim Reaper.
+  - The Grim Reaper ?
+  - Yes. The one in charge of collecting souls like you.
   - Where is Ivan ?
   - 'Ivan ? '
   - "My brother\u2026"
@@ -37,4 +37,4 @@ MonoBehaviour:
   - "You\u2019re the only soul i collected here."
   - '*sigh* What a relief.'
   - "*There\u2019s something off about her. Is she...*"
-  - Follow me. I will guide you to afterlife.
+  - Follow me. I will guide you to the afterlife
