@@ -17,12 +17,6 @@ public class BestScore : MonoBehaviour
         scene = PlayerPrefs.GetInt("savedScene");
         bestScoreText = GameObject.Find("BestScore").GetComponent<Text>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
-            
-        if (PlayerPrefs.HasKey("bestScore") == false)
-        {
-            Debug.Log("no best score.. yet");
-            PlayerPrefs.SetInt("bestScore" + scene.ToString(), score);
-        }
 
         bestScore = PlayerPrefs.GetInt("bestScore" + scene.ToString());
         bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("bestScore" + scene.ToString()).ToString();
