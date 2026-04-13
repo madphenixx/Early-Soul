@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private InputActionReference interactRef;
     
     [SerializeField] private GameObject dialogueCanvas;
+    [SerializeField] private GameObject player;
     [SerializeField] private Text charaName;
     [SerializeField] private Image charaAvatar;
     [SerializeField] private Text dialogueText;
@@ -30,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     {
         interactRef.action.started += DialogueEnter;
         interactRef.action.canceled += DialogueEnter;
+
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -55,6 +58,8 @@ public class DialogueManager : MonoBehaviour
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
         dialogueNext = true;
+        // player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        // player.SetActive(false);
         GameManager.movementAllowed = false;
     }
 
@@ -63,6 +68,8 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
+        // player.SetActive(true);
+        // player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.movementAllowed = true;
     }
 

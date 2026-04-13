@@ -11,7 +11,7 @@ public class GateSpawn : MonoBehaviour
     void Start()
     {
         props = GameObject.Find("Props");
-       gatePos = new Vector3(-19,-1, -1); 
+        gatePos = new Vector3(-28.31277f,-1, -1); 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
