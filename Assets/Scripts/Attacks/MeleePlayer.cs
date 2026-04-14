@@ -44,7 +44,7 @@ public class MeleePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Boss"))
         {
             //Debug.Log("comboe" + GameManager.combo);
-            float produit = (1 + (GameManager.combo * 0.5f)) * gameObject.GetComponent<Boss>().resistanceMelee; //A modifier et équilibrer (multiplicateur de combo)}*
+            float produit = (1 + (GameManager.combo * 0.5f)) * collision.gameObject.GetComponent<Boss>().resistanceMelee; //A modifier et équilibrer (multiplicateur de combo)}*
             //Debug.Log(produit);
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 

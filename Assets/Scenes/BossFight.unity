@@ -1772,9 +1772,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3124816362398436970}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 7
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 7
+  m_Value: 30
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2186,12 +2186,11 @@ MonoBehaviour:
   projectile: {fileID: 6766587246430527401, guid: 81d9d543f162e0a4abb0903d8744e6c2, type: 3}
   virtue: {fileID: 0}
   classEnnemi: {fileID: 0}
-  aoeSpawnTime: 1
-  changeTime: 0.5
   resistanceMelee: 1
   resistanceDistance: 0.5
   resistanceFinisher: 2
   startP2: 10
+  aoeSpawnTime: 1
   maxProjTime: 2.5
   maxSpawnTime: 1.5
   maxSpawnDistance: 4

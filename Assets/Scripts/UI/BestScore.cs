@@ -35,12 +35,12 @@ public class BestScore : MonoBehaviour
     void Update()
     {
         score = PlayerPrefs.GetInt("currentScore");
-        Debug.Log(PlayerPrefs.GetInt("currentScore"));
+        //Debug.Log(PlayerPrefs.GetInt("currentScore"));
 
         if (score > bestScore)
         {
             PlayerPrefs.SetInt("bestScore" + scene.ToString(), score);
-            Debug.Log("good");
+            //Debug.Log("good");
         }
     }
 }

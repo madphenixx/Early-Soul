@@ -5,12 +5,12 @@ public class ProjectileBoss : MonoBehaviour
 {
     [SerializeField] private GameObject cible;
     [SerializeField] private Rigidbody2D rb;
-    public int baseAttack = 2;
+    public int baseAttack = 4;
 
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
-    [SerializeField] private float speed = 1;
-    [SerializeField] private float duration = 3;
+    [SerializeField] private float speed = 3;
+    [SerializeField] private float duration = 7;
 
     [SerializeField] private GameManager gameManager;
 

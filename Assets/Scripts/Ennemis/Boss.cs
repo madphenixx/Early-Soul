@@ -14,19 +14,17 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject projectileAOE;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject virtue;
     [SerializeField] private ClassEnnemi classEnnemi;
 
     private Vector2 spawnPos;
-    [SerializeField] private float aoeSpawnTime = 1;
-    [SerializeField] private float changeTime = 0.5f;
     public float resistanceMelee = 1;
     public float resistanceDistance = 0.5f;
     [SerializeField] private float resistanceFinisher = 2;
     [SerializeField] private float startP2 = 10;
+    [SerializeField] private float aoeSpawnTime = 1;
     [SerializeField] private float maxProjTime = 3.5f;
     [SerializeField] private float maxSpawnTime = 2.5f;
     [SerializeField] private float maxSpawnDistance = 4f;
@@ -43,7 +41,6 @@ public class Boss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
 
         currentState = stateAttack;
@@ -134,6 +131,8 @@ public class Boss : MonoBehaviour
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
         projDroit.GetComponent<AOEProjectileBoss>().isLeftOne = false;
+
+        attackRoutine = null;
     }
 
     private IEnumerator LaunchProjectile()
@@ -143,6 +142,8 @@ public class Boss : MonoBehaviour
 
         spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
         Instantiate(projectile, spawnPos, Quaternion.identity);
+
+        attackRoutine = null;
     }
 
     private IEnumerator SpawnVirtue()
@@ -164,5 +165,7 @@ public class Boss : MonoBehaviour
         }
         
         Instantiate(virtue, spawnPos, Quaternion.identity);
+
+        attackRoutine = null;
     }
 }
