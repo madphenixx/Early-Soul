@@ -1,13 +1,17 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
-    private GameObject[] allEnnemies;
+    [SerializeField] private GameObject[] allEnnemies;
+    private GameObject[] allEnnemiesBase;
+    private GameObject[] allEnnemiesGround;
+    private GameObject[] allEnnemiesBoss;
     private GameObject cible;
 
     [SerializeField] private GameManager gameManager;
@@ -22,17 +26,16 @@ public class ProjectilePlayer : MonoBehaviour
     [SerializeField] private bool boomerang;
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
-                 // joined = arr.Concat(arr2)
     {
-        GameObject[] allEnnemiesBase = GameObject.FindGameObjectsWithTag("Ennemi");
+        allEnnemiesBase = GameObject.FindGameObjectsWithTag("Ennemi");
 
-        GameObject[] allEnnemiesGround = GameObject.FindGameObjectsWithTag("EnnemiSol");
+        allEnnemiesGround = GameObject.FindGameObjectsWithTag("EnnemiSol");
 
-        GameObject[] allEnnemiesBoss = GameObject.FindGameObjectsWithTag("Boss");
+        allEnnemiesBoss = GameObject.FindGameObjectsWithTag("Boss");
 
-        allEnnemies.AddRange(allEnnemiesBase);
-        allEnnemies.AddRange(allEnnemiesGround);
-        allEnnemies.AddRange(allEnnemiesBoss);
+        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesBase);
+        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesGround);
+        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesBoss);
 
         foreach (GameObject ennemi in allEnnemies)
         {
@@ -146,6 +149,7 @@ public class ProjectilePlayer : MonoBehaviour
             // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 
+            collision.gameObject.GetComponent<Boss>().damageCount += produit;
             Destroy(gameObject);
         }
     }

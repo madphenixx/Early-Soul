@@ -16,22 +16,27 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject projectileAOE;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject virtue;
     [SerializeField] private ClassEnnemi classEnnemi;
 
     private Vector2 spawnPos;
-    [SerializeField] private float aoeSpawnTime = 4;
-    [SerializeField] private float reactivityTime = 0.5f;
+    [SerializeField] private float aoeSpawnTime = 1;
+    [SerializeField] private float changeTime = 0.5f;
     public float resistanceMelee = 1;
     public float resistanceDistance = 0.5f;
     [SerializeField] private float resistanceFinisher = 2;
     [SerializeField] private float startP2 = 10;
+    [SerializeField] private float maxProjTime = 3.5f;
+    [SerializeField] private float maxSpawnTime = 2.5f;
+    [SerializeField] private float maxSpawnDistance = 4f;
+    [SerializeField] private float minSpawnDistance = 0.7f;
+    public float damageCount;
 
-    private Coroutine aoeRoutine;
+    private Coroutine attackRoutine;
 
     [SerializeField] private string currentState;
-    private readonly string stateA0E = "AOE";
-    private readonly string stateProj = "Projectiles";
-    private readonly string stateSpawn = "Virtue";
+    private readonly string stateAttack = "Attack";
     private readonly string stateDefense = "Defense";
     private readonly string stateP2 = "Phase 2";
 
@@ -40,30 +45,16 @@ public class Boss : MonoBehaviour
     {
         player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
-        //currentState = stateApproche;
+
+        currentState = stateAttack;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (classEnnemi.pv <= startP2)
+        if (currentState == stateAttack)
         {
-            currentState = stateP2;
-        }
-
-        if (currentState == stateA0E)
-        {
-            AOEState();
-        }
-
-        else if (currentState == stateProj)
-        {
-            ProjState();
-        }
-
-        else if (currentState == stateSpawn)
-        {
-            SpawnState();
+            AttackState();
         }
 
         else if (currentState == stateDefense)
@@ -77,27 +68,48 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void AOEState()
+    void AttackState()
     {
-        if (aoeRoutine == null)
+        if (classEnnemi.pv <= startP2)
         {
-            aoeRoutine = StartCoroutine(LaunchAOE());
+            currentState = stateP2;
         }
-    }
 
-    void ProjState()
-    {
+        else if (damageCount >= 10)
+        {
+            currentState = stateDefense;
+        }
 
-    }
+        int randInt = Random.Range(1, 4);
 
-    void SpawnState()
-    {
+        if (randInt == 1) //AOE
+        {
+            if (attackRoutine == null)
+            {
+                attackRoutine = StartCoroutine(LaunchAOE());
+            }
+        }
 
+        else if (randInt == 2) //Proj
+        {
+            if (attackRoutine == null)
+            {
+                attackRoutine = StartCoroutine(LaunchProjectile());
+            }
+        }
+
+        else if (randInt == 3) //Spawn
+        {
+            if (attackRoutine == null)
+            {
+                attackRoutine = StartCoroutine(SpawnVirtue());
+            }
+        }
     }
 
     void DefenseState()
     {
-
+        damageCount = 0;
     }
 
     void P2State()
@@ -115,15 +127,42 @@ public class Boss : MonoBehaviour
 
     private IEnumerator LaunchAOE()
     {
-        while (true)
+        yield return new WaitForSeconds(aoeSpawnTime);
+
+        spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        Instantiate(projectileAOE, spawnPos, Quaternion.identity);
+        GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
+
+        projDroit.GetComponent<AOEProjectileBoss>().isLeftOne = false;
+    }
+
+    private IEnumerator LaunchProjectile()
+    {
+        float spawnTime = Random.Range(Time.deltaTime, maxProjTime);
+        yield return new WaitForSeconds(spawnTime);
+
+        spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        Instantiate(projectile, spawnPos, Quaternion.identity);
+    }
+
+    private IEnumerator SpawnVirtue()
+    {
+        float spawnTime = Random.Range(Time.deltaTime, maxSpawnTime);
+        yield return new WaitForSeconds(spawnTime);
+
+        float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
+        int positive = Random.Range(0, 2);
+
+        if (positive == 0)
         {
-            yield return new WaitForSeconds(aoeSpawnTime);
-
-            spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-            Instantiate(projectileAOE, spawnPos, Quaternion.identity);
-            GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
-
-            projDroit.GetComponent<AOEProjectileBoss>().isLeftOne = false;
+            spawnPos = new Vector2(gameObject.transform.position.x - distance, gameObject.transform.position.y);
         }
+
+        else
+        {
+            spawnPos = new Vector2(gameObject.transform.position.x + distance, gameObject.transform.position.y);
+        }
+        
+        Instantiate(virtue, spawnPos, Quaternion.identity);
     }
 }

@@ -60,6 +60,7 @@ public class MeleePlayer : MonoBehaviour
             // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 
+            collision.gameObject.GetComponent<Boss>().damageCount += produit;
             Destroy(gameObject);
         }
     }
