@@ -28,6 +28,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float maxSpawnDistance = 4f;
     [SerializeField] private float minSpawnDistance = 0.7f;
     public float damageCount;
+    [SerializeField] private float virtueCount;
+    [SerializeField] private int randInt;
 
     private Coroutine attackRoutine;
 
@@ -76,9 +78,9 @@ public class Boss : MonoBehaviour
             currentState = stateDefense;
         }
 
-        int randInt = Random.Range(1, 4);
+        randInt = Random.Range(1, 101);
 
-        if (randInt == 1) //AOE
+        if (randInt > 40) //AOE
         {
             if (attackRoutine == null)
             {
@@ -86,31 +88,33 @@ public class Boss : MonoBehaviour
             }
         }
 
-        else if (randInt == 2) //Proj
-        {
-            if (attackRoutine == null)
-            {
-                attackRoutine = StartCoroutine(LaunchProjectile());
-            }
-        }
-
-        else if (randInt == 3) //Spawn
+        else if (randInt > 80) //Spawn
         {
             if (attackRoutine == null)
             {
                 attackRoutine = StartCoroutine(SpawnVirtue());
             }
         }
+
+        else //Proj
+        {
+            if (attackRoutine == null)
+            {
+                attackRoutine = StartCoroutine(LaunchProjectile());
+            }
+        }
     }
 
     void DefenseState()
     {
+        Debug.Log("raaaaaaaaaaaaaaa");
+
         damageCount = 0;
         player.GetComponent<PlayerMovement>().TookDamage(gameObject);
 
         if (GameManager.parrying == false)
         {
-            GameManager.pv += -2;
+            GameManager.pv += -1;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.score = GameManager.score - 10;

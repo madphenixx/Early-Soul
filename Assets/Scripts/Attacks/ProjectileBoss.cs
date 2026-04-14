@@ -9,7 +9,7 @@ public class ProjectileBoss : MonoBehaviour
 
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
-    [SerializeField] private float speed = 3;
+    [SerializeField] private float speed = 1.5f;
     [SerializeField] private float duration = 7;
 
     [SerializeField] private GameManager gameManager;

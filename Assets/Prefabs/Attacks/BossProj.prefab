@@ -172,6 +172,6 @@ MonoBehaviour:
   cible: {fileID: 0}
   rb: {fileID: 0}
   baseAttack: 4
-  speed: 3
+  speed: 1.5
   duration: 7
   gameManager: {fileID: 0}
