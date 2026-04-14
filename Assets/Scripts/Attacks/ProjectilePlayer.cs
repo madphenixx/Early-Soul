@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Linq;
+using Unity.VisualScripting;
 
 public class ProjectilePlayer : MonoBehaviour
 {
@@ -20,19 +22,18 @@ public class ProjectilePlayer : MonoBehaviour
     [SerializeField] private bool boomerang;
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
+                 // joined = arr.Concat(arr2)
     {
-        allEnnemies = GameObject.FindGameObjectsWithTag("Ennemi");
-        foreach (GameObject ennemi in allEnnemies)
-        {
-            float distance = Vector2.Distance(transform.position, ennemi.transform.position);
-            if (distance < distanceMin)
-            {
-                cible = ennemi;
-                distanceMin = distance;
-            }
-        }
+        GameObject[] allEnnemiesBase = GameObject.FindGameObjectsWithTag("Ennemi");
 
-        allEnnemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
+        GameObject[] allEnnemiesGround = GameObject.FindGameObjectsWithTag("EnnemiSol");
+
+        GameObject[] allEnnemiesBoss = GameObject.FindGameObjectsWithTag("Boss");
+
+        allEnnemies.AddRange(allEnnemiesBase);
+        allEnnemies.AddRange(allEnnemiesGround);
+        allEnnemies.AddRange(allEnnemiesBoss);
+
         foreach (GameObject ennemi in allEnnemies)
         {
             float distance = Vector2.Distance(transform.position, ennemi.transform.position);
@@ -126,6 +127,27 @@ public class ProjectilePlayer : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            //Debug.Log("comboe" + GameManager.combo);
+            float produit = (1 + (GameManager.combo * 0.5f)) * gameObject.GetComponent<Boss>().resistanceDistance; //A modifier et équilibrer (multiplicateur de combo)}*
+            //Debug.Log(produit);
+            Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
+
+            GameManager.combo += 1;
+            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.multiplicateurText.text = "x" + produit.ToString();
+
+            collision.gameObject.GetComponent<ClassEnnemi>().pv += -1 * produit;
+            slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
+
+
+            GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
+            // gameManager.AddScoreAdd(10 * produit, true);
+            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator ProjectileDestroy()

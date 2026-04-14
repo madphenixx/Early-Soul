@@ -11,6 +11,7 @@ TagManager:
   - EnnemiSol
   - Obstacle
   - EnnemiAttack
+  - Boss
   layers:
   - Default
   - TransparentFX

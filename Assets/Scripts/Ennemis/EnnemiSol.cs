@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnnemiSol : MonoBehaviour
 {
-    private GameObject[] allAttacks;
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject player;
     
@@ -243,17 +242,9 @@ public class EnnemiSol : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("EnnemiSol") && !isAttacker)
+        if (collision.gameObject.CompareTag("PlayerAttack") && isAttacker)
         {
-            if (player.transform.position.x < transform.position.x)
-            {
-                currentState = stateDefense;
-            }
-
-            else if (player.transform.position.x >= transform.position.x)
-            {
-                currentState = stateDefense;
-            }
+            currentState = stateDefense;
         }
     }
 }
