@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3427827936343708310, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000025096062
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3427827936343708310, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2184,15 +2184,15 @@ MonoBehaviour:
   player: {fileID: 0}
   projectileAOE: {fileID: 6766587246430527401, guid: c41cfcddaba66054b9fff08ffe95d5e4, type: 3}
   projectile: {fileID: 6766587246430527401, guid: 81d9d543f162e0a4abb0903d8744e6c2, type: 3}
-  virtue: {fileID: 0}
+  virtue: {fileID: 7126992632354836113, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
   classEnnemi: {fileID: 0}
   resistanceMelee: 1
-  resistanceDistance: 0.5
+  resistanceDistance: 0.1
   resistanceFinisher: 2
   startP2: 10
   aoeSpawnTime: 1
-  maxProjTime: 2.5
-  maxSpawnTime: 1.5
+  maxProjTime: 2
+  maxSpawnTime: 3.5
   maxSpawnDistance: 4
   minSpawnDistance: 0.7
   damageCount: 0

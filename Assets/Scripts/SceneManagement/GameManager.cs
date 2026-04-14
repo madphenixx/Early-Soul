@@ -22,13 +22,14 @@ public class GameManager : MonoBehaviour
     public static int combo;
 
     public static bool movementAllowed = true;
+    public static bool parrying = false;
 
     // public List<GameObject> slots = new List<GameObject>();
     // public List<GameObject> scoreAdd = new List<GameObject>();
     // public int nextFreeSlot = 0;
     // public int slotCount;
     // public GameObject scoreAddPrefab;
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

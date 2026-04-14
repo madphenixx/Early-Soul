@@ -1,11 +1,8 @@
-using Unity.VisualScripting;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-//- []  Différents projectiles
-//- []  Spawn sakapatate
-//- []  AOE
-//- []  Projectiles
 //- []  Phase 2 à 1 / 3 de vie
 //- []  Nous pousse si’il prend trop de dégats lors d’n laps de temps
 //- []  Bouclier ??
@@ -14,6 +11,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject projectileAOE;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject virtue;
@@ -21,12 +19,12 @@ public class Boss : MonoBehaviour
 
     private Vector2 spawnPos;
     public float resistanceMelee = 1;
-    public float resistanceDistance = 0.5f;
+    public float resistanceDistance = 0.1f;
     [SerializeField] private float resistanceFinisher = 2;
     [SerializeField] private float startP2 = 10;
     [SerializeField] private float aoeSpawnTime = 1;
-    [SerializeField] private float maxProjTime = 3.5f;
-    [SerializeField] private float maxSpawnTime = 2.5f;
+    [SerializeField] private float maxProjTime = 2f;
+    [SerializeField] private float maxSpawnTime = 3.5f;
     [SerializeField] private float maxSpawnDistance = 4f;
     [SerializeField] private float minSpawnDistance = 0.7f;
     public float damageCount;
@@ -41,6 +39,7 @@ public class Boss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
 
         currentState = stateAttack;
@@ -107,6 +106,22 @@ public class Boss : MonoBehaviour
     void DefenseState()
     {
         damageCount = 0;
+        player.GetComponent<PlayerMovement>().TookDamage(gameObject);
+
+        if (GameManager.parrying == false)
+        {
+            GameManager.pv += -2;
+            GameManager.pvSlider.value = GameManager.pv;
+
+            GameManager.score = GameManager.score - 10;
+            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+        }
+
+        GameManager.combo = 0;
+        GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+        GameManager.multiplicateurText.text = "x1";
+
+        currentState = stateAttack;
     }
 
     void P2State()
@@ -152,18 +167,17 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(spawnTime);
 
         float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
-        int positive = Random.Range(0, 2);
 
-        if (positive == 0)
+        if (player.transform.position.x < transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x - distance, gameObject.transform.position.y);
+            spawnPos = new Vector2(gameObject.transform.position.x - distance, 0.2f);
         }
 
-        else
+        else if (player.transform.position.x >= transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x + distance, gameObject.transform.position.y);
+            spawnPos = new Vector2(gameObject.transform.position.x + distance, 0.2f);
         }
-        
+
         Instantiate(virtue, spawnPos, Quaternion.identity);
 
         attackRoutine = null;

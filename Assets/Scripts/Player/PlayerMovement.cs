@@ -89,18 +89,18 @@ public class PlayerMovement : MonoBehaviour
     public void TookDamage(GameObject attacker)
     {
         if (attacker.transform.position.x < transform.position.x)
-            {
-                Vector3 desiredPosition = transform.position + new Vector3(10, 0, 0);
-                Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
-                transform.position = newPosition;
-            }
+        {
+            Vector3 desiredPosition = transform.position + new Vector3(10, 0, 0);
+            Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
+            transform.position = newPosition;
+        }
 
-            else if (attacker.transform.position.x >= transform.position.x)
-            {
-                Vector3 desiredPosition = transform.position + new Vector3(-10, 0, 0);
-                Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
-                transform.position = newPosition;
-            }
+        else if (attacker.transform.position.x >= transform.position.x)
+        {
+            Vector3 desiredPosition = transform.position + new Vector3(-10, 0, 0);
+            Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
+            transform.position = newPosition;
+        }
     }
 
     public void Jump(InputAction.CallbackContext ctx)

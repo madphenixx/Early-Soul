@@ -29,7 +29,7 @@ public class MeleeEnnemi : MonoBehaviour
             // gameManager.AddScoreAdd(10, false);
 
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-            player.TookDamage(gameObject);
+            player.TookDamage(attacker);
 
             Destroy(gameObject);
         }
