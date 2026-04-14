@@ -58,8 +58,9 @@ public class DialogueManager : MonoBehaviour
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
         dialogueNext = true;
-        // player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-        // player.SetActive(false);
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        player.SetActive(false);
+        player.GetComponent<PlayerMovement>().direction = 0;
         GameManager.movementAllowed = false;
     }
 
@@ -68,8 +69,8 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
-        // player.SetActive(true);
-        // player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        player.SetActive(true);
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.movementAllowed = true;
     }
 

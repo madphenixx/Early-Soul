@@ -33,11 +33,12 @@ public class CameraSwap : MonoBehaviour
     //    }
     //}
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             mainCamera.GetComponent<CameraGround>().isZooming = true;
+            mainCamera.GetComponent<CameraGround>().isFollowing = false;
             Destroy(gameObject);
         }
     }

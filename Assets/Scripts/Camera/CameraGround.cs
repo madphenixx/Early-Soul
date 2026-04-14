@@ -17,6 +17,18 @@ public class CameraGround : MonoBehaviour
 
     void FixedUpdate()
     {
+        //if (player.activeSelf == false)
+        //{
+        //    isZooming = true;
+        //    isFollowing = false;
+        //}
+
+        //else
+        //{
+        //    isFollowing = true;
+        //    isZooming = false;
+        //}
+
         if (isFollowing == true)
         {
             Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 0.34f, -10);

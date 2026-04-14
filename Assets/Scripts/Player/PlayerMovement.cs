@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
     [SerializeField] private float jumpForce = 10;
-    [SerializeField] private float direction;
+    public float direction;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
     [SerializeField] private float iframeTime = 1;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isInvicible = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
         // playerAnimator = GetComponent<Animator>();
