@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private bool canContinueText = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         interactRef.action.started += DialogueEnter;
         interactRef.action.canceled += DialogueEnter;
@@ -58,9 +58,9 @@ public class DialogueManager : MonoBehaviour
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
         dialogueNext = true;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-        player.SetActive(false);
+        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         player.GetComponent<PlayerMovement>().direction = 0;
+        player.SetActive(false);
         GameManager.movementAllowed = false;
     }
 
@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
         player.SetActive(true);
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.movementAllowed = true;
     }
 
@@ -105,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!ctx.canceled)
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAA");
             dialogueNext = true;
         }
     }

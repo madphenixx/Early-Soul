@@ -11,9 +11,9 @@ public class GateSpawn : MonoBehaviour
     void Start()
     {
         props = GameObject.Find("Props");
-        gatePos = new Vector3(-28.31277f,-1, -1); 
+        gatePos = new Vector3(-21.39573f, -1, -1); 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && PrologueManager.dialogueLucyPlay)
         {

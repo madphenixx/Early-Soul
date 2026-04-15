@@ -29,7 +29,7 @@ public class PrologueManager : MonoBehaviour
             soulCollected = false;
 
             Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
-            spawnPos = new Vector3(playerTr.position.x, playerTr.position.y);
+            spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
 
             Instantiate(dialogueLucy, spawnPos, Quaternion.identity);
             dialogueLucyPlay = true;

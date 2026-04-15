@@ -11,7 +11,7 @@ public class CharaDialogue : MonoBehaviour
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) //On modifiera pour que cela se lance quand on attaeint autre chose mais la c'est pas important
+    private void OnTriggerStay2D(Collider2D collision) //On modifiera pour que cela se lance quand on attaeint autre chose mais la c'est pas important
     {
         if (collision.gameObject.CompareTag("Player"))
         { 
