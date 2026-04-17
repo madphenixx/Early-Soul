@@ -45,20 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   interactRef: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  currentConversation: {fileID: 0}
   dialogueCanvas: {fileID: 0}
+  player: {fileID: 0}
   charaName: {fileID: 0}
   charaAvatar: {fileID: 0}
   dialogueText: {fileID: 0}
   currentAvatar: {fileID: 0}
+  currentConversation: {fileID: 0}
   charaSO:
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: e09cfefe7188f9143aef39725293681b, type: 2}
   - {fileID: 11400000, guid: 55f8dbbc51d2c774d80313300f555e57, type: 2}
+  - {fileID: 11400000, guid: 84f1ff32417d548408dadd7ca54f7ac7, type: 2}
+  - {fileID: 11400000, guid: 7a4e6370e805ba0489c5227d1896eadb, type: 2}
   stepNum: 0
   typingSpeed: 0.03
   currentSpeaker: 
-  dialogueActive: 0
   dialogueNext: 0
   canContinueText: 1

@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
     public static Text comboText;
     public static Text multiplicateurText;
     public static Transform scoreTr;
+
+    [Header("Prefabs")]
     [SerializeField] private GameObject bonusPrefab;
     [SerializeField] private GameObject triggerPrefab;
     [SerializeField] private GameObject gatePrefab;
 
-    public static float pv;
+    [Header("Player PV")]
     [SerializeField] private float maxPv;
+    public static float pv;
     public static int score;
     public static int combo;
 
