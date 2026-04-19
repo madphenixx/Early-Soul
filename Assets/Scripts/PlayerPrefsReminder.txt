@@ -1,0 +1,11 @@
+PlayerPrefs: 
+-volume
+-savedScene
+-progress
+-viewedTutos
+-playerID
+-bestScore
+-currentScore
+
+Leaderboards:
+- seraph
