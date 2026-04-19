@@ -1017,8 +1017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   dialogueLucy: {fileID: 2964266153333439078, guid: 09d925ee571db9746adce2c8cf73786a, type: 3}
-  dialogueCanvas: {fileID: 839087497}
-  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!114 &429326915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,9 +1030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseRef: {fileID: 2257540636297086201, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  volumeSlider: {fileID: 1425780466}
   pauseMenuObject: {fileID: 1911623661}
   optionsMenuObject: {fileID: 1425780465}
-  volumeSlider: {fileID: 1425780466}
 --- !u!1 &528341205
 GameObject:
   m_ObjectHideFlags: 0
@@ -15616,7 +15614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gate: {fileID: 5329236331698083361, guid: 570cb26a832e1834d8038d2982979537, type: 3}
   props: {fileID: 0}
-  gatePos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1527050317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16760,7 +16757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9536ca727c8f4b409bc913239b51d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwap
-  mainCamera: {fileID: 1397325068}
 --- !u!1001 &1898436634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17125,10 +17121,11 @@ MonoBehaviour:
   playerSpeed: 6.5
   basePlayerSpeed: 6.5
   jumpForce: 0
-  direction: 0
   dashSpeed: 0
   dodgeSpeed: 0
-  iframeTime: 1
+  iframeTimeDodge: 1
+  iframeTimeDamage: 0.5
+  direction: 0
   isGrounded: 1
   isDodging: 0
 --- !u!4 &3435133965514184714
