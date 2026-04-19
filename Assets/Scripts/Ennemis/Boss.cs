@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     private Vector2 spawnPos;
 
     private Coroutine attackRoutine;
+    private Coroutine spawnRoutine;
 
     private int randInt;
 
@@ -29,8 +30,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float aoeSpawnTime = 1;
     [SerializeField] private float maxProjTime = 2f;
     [SerializeField] private float maxSpawnTime = 3.5f;
-    [SerializeField] private float maxSpawnDistance = 4f;
-    [SerializeField] private float minSpawnDistance = 0.7f;
+    [SerializeField] private float maxSpawnDistance = 8f;
+    [SerializeField] private float minSpawnDistance = 5f;
     
     [Header("Debug: count")]
     public float damageCount;
@@ -84,7 +85,7 @@ public class Boss : MonoBehaviour
 
         randInt = Random.Range(1, 101);
 
-        if (randInt > 40) //AOE
+        if (randInt < 40) //AOE
         {
             if (attackRoutine == null)
             {
@@ -94,9 +95,9 @@ public class Boss : MonoBehaviour
 
         else if (randInt > 80) //Spawn
         {
-            if (attackRoutine == null)
+            if (spawnRoutine == null)
             {
-                attackRoutine = StartCoroutine(SpawnVirtue());
+                spawnRoutine = StartCoroutine(SpawnVirtue());
             }
         }
 
@@ -187,7 +188,6 @@ public class Boss : MonoBehaviour
         }
 
         Instantiate(virtue, spawnPos, Quaternion.identity);
-
         attackRoutine = null;
     }
 }

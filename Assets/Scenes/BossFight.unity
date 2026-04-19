@@ -1946,10 +1946,10 @@ GameObject:
   m_Component:
   - component: {fileID: 121645685474570175}
   - component: {fileID: 5572267356686308784}
+  - component: {fileID: 6326454025750996294}
   - component: {fileID: 6326454025750996292}
   - component: {fileID: 6276970384914960712}
-  - component: {fileID: 6326454025750996293}
-  - component: {fileID: 6326454025750996294}
+  - component: {fileID: 6326454025750996295}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -2056,35 +2056,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &6326454025750996293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5533254102098703288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e706b506060584cade6101a47ba4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Boss
-  projectileAOE: {fileID: 6766587246430527401, guid: c41cfcddaba66054b9fff08ffe95d5e4, type: 3}
-  projectile: {fileID: 6766587246430527401, guid: 81d9d543f162e0a4abb0903d8744e6c2, type: 3}
-  virtue: {fileID: 7126992632354836113, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
-  player: {fileID: 0}
-  defenseAttack: 1
-  resistanceMelee: 1
-  resistanceDistance: 0.1
-  resistanceFinisher: 2
-  startP2: 10
-  aoeSpawnTime: 1
-  maxProjTime: 2
-  maxSpawnTime: 3.5
-  maxSpawnDistance: 4
-  minSpawnDistance: 0.7
-  damageCount: 0
-  virtueCount: 0
-  currentState: 
 --- !u!61 &6326454025750996294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2131,6 +2102,35 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.82, y: 5.81}
   m_EdgeRadius: 0
+--- !u!114 &6326454025750996295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533254102098703288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e706b506060584cade6101a47ba4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Boss
+  projectileAOE: {fileID: 6766587246430527401, guid: c41cfcddaba66054b9fff08ffe95d5e4, type: 3}
+  projectile: {fileID: 6766587246430527401, guid: 81d9d543f162e0a4abb0903d8744e6c2, type: 3}
+  virtue: {fileID: 7126992632354836113, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+  player: {fileID: 0}
+  defenseAttack: 1
+  resistanceMelee: 1
+  resistanceDistance: 0.1
+  resistanceFinisher: 2
+  startP2: 10
+  aoeSpawnTime: 1
+  maxProjTime: 2
+  maxSpawnTime: 3.5
+  maxSpawnDistance: 8
+  minSpawnDistance: 5
+  damageCount: 0
+  virtueCount: 0
+  currentState: 
 --- !u!224 &6583075413462207738
 RectTransform:
   m_ObjectHideFlags: 0
