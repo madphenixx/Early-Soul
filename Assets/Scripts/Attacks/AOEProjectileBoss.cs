@@ -3,13 +3,15 @@ using System.Collections;
 
 public class AOEProjectileBoss : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    public int baseAttack = 4;
-
+    private Rigidbody2D rb;
     private Vector2 launchDir;
+
+    [Header("Settings")]
+    public int baseAttack = 2;
     [SerializeField] private float speed = 0.7f;
     [SerializeField] private float duration = 1;
 
+    [Header("Debug: booleans")]
     public bool isLeftOne = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
@@ -38,7 +40,7 @@ public class AOEProjectileBoss : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
         {
-            GameManager.pv += -baseAttack;
+            GameManager.pv += - baseAttack;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;

@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CharaDialogue : MonoBehaviour
 {
+    [Header("Dialogue")]
     public DialogueSO[] conversations;
-    [SerializeField] private DialogueManager dialogueManager;
+
+    private DialogueManager dialogueManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

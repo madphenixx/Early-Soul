@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class CameraGround : MonoBehaviour
 {
+    [Header("Debug: detection")]
     [SerializeField] private GameObject player;
 
+    [Header("Settings")]
     [SerializeField] private float smoothSpeed = 0.125f;
 
+    [Header("Debug: booleans")]
     public bool isFollowing = true;
     public bool isZooming = false;
 
@@ -17,21 +20,10 @@ public class CameraGround : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if (player.activeSelf == false)
-        //{
-        //    isZooming = true;
-        //    isFollowing = false;
-        //}
-
-        //else
-        //{
-        //    isFollowing = true;
-        //    isZooming = false;
-        //}
 
         if (isFollowing == true)
         {
-            Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 0.34f, -10);
+            Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 0.34f, - 10);
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;
 

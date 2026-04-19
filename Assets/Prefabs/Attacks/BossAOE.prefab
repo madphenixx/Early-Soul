@@ -169,8 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d5f5d9c02c2fa4aa6f4f72ae5aac4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AOEProjectileBoss
-  rb: {fileID: 0}
-  baseAttack: 4
+  baseAttack: 2
   speed: 0.7
   duration: 1
   isLeftOne: 1

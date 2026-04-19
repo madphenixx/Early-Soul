@@ -3,23 +3,22 @@ using System.Collections;
 
 public class ProjectileEnnemiVol : MonoBehaviour
 {   
-    [SerializeField] private GameObject cible;
-    [SerializeField] private Rigidbody2D rb;
-    public int baseAttack = 1;
+    private GameObject cible;
 
+    private Rigidbody2D rb;
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
+
+    [Header("Settings")]
+    public int baseAttack = 1;
     [SerializeField] private float speed = 10;
     [SerializeField] private float duration = 3;
-
-    [SerializeField] private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
         cible = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(ProjectileDestroy());
 
         launchDir = cible.transform.position - gameObject.transform.position;
@@ -44,7 +43,6 @@ public class ProjectileEnnemiVol : MonoBehaviour
 
             GameManager.score = GameManager.score - 10;
             GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
-            // gameManager.AddScoreAdd(10, false);
 
             Destroy(gameObject);
         }

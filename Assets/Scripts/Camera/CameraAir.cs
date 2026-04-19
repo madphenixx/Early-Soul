@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CameraAir : MonoBehaviour
 {
+    [Header("Debug: detection")]
     [SerializeField] private GameObject player;
 
+    [Header("Settings")]
     [SerializeField] private float smoothSpeed = 0.15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,7 +17,7 @@ public class CameraAir : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 desiredPosition = new Vector3(player.transform.position.x + 13, player.transform.position.y + 3, -10);
+        Vector3 desiredPosition = new Vector3(player.transform.position.x + 13, player.transform.position.y + 3, - 10);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
 

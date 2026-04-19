@@ -3,25 +3,34 @@ using UnityEngine;
 
 public class EnnemiSol : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject meleeRange;
+
+    [Header("Debug: detection")]
     [SerializeField] private GameObject player;
     
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
-    private float attackTime;
-    [SerializeField] private float reactivityTime = 0.5f;
-    [SerializeField] private float speed = 200;
-    [SerializeField] private int moveCount = 0;
-    [SerializeField] private int attackCount = 0;
 
     private Coroutine attackRoutine;
     private Coroutine stateRoutine;
 
+    [Header("Debug: count")]
+    [SerializeField] private int moveCount = 0;
+    [SerializeField] private int attackCount = 0;
+    private float attackTime;
+
+    [Header("Settings")]
+    [SerializeField] private float reactivityTime = 0.5f;
+    [SerializeField] private float speed = 200;
+
+    [Header("Debug: state")]
     [SerializeField] private string currentState;
     private readonly string stateAttaque = "Attaque";
     private readonly string stateDefense = "Defense";
     private readonly string stateApproche = "Approche";
 
+    [Header("Debug: booleans")]
     public bool tookDamage = false;
     public bool parryTime = false;
     public bool isAttacker = false;
@@ -75,6 +84,7 @@ public class EnnemiSol : MonoBehaviour
     void ApproachState()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
+
         if (moveCount <= 0)
         {
             if (player.transform.position.x < transform.position.x)
@@ -164,6 +174,7 @@ public class EnnemiSol : MonoBehaviour
     void DefenseState()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
+        
         if (distance > 7 && stateRoutine == null)
         {
             StartCoroutine(TimeState(stateApproche));

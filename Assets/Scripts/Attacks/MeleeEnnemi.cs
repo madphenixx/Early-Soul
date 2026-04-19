@@ -3,13 +3,15 @@ using System.Collections;
 
 public class MeleeEnnemi : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    [Header("For Player.TookDamage")]
     public GameObject attacker;
+
+    [Header("Settings")]
+    public int baseAttack = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(MeleeDestroy());
     }
 
@@ -17,7 +19,7 @@ public class MeleeEnnemi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
         {
-            GameManager.pv +=  - 1;
+            GameManager.pv +=  - baseAttack;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;
@@ -26,7 +28,6 @@ public class MeleeEnnemi : MonoBehaviour
 
             GameManager.score = GameManager.score - 10;
             GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
-            // gameManager.AddScoreAdd(10, false);
 
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
             player.TookDamage(attacker);

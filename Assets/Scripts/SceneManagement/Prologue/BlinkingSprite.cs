@@ -5,10 +5,11 @@ using UnityEngine.UI;
 public class BlinkingSprite : MonoBehaviour
 {
     private SpriteRenderer image;
-    [SerializeField]
-    private Sprite sprite1;
-    [SerializeField] 
-    private Sprite sprite2;
+
+    [Header("Sprites")]
+    [SerializeField] private Sprite sprite1;
+    [SerializeField] private Sprite sprite2;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

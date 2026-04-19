@@ -8,6 +8,8 @@ public class BestScore : MonoBehaviour
 {
     private Text scoreText;
     private Text bestScoreText;
+
+    [Header("Debug: scores")]
     [SerializeField] private int score;
     [SerializeField] private int scene;
     [SerializeField] private int bestScore;
@@ -35,12 +37,10 @@ public class BestScore : MonoBehaviour
     void Update()
     {
         score = PlayerPrefs.GetInt("currentScore");
-        //Debug.Log(PlayerPrefs.GetInt("currentScore"));
 
         if (score > bestScore)
         {
             PlayerPrefs.SetInt("bestScore" + scene.ToString(), score);
-            //Debug.Log("good");
         }
     }
 }

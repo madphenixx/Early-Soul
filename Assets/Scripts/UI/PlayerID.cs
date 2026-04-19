@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerID : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject playerIdPanel;
-    [SerializeField]
+    [Header("GameObjects")]
+    [SerializeField] private GameObject playerIdPanel;
+
     private string enteredID;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

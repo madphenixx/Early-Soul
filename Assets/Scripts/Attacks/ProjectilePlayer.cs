@@ -8,22 +8,24 @@ using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
+    [Header("Debug: detection")]
     [SerializeField] private GameObject[] allEnnemies;
     private GameObject[] allEnnemiesBase;
     private GameObject[] allEnnemiesGround;
     private GameObject[] allEnnemiesBoss;
     private GameObject cible;
-
-    [SerializeField] private GameManager gameManager;
     
+    private Rigidbody2D rb;
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
-    private Rigidbody2D rb;
+
+    [Header("Settings")]
+    public int baseAttack = 1;
     [SerializeField] private float distanceMin = 40;
     [SerializeField] private float speed = 10;
     [SerializeField] private float duration = 3;
 
-    [SerializeField] private bool boomerang;
+    // [SerializeField] private bool boomerang;
 
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
     {
@@ -51,7 +53,6 @@ public class ProjectilePlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ProjectileDestroy());
 
@@ -76,21 +77,18 @@ public class ProjectilePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemi"))
         {
-            //Debug.Log("comboe" + GameManager.combo);
-            float produit = 1 + (GameManager.combo * 0.5f); //A modifier et équilibrer (multiplicateur de combo)}*
-            //Debug.Log(produit);
+            float produit = 1 + (GameManager.combo * 0.5f);
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
             GameManager.combo += 1;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
-            collision.gameObject.GetComponent<ClassEnnemi>().pv += -1 * produit;
+            collision.gameObject.GetComponent<ClassEnnemi>().pv += - 1 * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
  
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 
             Destroy(gameObject);
@@ -133,21 +131,18 @@ public class ProjectilePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Boss"))
         {
 
-            //Debug.Log("comboe" + GameManager.combo);
-            float produit = (1 + (GameManager.combo * 0.5f)) * collision.gameObject.GetComponent<Boss>().resistanceDistance; //A modifier et équilibrer (multiplicateur de combo)}*
-            //Debug.Log(produit);
+            float produit = (1 + (GameManager.combo * 0.5f)) * collision.gameObject.GetComponent<Boss>().resistanceDistance;
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
             GameManager.combo += 1;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
-            collision.gameObject.GetComponent<ClassEnnemi>().pv += -1 * produit;
+            collision.gameObject.GetComponent<ClassEnnemi>().pv += - 1 * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
 
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            // gameManager.AddScoreAdd(10 * produit, true);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
 
             collision.gameObject.GetComponent<Boss>().damageCount += produit;

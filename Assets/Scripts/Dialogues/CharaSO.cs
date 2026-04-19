@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class CharaSO : ScriptableObject
 {
-    public string nom;
+    [Header("Caracteristics")]
     public Sprite avatar;
+    public string nom;
 }

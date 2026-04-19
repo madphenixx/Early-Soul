@@ -3,10 +3,13 @@ using UnityEngine.InputSystem;
 
 public class SoulInteract : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference collectRef;
 
+    [Header("UI")]
     [SerializeField] private GameObject soulInteraction;
 
+    [Header("Debug: booleans")]
     [SerializeField] private bool canInteract = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

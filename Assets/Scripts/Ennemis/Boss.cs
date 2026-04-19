@@ -1,23 +1,27 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
-//- []  Phase 2 à 1 / 3 de vie
-//- []  Nous pousse si’il prend trop de dégats lors d’n laps de temps
-//- []  Bouclier ??
-//- []  Bouquet final(enchanement d’aoE)
-//- []  Différentes résistances(mêlée, distance, finisher)
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private ClassEnnemi classEnnemi;
+
+    [Header("Prefabs")]
     [SerializeField] private GameObject projectileAOE;
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject virtue;
-    [SerializeField] private ClassEnnemi classEnnemi;
+
+    [Header("Debug: detection")]
+    [SerializeField] private GameObject player;
 
     private Vector2 spawnPos;
+
+    private Coroutine attackRoutine;
+
+    private int randInt;
+
+    [Header("Settings")]
+    [SerializeField] private int defenseAttack = 1;
     public float resistanceMelee = 1;
     public float resistanceDistance = 0.1f;
     [SerializeField] private float resistanceFinisher = 2;
@@ -27,12 +31,12 @@ public class Boss : MonoBehaviour
     [SerializeField] private float maxSpawnTime = 3.5f;
     [SerializeField] private float maxSpawnDistance = 4f;
     [SerializeField] private float minSpawnDistance = 0.7f;
+    
+    [Header("Debug: count")]
     public float damageCount;
     [SerializeField] private float virtueCount;
-    [SerializeField] private int randInt;
 
-    private Coroutine attackRoutine;
-
+    [Header("Debug: state")]
     [SerializeField] private string currentState;
     private readonly string stateAttack = "Attack";
     private readonly string stateDefense = "Defense";
@@ -114,7 +118,7 @@ public class Boss : MonoBehaviour
 
         if (GameManager.parrying == false)
         {
-            GameManager.pv += -1;
+            GameManager.pv += - defenseAttack;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.score = GameManager.score - 10;

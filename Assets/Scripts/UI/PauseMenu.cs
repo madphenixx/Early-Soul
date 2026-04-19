@@ -5,13 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference pauseRef;
 
-    [SerializeField] private GameObject pauseMenuObject;
-    [SerializeField] private GameObject optionsMenuObject;
+    [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
 
-    public static bool isPaused = false; // Permet de savoir si le jeu est en pause ou non.
+    [Header("Menus")]
+    [SerializeField] private GameObject pauseMenuObject;
+    [SerializeField] private GameObject optionsMenuObject;
+
+    public static bool isPaused = false;
 
     void Start()
     {
@@ -33,13 +37,13 @@ public class PauseMenu : MonoBehaviour
             {
                 pauseMenuObject.SetActive(true);
                 optionsMenuObject.SetActive(false);
-                Time.timeScale = 0f; // Le temps s'arrete
+                Time.timeScale = 0f;
                 //Cursor.lockState = CursorLockMode.Locked;
             }
 
             if (isPaused == false)
             {
-                Time.timeScale = 1f; // Le temps reprend
+                Time.timeScale = 1f;
                 pauseMenuObject.SetActive(false);
                 optionsMenuObject.SetActive(false);
                 //Cursor.lockState = CursorLockMode.Confined;

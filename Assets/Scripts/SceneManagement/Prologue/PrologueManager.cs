@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class PrologueManager : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject dialogueLucy;
-    [SerializeField] private GameObject dialogueCanvas;
 
-    [SerializeField] private Vector3 spawnPos;
+    private Vector3 spawnPos;
 
     public static bool soulCollected;
     public static bool dialogueLucyPlay;

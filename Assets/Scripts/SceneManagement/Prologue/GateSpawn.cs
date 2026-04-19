@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class GateSpawn : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject gate;
+    [Header("Location")]
     [SerializeField] private GameObject props;
 
-    [SerializeField] private Vector3 gatePos;
+    private Vector3 gatePos;
 
     void Start()
     {

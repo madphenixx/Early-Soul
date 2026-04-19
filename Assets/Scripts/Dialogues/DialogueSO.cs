@@ -4,7 +4,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DialogueSO : ScriptableObject
 {
+    [Header("Characters in dialogue")]
     public CharaSO[] characters;
-    [InspectorTextArea]
+
+    [Header("Conversation")]
     public string[] dialogues;
 }

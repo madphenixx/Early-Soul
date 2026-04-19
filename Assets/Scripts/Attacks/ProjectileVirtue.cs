@@ -4,13 +4,15 @@ using System.Collections;
 
 public class ProjectileVirtue : MonoBehaviour
 {   
-    [SerializeField] private Rigidbody2D rb;
-    public int baseAttack = 3;
-
+    private Rigidbody2D rb;
     private Vector2 launchDir;
+
+    [Header("Settings")]
+    public int baseAttack = 3;
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float duration = 1;
 
+    [Header("Debug: booleans")]
     public bool isLeftOne = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 

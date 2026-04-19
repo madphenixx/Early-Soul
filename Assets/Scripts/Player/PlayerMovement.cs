@@ -5,27 +5,33 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference moveRef;
     [SerializeField] private InputActionReference jumpRef;
     [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
+    // public Animator playerAnimator;
+
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
-    // public Animator playerAnimator;
-    private Coroutine iTimeRoutine;
-
+    
+    [Header("Settings")]
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
     [SerializeField] private float jumpForce = 10;
-    public float direction;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
-    [SerializeField] private float iframeTime = 1;
+    [SerializeField] private float iframeTimeDodge = 1;
+    [SerializeField] private float iframeTimeDamage = 0.5f;
+
+    [Header("Debug: movement")]
+    public float direction;
     
-    public static bool facingRight = true;
+    [Header("Debug: booleans")]
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isDodging;
+    public static bool facingRight = true;
     public static bool isInvicible = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             direction = ctx.ReadValue<float>();
             // playerAnimator.SetTrigger("IsWalking");
         }
+
         else
         {
             direction = 0;
@@ -88,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void TookDamage(GameObject attacker)
     {
+        StartCoroutine(IframeTime(iframeTimeDamage));
+
         if (attacker.transform.position.x < transform.position.x)
         {
             Vector3 desiredPosition = transform.position + new Vector3(10, 0, 0);
@@ -117,11 +126,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         float time = -1.5f;
+
         while (time < 0)
         {
             time += 5 * Time.deltaTime;
             yield return null;
         }
+
         // playerAnimator.SetTrigger("JumpDown");
         rb.AddForce(new Vector2(0f, -jumpForce), ForceMode2D.Impulse);
     }
@@ -139,11 +150,13 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator DashTime()
     {
         float time = -1;
+
         while (time < 0)
         {
             time += 5 * Time.deltaTime;
             yield return null;
         }
+
         playerSpeed = basePlayerSpeed;
     }
 
@@ -154,10 +167,11 @@ public class PlayerMovement : MonoBehaviour
             isDodging = true;
             playerSpeed = basePlayerSpeed * dodgeSpeed;
             StartCoroutine(DodgeTime());
-            StartCoroutine(IframeTime());
+            StartCoroutine(IframeTime(iframeTimeDodge));
 
             // playerAnimator.SetTrigger("IsDodging");
         }
+
         if (ctx.canceled)
         {
             isDodging = false;
@@ -167,16 +181,18 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator DodgeTime()
     {
         direction = -1;
+
         while (direction < 0)
         {
             direction += 5 * Time.deltaTime;
             yield return null;
         }
+
         direction = 0;
         playerSpeed = basePlayerSpeed;
     }
 
-    private IEnumerator IframeTime()
+    private IEnumerator IframeTime(float iframeTime)
     {
         isInvicible = true;
         yield return new WaitForSeconds(iframeTime);
@@ -190,6 +206,7 @@ public class PlayerMovement : MonoBehaviour
             facingRight = false;
             spriteRenderer.flipX = true;
         } 
+
         else if (direction > 0 && !facingRight && !isDodging)
         {
             facingRight = true;

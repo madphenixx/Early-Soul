@@ -3,13 +3,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
+    [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Button scene1;
     [SerializeField] private Button scene2;
     [SerializeField] private Button scene3;
     [SerializeField] private Button continueButton;
 
-    [SerializeField] private int progress;
+    private int progress;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

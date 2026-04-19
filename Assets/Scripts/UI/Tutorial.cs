@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference helpRef;
 
+    [Header("UI")]
     [SerializeField] private GameObject tutoObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

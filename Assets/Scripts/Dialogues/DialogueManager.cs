@@ -5,26 +5,32 @@ using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference interactRef;
     
-    [SerializeField] private GameObject dialogueCanvas;
-    [SerializeField] private GameObject player;
+    [Header("UI Elements")]
     [SerializeField] private Text charaName;
     [SerializeField] private Image charaAvatar;
     [SerializeField] private Text dialogueText;
-    [SerializeField] private Sprite currentAvatar;
+    [SerializeField] private GameObject dialogueCanvas;
+    private Sprite currentAvatar;
 
-    [SerializeField] private DialogueSO currentConversation;
+    [Header("Debug: detection")]
+    [SerializeField] private GameObject player;
+
+    [Header("All characters")]
     [SerializeField] private CharaSO[] charaSO;
-    [SerializeField] private Coroutine typeWriterRoutine;
+    private DialogueSO currentConversation;
+    private Coroutine typeWriterRoutine;
 
-    [SerializeField] private int stepNum = 0;
+    [Header("Settings")]
     [SerializeField] private float typingSpeed = 0.02f;
-    [SerializeField] private string currentSpeaker;
+    private int stepNum = 0;
+    private string currentSpeaker;
     
     public static bool dialogueActive;
-    [SerializeField] private bool dialogueNext;
-    [SerializeField] private bool canContinueText = true;
+    private bool dialogueNext;
+    private bool canContinueText = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
@@ -115,6 +121,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text="";
         canContinueText = false;
         yield return new WaitForSeconds(0.5f);
+
         foreach (char letter in line.ToCharArray())
         {
             if (dialogueNext == true)
@@ -123,6 +130,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueNext = false;
                 break;
             }
+            
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }

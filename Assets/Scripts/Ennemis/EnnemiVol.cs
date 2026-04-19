@@ -3,9 +3,12 @@ using System.Collections;
 
 public class EnnemiVol : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
     
     private Vector2 spawnPos;
+
+    [Header("Settings")]
     [SerializeField] private float spawnTime;
 
     void Start()

@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class EnnemiManager : MonoBehaviour
 {
+    [Header("Debug: detection")]
     [SerializeField] private GameObject[] allEnnemies;
-    [SerializeField] private EnnemiSol attacker;
     [SerializeField] private GameObject player;
 
+    [Header("Debug: attack")]
+    [SerializeField] private EnnemiSol attacker;
+
+    [Header("Settings")]
     [SerializeField] private float distanceMin = 1000;
 
     void Start()

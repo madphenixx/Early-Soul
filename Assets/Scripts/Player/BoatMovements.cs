@@ -3,14 +3,19 @@ using UnityEngine.InputSystem;
 
 public class BoatMovements : MonoBehaviour
 {
+    [Header("Controls")]
     [SerializeField] private InputActionReference moveRef;
 
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
 
+    [Header("Debug: movement")]
     [SerializeField] private Vector3 direction;
+
+    [Header("Settings")]
     [SerializeField] private float playerSpeed;
     
+    [Header("Debug: booleans")]
     [SerializeField] private bool facingRight = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +44,7 @@ public class BoatMovements : MonoBehaviour
         {
             Flip();
         } 
+
         else if (direction.x > 0 && !facingRight)
         {
             Flip();
@@ -51,6 +57,7 @@ public class BoatMovements : MonoBehaviour
         {
             direction = ctx.ReadValue<Vector2>();
         }
+        
         else
         {
             direction = new Vector2(0,0);

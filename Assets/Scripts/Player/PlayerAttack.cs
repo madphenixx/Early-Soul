@@ -4,19 +4,24 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 { 
+    [Header("Controls")]
     [SerializeField] private InputActionReference distanceRef;
     [SerializeField] private InputActionReference meleeRef;
     [SerializeField] private InputActionReference parryRef;
 
+    [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject parry;
 
     public static Vector2 spawnPos;
+
+    [Header("Settings")]
     [SerializeField] private float distanceCooldownTime = 0.2f;
     [SerializeField] private float parryCooldownTime = 0.3f;
     [SerializeField] private float meleeCooldownTime = 0.3f;
 
+    [Header("Debug: booleans")]
     [SerializeField] private bool canDistance = true;
     [SerializeField] private bool canParry = true;
     [SerializeField] private bool canMelee = true;
