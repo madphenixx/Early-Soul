@@ -5,6 +5,7 @@ public class ProjectileEnnemiVol : MonoBehaviour
 {   
     private GameObject cible;
 
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
@@ -19,7 +20,13 @@ public class ProjectileEnnemiVol : MonoBehaviour
     {
         cible = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(ProjectileDestroy());
+
+        if (cible.transform.position.x < transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;

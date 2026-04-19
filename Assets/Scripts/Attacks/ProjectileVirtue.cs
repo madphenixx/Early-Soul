@@ -4,6 +4,7 @@ using System.Collections;
 
 public class ProjectileVirtue : MonoBehaviour
 {   
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Vector2 launchDir;
 
@@ -18,11 +19,13 @@ public class ProjectileVirtue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ProjectileDestroy());
 
         if (isLeftOne)
         {
+            spriteRenderer.flipX = true;
             launchDir = new Vector2(-10, 0);
         }
 

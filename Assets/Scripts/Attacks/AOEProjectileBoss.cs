@@ -4,6 +4,7 @@ using System.Collections;
 public class AOEProjectileBoss : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private Vector2 launchDir;
 
     [Header("Settings")]
@@ -17,12 +18,14 @@ public class AOEProjectileBoss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ProjectileDestroy());
 
         if (isLeftOne)
         {
             launchDir = new Vector2(-10, 0);
+            spriteRenderer.flipX = true;
         }
 
         else

@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.32309, y: 1.07125, z: 0}
-  m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,8 +69,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.061641835, y: -0.009354076}
-  m_Radius: 2.172874
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.54999995
 --- !u!50 &7728443077878049931
 Rigidbody2D:
   serializedVersion: 5
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
+  m_Sprite: {fileID: -1008367676, guid: 2fca12c7465917c4dbe768cc34f4b1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,9 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0457b83e47c26479fe65a608b4bc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cible: {fileID: 0}
-  rb: {fileID: 0}
   baseAttack: 4
   speed: 1.5
   duration: 7
-  gameManager: {fileID: 0}

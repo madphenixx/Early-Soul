@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5098713766674049924}
-  - component: {fileID: 4997682289919983188}
+  - component: {fileID: 7563692220991841047}
   - component: {fileID: 202409815392673137}
   - component: {fileID: 495514731351847123}
   - component: {fileID: 1740065211665881603}
@@ -30,13 +30,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.17291, y: 0, z: -2.22238}
-  m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4997682289919983188
-CircleCollider2D:
+--- !u!61 &7563692220991841047
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -69,8 +69,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.061641835, y: -0.009354076}
-  m_Radius: 2.172874
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.93, y: 0.78}
+    newSize: {x: 4.52, y: 5.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.93, y: 0.78}
+  m_EdgeRadius: 0
 --- !u!50 &202409815392673137
 Rigidbody2D:
   serializedVersion: 5
@@ -147,7 +157,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
+  m_Sprite: {fileID: -14805776, guid: 2fca12c7465917c4dbe768cc34f4b1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,8 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59511b2530b9c844bc614042e359052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileVirtue
-  cible: {fileID: 0}
-  rb: {fileID: 0}
   baseAttack: 3
   speed: 0.5
+  duration: 1
   isLeftOne: 1

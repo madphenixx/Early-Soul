@@ -149,7 +149,7 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(aoeSpawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        spawnPos = new Vector2(gameObject.transform.position.x, 0.5150235f);
         Instantiate(projectileAOE, spawnPos, Quaternion.identity);
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 

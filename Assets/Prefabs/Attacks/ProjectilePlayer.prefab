@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089170162582206219}
-  - component: {fileID: 8080440144037283706}
+  - component: {fileID: 4808962239816377769}
   - component: {fileID: 8892635916506854345}
   - component: {fileID: 6045582479072819690}
   - component: {fileID: -3672311510354938054}
@@ -30,13 +30,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.54, y: 0.54, z: 0.54}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8080440144037283706
-CircleCollider2D:
+--- !u!61 &4808962239816377769
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -70,7 +70,17 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.49, y: 0.66}
+    newSize: {x: 4.52, y: 5.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.49, y: 0.66}
+  m_EdgeRadius: 0
 --- !u!50 &8892635916506854345
 Rigidbody2D:
   serializedVersion: 5
@@ -147,7 +157,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7440feb8392095e4f82f0c0b769f6d5c, type: 3}
+  m_Sprite: {fileID: -1851131056, guid: 2fca12c7465917c4dbe768cc34f4b1d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc5f7668f762b541b7c7f87d755f78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePlayer
-  gameManager: {fileID: 0}
+  allEnnemies: []
+  baseAttack: 1
   distanceMin: 40
   speed: 10
   duration: 3
-  boomerang: 0

@@ -200,6 +200,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920109882205846917, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920109882205846917, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3983678333591390695, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -423,6 +443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraGround
   player: {fileID: 0}
   smoothSpeed: 0.3
+  isFollowing: 1
+  isZooming: 0
 --- !u!114 &1292218150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +515,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683101318}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -545,7 +567,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -739,6 +761,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 396220761986085699, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396220761986085699, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396220761986085699, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3427827936343708310, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18
@@ -802,6 +836,14 @@ PrefabInstance:
     - target: {fileID: 7126992632354836113, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
       propertyPath: m_Name
       value: Virtue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465064663871336915, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465064663871336915, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

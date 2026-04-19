@@ -15,6 +15,7 @@ public class ProjectilePlayer : MonoBehaviour
     private GameObject[] allEnnemiesBoss;
     private GameObject cible;
     
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
@@ -53,6 +54,7 @@ public class ProjectilePlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ProjectileDestroy());
 
@@ -63,6 +65,10 @@ public class ProjectilePlayer : MonoBehaviour
 
         else
         {
+            if (cible.transform.position.x < transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
             launchDir = cible.transform.position - gameObject.transform.position;
             launchDirNorm = launchDir.normalized;
         }
