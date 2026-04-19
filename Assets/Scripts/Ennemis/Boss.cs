@@ -35,7 +35,8 @@ public class Boss : MonoBehaviour
     
     [Header("Debug: count")]
     public float damageCount;
-    [SerializeField] private float virtueCount;
+    [SerializeField] private float defenseCount;
+    // [SerializeField] private float virtueCount;
 
     [Header("Debug: state")]
     [SerializeField] private string currentState;
@@ -57,6 +58,7 @@ public class Boss : MonoBehaviour
     {
         if (currentState == stateAttack)
         {
+            defenseCount = 0;
             AttackState();
         }
 
@@ -67,6 +69,7 @@ public class Boss : MonoBehaviour
 
         else if (currentState == stateP2)
         {
+            defenseCount = 0;
             P2State();
         }
     }
@@ -114,21 +117,25 @@ public class Boss : MonoBehaviour
     {
         Debug.Log("raaaaaaaaaaaaaaa");
 
-        damageCount = 0;
-        player.GetComponent<PlayerMovement>().TookDamage(gameObject);
-
-        if (GameManager.parrying == false)
+        if (defenseCount == 0)
         {
-            GameManager.pv += - defenseAttack;
-            GameManager.pvSlider.value = GameManager.pv;
+            damageCount = 0;
+            player.GetComponent<PlayerMovement>().TookDamage(gameObject); // à réussir
 
-            GameManager.score = GameManager.score - 10;
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            if (GameManager.parrying == false)
+            {
+                GameManager.pv += - defenseAttack;
+                GameManager.pvSlider.value = GameManager.pv;
+
+                GameManager.score = GameManager.score - 10;
+                GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            }
+
+            GameManager.combo = 0;
+            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.multiplicateurText.text = "x1";
+            defenseCount += 1;
         }
-
-        GameManager.combo = 0;
-        GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
-        GameManager.multiplicateurText.text = "x1";
 
         currentState = stateAttack;
     }
