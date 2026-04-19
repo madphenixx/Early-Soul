@@ -40,15 +40,15 @@ public class BoatMovements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (direction.x < 0 && facingRight)
-        {
-            Flip();
-        } 
+        // if (direction.x < 0 && facingRight)
+        // {
+        //     Flip();
+        // } 
 
-        else if (direction.x > 0 && !facingRight)
-        {
-            Flip();
-        }
+        // else if (direction.x > 0 && !facingRight)
+        // {
+        //     Flip();
+        // }
     }
 
     void MoveBoat(InputAction.CallbackContext ctx)
