@@ -35,8 +35,10 @@ public class Boss : MonoBehaviour
     [SerializeField] private float maxProjTime = 3f;
     [SerializeField] private float minSpawnTime = 5f;
     [SerializeField] private float maxSpawnTime = 10f;
-    [SerializeField] private float maxSpawnDistance = 8f;
-    [SerializeField] private float minSpawnDistance = 5f;
+    [SerializeField] private float minAoeSpawnTimeP2 = 0f;
+    [SerializeField] private float maxAoeSpawnTimeP2 = 3f;
+    [SerializeField] private float maxSpawnDistance = 9f;
+    [SerializeField] private float minSpawnDistance = 6f;
     
     [Header("Debug: count")]
     public float damageCount;
@@ -48,6 +50,8 @@ public class Boss : MonoBehaviour
     private readonly string stateAttack = "Attack";
     private readonly string stateDefense = "Defense";
     private readonly string stateP2 = "Phase 2";
+
+    [SerializeField] private bool phase2Test = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,6 +70,11 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (phase2Test)
+        {
+            currentState = stateP2;
+        }
+
         if (currentState == stateAttack)
         {
             defenseCount = 0;
@@ -152,6 +161,11 @@ public class Boss : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().color = p2Color;
         resistanceMelee = resistanceFinisher;
+
+        if (attackRoutine == null)
+        {
+            attackRoutine = StartCoroutine(LaunchAOEP2());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -171,6 +185,23 @@ public class Boss : MonoBehaviour
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
         projDroit.GetComponent<AOEProjectileBoss>().isLeftOne = false;
+
+        attackRoutine = null;
+    }
+
+    private IEnumerator LaunchAOEP2()
+    {
+        float spawnTime = Random.Range(minAoeSpawnTimeP2, maxAoeSpawnTimeP2);
+        yield return new WaitForSeconds(spawnTime);
+
+        spawnPos = new Vector2(gameObject.transform.position.x, 0.5150235f);
+        GameObject projGauche = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
+        GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
+
+        projDroit.GetComponent<AOEProjectileBoss>().isLeftOne = false;
+
+        projGauche.GetComponent<SpriteRenderer>().color = p2Color;
+        projDroit.GetComponent<SpriteRenderer>().color = p2Color;
 
         attackRoutine = null;
     }

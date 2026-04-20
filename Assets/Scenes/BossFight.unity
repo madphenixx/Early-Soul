@@ -2122,7 +2122,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.82, y: 5.81}
+  m_Size: {x: 4.8, y: 5.78}
   m_EdgeRadius: 0
 --- !u!114 &6326454025750996295
 MonoBehaviour:
@@ -2146,13 +2146,18 @@ MonoBehaviour:
   resistanceFinisher: 2
   startP2: 10
   aoeSpawnTime: 1
-  maxProjTime: 2
-  maxSpawnTime: 3.5
-  maxSpawnDistance: 8
-  minSpawnDistance: 5
+  minProjTime: 1.5
+  maxProjTime: 3
+  minSpawnTime: 5
+  maxSpawnTime: 10
+  minAoeSpawnTimeP2: 0
+  maxAoeSpawnTimeP2: 3
+  maxSpawnDistance: 9
+  minSpawnDistance: 6
   damageCount: 0
   defenseCount: 0
   currentState: 
+  phase2Test: 0
 --- !u!224 &6583075413462207738
 RectTransform:
   m_ObjectHideFlags: 0
