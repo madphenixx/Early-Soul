@@ -16,12 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     
-    [Header("Settings")]
+    [Header("Settings: Movements")]
     [SerializeField] private float playerSpeed;
     [SerializeField] private float basePlayerSpeed;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
+
+    [Header("Settings: iFrames")]
     [SerializeField] private float iframeTimeDodge = 1;
     [SerializeField] private float iframeTimeDamage = 0.5f;
 
@@ -93,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void TookDamage(GameObject attacker)
+    public void TookDamage(GameObject attacker, float distance)
     {
         StartCoroutine(IframeTime(iframeTimeDamage));
 
@@ -103,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
             // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
             // transform.position = newPosition;
 
-            transform.position += new Vector3(10, 0, 0);
+            transform.position += new Vector3(distance, 0, 0);
         }
 
         else if (attacker.transform.position.x >= transform.position.x)
@@ -112,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
             // transform.position = newPosition;
 
-            transform.position += new Vector3(-10, 0, 0);
+            transform.position += new Vector3(-distance, 0, 0);
         }
     }
 

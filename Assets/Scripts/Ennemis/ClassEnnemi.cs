@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClassEnnemi : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class ClassEnnemi : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (gameObject.CompareTag("Ennemi") || gameObject.CompareTag("EnnemiSol"))
+        {
+            Slider slEnnemi = transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
+            slEnnemi.maxValue = pv;
+            slEnnemi.value = pv;
+        }
+
         //enemyAnimator = GetComponent<Animator>();
     }
 

@@ -1,12 +1,12 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Boss : MonoBehaviour
 {
-    
-    private ClassEnnemi classEnnemi;
+    [SerializeField] private Slider slBoss;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject projectileAOE;
@@ -19,17 +19,24 @@ public class Boss : MonoBehaviour
     private Vector2 spawnPos;
     private Color p2Color;
 
+    private ClassEnnemi classEnnemi;
     private Coroutine attackRoutine;
     private Coroutine spawnRoutine;
 
     private int randInt;
 
-    [Header("Settings")]
+    [Header("Settings: Defense")]
     [SerializeField] private int defenseAttack = 1;
+    [SerializeField] private float distanceDefState = 10;
+    [SerializeField] private float defensePhaseStart = 10;
+
+    [Header("Settings: Resistance")]
     public float resistanceMelee = 1;
     public float resistanceDistance = 0.1f;
     [SerializeField] private float resistanceFinisher = 2;
     [SerializeField] private float startP2 = 10;
+
+    [Header("Settings: Speed")]
     [SerializeField] private float aoeSpawnTime = 1;
     [SerializeField] private float minProjTime = 1.5f;
     [SerializeField] private float maxProjTime = 3f;
@@ -37,8 +44,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float maxSpawnTime = 10f;
     [SerializeField] private float minAoeSpawnTimeP2 = 0f;
     [SerializeField] private float maxAoeSpawnTimeP2 = 3f;
-    [SerializeField] private float maxSpawnDistance = 9f;
     [SerializeField] private float minSpawnDistance = 6f;
+    [SerializeField] private float maxSpawnDistance = 9f;
     
     [Header("Debug: count")]
     public float damageCount;
@@ -58,6 +65,9 @@ public class Boss : MonoBehaviour
     {
         player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
+        slBoss = GameObject.Find("PVBoss").GetComponent<Slider>();
+        slBoss.maxValue = classEnnemi.pv;
+        slBoss.value = classEnnemi.pv;
 
         currentState = stateAttack;
 
@@ -100,7 +110,7 @@ public class Boss : MonoBehaviour
             currentState = stateP2;
         }
 
-        else if (damageCount >= 10)
+        else if (damageCount >= defensePhaseStart)
         {
             currentState = stateDefense;
         }
@@ -137,7 +147,7 @@ public class Boss : MonoBehaviour
         if (defenseCount == 0)
         {
             damageCount = 0;
-            player.GetComponent<PlayerMovement>().TookDamage(gameObject); // à réussir
+            player.GetComponent<PlayerMovement>().TookDamage(gameObject, distanceDefState);
 
             if (GameManager.parrying == false)
             {

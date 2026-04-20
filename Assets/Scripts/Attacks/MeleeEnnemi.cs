@@ -7,7 +7,8 @@ public class MeleeEnnemi : MonoBehaviour
     public GameObject attacker;
 
     [Header("Settings")]
-    public int baseAttack = 1;
+    [SerializeField] private int baseAttack = 1;
+    [SerializeField] private int distance = 6;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,7 +31,7 @@ public class MeleeEnnemi : MonoBehaviour
             GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
 
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-            player.TookDamage(attacker);
+            player.TookDamage(attacker, distance);
 
             Destroy(gameObject);
         }

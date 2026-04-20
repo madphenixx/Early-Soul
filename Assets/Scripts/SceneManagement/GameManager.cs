@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private Coroutine comboRoutine;
 
     [Header("Settings")]
-    [SerializeField] private float maxPv;
+    [SerializeField] private float maxPv = 10;
     [SerializeField] private float comboMaxDuration = 5;
     public static float pv;
     public static int score;
@@ -41,11 +41,12 @@ public class GameManager : MonoBehaviour
         }
 
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
+        pvSlider.maxValue = maxPv;
+        pvSlider.value = maxPv;
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         comboText = GameObject.Find("Combo").GetComponent<Text>();
         multiplicateurText = GameObject.Find("Multiplicateur").GetComponent<Text>();
 
-        maxPv = 10;
         pv = 10;
         score = 0;
         combo = 0;
