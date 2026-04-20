@@ -36,11 +36,11 @@ public class CameraGround : MonoBehaviour
             {
                 isFollowing = false;
 
-                Vector3 desiredPosition = new Vector3(-58.55f, 3.11f, -3.7f);
+                Vector3 desiredPosition = new Vector3(-58.58f, 2.29f, -3.7f);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * 0.4f);
                 transform.position = smoothedPosition;
 
-                gameObject.GetComponent<Camera>().orthographicSize = 2.73f;
+                gameObject.GetComponent<Camera>().orthographicSize = 4;
             }
         }
 

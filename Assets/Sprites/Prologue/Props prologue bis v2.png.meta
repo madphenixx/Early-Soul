@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc8d42b842742dc40b761a9317da5e7a
+guid: 2561f099731f4244aaf31967e5e57f26
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,85 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -175,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Props prologue bis_0
+      name: Props prologue bis v2_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 249
-        width: 315
-        height: 595
+        x: 628
+        y: 144
+        width: 402
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,102 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 282c0e890d172384ab8fa01628a787a8
-      internalID: 1572943002
+      spriteID: 8ffdccf7e70aa154697869344bac952d
+      internalID: -810735508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props prologue bis_1
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 595
-        width: 135
-        height: 163
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3adc31ea2948be4b98cf5d9d26dd695
-      internalID: -578430474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props prologue bis_2
-      rect:
-        serializedVersion: 2
-        x: 1020
-        y: 591
-        width: 135
-        height: 163
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcb548c3e456fa84482035c09e9ebfc2
-      internalID: 1963350940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props prologue bis_3
-      rect:
-        serializedVersion: 2
-        x: 794
-        y: 274
-        width: 46
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91ecec9617b86dc4e968faa14803554a
-      internalID: 516662518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props prologue bis_4
-      rect:
-        serializedVersion: 2
-        x: 1517
-        y: 316
-        width: 346
-        height: 354
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 953a507d99663554dbfcd7deeda1a7cf
-      internalID: 1086934595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props prologue bis_5
+      name: Props prologue bis v2_1
       rect:
         serializedVersion: 2
         x: 1380
@@ -300,8 +134,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed729848044a70e45bf52e86d18af694
-      internalID: 312802338
+      spriteID: b0b6096edddc21b46a950d0acf6fa979
+      internalID: 46492512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props prologue bis v2_2
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 605
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232e10d5728c3c84bbabdb743822cf00
+      internalID: -1643492663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props prologue bis v2_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 244
+        width: 324
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b2dcb7057330a40baa0b98c063f22d
+      internalID: 1783546023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props prologue bis v2_4
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 588
+        width: 141
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b245088033c5c3a458b794dbe2d8a1de
+      internalID: -1825556485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Props prologue bis v2_5
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 585
+        width: 141
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9ad7f936a63444e85d41707f72fe63
+      internalID: -715760358
       vertices: []
       indices: 
       edges: []
@@ -310,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 47c090d6d41162448be254e0158aac8d
+    spriteID: 57ed41368b81bca47aa9802207a06403
     internalID: 0
     vertices: []
     indices: 
@@ -320,12 +242,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Props prologue bis_0: 1572943002
-      Props prologue bis_1: -578430474
-      Props prologue bis_2: 1963350940
-      Props prologue bis_3: 516662518
-      Props prologue bis_4: 1086934595
-      Props prologue bis_5: 312802338
+      Props prologue bis v2_0: -810735508
+      Props prologue bis v2_1: 46492512
+      Props prologue bis v2_2: -1643492663
+      Props prologue bis v2_3: 1783546023
+      Props prologue bis v2_4: -1825556485
+      Props prologue bis v2_5: -715760358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
