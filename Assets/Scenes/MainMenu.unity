@@ -3507,7 +3507,7 @@ MonoBehaviour:
   m_SelectionColor: {r: 1, g: 0.65882355, b: 0.6821743, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
-  m_CaretWidth: 1
+  m_CaretWidth: 4
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
 --- !u!114 &985462735
@@ -5137,7 +5137,7 @@ MonoBehaviour:
   m_SelectionColor: {r: 1, g: 0.65882355, b: 0.6821743, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
-  m_CaretWidth: 1
+  m_CaretWidth: 4
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
 --- !u!114 &1368299192
@@ -7200,9 +7200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c6e93de91f2364ca32e08f8a72aff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authentication
-  playerIdPanel: {fileID: 0}
+  playerIdPanel: {fileID: 1887029154}
   playerID: {fileID: 1335422077}
-  errorMenu: {fileID: 0}
+  errorMenu: {fileID: 585111367}
   usernameInput: 
   passwordInput: 
 --- !u!4 &1887029156
