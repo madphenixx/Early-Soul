@@ -68,20 +68,6 @@ public class PauseMenu : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Confined;
     }
 
-    public void MainMenuEnd()
-    {
-        Time.timeScale = 1.0f;
-        isPaused = false;
-        PlayerPrefs.DeleteKey("savedScene");
-        SceneManager.LoadScene(0);
-        //Cursor.lockState = CursorLockMode.Confined;
-    }
-
-    public void Retry()
-    {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));
-    }
-
     public void QuitMenu()
     {
         Debug.Log("QUIT!");
@@ -107,14 +93,5 @@ public class PauseMenu : MonoBehaviour
     {
         pauseRef.action.started -= PauseGame;
         pauseRef.action.canceled -= PauseGame;
-    }
-
-    public void AdminReset()
-    {
-        Debug.Log("Reset!");
-        Time.timeScale = 1.0f;
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("volume", 5);
-        Debug.Log(PlayerPrefs.GetFloat("volume"));
     }
 }

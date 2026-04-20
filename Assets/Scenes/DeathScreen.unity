@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 743860052}
   - component: {fileID: 743860051}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,8 +519,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579330471}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1579330473}
+        m_TargetAssemblyTypeName: EndDeathMenu, Assembly-CSharp
         m_MethodName: QuitMenu
         m_Mode: 1
         m_Arguments:
@@ -595,7 +595,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993589038}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -647,7 +647,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -915,8 +915,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579330471}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1579330473}
+        m_TargetAssemblyTypeName: EndDeathMenu, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -974,7 +974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579330470}
-  - component: {fileID: 1579330471}
+  - component: {fileID: 1579330473}
   - component: {fileID: 1579330472}
   m_Layer: 5
   m_Name: DeathMenu
@@ -999,22 +999,6 @@ Transform:
   - {fileID: 1930313551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1579330471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579330469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cbeb3b093971846b47e096363f7b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
-  pauseRef: {fileID: 0}
-  pauseMenuObject: {fileID: 0}
-  optionsMenuObject: {fileID: 0}
-  volumeSlider: {fileID: 0}
 --- !u!114 &1579330472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,6 +1014,18 @@ MonoBehaviour:
   score: 0
   scene: 0
   bestScore: 0
+--- !u!114 &1579330473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579330469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d87c257d13b5754fbce0cc19f76ef71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndDeathMenu
 --- !u!1 &1725903736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1199,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
