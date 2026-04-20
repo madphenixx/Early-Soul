@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class MainMenu : MonoBehaviour
+using Unity.Services.Authentication;
+
+public class MainMenu : Initialisation
 {
     [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
@@ -9,7 +11,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button scene2;
     [SerializeField] private Button scene3;
     [SerializeField] private Button continueButton;
+    [SerializeField] private Text nameText;
 
+    [SerializeField] private GameObject panelID;
     private int progress;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,6 +59,22 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public override void Initialize()
+    {
+        if (IsInitialized)
+        {
+            return;
+        }
+
+        base.Initialize();
+    }
+
+    public override void OnEnable()
+    {
+        UpdatePlayerNameUI();
+        base.OnEnable();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));
@@ -79,6 +99,16 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("volume", sliderValue);
         AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
+    }
+
+    public void SignOut()
+    {
+        PlayerID.Instance.SignOut();
+    }
+
+    private void UpdatePlayerNameUI()
+    {
+        nameText.text = AuthenticationService.Instance.PlayerName;
     }
 
     public void QuitGame()

@@ -5,7 +5,7 @@ using System;
 using System.Runtime.Serialization;
 using Unity.VisualScripting;
 
-public class BestscoreLeaderboard : MonoBehaviour
+public class BestscoreLeaderboard : Initialisation
 {
     [Header("UI Elements")]
     [SerializeField] private RectTransform playersObject;
@@ -27,9 +27,16 @@ public class BestscoreLeaderboard : MonoBehaviour
     private int currentPage = 1;
     private int totalPages = 0;
 
-    void Awake()
+    public override void Initialize()
     {
+        if (IsInitialized)
+        {
+            return;
+        }
+
         ClearPlayerList();
+
+        base.Initialize();
     }
 
     public void TestAddScore()
@@ -37,8 +44,9 @@ public class BestscoreLeaderboard : MonoBehaviour
         AddScore(10);
     }
 
-    private void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
         pageText.text = "-";
         nextButton.interactable = false;
         prevButton.interactable = false;
