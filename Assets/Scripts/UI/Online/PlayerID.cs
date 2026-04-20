@@ -31,17 +31,18 @@ public class PlayerID : MonoBehaviour
         }
     }
 
-    void Awake()
+    public void  Awake()
     {
         Application.runInBackground = true;
         StartClientService();
     }
 
-    private void Initialize()
+    private async void Initialize()
     {
-        UnityServices.InitializeAsync();
         if (initialized) { return; }
         initialized = true;
+
+        await UnityServices.InitializeAsync();
     }
 
     private void SetUpEvents()

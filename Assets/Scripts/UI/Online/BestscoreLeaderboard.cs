@@ -37,11 +37,7 @@ public class BestscoreLeaderboard : Initialisation
         ClearPlayerList();
 
         base.Initialize();
-    }
-
-    public void TestAddScore()
-    {
-        AddScore(10);
+        LoadPlayers(1);
     }
 
     public override void OnEnable()
@@ -56,8 +52,13 @@ public class BestscoreLeaderboard : Initialisation
         totalPages = 0;
         LoadPlayers(1);
     }
+
+    public void TestAddScore()
+    {
+        AddScoreAsync(10);
+    }
     
-    public async void AddScore(int score)
+    public async void AddScoreAsync(int score)
     {
         addScore.interactable = false;
 
@@ -137,6 +138,7 @@ public class BestscoreLeaderboard : Initialisation
     public void ClearPlayerList()
     {
         LeaderboardItem[] items = playersObject.GetComponentsInChildren<LeaderboardItem>();
+
         if (items != null)
         {
             for (int i = 0; i < items.Length; i++)

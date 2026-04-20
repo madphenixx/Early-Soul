@@ -59,6 +59,11 @@ public class MainMenu : Initialisation
         }
     }
 
+    void Update()
+    {
+        UpdatePlayerNameUI();
+    }
+
     public override void Initialize()
     {
         if (IsInitialized)
@@ -101,6 +106,12 @@ public class MainMenu : Initialisation
         AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("QUIT!");
+        Application.Quit();
+    } 
+
     public void SignOut()
     {
         PlayerID.Instance.SignOut();
@@ -109,11 +120,5 @@ public class MainMenu : Initialisation
     private void UpdatePlayerNameUI()
     {
         nameText.text = AuthenticationService.Instance.PlayerName;
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("QUIT!");
-        Application.Quit();
-    }   
+    }  
 }
