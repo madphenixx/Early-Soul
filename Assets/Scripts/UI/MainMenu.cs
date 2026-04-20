@@ -13,6 +13,7 @@ public class MainMenu : Initialisation
     [SerializeField] private Button continueButton;
     [SerializeField] private Text nameText;
 
+    [Header("Objects")]
     [SerializeField] private GameObject panelID;
     private int progress;
 

@@ -17,12 +17,11 @@ public class BestscoreLeaderboard : Initialisation
 
     [Header("Prefabs")]
     [SerializeField] private LeaderboardItem playerItemPrefab;
+    [DataMember(Name = "playerName", IsRequired = true, EmitDefaultValue = true)]
+    public string PlayerName { get; }
 
     [Header("Settings")]
     [SerializeField] private int playersPerPage = 8;
-
-    [DataMember(Name = "playerName", IsRequired = true, EmitDefaultValue = true)]
-    public string PlayerName { get; }
 
     private int currentPage = 1;
     private int totalPages = 0;

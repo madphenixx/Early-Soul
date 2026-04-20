@@ -11,8 +11,8 @@ public class ProjectileBoss : MonoBehaviour
 
     [Header("Settings")]
     public int baseAttack = 4;
-    [SerializeField] private float speed = 1.5f;
-    [SerializeField] private float duration = 7;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float duration = 10;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 

@@ -6,13 +6,11 @@ using System;
 
 public class Authentication : Initialisation
 {
-    [SerializeField] private GameObject playerIdPanel;
-
-    [SerializeField] private PlayerID playerID;
+    [Header("Objects")]
     [SerializeField] private ErrorMenu errorMenu;
 
-    [SerializeField] private string usernameInput;
-    [SerializeField] private string passwordInput;
+    private string usernameInput;
+    private string passwordInput;
 
     public override void Initialize()
     {
@@ -20,6 +18,7 @@ public class Authentication : Initialisation
         {
             return;
         }
+
         base.Initialize();
     }
 

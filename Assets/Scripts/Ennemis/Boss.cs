@@ -2,8 +2,10 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class Boss : MonoBehaviour
 {
+    
     private ClassEnnemi classEnnemi;
 
     [Header("Prefabs")]
@@ -15,6 +17,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject player;
 
     private Vector2 spawnPos;
+    private Color p2Color;
 
     private Coroutine attackRoutine;
     private Coroutine spawnRoutine;
@@ -28,8 +31,10 @@ public class Boss : MonoBehaviour
     [SerializeField] private float resistanceFinisher = 2;
     [SerializeField] private float startP2 = 10;
     [SerializeField] private float aoeSpawnTime = 1;
-    [SerializeField] private float maxProjTime = 2f;
-    [SerializeField] private float maxSpawnTime = 3.5f;
+    [SerializeField] private float minProjTime = 1.5f;
+    [SerializeField] private float maxProjTime = 3f;
+    [SerializeField] private float minSpawnTime = 5f;
+    [SerializeField] private float maxSpawnTime = 10f;
     [SerializeField] private float maxSpawnDistance = 8f;
     [SerializeField] private float minSpawnDistance = 5f;
     
@@ -51,6 +56,11 @@ public class Boss : MonoBehaviour
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
 
         currentState = stateAttack;
+
+        if (UnityEngine.ColorUtility.TryParseHtmlString("#CAC4E4", out Color color))
+        {
+            p2Color = color;
+        }
     }
 
     // Update is called once per frame
@@ -88,7 +98,7 @@ public class Boss : MonoBehaviour
 
         randInt = Random.Range(1, 101);
 
-        if (randInt < 40) //AOE
+        if (randInt < 50) //AOE
         {
             if (attackRoutine == null)
             {
@@ -96,7 +106,7 @@ public class Boss : MonoBehaviour
             }
         }
 
-        else if (randInt > 80) //Spawn
+        else if (randInt > 90) //Spawn
         {
             if (spawnRoutine == null)
             {
@@ -115,8 +125,6 @@ public class Boss : MonoBehaviour
 
     void DefenseState()
     {
-        Debug.Log("raaaaaaaaaaaaaaa");
-
         if (defenseCount == 0)
         {
             damageCount = 0;
@@ -142,6 +150,7 @@ public class Boss : MonoBehaviour
 
     void P2State()
     {
+        GetComponent<SpriteRenderer>().color = p2Color;
         resistanceMelee = resistanceFinisher;
     }
 
@@ -168,7 +177,7 @@ public class Boss : MonoBehaviour
 
     private IEnumerator LaunchProjectile()
     {
-        float spawnTime = Random.Range(Time.deltaTime, maxProjTime);
+        float spawnTime = Random.Range(minProjTime, maxProjTime);
         yield return new WaitForSeconds(spawnTime);
 
         spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
@@ -179,7 +188,7 @@ public class Boss : MonoBehaviour
 
     private IEnumerator SpawnVirtue()
     {
-        float spawnTime = Random.Range(Time.deltaTime, maxSpawnTime);
+        float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
         yield return new WaitForSeconds(spawnTime);
 
         float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
@@ -195,6 +204,6 @@ public class Boss : MonoBehaviour
         }
 
         Instantiate(virtue, spawnPos, Quaternion.identity);
-        attackRoutine = null;
+        spawnRoutine = null;
     }
 }

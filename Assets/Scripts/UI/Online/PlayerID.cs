@@ -9,12 +9,7 @@ public class PlayerID : MonoBehaviour
     [SerializeField] private GameObject playerIdPanel;
 
     [SerializeField] private ErrorMenu errorMenu;
-
-    private bool initialized = false;
-    private bool eventsInitialized = false;
-
     private static PlayerID singleton = null;
-
     public static PlayerID Instance
     {
         get
@@ -30,6 +25,11 @@ public class PlayerID : MonoBehaviour
             return singleton; 
         }
     }
+
+    private bool initialized = false;
+    private bool eventsInitialized = false;
+
+    
 
     public void  Awake()
     {

@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class ErrorMenu : Initialisation
 {
+    [Header("UI Elements")]
     [SerializeField] private Text errorText;
     [SerializeField] private Text buttonText;
 
+    [Header("Objects")]
     [SerializeField] private GameObject errorPanel;
     [SerializeField] private GameObject authPanel;
-
-    [SerializeField] private PlayerID playerID;
 
     public enum Action
     {

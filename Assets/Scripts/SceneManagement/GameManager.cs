@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,11 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject triggerPrefab;
     [SerializeField] private GameObject gatePrefab;
 
-    [Header("Player PV")]
+    private Coroutine comboRoutine;
+
+    [Header("Settings")]
     [SerializeField] private float maxPv;
+    [SerializeField] private float comboMaxDuration = 5;
     public static float pv;
     public static int score;
     public static int combo;
+    private int comboArch = 0;
 
     public static bool movementAllowed = true;
     public static bool parrying = false;
@@ -59,6 +65,37 @@ public class GameManager : MonoBehaviour
         if (pv > maxPv)
         {
             pv = maxPv;
+        }
+
+        comboCheck();
+    }
+
+    private void comboCheck()
+    {
+        if (comboRoutine == null)
+        {
+            comboArch = combo;
+            comboRoutine = StartCoroutine(comboTime());
+        }
+
+        // else
+        // {
+        //     StopCoroutine(comboRoutine);
+        //     comboRoutine = null;
+        //     comboArch = combo;
+        // }    
+    }
+
+    private IEnumerator comboTime()
+    {
+        while (combo == comboArch)
+        {
+            yield return new WaitForSeconds(comboMaxDuration);
+
+            combo = 0;
+            comboText.text = "Combo: 0";
+            multiplicateurText.text = "x1";
+            comboArch = combo;
         }
     }
 

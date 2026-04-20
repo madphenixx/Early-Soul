@@ -42,7 +42,7 @@ public class MeleePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Boss"))
         {
             float produit = (1 + (GameManager.combo * 0.5f)) * collision.gameObject.GetComponent<Boss>().resistanceMelee;
-            Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
+            Slider slEnnemi = GameObject.Find("PVBoss").GetComponent<Slider>();
 
             GameManager.combo += 1;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
@@ -50,7 +50,6 @@ public class MeleePlayer : MonoBehaviour
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += - baseAttack * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
-
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
             GameManager.scoreText.text = "Score: " + GameManager.score.ToString();

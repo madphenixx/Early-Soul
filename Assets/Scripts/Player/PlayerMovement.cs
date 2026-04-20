@@ -99,16 +99,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (attacker.transform.position.x < transform.position.x)
         {
-            Vector3 desiredPosition = transform.position + new Vector3(10, 0, 0);
-            Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
-            transform.position = newPosition;
+            // Vector3 desiredPosition = transform.position + new Vector3(10, 0, 0);
+            // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
+            // transform.position = newPosition;
+
+            transform.position += new Vector3(10, 0, 0);
         }
 
         else if (attacker.transform.position.x >= transform.position.x)
         {
-            Vector3 desiredPosition = transform.position + new Vector3(-10, 0, 0);
-            Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
-            transform.position = newPosition;
+            // Vector3 desiredPosition = transform.position + new Vector3(-10, 0, 0);
+            // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
+            // transform.position = newPosition;
+
+            transform.position += new Vector3(-10, 0, 0);
         }
     }
 

@@ -138,7 +138,7 @@ public class ProjectilePlayer : MonoBehaviour
         {
 
             float produit = (1 + (GameManager.combo * 0.5f)) * collision.gameObject.GetComponent<Boss>().resistanceDistance;
-            Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
+            Slider slEnnemi = GameObject.Find("PVBoss").GetComponent<Slider>();
 
             GameManager.combo += 1;
             GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
