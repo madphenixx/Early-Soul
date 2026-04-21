@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
+    [Header("UI Elements")]
     [SerializeField] private Slider slBoss;
+    [SerializeField] private GameObject bossUi;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject projectileAOE;
@@ -66,6 +68,7 @@ public class Boss : MonoBehaviour
         player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
         slBoss = GameObject.Find("PVBoss").GetComponent<Slider>();
+        bossUi = GameObject.Find("BossUI");
         slBoss.maxValue = classEnnemi.pv;
         slBoss.value = classEnnemi.pv;
 
@@ -246,5 +249,10 @@ public class Boss : MonoBehaviour
 
         Instantiate(virtue, spawnPos, Quaternion.identity);
         spawnRoutine = null;
+    }
+
+    void OnDestroy()
+    {
+        bossUi.SetActive(false);
     }
 }

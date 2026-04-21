@@ -446,6 +446,43 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &601279772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601279773}
+  m_Layer: 5
+  m_Name: BossUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &601279773
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601279772}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.42312402, y: 0.42312402, z: 0.42312402}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1616376313}
+  - {fileID: 8978052982532487361}
+  m_Father: {fileID: 656381637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -348.86783}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &656381637 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9138701408093042007, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
@@ -1369,10 +1406,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9138701408093042007, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       insertIndex: 4
-      addedObject: {fileID: 1616376313}
-    - targetCorrespondingSourceObject: {fileID: 9138701408093042007, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 8978052982532487361}
+      addedObject: {fileID: 601279773}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
 --- !u!1 &1540180231
@@ -1481,14 +1515,14 @@ RectTransform:
   m_GameObject: {fileID: 1616376312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.423124, y: 0.423124, z: 0.423124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 656381637}
+  m_Father: {fileID: 601279773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -348.8678}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 2587.7998, y: 182.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616376314
@@ -2137,6 +2171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss
   slBoss: {fileID: 0}
+  bossUi: {fileID: 0}
   projectileAOE: {fileID: 6766587246430527401, guid: c41cfcddaba66054b9fff08ffe95d5e4, type: 3}
   projectile: {fileID: 6766587246430527401, guid: 81d9d543f162e0a4abb0903d8744e6c2, type: 3}
   virtue: {fileID: 7126992632354836113, guid: 4acf5364eb43dd4418a867c3ecf5d82d, type: 3}
@@ -2342,18 +2377,18 @@ RectTransform:
   m_GameObject: {fileID: 2683517262554050533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.2, y: 6.2, z: 6.2}
+  m_LocalScale: {x: 14.652914, y: 14.652914, z: 14.652914}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2565606820061940374}
   - {fileID: 6967434936747943010}
   - {fileID: 6789771029435221713}
   - {fileID: 7480448277839135868}
-  m_Father: {fileID: 656381637}
+  m_Father: {fileID: 601279773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -450.24792}
+  m_AnchoredPosition: {x: 0, y: -239.59894}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
