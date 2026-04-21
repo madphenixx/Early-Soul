@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     
     [Header("Settings: Movements")]
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private float basePlayerSpeed;
+    [SerializeField] private float playerSpeed = 10;
+    [SerializeField] private float basePlayerSpeed = 10;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;

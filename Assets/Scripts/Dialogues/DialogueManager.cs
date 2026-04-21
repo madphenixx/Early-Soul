@@ -65,8 +65,19 @@ public class DialogueManager : MonoBehaviour
         dialogueActive = true;
         dialogueNext = true;
         //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-        player.GetComponent<PlayerMovement>().direction = 0;
-        player.SetActive(false);
+        if (player.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement))
+        {
+            PlayerMovement pM = playerMovement;
+            pM.direction = 0;
+        }
+
+        else if (player.TryGetComponent<ReaperMovements>(out ReaperMovements reaperMovements))
+        {
+            ReaperMovements rM = reaperMovements;
+            rM.direction = 0;
+        }
+        
+        player.GetComponent<SpriteRenderer>().enabled = false;
         GameManager.movementAllowed = false;
     }
 
@@ -75,7 +86,7 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
-        player.SetActive(true);
+        player.GetComponent<SpriteRenderer>().enabled = true;
         //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.movementAllowed = true;
     }
