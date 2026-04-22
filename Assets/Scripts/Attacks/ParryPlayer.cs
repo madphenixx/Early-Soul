@@ -3,11 +3,13 @@ using System.Collections;
 
 public class ParryPlayer : MonoBehaviour
 {
+    [SerializeField] private float parryeDuration = 0.2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameManager.parrying = true;
-        StartCoroutine(ParryDestroy(0.2f));
+        StartCoroutine(ParryDestroy(parryeDuration));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

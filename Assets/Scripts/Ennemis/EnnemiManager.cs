@@ -11,11 +11,15 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private EnnemiSol attacker;
 
     [Header("Settings")]
+    [SerializeField] private float baseDistanceMin;
     [SerializeField] private float distanceMin = 1000;
+
+    // public static bool playerAttacking = false;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        baseDistanceMin = distanceMin;
     }
 
     void Update()
@@ -42,7 +46,7 @@ public class EnnemiManager : MonoBehaviour
         if (attacker != null)
         {
             attacker.isAttacker = true;
-            distanceMin = 1000;
+            distanceMin = baseDistanceMin;
         }
     }
 }

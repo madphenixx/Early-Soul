@@ -52,6 +52,8 @@ public class ErrorMenu : Initialisation
 
     public void ButtonAction()
     {
+        errorPanel.SetActive(false);
+
         switch (action)
         {
             case Action.StartService:
@@ -64,7 +66,5 @@ public class ErrorMenu : Initialisation
                 authPanel.SetActive(true);
                 break;
         }
-
-        errorPanel.SetActive(false);
     }
 }

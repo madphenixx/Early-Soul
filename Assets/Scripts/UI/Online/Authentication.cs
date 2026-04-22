@@ -29,6 +29,8 @@ public class Authentication : Initialisation
 
     public void ConfirmID(string inputID)
     {
+        InputField inputField = GameObject.Find("Username input").GetComponent<InputField>();
+        inputField.text = inputField.text.ToLower();
         usernameInput = inputID;
         // playerIdPanel.SetActive(false);
     }

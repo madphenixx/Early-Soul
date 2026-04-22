@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
     { 
         if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x + 1, gameObject.transform.position.y);
+            spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
             Instantiate(projectile, spawnPos, Quaternion.identity);
             StartCoroutine(DistanceCooldown());
         } 
@@ -54,6 +54,8 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true)
         {
+            // EnnemiManager.playerAttacking = true;
+
             if (PlayerMovement.facingRight)
             {
                 //transform.position += new Vector3(1, 0, 0);
@@ -78,13 +80,11 @@ public class PlayerAttack : MonoBehaviour
         {
             if (PlayerMovement.facingRight)
             {
-                //transform.position += new Vector3(1, 0, 0);
                 spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.2f);
             }
 
             else
             {
-                //transform.position += new Vector3(1, 0, 0);
                 spawnPos = new Vector2(transform.position.x - 1.5f, transform.position.y + 0.2f);
             }
 

@@ -69,6 +69,7 @@ public class ProjectilePlayer : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
+            
             launchDir = cible.transform.position - gameObject.transform.position;
             launchDirNorm = launchDir.normalized;
         }

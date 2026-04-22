@@ -123,17 +123,18 @@ public class PlayerID : MonoBehaviour
         try
         {
             await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(username, password);
+            PlayerPrefs.SetString("playerUserName", username);
         }
 
-        catch (AuthenticationException)
+        catch (AuthenticationException exception)
         {
-            errorMenu.OpenError(ErrorMenu.Action.OpenAuthMenu, "Username or password is wrong.", "OK");
+            errorMenu.OpenError(ErrorMenu.Action.OpenAuthMenu, exception.Message, "OK");
             errorMenu.gameObject.SetActive(true);
         }
 
         catch (RequestFailedException)
         {
-            errorMenu.OpenError(ErrorMenu.Action.SignIn, "Failed to connect to the network.", "OK");
+            errorMenu.OpenError(ErrorMenu.Action.SignIn, "Wrong Username or PassWord", "Retry");
             errorMenu.gameObject.SetActive(true);
         }
     }
@@ -143,11 +144,12 @@ public class PlayerID : MonoBehaviour
         try
         {
             await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(username, password);
+            PlayerPrefs.SetString("playerUserName", username);
         }
 
-        catch (AuthenticationException)
+        catch (AuthenticationException )
         {
-            errorMenu.OpenError(ErrorMenu.Action.OpenAuthMenu, "Failed to sign you up.", "OK");
+            errorMenu.OpenError(ErrorMenu.Action.OpenAuthMenu, "There is already an user with this username", "OK");
             errorMenu.gameObject.SetActive(true);
         }
 

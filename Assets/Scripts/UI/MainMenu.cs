@@ -62,7 +62,10 @@ public class MainMenu : Initialisation
 
     void Update()
     {
-        UpdatePlayerNameUI();
+        if (panelID.activeSelf == false)
+        {
+            UpdatePlayerNameUI();
+        } 
     }
 
     public override void Initialize()
@@ -116,10 +119,12 @@ public class MainMenu : Initialisation
     public void SignOut()
     {
         PlayerID.Instance.SignOut();
+        PlayerPrefs.DeleteKey("playerUserName");
+        nameText.text = "";
     }
 
     private void UpdatePlayerNameUI()
     {
-        nameText.text = AuthenticationService.Instance.PlayerName;
+        nameText.text = AuthenticationService.Instance.PlayerInfo.Username;
     }  
 }

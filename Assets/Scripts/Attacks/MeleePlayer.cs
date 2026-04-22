@@ -6,6 +6,7 @@ public class MeleePlayer : MonoBehaviour
 {
     [Header("Settings")]
     public int baseAttack = 1;
+    [SerializeField] private float meleeDuration = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,7 +62,7 @@ public class MeleePlayer : MonoBehaviour
 
     private IEnumerator MeleeDestroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(meleeDuration);
         Destroy(gameObject);
     } 
 }

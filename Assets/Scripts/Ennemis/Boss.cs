@@ -46,8 +46,12 @@ public class Boss : MonoBehaviour
     [SerializeField] private float maxSpawnTime = 10f;
     [SerializeField] private float minAoeSpawnTimeP2 = 0f;
     [SerializeField] private float maxAoeSpawnTimeP2 = 3f;
+
+    [Header("Settings: Distance")]
     [SerializeField] private float minSpawnDistance = 6f;
     [SerializeField] private float maxSpawnDistance = 9f;
+    [SerializeField] private float spawnDistanceY = 0.2f;
+    [SerializeField] private float aoeDistanceY = 0.5150235f;
     
     [Header("Debug: count")]
     public float damageCount;
@@ -193,7 +197,7 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(aoeSpawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, 0.5150235f);
+        spawnPos = new Vector2(gameObject.transform.position.x, aoeDistanceY);
         Instantiate(projectileAOE, spawnPos, Quaternion.identity);
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
@@ -207,7 +211,7 @@ public class Boss : MonoBehaviour
         float spawnTime = Random.Range(minAoeSpawnTimeP2, maxAoeSpawnTimeP2);
         yield return new WaitForSeconds(spawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, 0.5150235f);
+        spawnPos = new Vector2(gameObject.transform.position.x, aoeDistanceY);
         GameObject projGauche = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
@@ -239,12 +243,12 @@ public class Boss : MonoBehaviour
 
         if (player.transform.position.x < transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x - distance, 0.2f);
+            spawnPos = new Vector2(gameObject.transform.position.x - distance, spawnDistanceY);
         }
 
         else if (player.transform.position.x >= transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x + distance, 0.2f);
+            spawnPos = new Vector2(gameObject.transform.position.x + distance, spawnDistanceY);
         }
 
         Instantiate(virtue, spawnPos, Quaternion.identity);

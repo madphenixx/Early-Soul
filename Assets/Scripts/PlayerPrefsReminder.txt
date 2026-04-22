@@ -3,7 +3,7 @@ PlayerPrefs:
 -savedScene
 -progress
 -viewedTutos
--playerID
+-playerUserName
 -bestScore
 -currentScore
 

@@ -20,9 +20,17 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private int attackCount = 0;
     private float attackTime;
 
-    [Header("Settings")]
+    [Header("Settings: Speed")]
     [SerializeField] private float reactivityTime = 0.5f;
+    [SerializeField] private float minMeleeTime = 1f;
+    [SerializeField] private float maxMeleeTime = 4f;
     [SerializeField] private float speed = 200;
+
+    [Header("Settings: Defense")]
+    // [SerializeField] private int dodgeChance = 11;
+    [SerializeField] private int distanceDefense = 5;
+    [SerializeField] private int distanceApproach = 4;
+    [SerializeField] private int maxDistanceApproach = 7;
 
     [Header("Debug: state")]
     [SerializeField] private string currentState;
@@ -35,9 +43,7 @@ public class EnnemiSol : MonoBehaviour
     public bool parryTime = false;
     public bool isAttacker = false;
     [SerializeField] private bool canAttack = true;
-    [SerializeField] private bool facingRight = true;
-
-    
+    [SerializeField] private bool facingRight = true;   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -79,6 +85,17 @@ public class EnnemiSol : MonoBehaviour
         {
             Flip();
         }
+
+        // if (EnnemiManager.playerAttacking == true)
+        // {
+        //     EnnemiManager.playerAttacking = false;
+        //     int randInt = Random.Range(1, dodgeChance);
+        
+        //     if (randInt == 1)
+        //     {
+        //         currentState = stateDefense;
+        //     }
+        // }
     }
 
     void ApproachState()
@@ -89,18 +106,18 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(-distance + 4);
+                Move(-distance + distanceApproach);
             }
 
             else
             {
-                Move(distance - 4);
+                Move(distance - distanceApproach);
             }
 
             moveCount += 1;
         }
         
-        if (distance <= 7)
+        if (distance <= maxDistanceApproach)
         {
             currentState = stateDefense;
         }
@@ -111,6 +128,7 @@ public class EnnemiSol : MonoBehaviour
             {
                 stateRoutine = StartCoroutine(TimeState(stateDefense));
             }
+
             // currentState = stateDefense;
         }
 
@@ -175,7 +193,7 @@ public class EnnemiSol : MonoBehaviour
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
         
-        if (distance > 7 && stateRoutine == null)
+        if (distance > maxDistanceApproach && stateRoutine == null)
         {
             StartCoroutine(TimeState(stateApproche));
         }
@@ -184,12 +202,12 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(5);
+                Move(distanceDefense);
             }
 
             else if (player.transform.position.x >= transform.position.x)
             {
-                Move(-5);
+                Move(-distanceDefense);
             }
 
             moveCount += 1;
@@ -217,7 +235,7 @@ public class EnnemiSol : MonoBehaviour
 
     private IEnumerator AttackWait()
     {
-        attackTime = Random.Range(1, 4);
+        attackTime = Random.Range(minMeleeTime, maxMeleeTime);
         yield return new WaitForSeconds(attackTime);
         canAttack = true;
     }

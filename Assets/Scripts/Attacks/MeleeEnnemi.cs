@@ -8,7 +8,8 @@ public class MeleeEnnemi : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private int baseAttack = 1;
-    [SerializeField] private int distance = 6;
+    [SerializeField] private int distanceTookDamage = 6;
+    [SerializeField] private float meleeDuration = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +21,7 @@ public class MeleeEnnemi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
         {
-            GameManager.pv +=  - baseAttack;
+            GameManager.pv +=  -baseAttack;
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;
@@ -31,7 +32,7 @@ public class MeleeEnnemi : MonoBehaviour
             GameManager.scoreText.text = "Score: "+ GameManager.score.ToString();
 
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-            player.TookDamage(attacker, distance);
+            player.TookDamage(attacker, distanceTookDamage);
 
             Destroy(gameObject);
         }
@@ -39,7 +40,7 @@ public class MeleeEnnemi : MonoBehaviour
 
     private IEnumerator MeleeDestroy()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(meleeDuration);
         Destroy(gameObject);
     }
 }

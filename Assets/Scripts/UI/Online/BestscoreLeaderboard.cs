@@ -36,7 +36,6 @@ public class BestscoreLeaderboard : Initialisation
         ClearPlayerList();
 
         base.Initialize();
-        LoadPlayers(1);
     }
 
     public override void OnEnable()
