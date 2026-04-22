@@ -134,7 +134,7 @@ public class PlayerID : MonoBehaviour
 
         catch (RequestFailedException)
         {
-            errorMenu.OpenError(ErrorMenu.Action.SignIn, "Wrong Username or PassWord", "Retry");
+            errorMenu.OpenError(ErrorMenu.Action.SignIn, "Incorrect Username or Password", "Retry");
             errorMenu.gameObject.SetActive(true);
         }
     }
