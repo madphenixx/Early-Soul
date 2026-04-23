@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c95f681784d18744a8fd22aa6b5e5c93
+guid: c7cdbfd8bfa8c6a4d933b84dbb9d98bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 540
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,133 +97,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decor 1 ciel fond_0
+      name: Decor 1 ciel_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 540
-        width: 540
-        height: 540
+        x: 149
+        y: 880
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 015ec55e7621124439273f9b90f2b627
-      internalID: -1072377999
+      spriteID: e70b572f65d6afd4eabb12fce0d1c049
+      internalID: 2028804680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor 1 ciel fond_1
+      name: Decor 1 ciel_1
       rect:
         serializedVersion: 2
-        x: 540
-        y: 540
-        width: 540
-        height: 540
+        x: 149
+        y: 680
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 084b200e3917ce54b85e44d09fa7165d
-      internalID: 806793525
+      spriteID: e187da781d7ec8a4799260c7d7d06fe5
+      internalID: -388096207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor 1 ciel fond_2
+      name: Decor 1 ciel_2
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 540
-        width: 540
-        height: 540
+        x: 149
+        y: 480
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a05cf72fe3867ac429ab8a400242c828
-      internalID: -829579354
+      spriteID: 82a0acab737f5a846ad0e388f59331d4
+      internalID: -1974995762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor 1 ciel fond_3
+      name: Decor 1 ciel_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 540
-        height: 540
+        x: 149
+        y: 280
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42258227477619a4d95139ca15c9ef10
-      internalID: -1283571640
+      spriteID: 1dd69e3e0eaddc4489ce0a5466219675
+      internalID: 1116498987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decor 1 ciel fond_4
+      name: Decor 1 ciel_4
       rect:
         serializedVersion: 2
-        x: 540
-        y: 0
-        width: 540
-        height: 540
+        x: 149
+        y: 80
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875314e87b921b4489c960457d6c6b57
-      internalID: 868298984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decor 1 ciel fond_5
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 540
-        height: 540
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 021cee79a7d7533498efc2d9b6f58818
-      internalID: -1006332876
+      spriteID: 76e77fbf74f6fae4e8846dad5a2b0a86
+      internalID: -66112257
       vertices: []
       indices: 
       edges: []
@@ -232,7 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1720a8400e326d94986a25497effeb66
+    spriteID: 0ab78bd239aa84548b2fb045805f0e1d
     internalID: 0
     vertices: []
     indices: 
@@ -240,16 +218,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":540.0,"y":540.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Decor 1 ciel fond_0: -1072377999
-      Decor 1 ciel fond_1: 806793525
-      Decor 1 ciel fond_2: -829579354
-      Decor 1 ciel fond_3: -1283571640
-      Decor 1 ciel fond_4: 868298984
-      Decor 1 ciel fond_5: -1006332876
+      Decor 1 ciel_0: 2028804680
+      Decor 1 ciel_1: -388096207
+      Decor 1 ciel_2: -1974995762
+      Decor 1 ciel_3: 1116498987
+      Decor 1 ciel_4: -66112257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
