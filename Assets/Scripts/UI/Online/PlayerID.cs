@@ -68,7 +68,7 @@ public class PlayerID : MonoBehaviour
     {
         try
         {
-           if (UnityServices.State != ServicesInitializationState.Initialized)
+            if (UnityServices.State != ServicesInitializationState.Initialized)
             {
                 var options = new InitializationOptions();
                 options.SetProfile("default_profile");
