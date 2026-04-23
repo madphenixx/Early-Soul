@@ -4,7 +4,7 @@ PlayerPrefs:
 -progress
 -viewedTutos
 -playerUserName
--bestScore
+-PlayerPrefs.GetInt("bestScore" + scene.ToString())
 -currentScore
 
 Leaderboards:
