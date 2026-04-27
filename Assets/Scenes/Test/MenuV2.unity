@@ -292,10 +292,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 570602871}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -375,6 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 570602870}
+  - component: {fileID: 570602871}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -398,6 +399,25 @@ Transform:
   - {fileID: 1780479879}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570602871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570602869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483250196aa8b9249972c5c1ba98e15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  volumeSlider: {fileID: 0}
+  scene1: {fileID: 0}
+  scene2: {fileID: 0}
+  scene3: {fileID: 0}
+  continueButton: {fileID: 0}
+  nameText: {fileID: 0}
+  panelID: {fileID: 0}
 --- !u!1 &744212940
 GameObject:
   m_ObjectHideFlags: 0
