@@ -25,18 +25,18 @@ public class CameraGround : MonoBehaviour
         {
             if (isFollowing == true)
             {
-                Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 0.47f, - 10);
+                Vector3 desiredPosition = new Vector3(player.transform.position.x + 5.1f, player.transform.position.y + 0.81f, - 10);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
                 transform.position = smoothedPosition;
 
-                gameObject.GetComponent<Camera>().orthographicSize = 5;
+                gameObject.GetComponent<Camera>().orthographicSize = 6;
             }
 
             if (isZooming == true)
             {
                 isFollowing = false;
 
-                Vector3 desiredPosition = new Vector3(-58.58f, 2.29f, -3.7f);
+                Vector3 desiredPosition = new Vector3(15, 2.730344f, 2.749996f);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * 0.4f);
                 transform.position = smoothedPosition;
 

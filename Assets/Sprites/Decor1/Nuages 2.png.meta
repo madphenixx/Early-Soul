@@ -105,7 +105,7 @@ TextureImporter:
         width: 790
         height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -127,7 +127,7 @@ TextureImporter:
         width: 738
         height: 430
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,6 +136,28 @@ TextureImporter:
       bones: []
       spriteID: 7e3afb43f6b35ed449e900fbf133d80e
       internalID: 276978575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nuages 2_2
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 664
+        width: 325
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d3c906f65aadc449604d7090e6beb9
+      internalID: 263467424
       vertices: []
       indices: 
       edges: []
@@ -156,6 +178,7 @@ TextureImporter:
     nameFileIdTable:
       Nuages 2_0: -542374440
       Nuages 2_1: 276978575
+      Nuages 2_2: 263467424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
