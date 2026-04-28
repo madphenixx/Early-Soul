@@ -52,13 +52,13 @@ public class ReaperMovements : MonoBehaviour
         if (!ctx.canceled)
         {
             direction = ctx.ReadValue<float>();
-            playerAnimator.SetTrigger("isWalking");
+            // playerAnimator.SetTrigger("isWalking");
         }
 
         else
         {
             direction = 0;
-            playerAnimator.SetTrigger("stopWalking");
+            // playerAnimator.SetTrigger("stopWalking");
         }
     }
 

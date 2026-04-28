@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
             rM.direction = 0;
         }
         
-        player.GetComponent<SpriteRenderer>().enabled = false;
+        // player.GetComponent<SpriteRenderer>().enabled = false;
         GameManager.movementAllowed = false;
     }
 
@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
-        player.GetComponent<SpriteRenderer>().enabled = true;
+        // player.GetComponent<SpriteRenderer>().enabled = true;
         //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         GameManager.movementAllowed = true;
     }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
   m_Name: Lucy
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
+  avatar: {fileID: 1169507812, guid: 58ccf656afab3bf489478f9fca42e812, type: 3}
   nom: Lucy
-  avatar: {fileID: 21300000, guid: b1edce220b202b04d94ccaa49ca4f173, type: 3}
