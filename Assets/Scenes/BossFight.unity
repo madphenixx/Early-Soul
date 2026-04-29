@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45882353, g: 0.09411765, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2192,6 +2192,8 @@ MonoBehaviour:
   maxAoeSpawnTimeP2: 3
   minSpawnDistance: 6
   maxSpawnDistance: 9
+  spawnDistanceY: 0.2
+  aoeDistanceY: 0.5150235
   damageCount: 0
   defenseCount: 0
   currentState: 

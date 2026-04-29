@@ -244,17 +244,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
---- !u!114 &13502791 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4920769418502741232, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-  m_PrefabInstance: {fileID: 13502790}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &13502792 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7208014467472537496, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
@@ -332,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 2025297163}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &194802285
@@ -684,6 +673,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraGround
   player: {fileID: 0}
   smoothSpeed: 0.15
+  isFollowing: 1
+  isZooming: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +701,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -762,7 +753,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -1901,11 +1892,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7770772567039821547, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
   m_PrefabInstance: {fileID: 2025297161}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2025297163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5599351889863925086, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
-  m_PrefabInstance: {fileID: 2025297161}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &198638974225130701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2075,7 +2061,7 @@ PrefabInstance:
     - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: volumeSlider
       value: 
-      objectReference: {fileID: 13502791}
+      objectReference: {fileID: 0}
     - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: pauseMenuObject
       value: 
