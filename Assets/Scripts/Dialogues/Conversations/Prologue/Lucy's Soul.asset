@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  isRight: 010001000100010000010000
   dialogues:
   - Who are you ?
   - I am the Grim Reaper.

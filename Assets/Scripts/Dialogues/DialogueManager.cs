@@ -9,8 +9,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private InputActionReference interactRef;
     
     [Header("UI Elements")]
-    [SerializeField] private Text charaName;
-    [SerializeField] private Image charaAvatar;
+    [SerializeField] private Text charaNameLeft;
+    [SerializeField] private Image charaNameBulleLeft;
+    [SerializeField] private Image charaAvatarLeft;
+    [SerializeField] private Text charaNameRight;
+    [SerializeField] private Image charaNameBulleRight;
+    [SerializeField] private Image charaAvatarRight;
     [SerializeField] private Text dialogueText;
     [SerializeField] private GameObject dialogueCanvas;
     private Sprite currentAvatar;
@@ -94,15 +98,78 @@ public class DialogueManager : MonoBehaviour
     private void PlayDialogue()
     {
         SetActorInfo();
-        charaName.text = currentSpeaker;
-        charaAvatar.sprite = currentAvatar;
+        if (currentConversation.isRight[stepNum] == false)
+        {
+            charaNameLeft.text = currentSpeaker;
+            charaAvatarLeft.sprite = currentAvatar;
+
+            PolishActor();
+        }
+
+        else if (currentConversation.isRight[stepNum] == true)
+        {
+            charaNameRight.text = currentSpeaker;
+            charaAvatarRight.sprite = currentAvatar;
+
+            PolishActor();
+        }
+        
         if (typeWriterRoutine != null)
         {
             StopCoroutine(typeWriterRoutine);
         }
+
         typeWriterRoutine = StartCoroutine(typeWriterEffect(dialogueText.text = currentConversation.dialogues[stepNum]));
         dialogueCanvas.SetActive(true);
         stepNum += 1;
+    }
+
+    private void PolishActor()
+    {
+        bool uniqueCharacter = true;
+        CharaSO characterRef = currentConversation.characters[0];
+
+        for (int i = 0; i < currentConversation.characters.Length; i++)
+        {
+            if (currentConversation.characters[i] != characterRef)
+            {
+                uniqueCharacter = false;
+            }
+        }
+
+        if (uniqueCharacter == true)
+        {
+            charaNameRight.gameObject.SetActive(false);
+            charaAvatarRight.gameObject.SetActive(false);
+            charaNameBulleRight.gameObject.SetActive(false);
+        }
+
+        else
+        {
+            charaNameRight.gameObject.SetActive(true);
+            charaAvatarRight.gameObject.SetActive(true);
+            charaNameBulleRight.gameObject.SetActive(true);
+
+            bool currentIsRight = currentConversation.isRight[stepNum];
+
+            if (currentIsRight == false)
+            {
+                charaAvatarLeft.color = Color.white;
+                charaNameBulleLeft.color = Color.white;
+
+                charaAvatarRight.color = Color.slateGray;
+                charaNameBulleRight.color = Color.slateGray;
+            }
+
+            if (currentIsRight == true)
+            {
+                charaAvatarLeft.color = Color.slateGray;
+                charaNameBulleLeft.color = Color.slateGray;
+
+                charaAvatarRight.color = Color.white;
+                charaNameBulleRight.color = Color.white;
+            }
+        }
     }
 
     private void SetActorInfo()
