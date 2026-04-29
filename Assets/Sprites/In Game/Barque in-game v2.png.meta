@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c698120aa226a1b4e8719550a246a362
+guid: 552ba851184e7774fb78a4d12a97cfb8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 307, y: 478, z: 671, w: 328}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Barque_0
+      name: Barque in-game v2_0
       rect:
         serializedVersion: 2
-        x: 309
-        y: 475
-        width: 937
-        height: 272
+        x: 498
+        y: 324
+        width: 791
+        height: 583
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99472197893b4814ea557aa89c52c864
-      internalID: 1768931682
+      spriteID: 50e8b0247c6945a41ab1deb227602978
+      internalID: -1698250799
       vertices: []
       indices: 
       edges: []
@@ -122,8 +122,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 6b1365ae444924545a7aac18d32dc36c
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Barque_0: 1768931682
+      Barque in-game v2_0: -1698250799
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

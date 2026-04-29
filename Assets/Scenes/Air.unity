@@ -1630,7 +1630,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1653,7 +1653,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -1676,7 +1676,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -1938,7 +1938,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.03
+      scalar: 0.01
       minScalar: 0.001
       maxCurve:
         serializedVersion: 2
@@ -6416,7 +6416,7 @@ Transform:
   m_GameObject: {fileID: 472945175}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.9446602, y: -24.12964, z: 1.9999994}
+  m_LocalPosition: {x: -0.9446602, y: -24.12964, z: 1.72}
   m_LocalScale: {x: 136.9, y: 120.08773, z: 129.69473}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8464,7 +8464,7 @@ SpriteRenderer:
   m_Size: {x: 19.199999, y: 10.8046875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1037375447
 GameObject:
@@ -10089,7 +10089,7 @@ SpriteRenderer:
   m_Size: {x: 19.199999, y: 10.8046875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1159985143
 Transform:
@@ -12593,7 +12593,7 @@ SpriteRenderer:
   m_Size: {x: 19.199999, y: 10.8046875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1635018519
 Transform:
@@ -15340,8 +15340,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -18759517, guid: e65655580a9f63a4db05ca8806a23a88, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -1698250799, guid: 552ba851184e7774fb78a4d12a97cfb8, type: 3}
+  m_Color: {r: 0.8301887, g: 0.77430487, b: 0.70096123, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

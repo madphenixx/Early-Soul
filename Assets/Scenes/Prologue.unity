@@ -303,7 +303,6 @@ Transform:
   - {fileID: 302737491}
   - {fileID: 328004526}
   - {fileID: 560972677}
-  - {fileID: 1249281405}
   - {fileID: 192924791}
   - {fileID: 307113962}
   - {fileID: 828109831}
@@ -313,6 +312,7 @@ Transform:
   - {fileID: 1925587403}
   - {fileID: 1836172359}
   - {fileID: 1360865294}
+  - {fileID: 1249281405}
   - {fileID: 1108232610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14607,9 +14607,6 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 742
     m_Data: {fileID: 2043175366, guid: b29dca77c162f6d4ea66e32704915d4f, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
-    m_Data: {fileID: 1351437562}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 1209
@@ -15107,7 +15104,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15130,7 +15127,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -15153,7 +15150,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -15351,7 +15348,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.8679245, g: 0.76557493, b: 0.76557493, a: 0.83137256}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -15415,8 +15412,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.2
+      scalar: 0.17
+      minScalar: 0.12
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15998,7 +15995,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.76
+      scalar: 2.01
       minScalar: 10
       maxCurve:
         serializedVersion: 2
