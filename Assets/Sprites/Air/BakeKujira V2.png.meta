@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eebf1ddc04a90a04499cc86614ab95a5
+guid: ee36e8cea89d0354595889e6df1cc18a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BakeKujira_0
+      name: BakeKujira V2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3240
+        y: 3243
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc76ffd683637648ae10e57f6ce4e7b
-      internalID: 471789359
+      spriteID: 61200af6faf507e448550734888cbbb0
+      internalID: -1697573203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_1
+      name: BakeKujira V2_1
       rect:
         serializedVersion: 2
         x: 1920
-        y: 3240
+        y: 3243
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 642ed5d61473dac49b8146db06090324
-      internalID: 1997815314
+      spriteID: 295c7495f8c06614db07eda90395f5fe
+      internalID: 239548124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_2
+      name: BakeKujira V2_2
       rect:
         serializedVersion: 2
         x: 3840
-        y: 3240
+        y: 3243
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3f562fe45912924190885764a68df0e
-      internalID: -1098355706
+      spriteID: a58050274d7a3ef4988862d9f0315cb5
+      internalID: 1106899412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_3
+      name: BakeKujira V2_3
       rect:
         serializedVersion: 2
         x: 5760
-        y: 3240
+        y: 3243
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4b0ee742ef942a478aadc7b669b3ee6
-      internalID: -1963614911
+      spriteID: 70d4c883d8272284bb673878f78260eb
+      internalID: -915513506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_4
+      name: BakeKujira V2_4
       rect:
         serializedVersion: 2
         x: 7680
-        y: 3240
+        y: 3243
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be3016d53220ea34bade4340995cc84c
-      internalID: -1609454062
+      spriteID: bb1460175822e0b4fad8b05ab6ddcef1
+      internalID: 1827908114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_5
+      name: BakeKujira V2_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
+        y: 2162
         width: 1920
-        height: 1067
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae3cabf272e08b64e96c41434e8ce071
-      internalID: -1730166025
+      spriteID: 4f9731f324c8ed548b08f407aa16deef
+      internalID: -1771740172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_6
+      name: BakeKujira V2_6
       rect:
         serializedVersion: 2
         x: 1920
         y: 2162
         width: 1920
-        height: 1063
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d46c776853f00594691f88cf3704b19b
-      internalID: -1011775871
+      spriteID: a1f60b7776da866478a789f3426b7e7b
+      internalID: 1069349402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_7
+      name: BakeKujira V2_7
       rect:
         serializedVersion: 2
         x: 3840
-        y: 2160
+        y: 2162
         width: 1920
-        height: 1064
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,130 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b4bea4daa77fb94ca784c0fcbeb9241
-      internalID: -505352294
+      spriteID: 17322cb1aa5f6954b92dafa82a6ec3f9
+      internalID: -356445870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_8
-      rect:
-        serializedVersion: 2
-        x: 5763
-        y: 2166
-        width: 1920
-        height: 1057
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a617d120ff271d04691d5a14ccb14116
-      internalID: 1133308527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BakeKujira_9
-      rect:
-        serializedVersion: 2
-        x: 7680
-        y: 2160
-        width: 1920
-        height: 1057
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35655051717e9c64cac663025be324be
-      internalID: -181606231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BakeKujira_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1080
-        width: 1920
-        height: 1066
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b062878518ddac441b6678548fb79efc
-      internalID: -1371637085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BakeKujira_11
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 1080
-        width: 1920
-        height: 1066
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12737ac831ef82e49bf9ee10897d2786
-      internalID: -1052295669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BakeKujira_12
-      rect:
-        serializedVersion: 2
-        x: 3842
-        y: 1080
-        width: 1920
-        height: 1066
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62fa2d4cc942cc04096830ad79e30dc9
-      internalID: -221955067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BakeKujira_13
+      name: BakeKujira V2_8
       rect:
         serializedVersion: 2
         x: 5760
-        y: 1080
+        y: 2162
         width: 1920
-        height: 1066
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +288,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b33dba464e7ae48872e28b34d74ca9
-      internalID: 746344777
+      spriteID: fdaae4178e3272f43aa25d5dda2e31bf
+      internalID: 844765313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_14
+      name: BakeKujira V2_9
       rect:
         serializedVersion: 2
         x: 7680
-        y: 1080
+        y: 2162
         width: 1920
-        height: 1061
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,20 +310,130 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 485bdbd45e05c514db195c5c4279640c
-      internalID: -1990980732
+      spriteID: b002b18fc4bf565408262bc5c3fdabb2
+      internalID: 1248342407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_15
+      name: BakeKujira V2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1081
+        width: 1920
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee0cd285fb1abf4eb6d67abfe069d2f
+      internalID: 1204547594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeKujira V2_11
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1081
+        width: 1920
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f82a9b0e9775f44bc750d32fdd740c
+      internalID: 880950009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeKujira V2_12
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1081
+        width: 1920
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a2938501aa262449ac8152a818ff49
+      internalID: -920990003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeKujira V2_13
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1081
+        width: 1920
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58534ef8b84df4479b57e80490d2c20
+      internalID: 1462712101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeKujira V2_14
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 1081
+        width: 1920
+        height: 1069
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affa7bed020714a43bb2369c76287e60
+      internalID: 1894120930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BakeKujira V2_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,20 +442,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5726baa5c8694c94e925da9172733cde
-      internalID: -1498328900
+      spriteID: 72d009a34fb9d3e48ad4c948f7506831
+      internalID: -472523120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_16
+      name: BakeKujira V2_16
       rect:
         serializedVersion: 2
         x: 1920
         y: 0
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,20 +464,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a667aaba9109e034eb8ec89603241963
-      internalID: 87581629
+      spriteID: 19a4fb03426b1724c89882f89c71f1a1
+      internalID: -1765777700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_17
+      name: BakeKujira V2_17
       rect:
         serializedVersion: 2
         x: 3840
         y: 0
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,20 +486,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67e17afaaee87314e9cdb71cee61ba71
-      internalID: 399624508
+      spriteID: eff9d12f52dbf0f4ba7785bbd0335372
+      internalID: -2074686639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_18
+      name: BakeKujira V2_18
       rect:
         serializedVersion: 2
         x: 5760
         y: 0
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,20 +508,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3a65677fa7e30140bf6dbb1468380a8
-      internalID: -2033930257
+      spriteID: 2f8f92f54d7331d4bb619752e82702ce
+      internalID: -1564559721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BakeKujira_19
+      name: BakeKujira V2_19
       rect:
         serializedVersion: 2
         x: 7680
         y: 0
         width: 1920
-        height: 1080
+        height: 1069
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75224a808542db841a7604131a6ed7ab
-      internalID: 604286751
+      spriteID: f08a8624e3d034146881665443ee2a7d
+      internalID: -1876081561
       vertices: []
       indices: 
       edges: []
@@ -540,7 +540,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9006ef9c6af40e348b10fc7fd21be5a5
+    spriteID: f2f81ade41aa1a04886ee5277d21b95e
     internalID: 0
     vertices: []
     indices: 
@@ -550,28 +550,28 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1920.0,"y":1080.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":4.0},"gridSpriteSize":{"x":1920.0,"y":1069.0},"gridSpriteOffset":{"x":0.0,"y":8.0},"gridSpritePadding":{"x":0.0,"y":12.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BakeKujira_0: 471789359
-      BakeKujira_1: 1997815314
-      BakeKujira_10: -1371637085
-      BakeKujira_11: -1052295669
-      BakeKujira_12: -221955067
-      BakeKujira_13: 746344777
-      BakeKujira_14: -1990980732
-      BakeKujira_15: -1498328900
-      BakeKujira_16: 87581629
-      BakeKujira_17: 399624508
-      BakeKujira_18: -2033930257
-      BakeKujira_19: 604286751
-      BakeKujira_2: -1098355706
-      BakeKujira_3: -1963614911
-      BakeKujira_4: -1609454062
-      BakeKujira_5: -1730166025
-      BakeKujira_6: -1011775871
-      BakeKujira_7: -505352294
-      BakeKujira_8: 1133308527
-      BakeKujira_9: -181606231
+      BakeKujira V2_0: -1697573203
+      BakeKujira V2_1: 239548124
+      BakeKujira V2_10: 1204547594
+      BakeKujira V2_11: 880950009
+      BakeKujira V2_12: -920990003
+      BakeKujira V2_13: 1462712101
+      BakeKujira V2_14: 1894120930
+      BakeKujira V2_15: -472523120
+      BakeKujira V2_16: -1765777700
+      BakeKujira V2_17: -2074686639
+      BakeKujira V2_18: -1564559721
+      BakeKujira V2_19: -1876081561
+      BakeKujira V2_2: 1106899412
+      BakeKujira V2_3: -915513506
+      BakeKujira V2_4: 1827908114
+      BakeKujira V2_5: -1771740172
+      BakeKujira V2_6: 1069349402
+      BakeKujira V2_7: -356445870
+      BakeKujira V2_8: 844765313
+      BakeKujira V2_9: 1248342407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
