@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d4ef81e4696fb04d9aabb5988a47b64
+guid: 1bc2961a4eaa08a4395164e0e743605f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,20 +100,20 @@ TextureImporter:
       name: BackOver_0
       rect:
         serializedVersion: 2
-        x: 837
-        y: 490
+        x: 1376
+        y: 554
         width: 244
         height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4027d796350d31c4fa01cc767ff4b4c2
-      internalID: 1026076147
+      spriteID: d31ed1f45f0977648bbeebfd08ff2abd
+      internalID: 425887604
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 015ac72f452aee342b55a9bda753a423
+    spriteID: fff7dab9054ff174d8b7c165ebc98ac1
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackOver_0: 1026076147
+      BackOver_0: 425887604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

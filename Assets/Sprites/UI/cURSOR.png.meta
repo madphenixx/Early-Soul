@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d846ddbfcd0ec949b44c1d06f2bc6d5
+guid: 254b68e2c7f086c409e8e6675807b209
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackNorm_0
+      name: cURSOR_0
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 554
-        width: 244
-        height: 136
+        x: 911
+        y: 570
+        width: 102
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca4320dece75b44faae1893dcb6ea48
-      internalID: -491887607
+      spriteID: 18f9dad53bc81824d8a3b64d3169e5a0
+      internalID: -1821907012
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49b7c420652a9c347a11f6ddc9d48a0c
+    spriteID: 6385dcee8fd450c48b33e13ebcf0d584
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackNorm_0: -491887607
+      cURSOR_0: -1821907012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de219d8a2975a4543ba1203e53ea8d54
+guid: 9f40d5d260ee87749b1a99e43624f52c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,20 +100,20 @@ TextureImporter:
       name: XOver_0
       rect:
         serializedVersion: 2
-        x: 771
-        y: 389
-        width: 218
+        x: 920
+        y: 414
+        width: 211
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56b6609ab9ccf354db4ac68dcb50cc73
-      internalID: 791416639
+      spriteID: 0b7a6b4d1ad4f964c82a316d2d172f9d
+      internalID: -859480433
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 21a665ece34800e49af7b364f4b5cb2b
+    spriteID: 7d9cc129591b7374f8ebb20bfe8a10f4
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      XOver_0: 791416639
+      XOver_0: -859480433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

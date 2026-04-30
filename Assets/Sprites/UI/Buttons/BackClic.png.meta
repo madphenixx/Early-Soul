@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f29ebb29a1555246b39837f3f3331c4
+guid: 1b1385e2c8f482a4eb07f85c7fd302a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,8 +100,8 @@ TextureImporter:
       name: BackClic_0
       rect:
         serializedVersion: 2
-        x: 837
-        y: 490
+        x: 1376
+        y: 554
         width: 244
         height: 136
       alignment: 0
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e912d900a3fd0de40ac39be4bdd3b7f4
-      internalID: -155963033
+      spriteID: 676291bca82e88c4ebc422573e5ed60f
+      internalID: -655208079
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 365688a4e14d25246a498ea07430e2ca
+    spriteID: a3433a6936e0aaa498660157d5b025f4
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackClic_0: -155963033
+      BackClic_0: -655208079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

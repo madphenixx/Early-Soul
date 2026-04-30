@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d846ddbfcd0ec949b44c1d06f2bc6d5
+guid: 33a248ce5c11b124db25da185897c577
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackNorm_0
+      name: ThroneOff_0
       rect:
         serializedVersion: 2
-        x: 1376
-        y: 554
-        width: 244
-        height: 136
+        x: 93
+        y: 335
+        width: 501
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca4320dece75b44faae1893dcb6ea48
-      internalID: -491887607
+      spriteID: 0a93c8592d3543649bb0de46e09b0787
+      internalID: -96346151
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49b7c420652a9c347a11f6ddc9d48a0c
+    spriteID: 4744f0ec87fc0d2409582beaf7435055
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackNorm_0: -491887607
+      ThroneOff_0: -96346151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
