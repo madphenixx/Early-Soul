@@ -9,18 +9,17 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private InputActionReference interactRef;
     
     [Header("UI Elements")]
-    [SerializeField] private Text charaNameLeft;
-    [SerializeField] private Image charaNameBulleLeft;
+    [SerializeField] private Text charaName;
     [SerializeField] private Image charaAvatarLeft;
-    [SerializeField] private Text charaNameRight;
-    [SerializeField] private Image charaNameBulleRight;
     [SerializeField] private Image charaAvatarRight;
     [SerializeField] private Text dialogueText;
+    [SerializeField] private Text dialogueTextSolo;
+    [SerializeField] private GameObject dialogueBulle;
+    [SerializeField] private GameObject dialogueBulleSolo;
     [SerializeField] private GameObject dialogueCanvas;
     private Sprite currentAvatar;
 
-    [Header("Debug: detection")]
-    [SerializeField] private GameObject player;
+    private GameObject player;
 
     [Header("All characters")]
     [SerializeField] private CharaSO[] charaSO;
@@ -35,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     public static bool dialogueActive;
     private bool dialogueNext;
     private bool canContinueText = true;
+    private bool uniqueCharacter = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
         SetActorInfo();
         if (currentConversation.isRight[stepNum] == false)
         {
-            charaNameLeft.text = currentSpeaker;
+            charaName.text = currentSpeaker;
             charaAvatarLeft.sprite = currentAvatar;
 
             PolishActor();
@@ -108,7 +108,7 @@ public class DialogueManager : MonoBehaviour
 
         else if (currentConversation.isRight[stepNum] == true)
         {
-            charaNameRight.text = currentSpeaker;
+            charaName.text = currentSpeaker;
             charaAvatarRight.sprite = currentAvatar;
 
             PolishActor();
@@ -119,14 +119,19 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(typeWriterRoutine);
         }
 
-        typeWriterRoutine = StartCoroutine(typeWriterEffect(dialogueText.text = currentConversation.dialogues[stepNum]));
+        if (uniqueCharacter == false)
+        typeWriterRoutine = StartCoroutine(typeWriterEffect(dialogueText.text = currentConversation.dialogues[stepNum], dialogueText));
+
+        else if (uniqueCharacter == true)
+        typeWriterRoutine = StartCoroutine(typeWriterEffect(dialogueTextSolo.text = currentConversation.dialogues[stepNum], dialogueTextSolo));
+
         dialogueCanvas.SetActive(true);
         stepNum += 1;
     }
 
     private void PolishActor()
     {
-        bool uniqueCharacter = true;
+        uniqueCharacter = true;
         CharaSO characterRef = currentConversation.characters[0];
 
         for (int i = 0; i < currentConversation.characters.Length; i++)
@@ -139,35 +144,33 @@ public class DialogueManager : MonoBehaviour
 
         if (uniqueCharacter == true)
         {
-            charaNameRight.gameObject.SetActive(false);
             charaAvatarRight.gameObject.SetActive(false);
-            charaNameBulleRight.gameObject.SetActive(false);
+            dialogueBulle.SetActive(false);
+            dialogueBulleSolo.SetActive(true);
+            dialogueText.gameObject.SetActive(false);
+            dialogueTextSolo.gameObject.SetActive(true);
         }
 
         else
         {
-            charaNameRight.gameObject.SetActive(true);
             charaAvatarRight.gameObject.SetActive(true);
-            charaNameBulleRight.gameObject.SetActive(true);
+            dialogueBulle.SetActive(true);
+            dialogueBulleSolo.SetActive(false);
+            dialogueText.gameObject.SetActive(true);
+            dialogueTextSolo.gameObject.SetActive(false);
 
             bool currentIsRight = currentConversation.isRight[stepNum];
 
             if (currentIsRight == false)
             {
                 charaAvatarLeft.color = Color.white;
-                charaNameBulleLeft.color = Color.white;
-
                 charaAvatarRight.color = Color.slateGray;
-                charaNameBulleRight.color = Color.slateGray;
             }
 
             if (currentIsRight == true)
             {
                 charaAvatarLeft.color = Color.slateGray;
-                charaNameBulleLeft.color = Color.slateGray;
-
                 charaAvatarRight.color = Color.white;
-                charaNameBulleRight.color = Color.white;
             }
         }
     }
@@ -194,9 +197,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator typeWriterEffect(string line)
+    private IEnumerator typeWriterEffect(string line, Text diaText)
     {
-        dialogueText.text="";
+        diaText.text="";
         canContinueText = false;
         yield return new WaitForSeconds(0.5f);
 
@@ -204,12 +207,12 @@ public class DialogueManager : MonoBehaviour
         {
             if (dialogueNext == true)
             {
-                dialogueText.text = line;
+                diaText.text = line;
                 dialogueNext = false;
                 break;
             }
             
-            dialogueText.text += letter;
+            diaText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 

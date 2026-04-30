@@ -316,6 +316,17 @@ Transform:
   - {fileID: 1108232610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164871219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2064992741291258685, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 839087496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
 --- !u!1 &192924789
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +497,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203717630}
   m_CullTransparentMesh: 1
+--- !u!1 &209214185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3429700179282809397, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 839087496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284810703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,17 +1815,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1477245329777737504, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
   m_PrefabInstance: {fileID: 839087496}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &839087498 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 584407689567337467, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
-  m_PrefabInstance: {fileID: 839087496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
 --- !u!114 &839087499 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7535062547367205507, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
@@ -14611,6 +14616,9 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 742
     m_Data: {fileID: 2043175366, guid: b29dca77c162f6d4ea66e32704915d4f, type: 3}
+  - serializedVersion: 2
+    m_RefCount: 0
+    m_Data: {fileID: 1351437562}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 1209
@@ -20186,6 +20194,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1360157005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1118660994456968640, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 839087496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1360865293
 GameObject:
   m_ObjectHideFlags: 0
@@ -20985,17 +20998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
---- !u!114 &1491480844 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3420927313932327540, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
-  m_PrefabInstance: {fileID: 839087496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &1493200759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21789,7 +21791,7 @@ PrefabInstance:
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaName
       value: 
-      objectReference: {fileID: 839087498}
+      objectReference: {fileID: 1489387465}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaAvatar
       value: 
@@ -21801,7 +21803,11 @@ PrefabInstance:
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaNameLeft
       value: 
-      objectReference: {fileID: 839087498}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueBulle
+      value: 
+      objectReference: {fileID: 1360157005}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaNameRight
       value: 
@@ -21819,9 +21825,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1421714106}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueTextSolo
+      value: 
+      objectReference: {fileID: 164871219}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueBulleSolo
+      value: 
+      objectReference: {fileID: 209214185}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaNameBulleLeft
       value: 
-      objectReference: {fileID: 1491480844}
+      objectReference: {fileID: 0}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaNameBulleRight
       value: 

@@ -691,17 +691,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1477245329777737504, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
   m_PrefabInstance: {fileID: 924349464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &924349466 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 584407689567337467, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+--- !u!1 &924349466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3429700179282809397, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
   m_PrefabInstance: {fileID: 924349464}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
 --- !u!114 &924349467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7535062547367205507, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
@@ -724,6 +718,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &924349469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1118660994456968640, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 924349464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924349470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2064992741291258685, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 924349464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+--- !u!114 &924349471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1112627163065965555, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 924349464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &924349472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3486586656735060493, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
+  m_PrefabInstance: {fileID: 924349464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
 --- !u!1001 &1038872974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1603,7 +1635,7 @@ PrefabInstance:
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaName
       value: 
-      objectReference: {fileID: 924349466}
+      objectReference: {fileID: 924349472}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaAvatar
       value: 
@@ -1613,9 +1645,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 924349467}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueBulle
+      value: 
+      objectReference: {fileID: 924349469}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: dialogueCanvas
       value: 
       objectReference: {fileID: 924349465}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: charaAvatarLeft
+      value: 
+      objectReference: {fileID: 924349468}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: charaAvatarRight
+      value: 
+      objectReference: {fileID: 924349471}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueTextSolo
+      value: 
+      objectReference: {fileID: 924349470}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: dialogueBulleSolo
+      value: 
+      objectReference: {fileID: 924349466}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
