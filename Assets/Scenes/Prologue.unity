@@ -15081,7 +15081,7 @@ Transform:
   m_GameObject: {fileID: 1249281404}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -45.992775, y: -3.44, z: 50.30337}
+  m_LocalPosition: {x: -45.992775, y: -3.44, z: 42.7}
   m_LocalScale: {x: 3.28, y: 2.8771927, z: 3.1073687}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -15357,7 +15357,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8679245, g: 0.76557493, b: 0.76557493, a: 0.83137256}
+      maxColor: {r: 0.8679245, g: 0.76557493, b: 0.76557493, a: 0.5529412}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -20600,14 +20600,6 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 429326915}
-    - target: {fileID: 965365436925014573, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 965365436925014573, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 1915264669684697494, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.80244
@@ -20648,26 +20640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2092829426913851347, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092829426913851347, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154077339875841715, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154077339875841715, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154077339875841715, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7208014467472537496, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
@@ -20677,21 +20649,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7877763501929369074, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1425780465}
-    - target: {fileID: 7877763501929369074, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1911623661}
-    - target: {fileID: 7877763501929369074, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7877763501929369074, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22897,11 +22857,11 @@ SceneRoots:
   - {fileID: 1898436634}
   - {fileID: 1527050317}
   - {fileID: 1194664454}
+  - {fileID: 1645668990}
+  - {fileID: 1481463534}
   - {fileID: 66868115}
   - {fileID: 1399741227}
   - {fileID: 528341209}
   - {fileID: 942352127}
-  - {fileID: 1645668990}
-  - {fileID: 1481463534}
   - {fileID: 113006223}
   - {fileID: 3435133965514184714}
