@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
   m_Name: Archangel
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
+  avatar: {fileID: 438322662, guid: c0604dbfda9a3da40af0a0698b754d29, type: 3}
   nom: Archangel
-  avatar: {fileID: 21300000, guid: 5d53e149a7ad88441a3eec61ba19d6b9, type: 3}

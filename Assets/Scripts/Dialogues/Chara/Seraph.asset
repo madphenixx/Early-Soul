@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
   m_Name: Seraph
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
+  avatar: {fileID: -438188945, guid: f879585431cd4834a9d817df01249460, type: 3}
   nom: Seraph
-  avatar: {fileID: 21300000, guid: f58a3b0c5a07e2c4f9a130911ab625bb, type: 3}

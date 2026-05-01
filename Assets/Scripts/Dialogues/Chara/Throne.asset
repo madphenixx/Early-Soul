@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
   m_Name: Throne
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
+  avatar: {fileID: -298572215, guid: c0604dbfda9a3da40af0a0698b754d29, type: 3}
   nom: Throne
-  avatar: {fileID: 21300000, guid: 862704d5bbe8a8249980fd06b93b39cd, type: 3}

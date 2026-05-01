@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f52fc6451beba34482f85ceb59d58a9
+guid: 8aef0a10af4f08c429e7eac4d7ab61e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,12 +95,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Tr\xF4ne in-game V2_0"
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 524
+        width: 2164
+        height: 1426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28976e18758a0c4aa8c9a42554577a3
+      internalID: 1076245011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e365b15aa76621445a06486adbe925cd
     internalID: 0
     vertices: []
     indices: 
@@ -109,7 +131,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Tr\xF4ne in-game V2_0": 1076245011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -100,20 +100,20 @@ TextureImporter:
       name: Sprites dialogue - Protas_0
       rect:
         serializedVersion: 2
-        x: 607
-        y: 62
-        width: 609
-        height: 945
+        x: 1042
+        y: 0
+        width: 674
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86319226342c8c94fbffa67741970aed
-      internalID: 1169507812
+      spriteID: 67c7533db905214429ac683ea83286aa
+      internalID: 796903581
       vertices: []
       indices: 
       edges: []
@@ -122,20 +122,20 @@ TextureImporter:
       name: Sprites dialogue - Protas_1
       rect:
         serializedVersion: 2
-        x: 1237
-        y: 62
-        width: 609
-        height: 945
+        x: 110
+        y: 0
+        width: 674
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83432cc6b751e8c4293253ab49c5862f
-      internalID: -1207545019
+      spriteID: 49eccab5d806e2b4fa366649d14da3a2
+      internalID: 1069611663
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ae0ceb6c81cd84c43bbb988f3df4ba81
+    spriteID: 52b47ca1433de0f49bcade3373f4d99a
     internalID: 0
     vertices: []
     indices: 
@@ -154,8 +154,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprites dialogue - Protas_0: 1169507812
-      Sprites dialogue - Protas_1: -1207545019
+      Sprites dialogue - Protas_0: 796903581
+      Sprites dialogue - Protas_1: 1069611663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

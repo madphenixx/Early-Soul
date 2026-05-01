@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe2fb3a84bad664ca6d4399691f58ed, type: 3}
   m_Name: Reaper
   m_EditorClassIdentifier: Assembly-CSharp::CharaSO
-  avatar: {fileID: -1207545019, guid: 58ccf656afab3bf489478f9fca42e812, type: 3}
+  avatar: {fileID: 796903581, guid: 58ccf656afab3bf489478f9fca42e812, type: 3}
   nom: Reaper
