@@ -40,6 +40,23 @@ public class PlayerAttack : MonoBehaviour
         parryRef.action.canceled += Parry;
     }
 
+    void Update()
+    {
+        if (GameManager.canAttack == false)
+        {
+            canDistance = false;
+            canMelee = false;
+            canParry = false;
+        }
+
+        if (GameManager.canAttack == true)
+        {
+            canDistance = true;
+            canMelee = true;
+            canParry = true;
+        }
+    }
+
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
         if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)

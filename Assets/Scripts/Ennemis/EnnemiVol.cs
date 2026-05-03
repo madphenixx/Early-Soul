@@ -12,12 +12,24 @@ public class EnnemiVol : MonoBehaviour
     
     private Vector2 spawnPos;
 
+    private Coroutine launchRoutine;
+
     [Header("Settings")]
     [SerializeField] private float spawnTime;
 
-    void Start()
+    public static bool canAttack = false;
+
+    void Update()
     {
-        StartCoroutine(LaunchProjectiles());
+        if (canAttack == true && launchRoutine == null)
+        {
+            launchRoutine = StartCoroutine(LaunchProjectiles());
+        }
+
+        else if (DialogueManager.dialogueActive == true && launchRoutine != null && canAttack == false)
+        {
+            StopCoroutine(launchRoutine);
+        }
     }
 
     private IEnumerator LaunchProjectiles()

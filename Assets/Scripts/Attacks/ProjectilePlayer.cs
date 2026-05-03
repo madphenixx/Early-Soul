@@ -24,7 +24,7 @@ public class ProjectilePlayer : MonoBehaviour
     public int baseAttack = 1;
     [SerializeField] private float distanceMin = 40;
     [SerializeField] private float speed = 10;
-    [SerializeField] private float duration = 3;
+    [SerializeField] private float duration = 10;
 
     // [SerializeField] private bool boomerang;
 

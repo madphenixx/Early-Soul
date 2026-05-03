@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private int comboArch = 0;
 
     public static bool movementAllowed = true;
+    public static bool canAttack = true;
     public static bool parrying = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

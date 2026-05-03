@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
-  m_Name: Intro
+  m_Name: Boat broken
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   characters:
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
-  isRight: 0000
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  isRight: 0000010000
   dialogues:
-  - Last Soul of the day.
-  - I can't wait to go home...
+  - "\u2026"
+  - "It\u2019s broken"
+  - ...
+  - I know another gate to the afterlife is here. But there will be more angels.
+  - Stay by my side, I'll protect you.

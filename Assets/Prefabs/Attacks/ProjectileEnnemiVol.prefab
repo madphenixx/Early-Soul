@@ -181,4 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   baseAttack: 1
   speed: 10
-  duration: 3
+  duration: 10

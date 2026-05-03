@@ -22214,21 +22214,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1928808572901185361, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
-      propertyPath: dialogueManager
-      value: 
-      objectReference: {fileID: 1741694803}
-    - target: {fileID: -1928808572901185361, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
-      propertyPath: 'conversations.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a12aa1d540ebf6428785c8be92d4548, type: 2}
-    - target: {fileID: 801762457988029367, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.68
-      objectReference: {fileID: 0}
     - target: {fileID: 801762457988029367, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.543648
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 801762457988029367, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22266,17 +22254,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3138668963469061999, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7487027437801811660, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
       propertyPath: m_Name
       value: LastSoul...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7487027437801811660, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

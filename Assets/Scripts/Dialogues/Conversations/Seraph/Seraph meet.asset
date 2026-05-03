@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
+  m_Name: Seraph meet
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  characters:
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: e09cfefe7188f9143aef39725293681b, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: e09cfefe7188f9143aef39725293681b, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: e09cfefe7188f9143aef39725293681b, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  isRight: 0001000100010000
+  dialogues:
+  - Crap. I thought they never patrolled here.
+  - Reaper 666 ! Eliminate this Soul.
+  - Why ?
+  - "It\u2019s an Early Soul."
+  - She is not dangerous and you know it.
+  - Reaper 666. This is an order. Give us the girl.
+  - "Hmm\u2026 Let me think about it\u2026"
+  - "I won\u2019t"

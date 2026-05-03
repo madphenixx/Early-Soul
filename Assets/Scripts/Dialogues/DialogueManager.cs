@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class DialogueManager : MonoBehaviour
         currentConversation = charaDialogue.conversations[0];
         dialogueActive = true;
         dialogueNext = true;
-        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+
         if (player.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement))
         {
             PlayerMovement pM = playerMovement;
@@ -81,8 +82,8 @@ public class DialogueManager : MonoBehaviour
             rM.direction = 0;
         }
         
-        // player.GetComponent<SpriteRenderer>().enabled = false;
         GameManager.movementAllowed = false;
+        GameManager.canAttack = false;
     }
 
     private void TurnOffDialogue()
@@ -90,14 +91,15 @@ public class DialogueManager : MonoBehaviour
         stepNum = 0;
         dialogueActive = false;
         dialogueCanvas.SetActive(false);
-        // player.GetComponent<SpriteRenderer>().enabled = true;
-        //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
         GameManager.movementAllowed = true;
+        GameManager.canAttack = true;
     }
 
     private void PlayDialogue()
     {
         SetActorInfo();
+
         if (currentConversation.isRight[stepNum] == false)
         {
             charaName.text = currentSpeaker;
@@ -160,6 +162,24 @@ public class DialogueManager : MonoBehaviour
             dialogueTextSolo.gameObject.SetActive(false);
 
             bool currentIsRight = currentConversation.isRight[stepNum];
+
+            for (int i = 0; i < currentConversation.isRight.Length; i++)
+            {
+                if (currentConversation.isRight[i] == !currentIsRight)
+                {
+                    if (currentIsRight == false)
+                    {
+                        charaAvatarRight.sprite = currentConversation.characters[i].avatar;
+                        break;
+                    }
+                    
+                    else if (currentIsRight == true)
+                    {
+                        charaAvatarLeft.sprite = currentConversation.characters[i].avatar;
+                        break;
+                    }
+                }
+            }
 
             if (currentIsRight == false)
             {

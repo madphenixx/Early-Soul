@@ -13,7 +13,7 @@ public class ProjectileEnnemiVol : MonoBehaviour
     [Header("Settings")]
     public int baseAttack = 1;
     [SerializeField] private float speed = 10;
-    [SerializeField] private float duration = 3;
+    [SerializeField] private float duration = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()

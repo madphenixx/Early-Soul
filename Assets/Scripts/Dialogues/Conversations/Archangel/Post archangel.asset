@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
+  m_Name: Post archangel
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  characters:
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  isRight: 010001000100
+  dialogues:
+  - "Why do they keep calling me that ? An \u201CEarly Soul\u201D ?"
+  - "You weren\u2019t supposed to die this day. We call this type of case an \u201CEarly
+    Soul\u201D."
+  - And why would I be dangerous ?
+  - Sometimes, Early Souls that are mad about their situation visit the human world.
+    Those are the only Souls, except Angels and Reapers, that can travel between
+    all the worlds
+  - "But\u2026 You don\u2019t know me. Why wouldn't I do that ?"
+  - Trust me, I have seen early souls before and when they are dangerous, it shows.
+    You are not a danger and you will get to the afterlife.

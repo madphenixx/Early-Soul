@@ -183,4 +183,4 @@ MonoBehaviour:
   baseAttack: 1
   distanceMin: 40
   speed: 10
-  duration: 3
+  duration: 10

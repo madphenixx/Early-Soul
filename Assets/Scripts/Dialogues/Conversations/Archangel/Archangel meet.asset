@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
+  m_Name: Archangel meet
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  characters:
+  - {fileID: 11400000, guid: 55f8dbbc51d2c774d80313300f555e57, type: 2}
+  - {fileID: 11400000, guid: 55f8dbbc51d2c774d80313300f555e57, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: 55f8dbbc51d2c774d80313300f555e57, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: 55f8dbbc51d2c774d80313300f555e57, type: 2}
+  isRight: 010100010001
+  dialogues:
+  - "There they are\u2026"
+  - "Reaper 666, surrender, give us the Early Soul and we\u2019ll be lenient."
+  - I already made my decision. She deserves to live in death.
+  - But the order may be disturbed !
+  - "It\u2019s a small chance. You angels are too careful."
+  - Then, prepare yourself to die.

@@ -10,32 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60dce8f3bca4f964b8535d025dec700c, type: 3}
-  m_Name: Lucy's Soul
+  m_Name: Goodbyes
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   characters:
-  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
-  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
-  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
-  isRight: 010001000100010000010000
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  isRight: 00010001000101000001
   dialogues:
-  - Who are you ?
-  - I am the Grim Reaper. What's your name, my child ?
-  - I am Lucy. Are you really the Grim Reaper ?
-  - Yes. The one in charge of collecting souls like you.
-  - Where is Ivan ?
-  - 'Ivan ? '
-  - "My brother\u2026"
-  - "\u2026"
-  - "You\u2019re the only Soul i collected here."
-  - '*sigh* What a relief.'
-  - "*There\u2019s something off about her. Is she...*"
-  - Follow me. I will guide you to the afterlife
+  - Quick ! Walk through that door before more of them come !
+  - But what will you do ?
+  - "I don\u2019t know but i will make it out alive, i promise, please just leave."
+  - "I really don\u2019t understand why you helped me\u2026"
+  - "Oh\u2026 I supposed nobody ever helped you and I couldn't stand the angels anymore
+    anyways. This was on my mind for years and when I saw you, I knew what I needed
+    to do."
+  - ...
+  - Thank you.
+  - You need to survive. Remember your promise.
+  - Goodbye, Lucy.
+  - Goodbye, Grim Reaper.
