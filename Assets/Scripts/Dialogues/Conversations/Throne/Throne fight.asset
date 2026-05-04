@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   characters:
   - {fileID: 11400000, guid: 7a4e6370e805ba0489c5227d1896eadb, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   isRight: 0100
   dialogues:
   - REAPER 666 ! I WILL ELIMINATE YOU AND THIS SOUL YOU PROTECT.

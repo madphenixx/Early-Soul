@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class ClassEnnemi : MonoBehaviour
 {
-    // public Animator enemyAnimator;
-
     private SpriteRenderer spriteRenderer;
 
     [Header("Settings")]
@@ -22,8 +20,6 @@ public class ClassEnnemi : MonoBehaviour
             slEnnemi.maxValue = pv;
             slEnnemi.value = pv;
         }
-
-        //enemyAnimator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -37,11 +33,9 @@ public class ClassEnnemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pv <= 0 && gameObject.CompareTag("Ennemi") || pv <= 0 && gameObject.CompareTag("EnnemiSol"))
+        if (pv <= 0)
         {
             GameManager.score += 50;
-            //enemyAnimator.SetTrigger("IsDead");
-            //Faudra aussi faire une coroutine pour attendre la fin de l'animation pour mourir
             Destroy(gameObject);
         }
     }

@@ -212,7 +212,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (!ctx.canceled)
         {
-            //Debug.Log("AAAAAAAAAAAAAAAAAAAA");
             dialogueNext = true;
         }
     }

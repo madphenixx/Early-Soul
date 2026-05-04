@@ -1,36 +1,40 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using UnityEditor;
 
-public class ArchangelManager : MonoBehaviour
+public class ThroneManager : MonoBehaviour
 {
     [Header("Objects")]
-    [SerializeField] private GameObject tutoObject;
+    [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
+    [SerializeField] private GameObject[] ennemies;
+    [SerializeField] private GameObject[] boss;
+
     [SerializeField] private GameObject[] interactions;
-    private GameObject[] ennemies;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject postFightDialogue;
+    [SerializeField] private GameObject goodbyes;
 
-    public static bool archangelStarted = false;
+    [Header("Settings")]
+
+    public static bool throneStarted = false;
     private bool endStarted = false;
 
     void Start()
     {
-        archangelStarted = false;
+        throneStarted = false;
         gate.enabled = false;
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
-            tutoObject.SetActive(false);
-
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(false);
             }
 
-            EnnemiSol.startAttack = true;
+            bossUI.SetActive(true);
+            Boss.canAttack = true;
+            Debug.Log(Boss.canAttack);
         }
 
         else
@@ -38,7 +42,9 @@ public class ArchangelManager : MonoBehaviour
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(true);
-            }
+            } 
+
+            bossUI.SetActive(false);
 
             GameManager.canAttack = false;
         }
@@ -47,29 +53,32 @@ public class ArchangelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex && EnnemiSol.startAttack == false)
+        if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex && Boss.canAttack == false)
         {
             GameManager.canAttack = false;
         }
 
-        if (archangelStarted == true && DialogueManager.dialogueActive == false  && EnnemiSol.startAttack == false)
+        if (throneStarted == true && DialogueManager.dialogueActive == false && Boss.canAttack == false)
         {
             GameManager.canAttack = true;
-            EnnemiSol.startAttack = true;
+            Boss.canAttack = true;
 
-            tutoObject.SetActive(true);
-            Time.timeScale = 0f;
+            bossUI.SetActive(true);
         }
 
-        ennemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
+        ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
 
-        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
+        boss = GameObject.FindGameObjectsWithTag("Boss");
+
+        if (ennemies.Length == 0 && boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") <= SceneManager.GetActiveScene().buildIndex)
         {
+            bossUI.SetActive(false);
             End();
         }
 
-        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && boss.Length == 0 && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
         {
+            bossUI.SetActive(false);
             SceneManager.LoadScene("VictoryScreen");
         }  
     }
@@ -77,14 +86,15 @@ public class ArchangelManager : MonoBehaviour
     private void End()
     {
         endStarted = true;
-        Debug.Log("this is the end...");
 
         Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
 
-        Instantiate(postFightDialogue, spawnPos, Quaternion.identity);
+        Instantiate(goodbyes, spawnPos, Quaternion.identity);
 
         gate.enabled = true;
+
+        Debug.Log("this is the end...");
 
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
         {

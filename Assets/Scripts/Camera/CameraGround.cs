@@ -1,3 +1,5 @@
+using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +10,13 @@ public class CameraGround : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 0.125f;
+    [SerializeField] float shakeForce = 0.003f;
+    [SerializeField] private float shakeTimer = 1;
 
     [Header("Debug: booleans")]
     public bool isFollowing = true;
     public bool isZooming = false;
+    public bool isShaking = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,13 +49,21 @@ public class CameraGround : MonoBehaviour
             }
         }
 
-        else
+        else if (isShaking == false)
         {
             Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 2, - 10);
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;
 
             gameObject.GetComponent<Camera>().orthographicSize = 5;
+        }
+
+        else if (isShaking == true)
+        {
+            isFollowing = false;
+            StartCoroutine(ShakeTime());
+
+            StartCoroutine(Shaker1());
         }
     }
 
@@ -61,5 +74,32 @@ public class CameraGround : MonoBehaviour
             isFollowing = true;
             isZooming = false;
         }
+    }
+
+    private IEnumerator ShakeTime()
+    {
+        yield return new WaitForSeconds(shakeTimer);
+        
+        isShaking = false;
+        isFollowing = true;
+        StopAllCoroutines();
+    }
+
+    private IEnumerator Shaker1()
+    {
+        transform.position += new Vector3(shakeForce, 0, 0);
+
+        yield return new WaitForSeconds(0.1f);
+
+        StartCoroutine(Shaker2());
+    }
+
+    private IEnumerator Shaker2()
+    {
+        transform.position = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 2, - 10);
+
+        yield return new WaitForSeconds(0.1f);
+
+        StartCoroutine(Shaker1());
     }
 }

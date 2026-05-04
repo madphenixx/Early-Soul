@@ -59,24 +59,21 @@ public class Boss : MonoBehaviour
     // [SerializeField] private float virtueCount;
 
     [Header("Debug: state")]
-    [SerializeField] private string currentState;
+    [SerializeField] private string currentState = null;
     private readonly string stateAttack = "Attack";
     private readonly string stateDefense = "Defense";
     private readonly string stateP2 = "Phase 2";
 
     [SerializeField] private bool phase2Test = false;
+    public static bool canAttack = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.Find("Player");
         classEnnemi = gameObject.GetComponent<ClassEnnemi>();
-        slBoss = GameObject.Find("PVBoss").GetComponent<Slider>();
-        bossUi = GameObject.Find("BossUI");
         slBoss.maxValue = classEnnemi.pv;
         slBoss.value = classEnnemi.pv;
-
-        currentState = stateAttack;
 
         if (UnityEngine.ColorUtility.TryParseHtmlString("#CAC4E4", out Color color))
         {
@@ -87,6 +84,11 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentState == null && canAttack == true)
+        {
+            currentState = stateAttack;
+        }
+
         if (phase2Test)
         {
             currentState = stateP2;
@@ -257,6 +259,7 @@ public class Boss : MonoBehaviour
 
     void OnDestroy()
     {
-        bossUi.SetActive(false);
+        currentState = null;
+        canAttack = false;
     }
 }

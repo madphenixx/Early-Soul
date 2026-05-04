@@ -6,8 +6,7 @@ public class EnnemiSol : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject meleeRange;
 
-    [Header("Debug: detection")]
-    [SerializeField] private GameObject player;
+    private GameObject player;
     
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
@@ -15,9 +14,8 @@ public class EnnemiSol : MonoBehaviour
     private Coroutine attackRoutine;
     private Coroutine stateRoutine;
 
-    [Header("Debug: count")]
-    [SerializeField] private int moveCount = 0;
-    [SerializeField] private int attackCount = 0;
+    private int moveCount = 0;
+    private int attackCount = 0;
     private float attackTime;
 
     [Header("Settings: Speed")]
@@ -48,10 +46,11 @@ public class EnnemiSol : MonoBehaviour
   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         startAttack = false;
         currentState = null;
+        
         player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -63,7 +62,6 @@ public class EnnemiSol : MonoBehaviour
         {
             currentState = stateApproche;
         }
-
 
         if (currentState == stateApproche)
         {

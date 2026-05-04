@@ -1,14 +1,16 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 public class SeraphManager : MonoBehaviour
 {
+    [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
-    [SerializeField] private GameObject[] ennemies;
-    [SerializeField] private GameObject[] interactions;
     [SerializeField] private GameObject seraph;
+    private GameObject[] ennemies;
+    [SerializeField] private GameObject[] interactions;
+    [SerializeField] private Gate gate;
 
+    [Header("Settings")]
     [SerializeField] private int maxVagues = 3;
     private int currentVague = 1;
     [SerializeField] private int maxEnnemies = 5;
@@ -25,10 +27,10 @@ public class SeraphManager : MonoBehaviour
     {
         seraphStarted = false;
         endStarted = false;
+        gate.enabled = false;
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
-            tutoObject.SetActive(false);
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(false);
@@ -49,7 +51,7 @@ public class SeraphManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (seraphStarted == true && DialogueManager.dialogueActive == false && EnnemiVol.canAttack == false)
+        if (seraphStarted == true && DialogueManager.dialogueActive == false && EnnemiVol.canAttack == false && currentVague == 1)
         {
             EnnemiVol.canAttack = true;
 
@@ -65,12 +67,12 @@ public class SeraphManager : MonoBehaviour
             NewVague();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("viewedTutos") <= SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") <= SceneManager.GetActiveScene().buildIndex)
         {
             End();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("viewedTutos") > SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
         {
             SceneManager.LoadScene("VictoryScreen");
         }  
@@ -92,6 +94,7 @@ public class SeraphManager : MonoBehaviour
 
     private void End()
     {
+        gate.enabled = true;
         endStarted = true;
         Debug.Log("this is the end...");
 
