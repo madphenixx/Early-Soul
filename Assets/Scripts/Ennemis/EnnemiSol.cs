@@ -33,7 +33,7 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private int maxDistanceApproach = 7;
 
     [Header("Debug: state")]
-    [SerializeField] private string currentState;
+    [SerializeField] private string currentState = null;
     private readonly string stateAttaque = "Attaque";
     private readonly string stateDefense = "Defense";
     private readonly string stateApproche = "Approche";
@@ -44,19 +44,27 @@ public class EnnemiSol : MonoBehaviour
     public bool isAttacker = false;
     [SerializeField] private bool canAttack = true;
     [SerializeField] private bool facingRight = true;   
+    public static bool startAttack = false;
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        startAttack = false;
+        currentState = null;
         player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        currentState = stateApproche;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (currentState == null && startAttack == true)
+        {
+            currentState = stateApproche;
+        }
+
+
         if (currentState == stateApproche)
         {
             moveCount = 0;

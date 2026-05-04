@@ -26,7 +26,7 @@ public class SeraphManager : MonoBehaviour
         seraphStarted = false;
         endStarted = false;
 
-        if (PlayerPrefs.GetInt("viewedTutos") >= SceneManager.GetActiveScene().buildIndex)
+        if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             tutoObject.SetActive(false);
             foreach (GameObject interact in interactions)
@@ -39,22 +39,22 @@ public class SeraphManager : MonoBehaviour
 
         else
         {
-            tutoObject.SetActive(true);
             foreach (GameObject interact in interactions)
             {
-                interact.SetActive(false);
-            }
-
-            Time.timeScale = 0f;
+                interact.SetActive(true);
+            } 
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (seraphStarted == true && DialogueManager.dialogueActive == false)
+        if (seraphStarted == true && DialogueManager.dialogueActive == false && EnnemiVol.canAttack == false)
         {
             EnnemiVol.canAttack = true;
+
+            tutoObject.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
@@ -94,5 +94,10 @@ public class SeraphManager : MonoBehaviour
     {
         endStarted = true;
         Debug.Log("this is the end...");
+
+        if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
+        {
+            PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

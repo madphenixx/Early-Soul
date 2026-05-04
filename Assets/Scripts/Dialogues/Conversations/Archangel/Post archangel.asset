@@ -15,19 +15,25 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
-  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
   - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
   - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
-  isRight: 010001000100
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: d55a25cde1f6fe64db15b4878991201a, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  - {fileID: 11400000, guid: ec8fadbabe5aecc45972009b4eadd277, type: 2}
+  isRight: 01000001000001010000
   dialogues:
   - "Why do they keep calling me that ? An \u201CEarly Soul\u201D ?"
-  - "You weren\u2019t supposed to die this day. We call this type of case an \u201CEarly
-    Soul\u201D."
+  - "You weren\u2019t supposed to die this day. "
+  - "We call this type of case an \u201CEarly Soul\u201D."
   - And why would I be dangerous ?
-  - Sometimes, Early Souls that are mad about their situation visit the human world.
-    Those are the only Souls, except Angels and Reapers, that can travel between
+  - 'Sometimes, Early Souls that are mad about their situation visit the human world. '
+  - Those are the only Souls, except Angels and Reapers, that can travel between
     all the worlds
-  - "But\u2026 You don\u2019t know me. Why wouldn't I do that ?"
+  - "But\u2026 You don\u2019t know me. "
+  - Why wouldn't I do that ?
   - Trust me, I have seen early souls before and when they are dangerous, it shows.
-    You are not a danger and you will get to the afterlife.
+    .
+  - You are not a danger and you will get to the afterlife

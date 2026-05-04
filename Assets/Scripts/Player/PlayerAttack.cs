@@ -57,6 +57,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
         if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)

@@ -37,7 +37,7 @@ public class ClassEnnemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pv <= 0 && gameObject.CompareTag("Ennemi"))
+        if (pv <= 0 && gameObject.CompareTag("Ennemi") || pv <= 0 && gameObject.CompareTag("EnnemiSol"))
         {
             GameManager.score += 50;
             //enemyAnimator.SetTrigger("IsDead");

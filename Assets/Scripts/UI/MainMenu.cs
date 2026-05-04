@@ -42,20 +42,20 @@ public class MainMenu : Initialisation
             {
                progress = PlayerPrefs.GetInt("progress");
 
-                if (progress < 4)
-                {
-                    scene3.interactable = false;
+               if (progress < 4)
+               {
+                   scene3.interactable = false;
 
-                    if (progress < 3)
-                    {
-                        scene2.interactable = false;
+                   if (progress < 3)
+                   {
+                       scene2.interactable = false;
 
-                        if (progress < 2)
-                        {
+                       if (progress < 2)
+                       {
                             scene1.interactable = false;
-                        }
-                    }
-                } 
+                       }
+                   }
+               } 
             }   
         }
     }
