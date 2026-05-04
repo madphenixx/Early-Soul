@@ -5,6 +5,7 @@ public class Virtue : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject explosion;
     
     private Vector2 spawnPos;
 
@@ -29,5 +30,11 @@ public class Virtue : MonoBehaviour
 
             projDroit.GetComponent<ProjectileVirtue>().isLeftOne = false;
         }
+    }
+
+    void OnDestroy()
+    {
+        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
+        Instantiate(explosion, spawnPos, Quaternion.identity);
     }
 }

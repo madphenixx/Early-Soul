@@ -39,7 +39,7 @@ public class ProjectileEnnemiVol : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false)
+        if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false && BoatMovements.isInvicible == false)
         {
             GameManager.pv +=  - baseAttack;
             GameManager.pvSlider.value = GameManager.pv;

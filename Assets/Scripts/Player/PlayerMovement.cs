@@ -80,6 +80,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnnemiAttack"))
+        {
+            StartCoroutine(BlinkingDamage());
+        }
+    }
+
     void Move(InputAction.CallbackContext ctx)
     {
         if (!ctx.canceled)
@@ -118,7 +126,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Jump(InputAction.CallbackContext ctx)
+    private IEnumerator BlinkingDamage()
+    {
+        isInvicible = true;
+
+        spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
+
+        isInvicible = false;
+    }
+
+    private void Jump(InputAction.CallbackContext ctx)
     {
         if (ctx.started && isGrounded)
         {

@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Virtue
   projectile: {fileID: 4002874529014856564, guid: 7bd729ae705b74645b377b7054915df1, type: 3}
+  explosion: {fileID: 6639526688992322976, guid: cdfce916fdec9d2439ec3377e6747ee7, type: 3}
   spawnTime: 5
 --- !u!61 &5877448465391705719
 BoxCollider2D:

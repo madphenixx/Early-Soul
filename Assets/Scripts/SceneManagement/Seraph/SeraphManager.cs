@@ -16,6 +16,13 @@ public class SeraphManager : MonoBehaviour
     [SerializeField] private int minY = -11;
 
     public static bool seraphStarted = false;
+    private bool endStarted = false;
+
+    void Start()
+    {
+        seraphStarted = false;
+        endStarted = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +39,11 @@ public class SeraphManager : MonoBehaviour
             currentVague += 1;
             NewVague();
         }
+
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false)
+        {
+            End();
+        }
     }
 
     private void NewVague()
@@ -46,5 +58,11 @@ public class SeraphManager : MonoBehaviour
 
             Instantiate(seraph, spawnPos, Quaternion.identity);
         }
+    }
+
+    private void End()
+    {
+        endStarted = true;
+        Debug.Log("this is the end...");
     }
 }
