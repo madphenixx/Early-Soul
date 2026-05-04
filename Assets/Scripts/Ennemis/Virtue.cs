@@ -32,7 +32,7 @@ public class Virtue : MonoBehaviour
         }
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
         Instantiate(explosion, spawnPos, Quaternion.identity);

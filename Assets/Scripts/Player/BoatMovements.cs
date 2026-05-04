@@ -11,6 +11,8 @@ public class BoatMovements : MonoBehaviour
     [SerializeField] private ParticleSystem swoosh;
     [SerializeField] private ParticleSystem swooshFront;
     [SerializeField] private ParticleSystem swooshBack;
+    [SerializeField] private ParticleSystem swooshFrontBottom;
+    [SerializeField] private ParticleSystem swooshBackBottom;
 
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
@@ -37,6 +39,9 @@ public class BoatMovements : MonoBehaviour
 
         swoosh.gameObject.SetActive(false);
         swooshFront.gameObject.SetActive(false);
+        swooshBack.gameObject.SetActive(false);
+        swooshFrontBottom.gameObject.SetActive(false);
+        swooshBackBottom.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -79,11 +84,13 @@ public class BoatMovements : MonoBehaviour
             if (direction.x == 1)
             {
                 swooshFront.gameObject.SetActive(true);
+                swooshFrontBottom.gameObject.SetActive(true);
             }
 
             else if (direction.x == -1)
             {
                 swooshBack.gameObject.SetActive(true);
+                swooshBackBottom.gameObject.SetActive(true);
             }
         }
         
@@ -93,6 +100,8 @@ public class BoatMovements : MonoBehaviour
             swoosh.gameObject.SetActive(false);
             swooshFront.gameObject.SetActive(false);
             swooshBack.gameObject.SetActive(false);
+            swooshFrontBottom.gameObject.SetActive(false);
+            swooshBackBottom.gameObject.SetActive(false);
         }
     }
 

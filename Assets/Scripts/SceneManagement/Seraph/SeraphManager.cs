@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class SeraphManager : MonoBehaviour
 {
+    [SerializeField] private GameObject tutoObject;
     [SerializeField] private GameObject[] ennemies;
+    [SerializeField] private GameObject[] interactions;
     [SerializeField] private GameObject seraph;
 
     [SerializeField] private int maxVagues = 3;
@@ -22,6 +25,28 @@ public class SeraphManager : MonoBehaviour
     {
         seraphStarted = false;
         endStarted = false;
+
+        if (PlayerPrefs.GetInt("viewedTutos") >= SceneManager.GetActiveScene().buildIndex)
+        {
+            tutoObject.SetActive(false);
+            foreach (GameObject interact in interactions)
+            {
+                interact.SetActive(false);
+            }
+
+            EnnemiVol.canAttack = true;
+        }
+
+        else
+        {
+            tutoObject.SetActive(true);
+            foreach (GameObject interact in interactions)
+            {
+                interact.SetActive(false);
+            }
+
+            Time.timeScale = 0f;
+        }
     }
 
     // Update is called once per frame
@@ -40,10 +65,15 @@ public class SeraphManager : MonoBehaviour
             NewVague();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("viewedTutos") <= SceneManager.GetActiveScene().buildIndex)
         {
             End();
         }
+
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("viewedTutos") > SceneManager.GetActiveScene().buildIndex)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }  
     }
 
     private void NewVague()

@@ -6,8 +6,10 @@ public class EnnemiVol : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject explosion;
+    private GameObject player;
 
     [Header("Settings")]
+    [SerializeField] private float minDistance = 50f;
     [SerializeField] private float minSpawnTime = 1f;
     [SerializeField] private float maxSpawnTime = 1.7f;
     [SerializeField] private float health;
@@ -25,11 +27,14 @@ public class EnnemiVol : MonoBehaviour
     {
         canAttack = false;
         health = gameObject.GetComponent<ClassEnnemi>().pv;
+        player = GameObject.Find("Player");
     }
 
     void Update()
     {
-        if (canAttack == true && launchRoutine == null)
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+
+        if (canAttack == true && launchRoutine == null && distance < minDistance)
         {
             launchRoutine = StartCoroutine(LaunchProjectiles());
         }
@@ -52,7 +57,7 @@ public class EnnemiVol : MonoBehaviour
         }
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
         Instantiate(explosion, spawnPos, Quaternion.identity);

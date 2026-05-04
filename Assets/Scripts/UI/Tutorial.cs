@@ -15,17 +15,6 @@ public class Tutorial : MonoBehaviour
     {
         helpRef.action.started += TutoReplay;
         helpRef.action.canceled += TutoReplay;
-
-        if (PlayerPrefs.GetInt("viewedTutos") >= SceneManager.GetActiveScene().buildIndex)
-        {
-            tutoObject.SetActive(false);
-        }
-
-        else
-        {
-            tutoObject.SetActive(true);
-            Time.timeScale = 0f;
-        }
     }
 
     public void TurnOffTuto()

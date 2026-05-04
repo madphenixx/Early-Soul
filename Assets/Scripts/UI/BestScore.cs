@@ -32,7 +32,7 @@ public class BestScore : MonoBehaviour
 
         bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("bestScore1" + scene.ToString()).ToString();
 
-        if (SceneManager.GetActiveScene().name == "DeathScreen")
+        if (SceneManager.GetActiveScene().name == "DeathScreen" || SceneManager.GetActiveScene().name == "VictoryScreen")
         {
             score = PlayerPrefs.GetInt("currentScore");
             scoreText.text = "Score: " + score.ToString();
