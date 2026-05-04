@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2402657185031466996}
   - component: {fileID: 8958113899402398718}
   - component: {fileID: 74419125547914390}
-  - component: {fileID: 1625630119171530158}
   m_Layer: 0
   m_Name: Goodbyes
   m_TagString: Untagged
@@ -122,15 +121,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharaDialogue
   conversations:
   - {fileID: 11400000, guid: 5529616f6f5152a43b3445da9ec68e07, type: 2}
---- !u!114 &1625630119171530158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2296489149768908675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74818496ad6288c4f8ef75a9cfa497a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'

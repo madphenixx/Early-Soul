@@ -34,7 +34,6 @@ public class ThroneManager : MonoBehaviour
 
             bossUI.SetActive(true);
             Boss.canAttack = true;
-            Debug.Log(Boss.canAttack);
         }
 
         else

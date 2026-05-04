@@ -67,6 +67,11 @@ public class Boss : MonoBehaviour
     [SerializeField] private bool phase2Test = false;
     public static bool canAttack = false;
 
+    void Awake()
+    {
+        currentState = null;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -87,6 +92,7 @@ public class Boss : MonoBehaviour
         if (currentState == null && canAttack == true)
         {
             currentState = stateAttack;
+            Debug.Log("raaaaaaaaa");
         }
 
         if (phase2Test)
