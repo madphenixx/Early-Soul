@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
 
 public class EndDeathMenu : MonoBehaviour
 {
@@ -45,7 +43,7 @@ public class EndDeathMenu : MonoBehaviour
         Debug.Log("Reset!");
         Time.timeScale = 1.0f;
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("volume", 5);
+        PlayerPrefs.SetFloat("volume", 0.5f);
         Debug.Log(PlayerPrefs.GetFloat("volume"));
     }
 }

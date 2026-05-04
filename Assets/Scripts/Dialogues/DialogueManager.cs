@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {

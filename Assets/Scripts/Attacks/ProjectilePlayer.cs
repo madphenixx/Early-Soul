@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +6,6 @@ using UnityEngine.UI;
 public class ProjectilePlayer : MonoBehaviour
 {
     [Header("Debug: detection")]
-    [SerializeField] private GameObject[] allEnnemies;
     private GameObject[] allEnnemiesBase;
     private GameObject[] allEnnemiesGround;
     private GameObject[] allEnnemiesBoss;
@@ -31,22 +27,36 @@ public class ProjectilePlayer : MonoBehaviour
     void Awake() // Voir si faut pas mettre l'évélutation de la distance dans un autre void
     {
         allEnnemiesBase = GameObject.FindGameObjectsWithTag("Ennemi");
-
         allEnnemiesGround = GameObject.FindGameObjectsWithTag("EnnemiSol");
-
         allEnnemiesBoss = GameObject.FindGameObjectsWithTag("Boss");
 
-        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesBase);
-        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesGround);
-        ArrayUtility.AddRange(ref allEnnemies, allEnnemiesBoss);
-
-        foreach (GameObject ennemi in allEnnemies)
+        foreach (GameObject ennemiB in allEnnemiesBase)
         {
-            float distance = Vector2.Distance(transform.position, ennemi.transform.position);
-            if (distance < distanceMin)
+            float distanceB = Vector2.Distance(transform.position, ennemiB.transform.position);
+            if (distanceB < distanceMin)
             {
-                cible = ennemi;
-                distanceMin = distance;
+                cible = ennemiB;
+                distanceMin = distanceB;
+            }
+        }
+
+        foreach (GameObject ennemiG in allEnnemiesGround)
+        {
+            float distanceG = Vector2.Distance(transform.position, ennemiG.transform.position);
+            if (distanceG < distanceMin)
+            {
+                cible = ennemiG;
+                distanceMin = distanceG;
+            }
+        }
+
+        foreach (GameObject ennemiB in allEnnemiesBoss)
+        {
+            float distanceB = Vector2.Distance(transform.position, ennemiB.transform.position);
+            if (distanceB < distanceMin)
+            {
+                cible = ennemiB;
+                distanceMin = distanceB;
             }
         }
     }

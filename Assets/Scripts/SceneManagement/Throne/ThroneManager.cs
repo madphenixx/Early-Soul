@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class ThroneManager : MonoBehaviour
 {

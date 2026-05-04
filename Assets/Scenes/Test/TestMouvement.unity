@@ -695,8 +695,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraGround
   player: {fileID: 0}
   smoothSpeed: 0.15
+  shakeForce: 0.003
+  shakeTimer: 1
   isFollowing: 1
   isZooming: 0
+  isShaking: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1515,7 @@ PrefabInstance:
     - target: {fileID: -1928808572901185361, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
       propertyPath: 'conversations.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 7ad7a0911ee6fd741852ba3a8d09aa58, type: 2}
+      objectReference: {fileID: 11400000, guid: 7c5d5cbc14fb46c4ba756d1d33c8331b, type: 2}
     - target: {fileID: 801762457988029367, guid: db1af643cf87cc2428bc70513a6e4c50, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.52
