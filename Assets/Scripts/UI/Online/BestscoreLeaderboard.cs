@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using Unity.Services.Leaderboards;
 using System;
 using System.Runtime.Serialization;
+using System.Threading.Tasks;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
+using System.Runtime.InteropServices;
 
 public class BestscoreLeaderboard : Initialisation
 {
@@ -40,6 +44,13 @@ public class BestscoreLeaderboard : Initialisation
     public override void OnEnable()
     {
         base.OnEnable();
+        if (!UnityServicesInitializer.IsReady)
+        {
+            return;
+        }
+
+        LoadPlayers(1);
+       
         pageText.text = "-";
         nextButton.interactable = false;
         prevButton.interactable = false;
@@ -47,16 +58,47 @@ public class BestscoreLeaderboard : Initialisation
         ClearPlayerList();
         currentPage = 1;
         totalPages = 0;
+    }
+
+    async void Start()
+    {
+        while (!UnityServicesInitializer.IsReady)
+        {
+            await Task.Delay(100);
+        }
+
         LoadPlayers(1);
+
+        try
+        {
+            await UnityServices.InitializeAsync();
+
+            if (!AuthenticationService.Instance.IsSignedIn)
+            {
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            }
+
+            var scores = await LeaderboardsService.Instance.GetScoresAsync("seraph");
+        }
+
+        catch (Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
+
     }
 
     public void TestAddScore()
     {
-        AddScoreAsync(10);
+        _ = AddScoreAsync(10);
     }
     
-    public async void AddScoreAsync(int score)
+    public async Task AddScoreAsync(int score)
     {
+        while (!UnityServicesInitializer.IsReady)
+        {
+            await Task.Delay(100);
+        }
         addScore.interactable = false;
 
         try
@@ -70,7 +112,10 @@ public class BestscoreLeaderboard : Initialisation
             Debug.Log(exception.Message);
         }
 
-        addScore.interactable = true;
+        finally
+        {
+            addScore.interactable = true;
+        }
     }
 
     private async void LoadPlayers(int page)

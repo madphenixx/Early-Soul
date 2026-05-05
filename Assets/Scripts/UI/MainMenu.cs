@@ -80,7 +80,11 @@ public class MainMenu : Initialisation
 
     public override void OnEnable()
     {
-        UpdatePlayerNameUI();
+        if (IsInitialized)
+        {
+            UpdatePlayerNameUI();
+        }
+        
         base.OnEnable();
     }
 
@@ -95,6 +99,7 @@ public class MainMenu : Initialisation
         SceneManager.LoadScene(1);
         PlayerPrefs.DeleteKey("savedScene");
         PlayerPrefs.DeleteKey("viewedTutos");
+        PlayerPrefs.DeleteKey("progress");
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
