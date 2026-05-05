@@ -68,13 +68,13 @@ public class ThroneManager : MonoBehaviour
 
         boss = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (ennemies.Length == 0 && boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") <= SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
             End();
         }
 
-        if (ennemies.Length == 0 && boss.Length == 0 && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && boss.Length == 0 && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
             SceneManager.LoadScene("VictoryScreen");

@@ -69,6 +69,16 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Flip();
+
+        // if (direction == 0)
+        // {
+        //     playerAnimator.SetTrigger("StopWalking");
+        // }
+
+        // else
+        // {
+        //     playerAnimator.SetTrigger("IsWalking");
+        // }
     }
 
     //void OnCollisionEnter2D(Collision2D collision)
@@ -89,16 +99,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Move(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled)
+        if (!ctx.canceled && GameManager.movementAllowed)
         {
+            playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
-            playerAnimator.SetTrigger("IsWalking");
         }
 
-        else
+        else 
         {
             direction = 0;
-            playerAnimator.SetTrigger("StopWalking");
+            playerAnimator.SetBool("isWalking", false);
         }
     }
 
@@ -169,12 +179,21 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSpeed = playerSpeed * dashSpeed;
             StartCoroutine(DashTime());
-             playerAnimator.SetTrigger("IsSprinting");
         }
+
+        // else
+        // {
+        //     playerAnimator.SetBool("isSprinting", false);
+        // }
     }
 
     private IEnumerator DashTime()
     {
+        if (GameManager.movementAllowed == true)
+        {
+            playerAnimator.SetBool("isSprinting", true);
+        }
+        
         float time = -1;
 
         while (time < 0)
@@ -184,6 +203,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         playerSpeed = basePlayerSpeed;
+        playerAnimator.SetBool("isSprinting", false);
     }
 
     void Dodge(InputAction.CallbackContext ctx)

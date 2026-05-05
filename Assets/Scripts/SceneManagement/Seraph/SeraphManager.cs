@@ -67,12 +67,12 @@ public class SeraphManager : MonoBehaviour
             NewVague();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") <= SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             End();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             SceneManager.LoadScene("VictoryScreen");
         }  

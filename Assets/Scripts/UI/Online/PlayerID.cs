@@ -29,8 +29,6 @@ public class PlayerID : MonoBehaviour
     private bool initialized = false;
     private bool eventsInitialized = false;
 
-    
-
     public void  Awake()
     {
         Application.runInBackground = true;

@@ -67,7 +67,7 @@ public class ArchangelManager : MonoBehaviour
             End();
         }
 
-        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") > SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             SceneManager.LoadScene("VictoryScreen");
         }  
