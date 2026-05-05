@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
-    // public Animator playerAnimator;
+     public Animator playerAnimator;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings: Movements")]
     [SerializeField] private float playerSpeed = 10;
     [SerializeField] private float basePlayerSpeed = 10;
-    [SerializeField] private float jumpForce = 10;
+    //[SerializeField] private float jumpForce = 10;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private float dodgeSpeed = 8f;
 
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float direction;
     
     [Header("Debug: booleans")]
-    [SerializeField] private bool isGrounded;
+    //[SerializeField] private bool isGrounded;
     [SerializeField] private bool isDodging;
     public static bool facingRight = true;
     public static bool isInvicible = false;
@@ -39,15 +39,15 @@ public class PlayerMovement : MonoBehaviour
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        // playerAnimator = GetComponent<Animator>();
+         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         moveRef.action.started += Move;
         moveRef.action.performed += Move;
         moveRef.action.canceled += Move;
 
-        jumpRef.action.started += Jump;
-        jumpRef.action.canceled += Jump;
+        //jumpRef.action.started += Jump;
+        //jumpRef.action.canceled += Jump;
 
         dashRef.action.started += Dash;
         dashRef.action.canceled += Dash;
@@ -71,13 +71,13 @@ public class PlayerMovement : MonoBehaviour
         Flip();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -92,13 +92,13 @@ public class PlayerMovement : MonoBehaviour
         if (!ctx.canceled)
         {
             direction = ctx.ReadValue<float>();
-            // playerAnimator.SetTrigger("IsWalking");
+            playerAnimator.SetTrigger("IsWalking");
         }
 
         else
         {
             direction = 0;
-            // playerAnimator.SetTrigger("StopWalking");
+            playerAnimator.SetTrigger("StopWalking");
         }
     }
 
@@ -138,30 +138,30 @@ public class PlayerMovement : MonoBehaviour
         isInvicible = false;
     }
 
-    private void Jump(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started && isGrounded)
-        {
-            // playerAnimator.SetTrigger("JumpUp");
-            isGrounded = false;
-            StartCoroutine(JumpTime());
-        }
-    }
+    //private void Jump(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.started && isGrounded)
+    //    {
+    //        // playerAnimator.SetTrigger("JumpUp");
+    //        isGrounded = false;
+    //        StartCoroutine(JumpTime());
+    //    }
+    //}
 
-    private IEnumerator JumpTime()
-    {
-        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        float time = -1.5f;
+    //private IEnumerator JumpTime()
+    //{
+    //    rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+    //    float time = -1.5f;
 
-        while (time < 0)
-        {
-            time += 5 * Time.deltaTime;
-            yield return null;
-        }
+    //    while (time < 0)
+    //    {
+    //        time += 5 * Time.deltaTime;
+    //        yield return null;
+    //    }
 
-        // playerAnimator.SetTrigger("JumpDown");
-        rb.AddForce(new Vector2(0f, -jumpForce), ForceMode2D.Impulse);
-    }
+    //    // playerAnimator.SetTrigger("JumpDown");
+    //    rb.AddForce(new Vector2(0f, -jumpForce), ForceMode2D.Impulse);
+    //}
 
     void Dash(InputAction.CallbackContext ctx)
     {
@@ -246,8 +246,8 @@ public class PlayerMovement : MonoBehaviour
         moveRef.action.performed -= Move;
         moveRef.action.canceled -= Move;
 
-        jumpRef.action.started -= Jump;
-        jumpRef.action.canceled -= Jump;
+        //jumpRef.action.started -= Jump;
+        //jumpRef.action.canceled -= Jump;
 
         dashRef.action.started -= Dash;
         dashRef.action.canceled -= Dash;

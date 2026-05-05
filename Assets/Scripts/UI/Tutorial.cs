@@ -21,7 +21,10 @@ public class Tutorial : MonoBehaviour
     {
         Time.timeScale = 1f;
         tutoObject.SetActive(false);
-        PlayerPrefs.SetInt("viewedTutos", SceneManager.GetActiveScene().buildIndex);
+        if (PlayerPrefs.GetInt("viewedTutos") <= SceneManager.GetActiveScene().buildIndex)
+        {
+            PlayerPrefs.SetInt("viewedTutos", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void TutoReplay(InputAction.CallbackContext ctx)
