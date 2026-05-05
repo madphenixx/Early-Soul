@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSpeed = playerSpeed * dashSpeed;
             StartCoroutine(DashTime());
-            // playerAnimator.SetTrigger("IsRunning");
+             playerAnimator.SetTrigger("IsSprinting");
         }
     }
 
