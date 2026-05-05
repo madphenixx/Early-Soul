@@ -67,6 +67,8 @@ public class BestscoreLeaderboard : Initialisation
             await Task.Delay(100);
         }
 
+        await AddScoreAsync(PlayerPrefs.GetInt("bestScore12"));
+
         LoadPlayers(1);
 
         try
@@ -99,7 +101,8 @@ public class BestscoreLeaderboard : Initialisation
         {
             await Task.Delay(100);
         }
-        addScore.interactable = false;
+
+        // addScore.interactable = false;
 
         try
         {
@@ -112,10 +115,10 @@ public class BestscoreLeaderboard : Initialisation
             Debug.Log(exception.Message);
         }
 
-        finally
-        {
-            addScore.interactable = true;
-        }
+        // finally
+        // {
+        //     addScore.interactable = true;
+        // }
     }
 
     private async void LoadPlayers(int page)

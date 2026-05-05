@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Services.Leaderboards.Models;
+using Unity.Services.Authentication;
 
 public class LeaderboardItem : MonoBehaviour
 {

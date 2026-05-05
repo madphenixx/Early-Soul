@@ -130,6 +130,6 @@ public class MainMenu : Initialisation
 
     private void UpdatePlayerNameUI()
     {
-        nameText.text = AuthenticationService.Instance.PlayerInfo.Username;
+        nameText.text = AuthenticationService.Instance.PlayerName;
     }  
 }

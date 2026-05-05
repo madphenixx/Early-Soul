@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
-
-
 
 public class UnityServicesInitializer : MonoBehaviour
 
 {
     public static bool IsReady { get; private set; } = false;
     public static UnityServicesInitializer Instance {get; private set;}
-
 
     async void Awake()
     {

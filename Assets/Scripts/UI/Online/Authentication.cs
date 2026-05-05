@@ -67,7 +67,6 @@ public class Authentication : Initialisation
         }
     }
 
-
     private bool IsPasswordValid(string password)
     {
         if (password.Length < 8 || password.Length > 30)

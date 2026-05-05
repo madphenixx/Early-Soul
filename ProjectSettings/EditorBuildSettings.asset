@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
     guid: b746ff1ec2bd1564cacee70e497bdd6b
+  - enabled: 1
+    path: Assets/Scenes/LDSeraph.unity
+    guid: 6d9183fe08124ad4ba392925afaec4e5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
