@@ -50,7 +50,7 @@ public class CameraGround : MonoBehaviour
 
         else if (isShaking == false)
         {
-            Vector3 desiredPosition = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 2, - 10);
+            Vector3 desiredPosition = new Vector3(player.transform.position.x + 3.5f, player.transform.position.y + 2, - 10);
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;
 
