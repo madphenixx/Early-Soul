@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -184,12 +185,16 @@ public class DialogueManager : MonoBehaviour
             {
                 charaAvatarLeft.color = Color.white;
                 charaAvatarRight.color = Color.slateGray;
+                charaAvatarLeft.gameObject.GetComponent<RectTransform>().localScale = new Vector3(5.5f, 8.2767f, 0);
+                charaAvatarRight.gameObject.GetComponent<RectTransform>().localScale = new Vector3(5f, 7.524273f, 0);
             }
 
             if (currentIsRight == true)
             {
                 charaAvatarLeft.color = Color.slateGray;
                 charaAvatarRight.color = Color.white;
+                charaAvatarLeft.gameObject.GetComponent<RectTransform>().localScale = new Vector3(5f, 7.524273f, 0);
+                charaAvatarRight.gameObject.GetComponent<RectTransform>().localScale = new Vector3(5.5f, 8.2767f, 0);
             }
         }
     }

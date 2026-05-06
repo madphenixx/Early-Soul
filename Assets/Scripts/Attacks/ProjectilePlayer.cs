@@ -88,8 +88,9 @@ public class ProjectilePlayer : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = launchDirNorm * speed;
+        //transform.forward = rb.linearVelocity;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ennemi"))
