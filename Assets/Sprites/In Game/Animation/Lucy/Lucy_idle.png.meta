@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 413b6a09fea4e2b479638aeb5dd1be7a
+guid: abede15c65d9ad94bb883b90a3f18e92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,51 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_lucy_0
+      name: Lucy_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2480
+        width: 2480
+        height: 2480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb7853ca82cb76479bb961d5b15979e
+      internalID: 1644865914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lucy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 2480
+        width: 2480
+        height: 2480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf56e551e3381e44834e2ec420f1f80
+      internalID: -1187149595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lucy_idle_2
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db0a00e5f69666840bc71715237161eb
-      internalID: 1700575684
+      spriteID: d6a99d66debf9834c866d659ea4722aa
+      internalID: -770116458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_lucy_1
+      name: Lucy_idle_3
       rect:
         serializedVersion: 2
         x: 2480
@@ -134,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4271a433ef5fe47b519c3f1540a341
-      internalID: -1113386319
+      spriteID: 1c2e19db8d9302c43b5d2303d9862b45
+      internalID: 372515239
       vertices: []
       indices: 
       edges: []
@@ -144,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: afdea0557b1bcd249b35dbf4496cb1a6
+    spriteID: 57f6376fd8a9cdd41859ad5550dd52c8
     internalID: 0
     vertices: []
     indices: 
@@ -154,10 +198,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      walk_lucy_0: 1700575684
-      walk_lucy_1: -1113386319
+      Lucy_idle_0: 1644865914
+      Lucy_idle_1: -1187149595
+      Lucy_idle_2: -770116458
+      Lucy_idle_3: 372515239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
