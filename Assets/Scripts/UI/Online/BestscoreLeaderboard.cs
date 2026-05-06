@@ -72,7 +72,7 @@ public class BestscoreLeaderboard : Initialisation
             await Task.Delay(100);
         }
 
-        await AddScoreAsync(PlayerPrefs.GetInt("bestScore1") + sceneNum);
+        await AddScoreAsync(PlayerPrefs.GetInt("bestScore1" + sceneNum.ToString()));
 
         LoadPlayers(1);
 

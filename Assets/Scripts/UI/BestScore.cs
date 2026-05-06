@@ -38,67 +38,39 @@ public class BestScore : MonoBehaviour
         bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("bestScore1" + scene.ToString()).ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         score = PlayerPrefs.GetInt("currentScore");
 
-        if (score > bestScores[0])
+        // if (score > bestScores[4])
+        // {
+        //     bestScores.Add(score);
+        //     bestScores.Sort();
+        //     bestScores.Reverse();
+        //     bestScores.RemoveAt(5);
+
+        //     PlayerPrefs.SetInt("bestScore1" + scene.ToString(), bestScores[0]);
+        //     PlayerPrefs.SetInt("bestScore2" + scene.ToString(), bestScores[1]);
+        //     PlayerPrefs.SetInt("bestScore3" + scene.ToString(), bestScores[2]);
+        //     PlayerPrefs.SetInt("bestScore4" + scene.ToString(), bestScores[3]);
+        //     PlayerPrefs.SetInt("bestScore5" + scene.ToString(), bestScores[4]);
+        // }
+    }
+
+    void OnDisable()
+    {
+        if (score > bestScores[4]  && SceneManager.GetActiveScene().name != "DeathScreen" || SceneManager.GetActiveScene().name != "VictoryScreen")
         {
-            // PlayerPrefs.SetInt("bestScore1" + scene.ToString(), score);
+            bestScores.Add(score);
+            bestScores.Sort();
+            bestScores.Reverse();
+            bestScores.RemoveAt(5);
 
-            int temp = PlayerPrefs.GetInt("bestScore1"  + scene.ToString());
-            PlayerPrefs.SetInt("bestScore1" + scene.ToString(), score);
-
-            int tempBis = PlayerPrefs.GetInt("bestScore2" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore2" + scene.ToString(), temp);
-
-            temp = PlayerPrefs.GetInt("bestScore3" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore3" + scene.ToString(), tempBis);
-
-            tempBis = PlayerPrefs.GetInt("bestScore4" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore4" + scene.ToString(), temp);
-
-            PlayerPrefs.SetInt("bestScore5" + scene.ToString(), tempBis);
-        }
-
-        else if (score > bestScores[1])
-        {
-            int tempBis = PlayerPrefs.GetInt("bestScore2" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore2" + scene.ToString(), score);
-
-            int temp = PlayerPrefs.GetInt("bestScore3" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore3" + scene.ToString(), tempBis);
-
-            tempBis = PlayerPrefs.GetInt("bestScore4" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore4" + scene.ToString(), temp);
-
-            PlayerPrefs.SetInt("bestScore5" + scene.ToString(), tempBis);
-        }
-
-        else if (score > bestScores[2])
-        {
-            int temp = PlayerPrefs.GetInt("bestScore3" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore3" + scene.ToString(), score);
-
-            int tempBis = PlayerPrefs.GetInt("bestScore4" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore4" + scene.ToString(), temp);
-
-            PlayerPrefs.SetInt("bestScore5" + scene.ToString(), tempBis);
-        }
-
-        else if (score > bestScores[3])
-        {
-            int temp = PlayerPrefs.GetInt("bestScore4" + scene.ToString());
-            PlayerPrefs.SetInt("bestScore4" + scene.ToString(), score);
-            PlayerPrefs.SetInt("bestScore5" + scene.ToString(), temp);
-
-            PlayerPrefs.SetInt("bestScore" + scene.ToString(), score);
-        }
-
-        else if (score > bestScores[4])
-        {
-            PlayerPrefs.SetInt("bestScore" + scene.ToString(), score);
+            PlayerPrefs.SetInt("bestScore1" + scene.ToString(), bestScores[0]);
+            PlayerPrefs.SetInt("bestScore2" + scene.ToString(), bestScores[1]);
+            PlayerPrefs.SetInt("bestScore3" + scene.ToString(), bestScores[2]);
+            PlayerPrefs.SetInt("bestScore4" + scene.ToString(), bestScores[3]);
+            PlayerPrefs.SetInt("bestScore5" + scene.ToString(), bestScores[4]);
         }
     }
 }

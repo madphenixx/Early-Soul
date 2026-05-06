@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class ArchangelManager : MonoBehaviour
@@ -81,9 +82,10 @@ public class ArchangelManager : MonoBehaviour
         Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
 
-        Instantiate(postFightDialogue, spawnPos, Quaternion.identity);
+        // Instantiate(postFightDialogue, spawnPos, Quaternion.identity);
 
         gate.enabled = true;
+        StartCoroutine(EndDialogue());
 
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
         {
@@ -94,5 +96,15 @@ public class ArchangelManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("passedCombat", SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    private IEnumerator EndDialogue()
+    {
+        yield return new WaitForSeconds(2);
+
+        Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
+        Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
+
+        Instantiate(postFightDialogue, spawnPos, Quaternion.identity);
     }
 }
