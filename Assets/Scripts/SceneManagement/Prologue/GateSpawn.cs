@@ -9,7 +9,7 @@ public class GateSpawn : MonoBehaviour
 
     void Start()
     {
-        gatePos = new Vector3(57f, -0.25f, 0); 
+        gatePos = new Vector3(57f, -0.25f, 0.5f); 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
