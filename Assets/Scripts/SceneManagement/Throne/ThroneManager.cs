@@ -6,7 +6,7 @@ public class ThroneManager : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
-    [SerializeField] private GameObject[] ennemies;
+    //[SerializeField] private GameObject[] ennemies;
     [SerializeField] private GameObject[] boss;
 
     [SerializeField] private GameObject[] interactions;
@@ -64,17 +64,17 @@ public class ThroneManager : MonoBehaviour
             bossUI.SetActive(true);
         }
 
-        ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        //ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
 
         boss = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (ennemies.Length == 0 && boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
+        if (boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
             End();
         }
 
-        if (ennemies.Length == 0 && boss.Length == 0 && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
+        if (boss.Length == 0 && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex && endStarted == false)
         {
             bossUI.SetActive(false);
             SceneManager.LoadScene("VictoryScreen");
@@ -97,6 +97,11 @@ public class ThroneManager : MonoBehaviour
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
         {
             PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (PlayerPrefs.GetInt("passedCombat") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("passedCombat") == false)
+        {
+            PlayerPrefs.SetInt("passedCombat", SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

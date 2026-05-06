@@ -22,6 +22,9 @@ public class BestscoreLeaderboard : Initialisation
     [SerializeField] private LeaderboardItem playerItemPrefab;
     [DataMember(Name = "playerName", IsRequired = true, EmitDefaultValue = true)]
     public string PlayerName { get; }
+    private string sceneID;
+
+    [SerializeField] private int sceneNum;
 
     [Header("Settings")]
     [SerializeField] private int playersPerPage = 8;
@@ -62,12 +65,14 @@ public class BestscoreLeaderboard : Initialisation
 
     async void Start()
     {
+        sceneID = gameObject.name.ToLower();
+
         while (!UnityServicesInitializer.IsReady)
         {
             await Task.Delay(100);
         }
 
-        await AddScoreAsync(PlayerPrefs.GetInt("bestScore12"));
+        await AddScoreAsync(PlayerPrefs.GetInt("bestScore1") + sceneNum);
 
         LoadPlayers(1);
 
@@ -80,7 +85,7 @@ public class BestscoreLeaderboard : Initialisation
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
             }
 
-            var scores = await LeaderboardsService.Instance.GetScoresAsync("seraph");
+            var scores = await LeaderboardsService.Instance.GetScoresAsync(sceneID);
         }
 
         catch (Exception ex)
@@ -106,7 +111,7 @@ public class BestscoreLeaderboard : Initialisation
 
         try
         {
-            var playerEntry = await LeaderboardsService.Instance.AddPlayerScoreAsync("seraph", score);
+            var playerEntry = await LeaderboardsService.Instance.AddPlayerScoreAsync(sceneID, score);
             LoadPlayers(currentPage);
         }
 
@@ -131,7 +136,7 @@ public class BestscoreLeaderboard : Initialisation
             GetScoresOptions options = new GetScoresOptions();
             options.Offset = (page - 1) * playersPerPage;
             options.Limit = playersPerPage;
-            var scores = await LeaderboardsService.Instance.GetScoresAsync("seraph", options);
+            var scores = await LeaderboardsService.Instance.GetScoresAsync(sceneID, options);
             ClearPlayerList();
 
             for (int i = 0; i < scores.Results.Count; i++)

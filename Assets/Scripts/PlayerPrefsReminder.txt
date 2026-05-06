@@ -2,7 +2,7 @@ PlayerPrefs:
 -volume
 -savedScene
 -progress
--viewedTutos
+-passedCombat
 -playerUserName
 -PlayerPrefs.GetInt("bestScore" + scene.ToString())
 -currentScore

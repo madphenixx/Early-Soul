@@ -59,6 +59,11 @@ public class SeraphManager : MonoBehaviour
             Time.timeScale = 0f;
         }
 
+        if (currentVague == 2)
+        {
+            EnnemiVol.canAttack = true;
+        }
+
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
 
         if (ennemies.Length == 0 && currentVague < 3)
@@ -101,6 +106,11 @@ public class SeraphManager : MonoBehaviour
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
         {
             PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (PlayerPrefs.GetInt("passedCombat") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("passedCombat") == false)
+        {
+            PlayerPrefs.SetInt("passedCombat", SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

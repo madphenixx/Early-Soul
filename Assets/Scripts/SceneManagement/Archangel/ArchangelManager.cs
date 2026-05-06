@@ -89,5 +89,10 @@ public class ArchangelManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("progress", SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (PlayerPrefs.GetInt("passedCombat") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("passedCombat") == false)
+        {
+            PlayerPrefs.SetInt("passedCombat", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

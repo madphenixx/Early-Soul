@@ -10,29 +10,39 @@ public class Tutorial : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject tutoObject;
 
+    private bool isActive;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         helpRef.action.started += TutoReplay;
         helpRef.action.canceled += TutoReplay;
+
     }
 
     public void TurnOffTuto()
     {
         Time.timeScale = 1f;
         tutoObject.SetActive(false);
-        if (PlayerPrefs.GetInt("viewedTutos") <= SceneManager.GetActiveScene().buildIndex)
-        {
-            PlayerPrefs.SetInt("viewedTutos", SceneManager.GetActiveScene().buildIndex);
-        }
     }
 
     void TutoReplay(InputAction.CallbackContext ctx)
     {
         if (!ctx.canceled)
         {
-            tutoObject.SetActive(true);
-            Time.timeScale = 0f;
+            isActive = !isActive;
+
+            if (isActive == true)
+            {
+                tutoObject.SetActive(false);
+                Time.timeScale = 1f;
+            }
+
+            if (isActive == false)
+            {
+                tutoObject.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 

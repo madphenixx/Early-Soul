@@ -6843,7 +6843,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThroneManager
   bossUI: {fileID: 601279772}
   gate: {fileID: 220634907}
-  ennemies: []
   boss: []
   interactions:
   - {fileID: 506618754}

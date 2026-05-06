@@ -269,11 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BestScore
   score: 0
   scene: 0
-  bestScore1: 0
-  bestScore2: 0
-  bestScore3: 0
-  bestScore4: 0
-  bestScore5: 0
+  bestScores: 
 --- !u!1 &1927955583950551368
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +490,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3898699656721919328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1718.6}
+  m_LocalPosition: {x: 0, y: 0, z: -487.29}
   m_LocalScale: {x: 0.12892063, y: 0.12892063, z: 0.12892063}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -730,7 +726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1892715504521791694
 Transform:
   m_ObjectHideFlags: 0

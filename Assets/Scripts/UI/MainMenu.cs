@@ -40,7 +40,7 @@ public class MainMenu : Initialisation
 
             else
             {
-               progress = PlayerPrefs.GetInt("progress");
+               progress = PlayerPrefs.GetInt("passedCombat");
 
                if (progress < 4)
                {
@@ -98,7 +98,6 @@ public class MainMenu : Initialisation
     {
         SceneManager.LoadScene(1);
         PlayerPrefs.DeleteKey("savedScene");
-        PlayerPrefs.DeleteKey("viewedTutos");
         PlayerPrefs.DeleteKey("progress");
         //Cursor.lockState = CursorLockMode.Locked;
     }
