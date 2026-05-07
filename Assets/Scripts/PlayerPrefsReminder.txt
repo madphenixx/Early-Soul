@@ -4,7 +4,8 @@ PlayerPrefs:
 -progress
 -passedCombat
 -playerUserName
--PlayerPrefs.GetInt("bestScore" + scene.ToString())
+-PlayerPrefs.GetInt("bestScoreX" + scene.ToString())
+-PlayerPrefs.GetInt("dateScoreX" + scene.ToString())
 -currentScore
 
 Leaderboards:

@@ -11,14 +11,13 @@ public class BestScore : MonoBehaviour
     [Header("Debug: scores")]
     [SerializeField] private int score;
     [SerializeField] private int scene;
-    [SerializeField] private List<int> bestScores = new List<int>();
-    
+    [SerializeField] private List<LocalScoreEl> bestScores = new List<int>();
+
     void Start()
     {
         scene = PlayerPrefs.GetInt("savedScene");
         bestScoreText = GameObject.Find("BestScore").GetComponent<Text>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
-
 
         bestScores.Add(PlayerPrefs.GetInt("bestScore1" + scene.ToString()));
         bestScores.Add(PlayerPrefs.GetInt("bestScore2" + scene.ToString()));
@@ -71,6 +70,8 @@ public class BestScore : MonoBehaviour
             PlayerPrefs.SetInt("bestScore3" + scene.ToString(), bestScores[2]);
             PlayerPrefs.SetInt("bestScore4" + scene.ToString(), bestScores[3]);
             PlayerPrefs.SetInt("bestScore5" + scene.ToString(), bestScores[4]);
+
+            //el.date.ToString("dd-MM-yyyy ") + el.date.ToString("HH:mm")
         }
     }
 }
