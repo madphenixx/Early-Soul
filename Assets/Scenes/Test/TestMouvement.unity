@@ -2235,6 +2235,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: InitialModule.gravitySource
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4441148276325846316, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745483400085363974, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.304317
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745483400085363974, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.031881854
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745483400085363974, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859508722209412462, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

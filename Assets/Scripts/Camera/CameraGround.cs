@@ -95,7 +95,7 @@ public class CameraGround : MonoBehaviour
 
     private IEnumerator Shaker2()
     {
-        transform.position = new Vector3(player.transform.position.x + 6f, player.transform.position.y + 2, - 10);
+        transform.position = new Vector3(player.transform.position.x + 3.5f, player.transform.position.y + 2.7f, - 10);
 
         yield return new WaitForSeconds(0.1f);
 

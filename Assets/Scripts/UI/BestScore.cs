@@ -59,7 +59,7 @@ public class BestScore : MonoBehaviour
 
     void OnDisable()
     {
-        if (score > bestScores[4]  && SceneManager.GetActiveScene().name != "DeathScreen" || SceneManager.GetActiveScene().name != "VictoryScreen")
+        if (score > bestScores[4]  && SceneManager.GetActiveScene().name != "DeathScreen" && SceneManager.GetActiveScene().name != "VictoryScreen")
         {
             bestScores.Add(score);
             bestScores.Sort();
