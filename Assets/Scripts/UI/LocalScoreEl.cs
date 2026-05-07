@@ -9,15 +9,26 @@ public class LocalScoreEl : MonoBehaviour
     public Text dateText;
     public Text scoreText;
 
-    [Header("Caracteristics")]
-    public int rank;
-    public string date { get; set; }
-    public int score { get; set; }
-
-    public void InitializeLeaderBoard(LocalScoreEl el)
+    public void InitializeLeaderBoard(LocalScoreClass el)
     {
         rankText.text = (el.rank + 1).ToString();
         dateText.text = el.date;
         scoreText.text = el.score.ToString();
+    }
+}
+
+[System.Serializable]
+public class LocalScoreClass
+{
+   [Header("Caracteristics")]
+    public int rank;
+    public string date;
+    public int score;
+
+    public LocalScoreClass(int Rank, string Date, int Score)
+    {
+        rank = Rank;
+        date = Date;
+        score = Score;
     }
 }

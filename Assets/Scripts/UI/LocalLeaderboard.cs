@@ -8,7 +8,7 @@ public class LocalLeaderboard : MonoBehaviour
     [SerializeField] private RectTransform playersObject;
 
     [Header("Prefabs")]
-    [SerializeField] private LocalScoreEl playerItemPrefab;
+    [SerializeField] private GameObject playerItemPrefab;
 
     [SerializeField] private List<int> bestScores = new List<int>();
     [SerializeField] private List<string> dateScores = new List<string>();
@@ -36,12 +36,11 @@ public class LocalLeaderboard : MonoBehaviour
     {
         for (int i = 0; i < bestScores.Count; i++)
         {
-            LocalScoreEl item = Instantiate(playerItemPrefab, playersObject);
-            item.score = bestScores[i];
-            item.rank = i;
-            item.date = dateScores[i];
+            GameObject item = Instantiate(playerItemPrefab, playersObject);
 
-            item.InitializeLeaderBoard(item);
+            LocalScoreClass el = new LocalScoreClass(i, dateScores[i], bestScores[i]);
+
+            item.GetComponent<LocalScoreEl>().InitializeLeaderBoard(el);
         }
     }
 }

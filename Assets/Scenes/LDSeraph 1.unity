@@ -6435,8 +6435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalLeaderboard
   playersObject: {fileID: 1176096066}
-  playerItemPrefab: {fileID: -499203198305473949, guid: 50c0034cfb3132441a6c411a0782d452, type: 3}
+  playerItemPrefab: {fileID: 3636487375664746027, guid: 50c0034cfb3132441a6c411a0782d452, type: 3}
   bestScores: 
+  dateScores: []
   sceneNum: 2
 --- !u!1 &1574714783
 GameObject:
