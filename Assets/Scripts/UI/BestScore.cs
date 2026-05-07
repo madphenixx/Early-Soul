@@ -11,7 +11,7 @@ public class BestScore : MonoBehaviour
     [Header("Debug: scores")]
     [SerializeField] private int score;
     [SerializeField] private int scene;
-    [SerializeField] private List<LocalScoreEl> bestScores = new List<int>();
+    [SerializeField] private List<int> bestScores = new List<int>();
 
     void Start()
     {
