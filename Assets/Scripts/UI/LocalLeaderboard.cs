@@ -11,6 +11,8 @@ public class LocalLeaderboard : MonoBehaviour
     [SerializeField] private LocalScoreEl playerItemPrefab;
 
     [SerializeField] private List<int> bestScores = new List<int>();
+    [SerializeField] private List<string> dateScores = new List<string>();
+
     [SerializeField] private int sceneNum;
 
     void Start()
@@ -21,6 +23,12 @@ public class LocalLeaderboard : MonoBehaviour
         bestScores.Add(PlayerPrefs.GetInt("bestScore4" + sceneNum.ToString()));
         bestScores.Add(PlayerPrefs.GetInt("bestScore5" + sceneNum.ToString()));
 
+
+        dateScores.Add(PlayerPrefs.GetString("dateScore1" + sceneNum.ToString()));
+        dateScores.Add(PlayerPrefs.GetString("dateScore2" + sceneNum.ToString()));
+        dateScores.Add(PlayerPrefs.GetString("dateScore3" + sceneNum.ToString()));
+        dateScores.Add(PlayerPrefs.GetString("dateScore4" + sceneNum.ToString()));
+        dateScores.Add(PlayerPrefs.GetString("dateScore5" + sceneNum.ToString()));
         LoadPlayers();
     }
 
@@ -31,6 +39,7 @@ public class LocalLeaderboard : MonoBehaviour
             LocalScoreEl item = Instantiate(playerItemPrefab, playersObject);
             item.score = bestScores[i];
             item.rank = i;
+            item.date = dateScores[i];
 
             item.InitializeLeaderBoard(item);
         }

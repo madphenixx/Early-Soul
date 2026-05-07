@@ -10,9 +10,9 @@ public class LocalScoreEl : MonoBehaviour
     public Text scoreText;
 
     [Header("Caracteristics")]
-    public int rank ;
-    public string date;
-    public int score;
+    public int rank;
+    public string date { get; set; }
+    public int score { get; set; }
 
     public void InitializeLeaderBoard(LocalScoreEl el)
     {
