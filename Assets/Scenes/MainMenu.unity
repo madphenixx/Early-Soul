@@ -13097,6 +13097,7 @@ MonoBehaviour:
   nextButton: {fileID: 81661003}
   prevButton: {fileID: 917144985}
   playerItemPrefab: {fileID: 3074182749405296579, guid: cf6dfae2f70239947a5980c71d4e7ae9, type: 3}
+  sceneID: seraph
   sceneNum: 2
   playersPerPage: 5
 --- !u!1 &1013289406
@@ -13235,6 +13236,7 @@ MonoBehaviour:
   nextButton: {fileID: 570914666}
   prevButton: {fileID: 1175889255}
   playerItemPrefab: {fileID: 3074182749405296579, guid: cf6dfae2f70239947a5980c71d4e7ae9, type: 3}
+  sceneID: archangel
   sceneNum: 3
   playersPerPage: 5
 --- !u!1 &1039516138
@@ -14865,6 +14867,7 @@ MonoBehaviour:
   nextButton: {fileID: 1824852576}
   prevButton: {fileID: 1910353319}
   playerItemPrefab: {fileID: 3074182749405296579, guid: cf6dfae2f70239947a5980c71d4e7ae9, type: 3}
+  sceneID: throne
   sceneNum: 4
   playersPerPage: 5
 --- !u!1 &1324900779

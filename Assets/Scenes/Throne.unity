@@ -11903,6 +11903,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7770772567039821547, guid: d4cc20a13f3002145af0b56c791b4a1d, type: 3}
   m_PrefabInstance: {fileID: 1278437268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1287020159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6988167808023973986, guid: 570cb26a832e1834d8038d2982979537, type: 3}
+  m_PrefabInstance: {fileID: 45656179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff535cf14e658d458dc1cad1d41992b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gate
 --- !u!1001 &1301843820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12800,7 +12811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThroneManager
   bossUI: {fileID: 601279772}
-  gate: {fileID: 0}
+  gate: {fileID: 1287020159}
   lightGate: {fileID: 7163203770637085612}
   boss: []
   interactions:

@@ -22,7 +22,7 @@ public class BestscoreLeaderboard : Initialisation
     [SerializeField] private LeaderboardItem playerItemPrefab;
     [DataMember(Name = "playerName", IsRequired = true, EmitDefaultValue = true)]
     public string PlayerName { get; }
-    private string sceneID;
+    [SerializeField] private string sceneID;
 
     [SerializeField] private int sceneNum;
 
@@ -65,8 +65,6 @@ public class BestscoreLeaderboard : Initialisation
 
     async void Start()
     {
-        sceneID = gameObject.name.ToLower();
-
         while (!UnityServicesInitializer.IsReady)
         {
             await Task.Delay(100);

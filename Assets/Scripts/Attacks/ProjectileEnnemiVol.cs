@@ -4,7 +4,7 @@ using System.Collections;
 public class ProjectileEnnemiVol : MonoBehaviour
 {   
     private GameObject cible;
-
+    
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Vector2 launchDir;
