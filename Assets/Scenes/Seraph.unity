@@ -14020,6 +14020,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 634155682}
+    - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634155683}
   m_SourcePrefab: {fileID: 100100000, guid: ce3cff77476f132468060f390a830fda, type: 3}
 --- !u!114 &634155680 stripped
 MonoBehaviour:
@@ -14061,6 +14064,28 @@ MonoBehaviour:
   minX: 86
   maxY: 15
   minY: -11
+--- !u!114 &634155683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634155681}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9537b7cb88ecb954c9b60b979132045f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxManager
+  layers:
+  - layer: {fileID: 118244143}
+    parallaxFactor: 0
+  - layer: {fileID: 1388224348}
+    parallaxFactor: 0.024
+  - layer: {fileID: 364229389}
+    parallaxFactor: 0.06
+  - layer: {fileID: 955618982}
+    parallaxFactor: 0.119
+  camTransform: {fileID: 374526206}
 --- !u!1 &639110590
 GameObject:
   m_ObjectHideFlags: 0
@@ -49084,6 +49109,26 @@ PrefabInstance:
     - target: {fileID: 1683630783434809614, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886157579484827956, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920109882205846917, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920109882205846917, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4688004593646543951, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: m_IsActive

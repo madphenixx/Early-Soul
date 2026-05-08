@@ -27,7 +27,7 @@ public class SeraphManager : MonoBehaviour
     {
         seraphStarted = false;
         endStarted = false;
-        gate.enabled = false;
+        gate.isEnabled = false;
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
@@ -99,7 +99,7 @@ public class SeraphManager : MonoBehaviour
 
     private void End()
     {
-        gate.enabled = true;
+        gate.isEnabled = true;
         endStarted = true;
         Debug.Log("this is the end...");
 

@@ -19,7 +19,7 @@ public class ArchangelManager : MonoBehaviour
     void Start()
     {
         archangelStarted = false;
-        gate.enabled = false;
+        gate.isEnabled = false;
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
@@ -84,7 +84,7 @@ public class ArchangelManager : MonoBehaviour
 
         // Instantiate(postFightDialogue, spawnPos, Quaternion.identity);
 
-        gate.enabled = true;
+        gate.isEnabled = true;
         StartCoroutine(EndDialogue());
 
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)

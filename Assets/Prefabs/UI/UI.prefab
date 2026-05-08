@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144, y: 81.10004}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 147.08922, y: 80.73499}
+  m_SizeDelta: {x: 35.6476, y: 35.7083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3901889095012993593
 CanvasRenderer:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BestScore
   score: 0
   scene: 0
-  bestScores: 
+  bestScores: []
 --- !u!1 &1927955583950551368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1308.52, y: -273}
+  m_AnchoredPosition: {x: 1300.5549, y: -272.9597}
   m_SizeDelta: {x: 2587.7998, y: 594.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6367286513395376460

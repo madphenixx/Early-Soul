@@ -6,13 +6,14 @@ public class ThroneManager : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
-    //[SerializeField] private GameObject[] ennemies;
+    [SerializeField] private GameObject lightGate;
     [SerializeField] private GameObject[] boss;
 
     [SerializeField] private GameObject[] interactions;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject goodbyes;
+    
 
     [Header("Settings")]
 
@@ -22,7 +23,8 @@ public class ThroneManager : MonoBehaviour
     void Start()
     {
         throneStarted = false;
-        gate.enabled = false;
+        gate.isEnabled = false;
+        lightGate.SetActive(false);
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
@@ -90,7 +92,8 @@ public class ThroneManager : MonoBehaviour
 
         Instantiate(goodbyes, spawnPos, Quaternion.identity);
 
-        gate.enabled = true;
+        gate.isEnabled = true;
+        lightGate.SetActive(true);
 
         Debug.Log("this is the end...");
 

@@ -183,7 +183,7 @@ public class Boss : MonoBehaviour
 
     void P2State()
     {
-        GetComponent<SpriteRenderer>().color = p2Color;
+        // GetComponent<SpriteRenderer>().color = p2Color;
         resistanceMelee = resistanceFinisher;
 
         if (attackRoutine == null)
