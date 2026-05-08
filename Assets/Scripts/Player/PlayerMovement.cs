@@ -68,7 +68,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Flip();
+        if (isDodging)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        else
+        {
+            Flip();
+        }
 
         // if (direction == 0)
         // {
@@ -212,20 +220,24 @@ public class PlayerMovement : MonoBehaviour
         {
             isDodging = true;
             playerSpeed = basePlayerSpeed * dodgeSpeed;
+
             StartCoroutine(DodgeTime());
             StartCoroutine(IframeTime(iframeTimeDodge));
-
-            // playerAnimator.SetTrigger("IsDodging");
         }
 
         if (ctx.canceled)
         {
-            isDodging = false;
+            
         }
     }
 
     private IEnumerator DodgeTime()
     {
+        if (GameManager.movementAllowed == true)
+        {
+            playerAnimator.SetBool("isDodging", true);
+        }
+
         direction = -1;
 
         while (direction < 0)
@@ -236,6 +248,9 @@ public class PlayerMovement : MonoBehaviour
 
         direction = 0;
         playerSpeed = basePlayerSpeed;
+
+        playerAnimator.SetBool("isDodging", false);
+        isDodging = false;
     }
 
     private IEnumerator IframeTime(float iframeTime)
