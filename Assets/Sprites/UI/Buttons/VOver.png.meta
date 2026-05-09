@@ -100,12 +100,12 @@ TextureImporter:
       name: VOver_0
       rect:
         serializedVersion: 2
-        x: 920
-        y: 414
-        width: 211
-        height: 211
+        x: 895
+        y: 389
+        width: 262
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

@@ -100,12 +100,12 @@ TextureImporter:
       name: OnOff Off_0
       rect:
         serializedVersion: 2
-        x: 468
-        y: 754
-        width: 492
-        height: 99
+        x: 457
+        y: 738
+        width: 502
+        height: 129
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

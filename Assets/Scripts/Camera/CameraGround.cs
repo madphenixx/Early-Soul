@@ -9,7 +9,7 @@ public class CameraGround : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 0.125f;
-    [SerializeField] float shakeForce = 0.003f;
+    [SerializeField] float shakeForce = 0.05f;
     [SerializeField] private float shakeTimer = 1;
 
     [Header("Debug: booleans")]
