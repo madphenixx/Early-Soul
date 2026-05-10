@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject triggerPrefab;
     [SerializeField] private GameObject gatePrefab;
 
+    [SerializeField] private Animator playerAnimator;
+
     private SpriteRenderer spriteRenderer;
 
     private Coroutine comboRoutine;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
 
+        playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
         spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
         pvSlider.maxValue = maxPv;
@@ -64,10 +67,10 @@ public class GameManager : MonoBehaviour
 
         if (pv <= 0 && deathRoutine == null)
         {
-            // deathRoutine = StartCoroutine(DeathPlayer());
+            deathRoutine = StartCoroutine(DeathPlayer());
             
-            pv = 0;
-            SceneManager.LoadScene("DeathScreen");
+            // pv = 0;
+            // SceneManager.LoadScene("DeathScreen");
         }
 
         if (pv > maxPv)
@@ -121,29 +124,17 @@ public class GameManager : MonoBehaviour
         Instantiate(gatePrefab, spawnPos, Quaternion.identity);
     }
 
-    // private IEnumerator DeathPlayer()
-    // {
-    //     movementAllowed = false;
-    //     canAttack = false;
-    //     PlayerMovement.isInvicible = true;
+    private IEnumerator DeathPlayer()
+    {
+        movementAllowed = false;
+        canAttack = false;
+        PlayerMovement.isInvicible = true;
 
-    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+        playerAnimator.SetTrigger("isDead");
 
-    //     yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.5f);
 
-    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-    //     yield return new WaitForSeconds(0.3f);
-
-    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
-
-    //     yield return new WaitForSeconds(0.3f);
-
-    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-    //     yield return new WaitForSeconds(0.3f);
-
-    //     pv = 0;
-    //     SceneManager.LoadScene("DeathScreen");
-    // }
+        pv = 0;
+        SceneManager.LoadScene("DeathScreen");
+    }
 }

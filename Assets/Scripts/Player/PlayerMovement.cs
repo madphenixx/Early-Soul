@@ -150,15 +150,12 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator BlinkingDamage()
     {
-        isInvicible = true;
 
         spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
 
         yield return new WaitForSeconds(0.1f);
 
         spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-        isInvicible = false;
     }
 
     //private void Jump(InputAction.CallbackContext ctx)
