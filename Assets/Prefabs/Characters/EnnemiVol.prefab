@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 6414839101449474312}
   - component: {fileID: 4389352089810341296}
   - component: {fileID: 2458197397254317592}
+  - component: {fileID: 3701384738592073199}
   m_Layer: 0
   m_Name: EnnemiVol
   m_TagString: Ennemi
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiVol
   projectile: {fileID: 4002874529014856564, guid: 06aedb8aa981df1448bbd40ec08ef804, type: 3}
   explosion: {fileID: 2732245306143296290, guid: 084c97d39ed6aa5488a603d11fc651d4, type: 3}
+  minDistance: 50
   minSpawnTime: 1
   maxSpawnTime: 1.7
   health: 0
@@ -265,6 +267,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
   pv: 5
+--- !u!95 &3701384738592073199
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138119206829371016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c71adb38f454f284a990917f8df3edb7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5993091293315613156
 GameObject:
   m_ObjectHideFlags: 0
