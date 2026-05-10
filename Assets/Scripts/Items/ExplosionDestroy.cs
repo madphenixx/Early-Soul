@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ExplosionDestroy : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ExplosionDestroy : MonoBehaviour
     void Start()
     {
         StartCoroutine(Destroy());
+       if (SceneManager.GetActiveScene().name == "DeathScreen" || SceneManager.GetActiveScene().name == "VictoryScreen")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator Destroy()

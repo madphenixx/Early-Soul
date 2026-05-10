@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Virtue : MonoBehaviour
 {
@@ -34,7 +35,10 @@ public class Virtue : MonoBehaviour
 
     void OnDisable()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
-        Instantiate(explosion, spawnPos, Quaternion.identity);
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
+            Instantiate(explosion, spawnPos, Quaternion.identity);
+        }
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnnemiSol : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private GameObject meleeRange;
+    [SerializeField] private GameObject explosion;
 
     private GameObject player;
     
@@ -280,6 +282,15 @@ public class EnnemiSol : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerAttack") && isAttacker)
         {
             currentState = stateDefense;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            Vector3 spawnPos = new Vector3(transform.position.x + 1 , transform.position.y + 2);
+            Instantiate(explosion, spawnPos, Quaternion.identity);
         }
     }
 }

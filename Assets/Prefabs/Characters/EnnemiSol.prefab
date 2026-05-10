@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 8265062393429732128}
   - component: {fileID: 3750518336463924742}
   - component: {fileID: 4137720246801729026}
+  - component: {fileID: 1333765353851101369}
   m_Layer: 0
   m_Name: EnnemiSol
   m_TagString: EnnemiSol
@@ -364,9 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
   meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
-  player: {fileID: 0}
-  moveCount: 0
-  attackCount: 0
+  explosion: {fileID: 1850735877733832066, guid: 89ff0b4cfa7be094ea48ee6378cf8987, type: 3}
   reactivityTime: 0.5
   minMeleeTime: 1
   maxMeleeTime: 4
@@ -380,6 +379,28 @@ MonoBehaviour:
   isAttacker: 0
   canAttack: 1
   facingRight: 1
+--- !u!95 &1333765353851101369
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040199318221650861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 560aee0187fc1bb49b9046055a814402, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2458636018016615099
 GameObject:
   m_ObjectHideFlags: 0

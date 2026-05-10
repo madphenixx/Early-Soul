@@ -24,7 +24,6 @@ public class ThroneManager : MonoBehaviour
     {
         throneStarted = false;
         gate.isEnabled = false;
-        lightGate.SetActive(false);
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
@@ -45,6 +44,7 @@ public class ThroneManager : MonoBehaviour
             } 
 
             bossUI.SetActive(false);
+            lightGate.SetActive(false);
 
             GameManager.canAttack = false;
         }

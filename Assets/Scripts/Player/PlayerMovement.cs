@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
-     public Animator playerAnimator;
+    [SerializeField] private Animator playerAnimator;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -35,11 +35,16 @@ public class PlayerMovement : MonoBehaviour
     public static bool facingRight = true;
     public static bool isInvicible = false;
 
+    void Awake()
+    {
+        isInvicible = false;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-         playerAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         moveRef.action.started += Move;

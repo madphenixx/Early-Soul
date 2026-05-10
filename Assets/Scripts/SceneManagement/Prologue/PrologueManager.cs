@@ -5,6 +5,7 @@ public class PrologueManager : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private GameObject dialogueLucy;
+    [SerializeField] private GameObject lucy;
 
     private Vector3 spawnPos;
 
@@ -30,6 +31,7 @@ public class PrologueManager : MonoBehaviour
             Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
             spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
 
+            lucy.SetActive(true);
             Instantiate(dialogueLucy, spawnPos, Quaternion.identity);
             dialogueLucyPlay = true;
         }

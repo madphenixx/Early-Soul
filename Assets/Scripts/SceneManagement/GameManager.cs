@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject triggerPrefab;
     [SerializeField] private GameObject gatePrefab;
 
+    private SpriteRenderer spriteRenderer;
+
     private Coroutine comboRoutine;
+    private Coroutine deathRoutine;
 
     [Header("Settings")]
     [SerializeField] private float maxPv = 10;
@@ -30,11 +33,18 @@ public class GameManager : MonoBehaviour
     public static bool canAttack = true;
     public static bool parrying = false;
 
+    void Awake()
+    {
+        canAttack = true;
+        movementAllowed = true;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
 
+        spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
         pvSlider.maxValue = maxPv;
         pvSlider.value = maxPv;
@@ -44,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         pv = 10;
         score = 0;
-        combo = 0;
+        combo = 0; 
     }
 
     // Update is called once per frame
@@ -52,8 +62,10 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("currentScore", score);
 
-        if (pv <= 0)
+        if (pv <= 0 && deathRoutine == null)
         {
+            // deathRoutine = StartCoroutine(DeathPlayer());
+            
             pv = 0;
             SceneManager.LoadScene("DeathScreen");
         }
@@ -61,6 +73,12 @@ public class GameManager : MonoBehaviour
         if (pv > maxPv)
         {
             pv = maxPv;
+        }
+
+        if (score < 0)
+        {
+            score = 0;
+            scoreText.text = "Score: " + score.ToString();
         }
 
         comboCheck();
@@ -72,14 +90,7 @@ public class GameManager : MonoBehaviour
         {
             comboArch = combo;
             comboRoutine = StartCoroutine(comboTime());
-        }
-
-        // else
-        // {
-        //     StopCoroutine(comboRoutine);
-        //     comboRoutine = null;
-        //     comboArch = combo;
-        // }    
+        }   
     }
 
     private IEnumerator comboTime()
@@ -109,4 +120,30 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(gatePrefab, spawnPos, Quaternion.identity);
     }
+
+    // private IEnumerator DeathPlayer()
+    // {
+    //     movementAllowed = false;
+    //     canAttack = false;
+    //     PlayerMovement.isInvicible = true;
+
+    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+
+    //     yield return new WaitForSeconds(0.3f);
+
+    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
+
+    //     yield return new WaitForSeconds(0.3f);
+
+    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+
+    //     yield return new WaitForSeconds(0.3f);
+
+    //     spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
+
+    //     yield return new WaitForSeconds(0.3f);
+
+    //     pv = 0;
+    //     SceneManager.LoadScene("DeathScreen");
+    // }
 }

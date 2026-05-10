@@ -91,7 +91,6 @@ public class Boss : MonoBehaviour
         if (currentState == null && canAttack == true)
         {
             currentState = stateAttack;
-            Debug.Log("raaaaaaaaa");
         }
 
         if (phase2Test)

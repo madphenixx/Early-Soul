@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class EnnemiVol : MonoBehaviour
 {
     [Header("Prefabs")]
@@ -59,7 +59,10 @@ public class EnnemiVol : MonoBehaviour
 
     void OnDisable()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
-        Instantiate(explosion, spawnPos, Quaternion.identity);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
+            Instantiate(explosion, spawnPos, Quaternion.identity);
+        }
     }
 }
