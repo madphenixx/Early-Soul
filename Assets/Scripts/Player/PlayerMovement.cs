@@ -135,7 +135,15 @@ public class PlayerMovement : MonoBehaviour
             // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
             // transform.position = newPosition;
 
-            transform.position += new Vector3(distance, 0, 0);
+            float wantedPosition = transform.position.x + distance;
+            playerAnimator.SetBool("isDodging", true);
+            direction = 1;
+
+            if (transform.position.x < wantedPosition)
+            {
+                direction = 0;
+                playerAnimator.SetBool("isDodging", false);
+            }
         }
 
         else if (attacker.transform.position.x >= transform.position.x)
@@ -144,7 +152,17 @@ public class PlayerMovement : MonoBehaviour
             // Vector3 newPosition = Vector3.Lerp(transform.position, desiredPosition, playerSpeed * Time.deltaTime);
             // transform.position = newPosition;
 
-            transform.position += new Vector3(-distance, 0, 0);
+            // transform.position += new Vector3(-distance, 0, 0);
+
+            float wantedPosition = transform.position.x - distance;
+            playerAnimator.SetBool("isDodging", true);
+            direction = -1;
+
+            if (transform.position.x > wantedPosition)
+            {
+                direction = 0;
+                playerAnimator.SetBool("isDodging", false);
+            }
         }
     }
 

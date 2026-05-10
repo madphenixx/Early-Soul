@@ -366,10 +366,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
   meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
   explosion: {fileID: 1850735877733832066, guid: 89ff0b4cfa7be094ea48ee6378cf8987, type: 3}
-  reactivityTime: 0.5
-  minMeleeTime: 1
-  maxMeleeTime: 4
-  speed: 20
+  reactivityTime: 0
+  minMeleeTime: 0
+  maxMeleeTime: 0.5
+  speed: 30
   direction: 0
   distance: 0
   distanceDefense: 2
