@@ -18,7 +18,7 @@ public class LucyPrologue : MonoBehaviour
     public float direction;
     
     [Header("Debug: booleans")]
-    public static bool facingRight = true; 
+    public static bool facingRight = false; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
@@ -38,7 +38,7 @@ public class LucyPrologue : MonoBehaviour
     {
         float distance = Vector2.Distance(cible.transform.position, transform.position);
 
-        if (distance > maxDistanceApproach)
+        if (distance > maxDistanceApproach && DialogueManager.dialogueActive == false)
         {
             playerAnimator.SetBool("isWalking", true);
 
