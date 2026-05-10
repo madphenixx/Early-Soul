@@ -18808,15 +18808,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1535761325916254278, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1535761325916254278, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1535761325916254278, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2040199318221650861, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_Name
@@ -18824,7 +18824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040199318221650861, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2150716807707896863, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18876,11 +18876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311224682963888654, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
@@ -20300,6 +20300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4668513169017555667, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      propertyPath: distanceMin
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -20550,14 +20554,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-      propertyPath: distanceDefense
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-      propertyPath: distanceApproach
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

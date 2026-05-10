@@ -26,9 +26,14 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private float maxMeleeTime = 4f;
     [SerializeField] private float speed = 200;
 
+    [Header("Debug: movement")]
+    public float direction;
+    [SerializeField] private float distance;
+
     [Header("Settings: Defense")]
     // [SerializeField] private int dodgeChance = 11;
     [SerializeField] private int distanceDefense = 5;
+    [SerializeField] private int distanceAttaque = 5;
     [SerializeField] private int distanceApproach = 4;
     [SerializeField] private int maxDistanceApproach = 7;
 
@@ -45,7 +50,6 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private bool canAttack = true;
     [SerializeField] private bool facingRight = true;   
     public static bool startAttack = false;
-  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -55,6 +59,11 @@ public class EnnemiSol : MonoBehaviour
         
         player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void FixedUpdate()
+    {
+        transform.position += new Vector3(direction * speed * Time.deltaTime, 0, 0);
     }
 
     // Update is called once per frame
@@ -108,31 +117,52 @@ public class EnnemiSol : MonoBehaviour
 
     void ApproachState()
     {
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
 
         if (moveCount <= 0)
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(-distance + distanceApproach);
+                // Move(-distance + distanceApproach);
+                direction = -1;
             }
 
             else
             {
-                Move(distance - distanceApproach);
+                // Move(distance - distanceApproach);
+                direction = 1;
             }
 
-            moveCount += 1;
+            // moveCount += 1;
         }
         
-        if (distance <= maxDistanceApproach)
+        // if (distance <= maxDistanceApproach)
+        // {
+        //     currentState = stateDefense;
+        // }
+
+        if (distance + distanceApproach <= maxDistanceApproach)
         {
+            moveCount += 1;
+            direction = 0;
+            
             currentState = stateDefense;
+        }
+
+        // if (attackRoutine == null)
+        // {
+        //     attackRoutine = StartCoroutine(AttackWait());
+        // }
+
+        if (isAttacker && canAttack)
+        {
+            stateRoutine = StartCoroutine(TimeState(stateAttaque));
+            attackRoutine = null;
         }
 
         if (!isAttacker)
         {
-            if (stateRoutine == null)
+            if (stateRoutine == null && moveCount > 0)
             {
                 stateRoutine = StartCoroutine(TimeState(stateDefense));
             }
@@ -142,20 +172,9 @@ public class EnnemiSol : MonoBehaviour
 
         if (tookDamage || parryTime && isAttacker)
         {
-            currentState = stateDefense;
             tookDamage = false;
             parryTime = false;
-        }
-
-        if (attackRoutine == null)
-        {
-            attackRoutine = StartCoroutine(AttackWait());
-        }
-
-        if (isAttacker && canAttack)
-        {
-            stateRoutine = StartCoroutine(TimeState(stateAttaque));
-            attackRoutine = null;
+            currentState = stateDefense;
         }
     }
 
@@ -169,24 +188,32 @@ public class EnnemiSol : MonoBehaviour
             parryTime = false;
         }
 
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
 
         if (attackCount <= 0)
         {
             if (player.transform.position.x < transform.position.x)
             {
-                MoveAttack(-distance + 1);
+                direction = -1;
+                // MoveAttack(-distance + 1);
             }
 
             else
             {
-                MoveAttack(distance - 1);
+                direction = 1;
+                // MoveAttack(distance - 1);
             }
 
-            attackCount += 1;
+            if (distance <= distanceAttaque)
+            {
+                Attack();
+                direction = 0;
+            }
+
+            // attackCount += 1;
         }
 
-        else if (attackCount > 0)
+        if (attackCount > 0)
         {
             canAttack = false;
 
@@ -199,7 +226,7 @@ public class EnnemiSol : MonoBehaviour
 
     void DefenseState()
     {
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
         
         if (distance > maxDistanceApproach && stateRoutine == null)
         {
@@ -210,15 +237,22 @@ public class EnnemiSol : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(distanceDefense);
+                // Move(distanceDefense);
+                direction = 1;
             }
 
             else if (player.transform.position.x >= transform.position.x)
             {
-                Move(-distanceDefense);
+                // Move(-distanceDefense);
+                direction = -1;
             }
 
+        }
+
+        if (distance <= distanceDefense)
+        {
             moveCount += 1;
+            direction = 0;
         }
 
         if (attackRoutine == null)
@@ -235,10 +269,10 @@ public class EnnemiSol : MonoBehaviour
             }
         }
 
-         if (tookDamage || parryTime && isAttacker)
-         {
-            currentState = stateApproche;
-         }
+        if (tookDamage || parryTime && isAttacker)
+        {
+            currentState = stateApproche;  
+        }
     }
 
     private IEnumerator AttackWait()
@@ -268,6 +302,15 @@ public class EnnemiSol : MonoBehaviour
         spawnPos = new Vector2(transform.position.x, transform.position.y);
         GameObject attack = Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
         attack.GetComponent<MeleeEnnemi>().attacker = gameObject;
+    }
+
+    private void Attack()
+    {
+        spawnPos = new Vector2(transform.position.x, transform.position.y);
+        GameObject attack = Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
+        attack.GetComponent<MeleeEnnemi>().attacker = gameObject;
+
+        attackCount += 1;
     }
 
     void Move(float distance)

@@ -369,10 +369,13 @@ MonoBehaviour:
   reactivityTime: 0.5
   minMeleeTime: 1
   maxMeleeTime: 4
-  speed: 200
-  distanceDefense: 5
-  distanceApproach: 4
-  maxDistanceApproach: 7
+  speed: 20
+  direction: 0
+  distance: 0
+  distanceDefense: 2
+  distanceAttaque: 1
+  distanceApproach: 2
+  maxDistanceApproach: 5
   currentState: 
   tookDamage: 0
   parryTime: 0

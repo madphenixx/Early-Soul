@@ -7,12 +7,11 @@ public class LucyPrologue : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
 
     private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb;
     
     [Header("Settings: Movements")]
     [SerializeField] private float speed = 10;
-    [SerializeField] private float maxDistanceApproach = 4;
-    [SerializeField] private float distanceApproach = -3;
+    [SerializeField] private float maxDistanceApproach = 7;
+    [SerializeField] private float distanceApproach = -4;
 
     [Header("Debug: movement")]
     public float direction;
@@ -23,7 +22,6 @@ public class LucyPrologue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
-        rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
