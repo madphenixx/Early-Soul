@@ -174,6 +174,7 @@ public class EnnemiSol : MonoBehaviour
         {
             tookDamage = false;
             parryTime = false;
+
             currentState = stateDefense;
         }
     }
@@ -182,10 +183,10 @@ public class EnnemiSol : MonoBehaviour
     {
         if (tookDamage || parryTime && isAttacker)
         {
-            currentState = stateDefense;
-            
             tookDamage = false;
             parryTime = false;
+
+            currentState = stateDefense;
         }
 
         distance = Vector2.Distance(player.transform.position, transform.position);
@@ -227,7 +228,7 @@ public class EnnemiSol : MonoBehaviour
     void DefenseState()
     {
         distance = Vector2.Distance(player.transform.position, transform.position);
-        
+
         if (distance > maxDistanceApproach && stateRoutine == null)
         {
             StartCoroutine(TimeState(stateApproche));
@@ -241,7 +242,7 @@ public class EnnemiSol : MonoBehaviour
                 direction = 1;
             }
 
-            else if (player.transform.position.x >= transform.position.x)
+            else if (player.transform.position.x <= transform.position.x)
             {
                 // Move(-distanceDefense);
                 direction = -1;
@@ -249,13 +250,13 @@ public class EnnemiSol : MonoBehaviour
 
         }
 
-        if (distance <= distanceDefense)
+        if (distance >= distanceDefense)
         {
             moveCount += 1;
             direction = 0;
         }
 
-        if (attackRoutine == null)
+        if (attackRoutine == null && moveCount > 0)
         {
             attackRoutine = StartCoroutine(AttackWait());
         }
@@ -263,7 +264,7 @@ public class EnnemiSol : MonoBehaviour
         if (isAttacker && canAttack)
         {
             attackRoutine = null;
-            if (stateRoutine == null)
+            if (stateRoutine == null && moveCount > 0)
             {
                 stateRoutine = StartCoroutine(TimeState(stateAttaque));
             }

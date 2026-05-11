@@ -18878,6 +18878,10 @@ PrefabInstance:
       propertyPath: speed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: distanceDefense
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -20562,6 +20566,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: distanceDefense
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
