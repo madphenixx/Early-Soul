@@ -71,17 +71,17 @@ public class ClassEnnemi : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
+        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
 
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
 
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
 
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
 
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
+        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
 
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
 
         Destroy(gameObject);
     }

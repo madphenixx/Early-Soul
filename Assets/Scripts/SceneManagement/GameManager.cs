@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         canAttack = true;
         movementAllowed = true;
+        pv = 10;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,7 +56,6 @@ public class GameManager : MonoBehaviour
         comboText = GameObject.Find("Combo").GetComponent<Text>();
         multiplicateurText = GameObject.Find("Multiplicateur").GetComponent<Text>();
 
-        pv = 10;
         score = 0;
         combo = 0; 
     }
@@ -65,12 +65,18 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("currentScore", score);
 
-        if (pv <= 0 && deathRoutine == null)
+        if (pv <= 0 && deathRoutine == null && SceneManager.GetActiveScene().buildIndex != 3)
         {
             deathRoutine = StartCoroutine(DeathPlayer());
             
             // pv = 0;
             // SceneManager.LoadScene("DeathScreen");
+        }
+
+        else if (pv <= 0 && deathRoutine == null)
+        {
+            pv = 0;
+            SceneManager.LoadScene("DeathScreen");
         }
 
         if (pv > maxPv)
