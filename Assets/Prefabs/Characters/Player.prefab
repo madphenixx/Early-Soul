@@ -205,7 +205,7 @@ MonoBehaviour:
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
   parry: {fileID: 8413523536311424509, guid: d2abd28754b0c3f4f8b86bd359addd89, type: 3}
   distanceCooldownTime: 0.2
-  parryCooldownTime: 0.3
+  parryCooldownTime: 0.2
   meleeCooldownTime: 0.4
   wasFalse: 0
   canDistance: 1

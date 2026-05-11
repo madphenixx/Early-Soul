@@ -59,29 +59,9 @@ public class ClassEnnemi : MonoBehaviour
 
     private IEnumerator DeathBoss()
     {
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
+        gameObject.GetComponent<Animator>().SetTrigger("isDead");
 
-        yield return new WaitForSeconds(0.3f);
-
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-        yield return new WaitForSeconds(0.3f);
-
-        spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
-
-        yield return new WaitForSeconds(0.3f);
-
-        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-        //yield return new WaitForSeconds(0.3f);
-
-        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
-
-        //yield return new WaitForSeconds(0.3f);
-
-        //spriteRenderer.material.color = new Color(1f, 1f, 1f, 1f);
-
-        //yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.5f);
 
         Destroy(gameObject);
     }
