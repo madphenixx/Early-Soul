@@ -11,6 +11,7 @@ public class CameraGround : MonoBehaviour
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] float shakeForce = 0.05f;
     [SerializeField] private float shakeTimer = 1;
+    [SerializeField] private float time = 0;
 
     [Header("Debug: booleans")]
     public bool isFollowing = true;
@@ -21,6 +22,7 @@ public class CameraGround : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        //time = 0;
     }
 
     void FixedUpdate()
@@ -29,11 +31,12 @@ public class CameraGround : MonoBehaviour
         {
             if (isFollowing == true)
             {
+                //time = 0;
                 Vector3 desiredPosition = new Vector3(player.transform.position.x + 5.1f, player.transform.position.y + 0.81f, - 10);
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
                 transform.position = smoothedPosition;
 
-                gameObject.GetComponent<Camera>().orthographicSize = 6;
+                //gameObject.GetComponent<Camera>().orthographicSize = 6;
             }
 
             if (isZooming == true)
@@ -41,10 +44,20 @@ public class CameraGround : MonoBehaviour
                 isFollowing = false;
 
                 Vector3 desiredPosition = new Vector3(15, 2.730344f, 2.749996f);
-                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * 0.4f);
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * 0.05f);
                 transform.position = smoothedPosition;
 
-                gameObject.GetComponent<Camera>().orthographicSize = 4;
+                //gameObject.GetComponent<Camera>().orthographicSize = 4;
+
+                //if (time <= 0)
+                //{
+                //    time = Time.time;
+                //}
+
+                //while (time < 4)
+                //{
+                //    gameObject.GetComponent<Camera>().orthographicSize = 6-time;
+                //}
             }
         }
 

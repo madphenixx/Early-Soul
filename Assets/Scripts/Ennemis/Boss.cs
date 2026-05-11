@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
     [Header("Debug: detection")]
     [SerializeField] private GameObject player;
 
-    private Vector2 spawnPos;
+    private Vector3 spawnPos;
     private Color p2Color;
 
     private ClassEnnemi classEnnemi;
@@ -203,7 +203,7 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(aoeSpawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, aoeDistanceY);
+        spawnPos = new Vector3(gameObject.transform.position.x, aoeDistanceY, 0.5f);
         Instantiate(projectileAOE, spawnPos, Quaternion.identity);
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
@@ -217,7 +217,7 @@ public class Boss : MonoBehaviour
         float spawnTime = Random.Range(minAoeSpawnTimeP2, maxAoeSpawnTimeP2);
         yield return new WaitForSeconds(spawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, aoeDistanceY);
+        spawnPos = new Vector3(gameObject.transform.position.x, aoeDistanceY, 0.5f);
         GameObject projGauche = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
         GameObject projDroit = Instantiate(projectileAOE, spawnPos, Quaternion.identity);
 
@@ -234,7 +234,7 @@ public class Boss : MonoBehaviour
         float spawnTime = Random.Range(minProjTime, maxProjTime);
         yield return new WaitForSeconds(spawnTime);
 
-        spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        spawnPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0.5f);
         Instantiate(projectile, spawnPos, Quaternion.identity);
 
         attackRoutine = null;
@@ -249,12 +249,12 @@ public class Boss : MonoBehaviour
 
         if (player.transform.position.x < transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x - distance, spawnDistanceY);
+            spawnPos = new Vector3(gameObject.transform.position.x - distance, spawnDistanceY, 0.5f);
         }
 
         else if (player.transform.position.x >= transform.position.x)
         {
-            spawnPos = new Vector2(gameObject.transform.position.x + distance, spawnDistanceY);
+            spawnPos = new Vector3(gameObject.transform.position.x + distance, spawnDistanceY, 0.5f);
         }
 
         Instantiate(virtue, spawnPos, Quaternion.identity);

@@ -15,7 +15,7 @@ public class CharaDialogue : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) //On modifiera pour que cela se lance quand on attaeint autre chose mais la c'est pas important
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Boat"))
         { 
             dialogueManager.InitiateDialogue(this);
             Destroy(gameObject);

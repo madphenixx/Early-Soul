@@ -7,6 +7,7 @@ public class ThroneManager : MonoBehaviour
     [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
     [SerializeField] private GameObject lightGate;
+    [SerializeField] private GameObject throne;
     [SerializeField] private GameObject[] boss;
 
     [SerializeField] private GameObject[] interactions;
@@ -41,8 +42,9 @@ public class ThroneManager : MonoBehaviour
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(true);
-            } 
+            }
 
+            //throne.SetActive(false);
             bossUI.SetActive(false);
             lightGate.SetActive(false);
 
@@ -70,7 +72,7 @@ public class ThroneManager : MonoBehaviour
 
         boss = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (boss.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
+        if (boss.Length == 0 && endStarted == false && throneStarted == true && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
             End();

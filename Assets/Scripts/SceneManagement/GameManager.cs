@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         if (score < 0)
         {
             score = 0;
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score : " + score.ToString();
         }
 
         comboCheck();
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(comboMaxDuration);
 
             combo = 0;
-            comboText.text = "Combo: 0";
+            comboText.text = "Combo : 0";
             multiplicateurText.text = "x1";
             comboArch = combo;
         }

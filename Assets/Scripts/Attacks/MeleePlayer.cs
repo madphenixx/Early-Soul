@@ -28,14 +28,14 @@ public class MeleePlayer : MonoBehaviour
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
             GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += - baseAttack * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             Destroy(gameObject);
         }
@@ -46,14 +46,14 @@ public class MeleePlayer : MonoBehaviour
             Slider slEnnemi = GameObject.Find("PVBoss").GetComponent<Slider>();
 
             GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += - baseAttack * produit;
             slEnnemi.value = collision.gameObject.GetComponent<ClassEnnemi>().pv;
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             collision.gameObject.GetComponent<Boss>().damageCount += produit;
             Destroy(gameObject);

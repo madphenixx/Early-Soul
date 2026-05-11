@@ -99,7 +99,7 @@ public class ProjectilePlayer : MonoBehaviour
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
             GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += - 1 * produit;
@@ -107,7 +107,7 @@ public class ProjectilePlayer : MonoBehaviour
  
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             Destroy(gameObject);
         }
@@ -153,7 +153,7 @@ public class ProjectilePlayer : MonoBehaviour
             Slider slEnnemi = GameObject.Find("PVBoss").GetComponent<Slider>();
 
             GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x" + produit.ToString();
 
             collision.gameObject.GetComponent<ClassEnnemi>().pv += - 1 * produit;
@@ -161,7 +161,7 @@ public class ProjectilePlayer : MonoBehaviour
 
 
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             collision.gameObject.GetComponent<Boss>().damageCount += produit;
             Destroy(gameObject);

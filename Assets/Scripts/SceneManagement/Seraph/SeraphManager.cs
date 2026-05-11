@@ -134,7 +134,7 @@ public class SeraphManager : MonoBehaviour
 
     private IEnumerator Endcor()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
 
         Transform player = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(player.position.x + 20, player.position.y + 5);

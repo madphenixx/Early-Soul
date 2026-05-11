@@ -9,7 +9,9 @@ public class EnnemiSol : MonoBehaviour
     [SerializeField] private GameObject explosion;
 
     private GameObject player;
-    
+
+    [SerializeField] private Animator enemyAnimator;
+
     private SpriteRenderer spriteRenderer;
     public static Vector2 spawnPos;
 
@@ -76,6 +78,7 @@ public class EnnemiSol : MonoBehaviour
 
         if (currentState == stateApproche)
         {
+            enemyAnimator.SetBool("isAttacking", false);
             moveCount = 0;
             attackCount = 0;
             ApproachState();
@@ -84,11 +87,13 @@ public class EnnemiSol : MonoBehaviour
         else if (currentState == stateAttaque)
         {
             moveCount = 0;
+            enemyAnimator.SetBool("isAttacking", true);
             AttackState();
         }
 
         else if (currentState == stateDefense)
         {
+            enemyAnimator.SetBool("isAttacking", false);
             attackCount = 0;
             DefenseState();
         }

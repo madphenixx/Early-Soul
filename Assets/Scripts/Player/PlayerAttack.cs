@@ -16,12 +16,17 @@ public class PlayerAttack : MonoBehaviour
 
     public static Vector2 spawnPos;
 
+    private Coroutine meleeTime;
+    private Coroutine parryTime;
+    private Coroutine distTime;
+
     [Header("Settings")]
     [SerializeField] private float distanceCooldownTime = 0.2f;
     [SerializeField] private float parryCooldownTime = 0.3f;
     [SerializeField] private float meleeCooldownTime = 0.3f;
 
     [Header("Debug: booleans")]
+    [SerializeField] private bool wasFalse;
     [SerializeField] private bool canDistance = true;
     [SerializeField] private bool canParry = true;
     [SerializeField] private bool canMelee = true;
@@ -30,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        wasFalse = false;
+
         distanceRef.action.started += DistanceAttack;
         distanceRef.action.canceled += DistanceAttack;
 
@@ -40,23 +47,26 @@ public class PlayerAttack : MonoBehaviour
         parryRef.action.canceled += Parry;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (GameManager.canAttack == false)
         {
             canDistance = false;
             canMelee = false;
             canParry = false;
+
+            wasFalse = true;
         }
 
-        if (GameManager.canAttack == true)
+        if (GameManager.canAttack == true && wasFalse == true)
         {
+            wasFalse = false;
+
             canDistance = true;
             canMelee = true;
             canParry = true;
         }
     }
-
 
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
@@ -64,7 +74,11 @@ public class PlayerAttack : MonoBehaviour
         {
             spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
             Instantiate(projectile, spawnPos, Quaternion.identity);
-            StartCoroutine(DistanceCooldown());
+            
+            //if (distTime == null)
+            //{
+                distTime = StartCoroutine(DistanceCooldown());
+            //}
         } 
     }
 
@@ -88,7 +102,11 @@ public class PlayerAttack : MonoBehaviour
             }
 
             Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
-            StartCoroutine(MeleeCooldown());
+
+            //if (meleeTime == null)
+            //{
+                meleeTime = StartCoroutine(MeleeCooldown());
+            //} 
         }
     }
 
@@ -107,7 +125,11 @@ public class PlayerAttack : MonoBehaviour
             }
 
             Instantiate(parry, spawnPos, Quaternion.identity);
-            StartCoroutine(ParryCooldown());
+
+            //if (parryTime == null)
+            //{
+                parryTime = StartCoroutine(ParryCooldown());
+            //}
         }
     }
 

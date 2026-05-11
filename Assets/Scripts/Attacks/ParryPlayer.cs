@@ -23,10 +23,10 @@ public class ParryPlayer : MonoBehaviour
             }
 
             GameManager.combo += 1;
-            GameManager.comboText.text = "Combo: " + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
 
             GameManager.score = GameManager.score + 10;
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             ParryDestroy(0.1f);
         }

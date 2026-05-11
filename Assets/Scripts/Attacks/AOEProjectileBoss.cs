@@ -47,11 +47,11 @@ public class AOEProjectileBoss : MonoBehaviour
             GameManager.pvSlider.value = GameManager.pv;
 
             GameManager.combo = 0;
-            GameManager.comboText.text = "Combo: x" + GameManager.combo.ToString();
+            GameManager.comboText.text = "Combo : x" + GameManager.combo.ToString();
             GameManager.multiplicateurText.text = "x1";
 
             GameManager.score = GameManager.score - 10;
-            GameManager.scoreText.text = "Score: " + GameManager.score.ToString();
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             Destroy(gameObject);
         }
