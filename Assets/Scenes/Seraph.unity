@@ -5978,6 +5978,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &175317879
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2963329466282683362}
+    m_Modifications:
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284948745768713064, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+      propertyPath: m_Name
+      value: ParryBoat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
 --- !u!1 &175599578
 GameObject:
   m_ObjectHideFlags: 0
@@ -25856,6 +25913,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1358074528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1990632864253725997, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
+  m_PrefabInstance: {fileID: 175317879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1373569572
 GameObject:
   m_ObjectHideFlags: 0
@@ -50871,7 +50933,7 @@ MonoBehaviour:
   parryRef: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
-  parry: {fileID: 8413523536311424509, guid: d2abd28754b0c3f4f8b86bd359addd89, type: 3}
+  parry: {fileID: 8284948745768713064, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
   distanceCooldownTime: 0.2
   parryCooldownTime: 0.3
   meleeCooldownTime: 0.3
@@ -50951,6 +51013,7 @@ Transform:
   m_LocalScale: {x: 1.44, y: 1.44, z: 1.44}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1358074528}
   - {fileID: 894814697}
   - {fileID: 859394440}
   - {fileID: 1373569573}

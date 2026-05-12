@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject parry;
 
-    public static Vector2 spawnPos;
+    public static Vector3 spawnPos;
 
     private Coroutine meleeTime;
     private Coroutine parryTime;
@@ -116,15 +116,18 @@ public class PlayerAttack : MonoBehaviour
         {
             if (PlayerMovement.facingRight)
             {
-                spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.2f);
+                spawnPos = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z + 0.2f);
+                Instantiate(parry, spawnPos, Quaternion.identity, transform);
             }
 
             else
             {
-                spawnPos = new Vector2(transform.position.x - 1.5f, transform.position.y + 0.2f);
+                spawnPos = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z + 0.2f);
+                GameObject parryObj = Instantiate(parry, spawnPos, Quaternion.identity, transform);
+                parryObj.GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            Instantiate(parry, spawnPos, Quaternion.identity);
+            
 
             //if (parryTime == null)
             //{

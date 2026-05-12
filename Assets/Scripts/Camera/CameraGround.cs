@@ -36,7 +36,8 @@ public class CameraGround : MonoBehaviour
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
                 transform.position = smoothedPosition;
 
-                //gameObject.GetComponent<Camera>().orthographicSize = 6;
+
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 6, Time.deltaTime);
             }
 
             if (isZooming == true)
@@ -47,7 +48,7 @@ public class CameraGround : MonoBehaviour
                 Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * 0.05f);
                 transform.position = smoothedPosition;
 
-                //gameObject.GetComponent<Camera>().orthographicSize = 4;
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 4, Time.deltaTime);
 
                 //if (time <= 0)
                 //{
