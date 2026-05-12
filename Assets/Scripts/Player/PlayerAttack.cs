@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 { 
@@ -13,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject parry;
+    [SerializeField] private GameObject reaper;
 
     public static Vector3 spawnPos;
 
@@ -101,7 +103,8 @@ public class PlayerAttack : MonoBehaviour
                 
             }
 
-            Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
+            Instantiate(meleeRange, spawnPos, Quaternion.identity);
+            // Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
 
             //if (meleeTime == null)
             //{
@@ -127,12 +130,24 @@ public class PlayerAttack : MonoBehaviour
                 parryObj.GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                reaper = GameObject.Find("Faucheuse");
+                reaper.SetActive(false);
+            }
 
             //if (parryTime == null)
             //{
                 parryTime = StartCoroutine(ParryCooldown());
             //}
+        }
+
+        else if (ctx.canceled && reaper != null)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                reaper.SetActive(true);
+            }
         }
     }
 
