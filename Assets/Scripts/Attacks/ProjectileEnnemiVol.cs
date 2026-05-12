@@ -23,10 +23,10 @@ public class ProjectileEnnemiVol : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(ProjectileDestroy());
 
-        if (cible.transform.position.x < transform.position.x)
-        {
-            spriteRenderer.flipX = true;
-        }
+        //if (cible.transform.position.x < transform.position.x)
+        //{
+        //    spriteRenderer.flipX = true;
+        //}
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
@@ -36,7 +36,17 @@ public class ProjectileEnnemiVol : MonoBehaviour
     {
         rb.linearVelocity = launchDirNorm * speed;
     }
-    
+
+    void Update()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.forward, launchDir);
+        Vector3 dirRot = transform.rotation.eulerAngles;
+        dirRot.z = dirRot.z + 90;
+        transform.rotation = Quaternion.Euler(dirRot);
+
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && PlayerMovement.isInvicible == false && BoatMovements.isInvicible == false)
