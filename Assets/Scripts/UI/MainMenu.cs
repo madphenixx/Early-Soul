@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Unity.Services.Authentication;
 
-public class MainMenu : Initialisation
+public class MainMenu : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
@@ -14,7 +14,7 @@ public class MainMenu : Initialisation
     [SerializeField] private Text nameText;
 
     [Header("Objects")]
-    [SerializeField] private GameObject panelID;
+    //[SerializeField] private GameObject panelID;
     private int progress;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,33 +60,33 @@ public class MainMenu : Initialisation
         }
     }
 
-    void Update()
-    {
-        if (panelID.activeSelf == false)
-        {
-            UpdatePlayerNameUI();
-        } 
-    }
+    //void Update()
+    //{
+    //    if (panelID.activeSelf == false)
+    //    {
+    //        UpdatePlayerNameUI();
+    //    } 
+    //}
 
-    public override void Initialize()
-    {
-        if (IsInitialized)
-        {
-            return;
-        }
+    //public override void Initialize()
+    //{
+    //    if (IsInitialized)
+    //    {
+    //        return;
+    //    }
 
-        base.Initialize();
-    }
+    //    base.Initialize();
+    //}
 
-    public override void OnEnable()
-    {
-        if (IsInitialized)
-        {
-            UpdatePlayerNameUI();
-        }
+    //public override void OnEnable()
+    //{
+    //    if (IsInitialized)
+    //    {
+    //        UpdatePlayerNameUI();
+    //    }
         
-        base.OnEnable();
-    }
+    //    base.OnEnable();
+    //}
 
     public void PlayGame()
     {
@@ -127,8 +127,8 @@ public class MainMenu : Initialisation
         nameText.text = "";
     }
 
-    private void UpdatePlayerNameUI()
-    {
-        nameText.text = AuthenticationService.Instance.PlayerName;
-    }  
+    //private void UpdatePlayerNameUI()
+    //{
+    //    nameText.text = AuthenticationService.Instance.PlayerName;
+    //}  
 }
