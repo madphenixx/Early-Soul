@@ -7,6 +7,9 @@ public class CameraGround : MonoBehaviour
     [Header("Debug: detection")]
     [SerializeField] private GameObject player;
 
+    private Coroutine shakeTime;
+    private Coroutine shaker;
+
     [Header("Settings")]
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] float shakeForce = 0.05f;
@@ -74,9 +77,16 @@ public class CameraGround : MonoBehaviour
         else if (isShaking == true)
         {
             isFollowing = false;
-            StartCoroutine(ShakeTime());
 
-            StartCoroutine(Shaker1());
+            if (shakeTime == null)
+            {
+                StartCoroutine(ShakeTime());
+            }
+           
+            if (shaker == null)
+            {
+                StartCoroutine(Shaker1());
+            }
         }
     }
 
