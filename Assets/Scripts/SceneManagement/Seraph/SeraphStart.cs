@@ -7,6 +7,7 @@ public class SeraphStart : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Boat"))
         {
             SeraphManager.seraphStarted = true;
+            GameManager.canAttack = true;
         }
     }
 }

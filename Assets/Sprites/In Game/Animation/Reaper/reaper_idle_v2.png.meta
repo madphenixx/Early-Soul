@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac2c55f7d4a5eec47ad7f2802b9e8e3c
+guid: f6e6455b97b850e4ea90b801570e7d0f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,51 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animation reaper idle_0
+      name: reaper_idle_v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2480
+        width: 2480
+        height: 2480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f126d6fb4bfe214c96e65dfa83485a6
+      internalID: -7247913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_idle_v2_1
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 2480
+        width: 2480
+        height: 2480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b9ef58ea5128246a92a86cd04acad8
+      internalID: 1686628269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaper_idle_v2_2
       rect:
         serializedVersion: 2
         x: 0
@@ -112,30 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8e7528f34d264479a32e4cfed6fb60
-      internalID: 130610064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation reaper idle_1
-      rect:
-        serializedVersion: 2
-        x: 2480
-        y: 0
-        width: 2480
-        height: 2480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fc2259afbc8df7499ed3d2d5129ffe5
-      internalID: -1331280761
+      spriteID: 8bdc0b58c0d749845acfdf5ea14a559d
+      internalID: 609800695
       vertices: []
       indices: 
       edges: []
@@ -144,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 035ed3909bbebe146abc3098a364cfae
+    spriteID: 4415223517f79ce4d8f16f2c074d58c7
     internalID: 0
     vertices: []
     indices: 
@@ -154,10 +176,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      animation reaper idle_0: 130610064
-      animation reaper idle_1: -1331280761
+      reaper_idle_v2_0: -7247913
+      reaper_idle_v2_1: 1686628269
+      reaper_idle_v2_2: 609800695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

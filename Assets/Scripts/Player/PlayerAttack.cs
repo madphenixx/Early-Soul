@@ -14,8 +14,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
     [SerializeField] private GameObject parry;
-    [SerializeField] private GameObject reaper;
 
+    [SerializeField] private Animator reaper;
     [SerializeField] private Animator hex;
 
     public static Vector3 spawnPos;
@@ -136,8 +136,8 @@ public class PlayerAttack : MonoBehaviour
 
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                reaper = GameObject.Find("Faucheuse");
-                reaper.SetActive(false);
+                reaper = GameObject.Find("Faucheuse").GetComponent<Animator>();
+                reaper.SetBool("isParry", true);
             }
 
             //if (parryTime == null)
@@ -150,7 +150,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                reaper.SetActive(true);
+                reaper.SetBool("isParry", false);
             }
         }
     }

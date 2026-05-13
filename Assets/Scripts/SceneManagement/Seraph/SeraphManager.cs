@@ -47,7 +47,9 @@ public class SeraphManager : MonoBehaviour
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(true);
-            } 
+            }
+
+            GameManager.canAttack = false;
         }
     }
 
