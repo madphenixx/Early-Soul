@@ -28,8 +28,6 @@ public class ThroneManager : MonoBehaviour
         throneStarted = false;
         gate.isEnabled = false;
 
-        GameManager.canAttack = false;
-
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             foreach (GameObject interact in interactions)

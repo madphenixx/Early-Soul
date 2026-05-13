@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("currentScore", score);
 
-        if (pv <= 0 && deathRoutine == null && SceneManager.GetActiveScene().buildIndex != 3)
+        if (pv <= 0 && deathRoutine == null && SceneManager.GetActiveScene().buildIndex != 2)
         {
             deathRoutine = StartCoroutine(DeathPlayer());
             

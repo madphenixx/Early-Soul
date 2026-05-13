@@ -73,9 +73,9 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void DistanceAttack(InputAction.CallbackContext ctx)
-    { 
-        
-        if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)
+    {
+
+        if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true && DialogueManager.dialogueActive == false)
         {
             hex.SetTrigger("isDistance");
             spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.4f);

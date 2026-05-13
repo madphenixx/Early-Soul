@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e175c9bb65f49bb4da1497542c1cc437
+guid: 05da6e0b4c0a7b34e8f8c8c50654cc07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animation reaper walk_0
+      name: reaper_walk_v2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035397101c8c5124c82a65fd4a3b0319
-      internalID: -938461415
+      spriteID: 1ab62ed78b256df40813228da96de880
+      internalID: 1225144263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation reaper walk_1
+      name: reaper_walk_v2_1
       rect:
         serializedVersion: 2
         x: 2480
@@ -134,36 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af2a01652d6dbd145ab2e9dc2385c85e
-      internalID: -1064588493
+      spriteID: c8fa42960754a424989a26297d3337a5
+      internalID: 1189588774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation reaper walk_2
-      rect:
-        serializedVersion: 2
-        x: 4960
-        y: 2480
-        width: 2480
-        height: 2480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b4fd727ea019094d90d189bca762748
-      internalID: 2124061702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation reaper walk_3
+      name: reaper_walk_v2_2
       rect:
         serializedVersion: 2
         x: 0
@@ -178,30 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 183ea7b7e61c4624b921ea13595122b5
-      internalID: -1130335751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation reaper walk_4
-      rect:
-        serializedVersion: 2
-        x: 2480
-        y: 0
-        width: 2480
-        height: 2480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82ea0e9b08f524c4c888bc0304fa8cec
-      internalID: 972037972
+      spriteID: 9cebd01bcd3ae6a488af50b636f2fb77
+      internalID: -56232614
       vertices: []
       indices: 
       edges: []
@@ -210,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 347084561d2776b4199b0ef7403cbe0e
+    spriteID: 0bf1355328f0af642bcb8470051ef3d2
     internalID: 0
     vertices: []
     indices: 
@@ -220,13 +176,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":2480.0,"y":2480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      animation reaper walk_0: -938461415
-      animation reaper walk_1: -1064588493
-      animation reaper walk_2: 2124061702
-      animation reaper walk_3: -1130335751
-      animation reaper walk_4: 972037972
+      reaper_walk_v2_0: 1225144263
+      reaper_walk_v2_1: 1189588774
+      reaper_walk_v2_2: -56232614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
