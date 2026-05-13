@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject parry;
     [SerializeField] private GameObject reaper;
 
+    [SerializeField] private Animator hex;
+
     public static Vector3 spawnPos;
 
     private Coroutine meleeTime;
@@ -72,9 +74,11 @@ public class PlayerAttack : MonoBehaviour
 
     void DistanceAttack(InputAction.CallbackContext ctx)
     { 
+        
         if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true)
         {
-            spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
+            hex.SetTrigger("isDistance");
+            spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.4f);
             Instantiate(projectile, spawnPos, Quaternion.identity);
             
             //if (distTime == null)

@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
-  pv: 8
+  pv: 16
 --- !u!114 &4137720246801729026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,10 +370,10 @@ MonoBehaviour:
   reactivityTime: 0
   minMeleeTime: 0
   maxMeleeTime: 0.5
-  speed: 20
+  speed: 15
   direction: 0
   distance: 0
-  distanceDefense: 2
+  distanceDefense: 4
   distanceAttaque: 1
   distanceApproach: 4
   maxDistanceApproach: 5

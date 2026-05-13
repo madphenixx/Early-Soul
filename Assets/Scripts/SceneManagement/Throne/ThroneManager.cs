@@ -7,8 +7,10 @@ public class ThroneManager : MonoBehaviour
     [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
     [SerializeField] private GameObject lightGate;
+    [SerializeField] private GameObject startDistance;
     [SerializeField] private GameObject throne;
     [SerializeField] private GameObject[] boss;
+    [SerializeField] private GameObject[] ennemies;
 
     [SerializeField] private GameObject[] interactions;
 
@@ -26,12 +28,16 @@ public class ThroneManager : MonoBehaviour
         throneStarted = false;
         gate.isEnabled = false;
 
+        GameManager.canAttack = false;
+
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             foreach (GameObject interact in interactions)
             {
                 interact.SetActive(false);
             }
+
+            startDistance.SetActive(true);
 
             bossUI.SetActive(true);
             Boss.canAttack = true;
@@ -45,10 +51,9 @@ public class ThroneManager : MonoBehaviour
             }
 
             //throne.SetActive(false);
+            startDistance.SetActive(false);
             bossUI.SetActive(false);
             lightGate.SetActive(false);
-
-            GameManager.canAttack = false;
         }
     }
 
@@ -68,13 +73,19 @@ public class ThroneManager : MonoBehaviour
             bossUI.SetActive(true);
         }
 
-        //ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
 
         boss = GameObject.FindGameObjectsWithTag("Boss");
 
         if (boss.Length == 0 && endStarted == false && throneStarted == true && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
+
+            for (int i = 0; i < ennemies.Length; i++)
+            {
+                Destroy(ennemies[i]);
+            }
+
             End();
         }
 

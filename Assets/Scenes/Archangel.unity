@@ -18875,6 +18875,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3750518336463924742, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: pv
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
+      propertyPath: distanceDefense
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -20481,14 +20493,6 @@ PrefabInstance:
     - target: {fileID: 3347080079921448248, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527666155236941623, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
-      propertyPath: parryCooldownTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3527666155236941623, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
-      propertyPath: distanceCooldownTime
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4207038351988583543, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_Name
