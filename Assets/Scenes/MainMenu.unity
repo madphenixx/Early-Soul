@@ -6104,6 +6104,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3087423734750340206, guid: 55fa3e4d86c2e1e4c97687da203ef687, type: 3}
   m_PrefabInstance: {fileID: 629458713}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &692783446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692783448}
+  - component: {fileID: 692783447}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &692783447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692783446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7433e7c1187ed747bede3a9aea5b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceAspectRatio
+  targetAspect: 1.7777778
+--- !u!4 &692783448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692783446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.91471, y: 2.98079, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717727037
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,7 +7524,6 @@ MonoBehaviour:
   scene3: {fileID: 1909637066}
   continueButton: {fileID: 1008925401}
   nameText: {fileID: 1629439991}
-  panelID: {fileID: 0}
 --- !u!4 &1335422079
 Transform:
   m_ObjectHideFlags: 0
@@ -9454,6 +9498,7 @@ GameObject:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 692783448}
   - {fileID: 1335422079}
   - {fileID: 1562438303}
   - {fileID: 1404822517}

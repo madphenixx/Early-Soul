@@ -16934,6 +16934,19 @@ MonoBehaviour:
   - {fileID: 638332509}
   - {fileID: 1417104323}
   postFightDialogue: {fileID: 9969133049167327, guid: 5af003693e051634e80f5f64f08d5a49, type: 3}
+--- !u!114 &1767755408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153957806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7433e7c1187ed747bede3a9aea5b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceAspectRatio
+  targetAspect: 1.7777778
 --- !u!1 &1780010309
 GameObject:
   m_ObjectHideFlags: 0
@@ -20348,6 +20361,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1767755407}
+    - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1767755408}
   m_SourcePrefab: {fileID: 100100000, guid: ce3cff77476f132468060f390a830fda, type: 3}
 --- !u!1001 &3846522414638002325
 PrefabInstance:

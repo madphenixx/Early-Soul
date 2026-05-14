@@ -9105,6 +9105,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1485682154}
+    - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1485682155}
   m_SourcePrefab: {fileID: 100100000, guid: ce3cff77476f132468060f390a830fda, type: 3}
 --- !u!114 &1038872975 stripped
 MonoBehaviour:
@@ -11265,6 +11268,19 @@ MonoBehaviour:
   - {fileID: 506618754}
   - {fileID: 1884157497}
   goodbyes: {fileID: 2296489149768908675, guid: 7bf0c6c3a94f28443a17b5a0acca1be4, type: 3}
+--- !u!114 &1485682155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485682150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7433e7c1187ed747bede3a9aea5b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceAspectRatio
+  targetAspect: 1.7777778
 --- !u!1 &1507003711
 GameObject:
   m_ObjectHideFlags: 0

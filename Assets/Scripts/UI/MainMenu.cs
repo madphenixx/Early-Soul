@@ -99,6 +99,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
         PlayerPrefs.DeleteKey("savedScene");
         PlayerPrefs.DeleteKey("progress");
+        PlayerPrefs.DeleteKey("passedCombat");
         //Cursor.lockState = CursorLockMode.Locked;
     }
 

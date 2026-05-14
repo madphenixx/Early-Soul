@@ -14651,6 +14651,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 634155683}
+    - targetCorrespondingSourceObject: {fileID: 6420788802028922014, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634155687}
   m_SourcePrefab: {fileID: 100100000, guid: ce3cff77476f132468060f390a830fda, type: 3}
 --- !u!114 &634155680 stripped
 MonoBehaviour:
@@ -14715,6 +14718,19 @@ MonoBehaviour:
   - layer: {fileID: 955618982}
     parallaxFactor: 0.119
   camTransform: {fileID: 374526206}
+--- !u!114 &634155687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634155681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7433e7c1187ed747bede3a9aea5b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceAspectRatio
+  targetAspect: 1.7777778
 --- !u!1 &639110590
 GameObject:
   m_ObjectHideFlags: 0
