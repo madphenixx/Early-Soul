@@ -35,7 +35,7 @@ public class ThroneManager : MonoBehaviour
                 interact.SetActive(false);
             }
 
-            startDistance.SetActive(true);
+            //startDistance.SetActive(true);
 
             bossUI.SetActive(true);
             Boss.canAttack = true;

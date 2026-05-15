@@ -11,6 +11,7 @@ public class MeleePlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlayerAttack.isMeleeing = true;
         StartCoroutine(MeleeDestroy());
     }
 
@@ -37,6 +38,7 @@ public class MeleePlayer : MonoBehaviour
             GameManager.score = Mathf.RoundToInt(GameManager.score + 10 * produit);
             GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
+            PlayerAttack.isMeleeing = false;
             Destroy(gameObject);
         }
 
@@ -56,6 +58,8 @@ public class MeleePlayer : MonoBehaviour
             GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             collision.gameObject.GetComponent<Boss>().damageCount += produit;
+
+            PlayerAttack.isMeleeing = false;
             Destroy(gameObject);
         }
     }
@@ -63,6 +67,7 @@ public class MeleePlayer : MonoBehaviour
     private IEnumerator MeleeDestroy()
     {
         yield return new WaitForSeconds(meleeDuration);
+        PlayerAttack.isMeleeing = false;
         Destroy(gameObject);
     } 
 }

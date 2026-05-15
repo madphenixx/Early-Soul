@@ -34,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private bool canDistance = true;
     [SerializeField] private bool canParry = true;
     [SerializeField] private bool canMelee = true;
+    public static bool isMeleeing = false;
+    public static bool isParrying = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -90,36 +92,31 @@ public class PlayerAttack : MonoBehaviour
 
     void MeleeAttack(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true && SceneManager.GetActiveScene().buildIndex != 2 && isParrying == false)
         {
             // EnnemiManager.playerAttacking = true;
 
             if (PlayerMovement.facingRight)
             {
-                //transform.position += new Vector3(1, 0, 0);
-                spawnPos = new Vector2(transform.position.x + 1, transform.position.y);
+                spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.8f);
+                Instantiate(meleeRange, spawnPos, Quaternion.identity);
             }
 
             else
             {
-                //transform.position += new Vector3(1, 0, 0);
-                spawnPos = new Vector2(transform.position.x - 1, transform.position.y);
-                
+                spawnPos = new Vector2(transform.position.x - 1, transform.position.y + 0.8f);
+                GameObject meleeObj = Instantiate(meleeRange, spawnPos, Quaternion.identity);
+                meleeObj.GetComponent<SpriteRenderer>().flipX = false;
+
             }
 
-            Instantiate(meleeRange, spawnPos, Quaternion.identity);
-            // Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
-
-            //if (meleeTime == null)
-            //{
-                meleeTime = StartCoroutine(MeleeCooldown());
-            //} 
+                meleeTime = StartCoroutine(MeleeCooldown()); 
         }
     }
 
     void Parry(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true && isMeleeing == false)
         {
             if (PlayerMovement.facingRight)
             {
