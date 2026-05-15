@@ -79,14 +79,23 @@ public class PlayerAttack : MonoBehaviour
 
         if (!ctx.canceled && PauseMenu.isPaused == false && canDistance == true && DialogueManager.dialogueActive == false)
         {
+            if (PlayerMovement.facingRight == false)
+            {
+                hex.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                spawnPos = new Vector2(transform.position.x - 1.5f, transform.position.y + 0.427f);
+            }
+
+            else
+            {
+                hex.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                spawnPos = new Vector2(transform.position.x + 1.5f, transform.position.y + 0.427f);
+            }
+
             hex.SetTrigger("isDistance");
-            spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.4f);
+            
             Instantiate(projectile, spawnPos, Quaternion.identity);
             
-            //if (distTime == null)
-            //{
-                distTime = StartCoroutine(DistanceCooldown());
-            //}
+            distTime = StartCoroutine(DistanceCooldown());
         } 
     }
 
