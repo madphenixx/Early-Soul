@@ -13,6 +13,14 @@ public class ParryPlayer : MonoBehaviour
         StartCoroutine(ParryDestroy(parryeDuration));
     }
 
+    private void Update()
+    {
+        if (PlayerAttack.isMeleeing == true)
+        {
+            ParryDestroy(0);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("EnnemiAttack") || collision.gameObject.CompareTag("EnnemiSol"))

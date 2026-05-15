@@ -7,7 +7,7 @@ public class ThroneManager : MonoBehaviour
     [SerializeField] private GameObject bossUI;
     [SerializeField] private Gate gate;
     [SerializeField] private GameObject lightGate;
-    [SerializeField] private GameObject startDistance;
+    //[SerializeField] private GameObject startDistance;
     [SerializeField] private GameObject throne;
     [SerializeField] private GameObject[] boss;
     [SerializeField] private GameObject[] ennemies;
@@ -49,7 +49,7 @@ public class ThroneManager : MonoBehaviour
             }
 
             //throne.SetActive(false);
-            startDistance.SetActive(false);
+            //startDistance.SetActive(false);
             bossUI.SetActive(false);
             lightGate.SetActive(false);
         }

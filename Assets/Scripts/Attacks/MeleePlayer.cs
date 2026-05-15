@@ -12,7 +12,16 @@ public class MeleePlayer : MonoBehaviour
     void Start()
     {
         PlayerAttack.isMeleeing = true;
-        StartCoroutine(MeleeDestroy());
+        StartCoroutine(MeleeDestroy(meleeDuration));
+    }
+
+    private void Update()
+    {
+        if (PlayerAttack.isParrying == true)
+        {
+            PlayerAttack.isMeleeing = false;
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +48,7 @@ public class MeleePlayer : MonoBehaviour
             GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
             PlayerAttack.isMeleeing = false;
-            Destroy(gameObject);
+            MeleeDestroy(0.18f);
         }
 
         if (collision.gameObject.CompareTag("Boss"))
@@ -60,13 +69,13 @@ public class MeleePlayer : MonoBehaviour
             collision.gameObject.GetComponent<Boss>().damageCount += produit;
 
             PlayerAttack.isMeleeing = false;
-            Destroy(gameObject);
+            MeleeDestroy(0.18f);
         }
     }
 
-    private IEnumerator MeleeDestroy()
+    private IEnumerator MeleeDestroy(float time)
     {
-        yield return new WaitForSeconds(meleeDuration);
+        yield return new WaitForSeconds(time);
         PlayerAttack.isMeleeing = false;
         Destroy(gameObject);
     } 

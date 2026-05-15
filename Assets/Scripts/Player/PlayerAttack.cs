@@ -101,19 +101,19 @@ public class PlayerAttack : MonoBehaviour
 
     void MeleeAttack(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true && SceneManager.GetActiveScene().buildIndex != 2 && isParrying == false)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true && SceneManager.GetActiveScene().buildIndex != 2)
         {
             // EnnemiManager.playerAttacking = true;
 
             if (PlayerMovement.facingRight)
             {
-                spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.8f);
+                spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.6f);
                 Instantiate(meleeRange, spawnPos, Quaternion.identity);
             }
 
             else
             {
-                spawnPos = new Vector2(transform.position.x - 1, transform.position.y + 0.8f);
+                spawnPos = new Vector2(transform.position.x - 1, transform.position.y + 0.6f);
                 GameObject meleeObj = Instantiate(meleeRange, spawnPos, Quaternion.identity);
                 meleeObj.GetComponent<SpriteRenderer>().flipX = false;
 
@@ -125,18 +125,18 @@ public class PlayerAttack : MonoBehaviour
 
     void Parry(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true && isMeleeing == false)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
         {
             if (PlayerMovement.facingRight)
             {
                 spawnPos = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z + 0.2f);
-                Instantiate(parry, spawnPos, Quaternion.identity, transform);
+                Instantiate(parry, spawnPos, Quaternion.identity);
             }
 
             else
             {
                 spawnPos = new Vector3(transform.position.x, transform.position.y + 0.6f, transform.position.z + 0.2f);
-                GameObject parryObj = Instantiate(parry, spawnPos, Quaternion.identity, transform);
+                GameObject parryObj = Instantiate(parry, spawnPos, Quaternion.identity);
                 parryObj.GetComponent<SpriteRenderer>().flipX = true;
             }
 
