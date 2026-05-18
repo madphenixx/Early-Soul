@@ -80,6 +80,7 @@ public class EnnemiSol : MonoBehaviour
         {
             enemyAnimator.SetBool("isAttacking", false);
             enemyAnimator.SetBool("isDefensive", false);
+            enemyAnimator.SetBool("isApproaching", true);
             moveCount = 0;
             attackCount = 0;
             ApproachState();
@@ -90,6 +91,7 @@ public class EnnemiSol : MonoBehaviour
             moveCount = 0;
             enemyAnimator.SetBool("isAttacking", true);
             enemyAnimator.SetBool("isDefensive", false);
+            enemyAnimator.SetBool("isApproaching", false);
             AttackState();
         }
 
@@ -97,6 +99,7 @@ public class EnnemiSol : MonoBehaviour
         {
             enemyAnimator.SetBool("isAttacking", false);
             enemyAnimator.SetBool("isDefensive", true);
+            enemyAnimator.SetBool("isApproaching", false);
             attackCount = 0;
             DefenseState();
         }
