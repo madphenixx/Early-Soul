@@ -79,6 +79,7 @@ public class EnnemiSol : MonoBehaviour
         if (currentState == stateApproche)
         {
             enemyAnimator.SetBool("isAttacking", false);
+            enemyAnimator.SetBool("isDefensive", false);
             moveCount = 0;
             attackCount = 0;
             ApproachState();
@@ -88,12 +89,14 @@ public class EnnemiSol : MonoBehaviour
         {
             moveCount = 0;
             enemyAnimator.SetBool("isAttacking", true);
+            enemyAnimator.SetBool("isDefensive", false);
             AttackState();
         }
 
         else if (currentState == stateDefense)
         {
             enemyAnimator.SetBool("isAttacking", false);
+            enemyAnimator.SetBool("isDefensive", true);
             attackCount = 0;
             DefenseState();
         }
