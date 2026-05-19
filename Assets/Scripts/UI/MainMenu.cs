@@ -7,12 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
-    //[SerializeField] private Slider SFXSlider;
+    [SerializeField] private Slider SFXSlider;
     [SerializeField] private Button scene1;
     [SerializeField] private Button scene2;
     [SerializeField] private Button scene3;
     [SerializeField] private Button continueButton;
     [SerializeField] private Text nameText;
+
+    [SerializeField] private AudioSource clickSound;
+    [SerializeField] private AudioSource sliderSound;
 
     [Header("Objects")]
     //[SerializeField] private GameObject panelID;
@@ -23,7 +26,7 @@ public class MainMenu : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Confined;
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        //SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -90,6 +93,16 @@ public class MainMenu : MonoBehaviour
     //    base.OnEnable();
     //}
 
+    public void ClicSound()
+    {
+        clickSound.Play();
+    }
+
+    public void SlideSound()
+    {
+        sliderSound.Play();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));
@@ -114,14 +127,14 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float sliderValue)
     {
         PlayerPrefs.SetFloat("volume", sliderValue);
-        AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
+        //AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
     }
-    
-    //public void SetVolumeSFX(float sliderValue)
-    //{
-    //    PlayerPrefs.SetFloat("SFXvolume", sliderValue);
-    //    AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume")/2;
-    //}
+
+    public void SetVolumeSFX(float sliderValue)
+    {
+        PlayerPrefs.SetFloat("SFXvolume", sliderValue);
+        //AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume") / 2;
+    }
 
     public void QuitGame()
     {
