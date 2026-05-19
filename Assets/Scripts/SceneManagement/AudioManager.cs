@@ -15,20 +15,6 @@ public class AudioManager : MonoBehaviour
     public float musicVolume;
     public float sfxVolume;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        //    else
-        //    {
-        //        Destroy(gameObject);
-        //    }
-    }
-
     private void Start()
     {
         musicSource.volume = PlayerPrefs.GetFloat("volume");

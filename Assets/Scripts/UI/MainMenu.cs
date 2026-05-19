@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private Slider SFXSlider;
+    //[SerializeField] private Slider SFXSlider;
     [SerializeField] private Button scene1;
     [SerializeField] private Button scene2;
     [SerializeField] private Button scene3;
@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Confined;
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
+        //SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -117,11 +117,11 @@ public class MainMenu : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volume")/2;
     }
     
-    public void SetVolumeSFX(float sliderValue)
-    {
-        PlayerPrefs.SetFloat("SFXvolume", sliderValue);
-        AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume")/2;
-    }
+    //public void SetVolumeSFX(float sliderValue)
+    //{
+    //    PlayerPrefs.SetFloat("SFXvolume", sliderValue);
+    //    AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume")/2;
+    //}
 
     public void QuitGame()
     {

@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private Slider SFXSlider;
+    //[SerializeField] private Slider SFXSlider;
 
     [Header("Menus")]
     [SerializeField] private GameObject pauseMenuObject;
@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
+        //SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
 
         pauseMenuObject.SetActive(false);
         optionsMenuObject.SetActive(false);
@@ -91,11 +91,11 @@ public class PauseMenu : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volume");
     }
 
-    public void SetVolumeSFX(float sliderValue)
-    {
-        PlayerPrefs.SetFloat("SFXvolume", sliderValue);
-        AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume");
-    }
+    //public void SetVolumeSFX(float sliderValue)
+    //{
+    //    PlayerPrefs.SetFloat("SFXvolume", sliderValue);
+    //    AudioListener.volume = PlayerPrefs.GetFloat("SFXvolume");
+    //}
 
     void OnDisable()
     {

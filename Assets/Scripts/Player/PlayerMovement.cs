@@ -40,13 +40,13 @@ public class PlayerMovement : MonoBehaviour
         isInvicible = false;
         direction = 0;
         playerAnimator.SetBool("isWalking", false);
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         moveRef.action.started += Move;
@@ -114,13 +114,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Move(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && GameManager.movementAllowed)
+        if (!ctx.canceled && DialogueManager.dialogueActive == false)
         {
             playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
         }
 
-        else if (ctx.canceled && GameManager.movementAllowed)
+        else if (ctx.canceled)
         {
             direction = 0;
             playerAnimator.SetBool("isWalking", false);

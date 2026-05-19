@@ -180,6 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePlayer
   baseAttack: 1
-  distanceMin: 20
+  distanceMin: 15
   speed: 10
   duration: 10
