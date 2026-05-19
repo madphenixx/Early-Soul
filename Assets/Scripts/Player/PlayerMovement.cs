@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         isInvicible = false;
+        direction = 0;
+        playerAnimator.SetBool("isWalking", false);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
