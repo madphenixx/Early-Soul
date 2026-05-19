@@ -1,5 +1,6 @@
 PlayerPrefs: 
 -volume
+-SFXvolume
 -savedScene
 -progress
 -passedCombat

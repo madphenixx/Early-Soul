@@ -44,6 +44,7 @@ public class EndDeathMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("volume", 0.5f);
+        PlayerPrefs.SetFloat("SFXvolume", 0.5f);
         Debug.Log(PlayerPrefs.GetFloat("volume"));
     }
 }

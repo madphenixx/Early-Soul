@@ -14629,6 +14629,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      propertyPath: SFXSlider
+      value: 
+      objectReference: {fileID: 1314111569078284677}
+    - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 932842375}
@@ -15451,6 +15455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789484717}
+  - component: {fileID: 789484718}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -15475,6 +15480,22 @@ Transform:
   - {fileID: 1481208173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &789484718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789484716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c92abb93ac6a964f897263dff503fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicVolume: 0
+  sfxVolume: 0
 --- !u!1 &803320062
 GameObject:
   m_ObjectHideFlags: 0
@@ -51586,6 +51607,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4019692502032358174, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 634155680}
+    - target: {fileID: 4019692502032358174, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolumeSFX
+      objectReference: {fileID: 0}
     - target: {fileID: 7208014467472537496, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
@@ -51603,6 +51632,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
+--- !u!114 &1314111569078284677 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4019692502032358174, guid: 7b07c3a3d544ca7409e5e59d51fc25bb, type: 3}
+  m_PrefabInstance: {fileID: 1314111569078284676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &1967622691995424342
 MonoBehaviour:
   m_ObjectHideFlags: 0
