@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 448237101155636121}
   - component: {fileID: 2340316343175786341}
   - component: {fileID: 5539279473931513804}
+  - component: {fileID: 3893546465959961955}
   m_Layer: 0
   m_Name: Post combat
   m_TagString: Untagged
@@ -121,3 +122,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharaDialogue
   conversations:
   - {fileID: 11400000, guid: 7ad7a0911ee6fd741852ba3a8d09aa58, type: 2}
+--- !u!114 &3893546465959961955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9969133049167327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6547aa37699e0d947bb5f8f0ad5c1783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

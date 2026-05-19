@@ -16,12 +16,20 @@ public class ThroneManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] private GameObject goodbyes;
-    
+
+    [Header("Sons")]
+    [SerializeField] private AudioSource musiqueCombat;
+    [SerializeField] private AudioSource musiqueScène;
 
     [Header("Settings")]
-
     public static bool throneStarted = false;
     private bool endStarted = false;
+
+    private void Awake()
+    {
+        musiqueCombat.Stop();
+        musiqueScène.Pause();
+    }
 
     void Start()
     {
@@ -37,6 +45,7 @@ public class ThroneManager : MonoBehaviour
 
             //startDistance.SetActive(true);
 
+            musiqueCombat.Play();
             bossUI.SetActive(true);
             Boss.canAttack = true;
         }
@@ -48,6 +57,8 @@ public class ThroneManager : MonoBehaviour
                 interact.SetActive(true);
             }
 
+
+            musiqueScène.Play();
             //throne.SetActive(false);
             //startDistance.SetActive(false);
             bossUI.SetActive(false);
@@ -78,6 +89,7 @@ public class ThroneManager : MonoBehaviour
         if (boss.Length == 0 && endStarted == false && throneStarted == true && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             bossUI.SetActive(false);
+            
 
             for (int i = 0; i < ennemies.Length; i++)
             {
@@ -87,6 +99,9 @@ public class ThroneManager : MonoBehaviour
             PlayerMovement.isInvicible = true;
 
             End();
+
+            musiqueScène.Play();
+            musiqueCombat.Stop();
         }
 
         if (boss.Length == 0 && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex && endStarted == false)

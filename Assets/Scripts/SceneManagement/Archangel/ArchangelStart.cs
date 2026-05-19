@@ -15,7 +15,7 @@ public class ArchangelStart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            musiqueScène.Stop();
+            musiqueScène.Pause();
             musiqueCombat.Play();
             ArchangelManager.archangelStarted = true;
         }

@@ -77,6 +77,8 @@ public class ArchangelManager : MonoBehaviour
 
         if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
+            musiqueCombat.Stop();
+            musiqueScène.Play();
             End();
         }
 
