@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        PlayerMovement.isInvicible = false;
         canAttack = true;
         movementAllowed = true;
         pv = 10;

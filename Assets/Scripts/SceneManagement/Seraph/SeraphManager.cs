@@ -12,15 +12,17 @@ public class SeraphManager : MonoBehaviour
     [SerializeField] private GameObject[] interactions;
     [SerializeField] private GameObject gate;
 
+    [SerializeField] private Transform player;
+
     [Header("Settings")]
     [SerializeField] private int maxVagues = 3;
     private int currentVague = 1;
     [SerializeField] private int maxEnnemies = 5;
     private int currentEnnemiesNumber = 0;
-    [SerializeField] private int maxX = 130;
-    [SerializeField] private int minX = 86;
-    [SerializeField] private int maxY = 15;
-    [SerializeField] private int minY = -11;
+    //[SerializeField] private int maxX = 130;
+    //[SerializeField] private int minX = 86;
+    //[SerializeField] private int maxY = 15;
+    //[SerializeField] private int minY = -11;
 
     public static bool seraphStarted = false;
     public static bool boatTouched = false;
@@ -28,6 +30,7 @@ public class SeraphManager : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Transform>();
         boatTouched = false;
         seraphStarted = false;
         endStarted = false;
@@ -92,7 +95,6 @@ public class SeraphManager : MonoBehaviour
             GameManager.movementAllowed = true;
             GameManager.canAttack = true;
 
-            Transform player = GameObject.Find("Player").GetComponent<Transform>();
             Vector3 spawnPos = new Vector3(player.position.x, player.position.y);
 
             Instantiate(gate, spawnPos, Quaternion.identity);
@@ -104,8 +106,8 @@ public class SeraphManager : MonoBehaviour
         while (currentEnnemiesNumber < maxEnnemies)
         {
             currentEnnemiesNumber += 1;
-            float spawnX = Random.Range(minX, maxX);
-            float spawnY = Random.Range(minY, maxY);
+            float spawnX = Random.Range(player.position.x + 15, player.position.x + 41);
+            float spawnY = Random.Range(11, -5);
 
             Vector3 spawnPos = new Vector3(spawnX, spawnY);
 

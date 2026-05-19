@@ -84,6 +84,8 @@ public class ThroneManager : MonoBehaviour
                 Destroy(ennemies[i]);
             }
 
+            PlayerMovement.isInvicible = true;
+
             End();
         }
 

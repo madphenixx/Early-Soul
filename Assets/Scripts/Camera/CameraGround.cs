@@ -14,7 +14,7 @@ public class CameraGround : MonoBehaviour
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] float shakeForce = 0.05f;
     [SerializeField] private float shakeTimer = 1;
-    [SerializeField] private float time = 0;
+    //[SerializeField] private float time = 0;
 
     [Header("Debug: booleans")]
     public bool isFollowing = true;

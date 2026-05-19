@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeEnnemi
   attacker: {fileID: 0}
-  baseAttack: 2
+  baseAttack: 1
   distanceTookDamage: 5
   meleeDuration: 0.2
 --- !u!212 &-7004090515865936869

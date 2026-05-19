@@ -234,7 +234,7 @@ public class Boss : MonoBehaviour
         float spawnTime = Random.Range(minProjTime, maxProjTime);
         yield return new WaitForSeconds(spawnTime);
 
-        spawnPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0.5f);
+        spawnPos = new Vector3(gameObject.transform.position.x, aoeDistanceY, 0.5f);
         Instantiate(projectile, spawnPos, Quaternion.identity);
 
         attackRoutine = null;

@@ -370,7 +370,7 @@ MonoBehaviour:
   reactivityTime: 0
   minMeleeTime: 0
   maxMeleeTime: 0.5
-  speed: 15
+  speed: 10
   direction: 0
   distance: 0
   distanceDefense: 4

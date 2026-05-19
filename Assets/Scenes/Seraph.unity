@@ -14690,12 +14690,9 @@ MonoBehaviour:
   - {fileID: 251940042}
   - {fileID: 1484659983}
   gate: {fileID: 5329236331698083361, guid: 6ee3d6fd407679541ab6ceb7046620fd, type: 3}
+  player: {fileID: 0}
   maxVagues: 3
   maxEnnemies: 5
-  maxX: 130
-  minX: 86
-  maxY: 15
-  minY: -11
 --- !u!114 &634155683
 MonoBehaviour:
   m_ObjectHideFlags: 0

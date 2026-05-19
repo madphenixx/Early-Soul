@@ -9880,7 +9880,6 @@ MonoBehaviour:
   smoothSpeed: 0.3
   shakeForce: 0.05
   shakeTimer: 2
-  time: 0
   isFollowing: 1
   isZooming: 0
   isShaking: 0
@@ -11260,7 +11259,6 @@ MonoBehaviour:
   bossUI: {fileID: 601279772}
   gate: {fileID: 1287020159}
   lightGate: {fileID: 7163203770637085612}
-  startDistance: {fileID: 0}
   throne: {fileID: 5533254102098703288}
   boss: []
   ennemies: []
@@ -15080,7 +15078,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11, y: 13.68}
+  m_Size: {x: 12.67, y: 13.68}
   m_EdgeRadius: 0
 --- !u!114 &6326454025750996295
 MonoBehaviour:
@@ -15104,16 +15102,16 @@ MonoBehaviour:
   distanceDefState: 10
   defensePhaseStart: 10
   resistanceMelee: 1
-  resistanceDistance: 0.1
-  resistanceFinisher: 2
-  startP2: 10
-  aoeSpawnTime: 0.5
+  resistanceDistance: 0.5
+  resistanceFinisher: 3
+  startP2: 20
+  aoeSpawnTime: 1
   minProjTime: 1
-  maxProjTime: 2
+  maxProjTime: 3
   minSpawnTime: 4
-  maxSpawnTime: 6
-  minAoeSpawnTimeP2: 0
-  maxAoeSpawnTimeP2: 2
+  maxSpawnTime: 7
+  minAoeSpawnTimeP2: 0.5
+  maxAoeSpawnTimeP2: 3
   minSpawnDistance: 6
   maxSpawnDistance: 9
   spawnDistanceY: 0.2
