@@ -4,7 +4,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] public static AudioManager instance;
 
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource[] musicSource;
 
     [SerializeField] private AudioSource[] sfxSource;
 
@@ -13,7 +13,11 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        musicSource.volume = PlayerPrefs.GetFloat("volume");
+        for (int i = 0; i < sfxSource.Length; i++)
+        {
+            //musicSource[i].volume = PlayerPrefs.GetFloat("volume");
+        }
+
         for (int i = 0; i < sfxSource.Length; i++)
         {
             sfxSource[i].volume = PlayerPrefs.GetFloat("SFXvolume");

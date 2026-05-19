@@ -14,12 +14,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private Text nameText;
 
+    [Header("Sons")]
     [SerializeField] private AudioSource clickSound;
     [SerializeField] private AudioSource sliderSound;
 
     [Header("Objects")]
     //[SerializeField] private GameObject panelID;
     private int progress;
+    private void Awake()
+    {
+        clickSound.Stop();
+        sliderSound.Stop();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

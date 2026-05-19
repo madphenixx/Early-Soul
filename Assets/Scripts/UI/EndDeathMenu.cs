@@ -3,6 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class EndDeathMenu : MonoBehaviour
 {
+    [Header("Sons")]
+    [SerializeField] private AudioSource clickSound;
+
+    private void Awake()
+    {
+        clickSound.Stop();
+    }
+
+    public void ClicSound()
+    {
+        clickSound.Play();
+    }
+
     public void Retry()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("savedScene"));

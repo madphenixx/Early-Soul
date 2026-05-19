@@ -12,11 +12,21 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider SFXSlider;
 
+    [Header("Sons")]
+    [SerializeField] private AudioSource clickSound;
+    [SerializeField] private AudioSource sliderSound;
+
     [Header("Menus")]
     [SerializeField] private GameObject pauseMenuObject;
     [SerializeField] private GameObject optionsMenuObject;
 
     public static bool isPaused = false;
+
+    private void Awake()
+    {
+        clickSound.Stop();
+        sliderSound.Stop();
+    }
 
     void Start()
     {
@@ -28,6 +38,16 @@ public class PauseMenu : MonoBehaviour
 
         pauseRef.action.started += PauseGame;
         pauseRef.action.canceled += PauseGame;
+    }
+
+    public void ClicSound()
+    {
+        clickSound.Play();
+    }
+
+    public void SlideSound()
+    {
+        sliderSound.Play();
     }
 
     public void PauseGame(InputAction.CallbackContext ctx)

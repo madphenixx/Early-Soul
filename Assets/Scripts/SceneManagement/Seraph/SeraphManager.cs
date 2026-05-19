@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class SeraphManager : MonoBehaviour
 {
+    [Header("Sons")]
+    [SerializeField] private AudioSource musiqueCombat;
+    [SerializeField] private AudioSource musiqueScène;
+
     [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
     [SerializeField] private GameObject seraph;
@@ -27,6 +31,11 @@ public class SeraphManager : MonoBehaviour
     public static bool seraphStarted = false;
     public static bool boatTouched = false;
     private bool endStarted = false;
+    private void Awake()
+    {
+        musiqueCombat.Stop();
+        musiqueScène.Stop();
+    }
 
     void Start()
     {
@@ -43,6 +52,7 @@ public class SeraphManager : MonoBehaviour
             }
 
             EnnemiVol.canAttack = true;
+            musiqueCombat.Play();
         }
 
         else
@@ -53,6 +63,7 @@ public class SeraphManager : MonoBehaviour
             }
 
             GameManager.canAttack = false;
+            musiqueScène.Play();
         }
     }
 

@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class ArchangelManager : MonoBehaviour
 {
+    [Header("Sons")]
+    [SerializeField] private AudioSource musiqueCombat;
+    [SerializeField] private AudioSource musiqueScène;
+
     [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
     [SerializeField] private Gate gate;
@@ -15,6 +19,12 @@ public class ArchangelManager : MonoBehaviour
 
     public static bool archangelStarted = false;
     private bool endStarted = false;
+
+    private void Awake()
+    {
+        musiqueCombat.Stop();
+        musiqueScène.Stop();
+    }
 
     void Start()
     {
@@ -31,6 +41,7 @@ public class ArchangelManager : MonoBehaviour
             }
 
             EnnemiSol.startAttack = true;
+            musiqueCombat.Play();
         }
 
         else
@@ -41,6 +52,7 @@ public class ArchangelManager : MonoBehaviour
             }
 
             GameManager.canAttack = false;
+            musiqueScène.Play();
         }
     }
 
