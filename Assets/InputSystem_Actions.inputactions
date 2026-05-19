@@ -413,6 +413,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bb90fe56-64c1-45cf-b0f9-2780e4a6e4c0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "423f2486-eb6b-453f-9512-06309ddde6fb",
                     "path": "<Keyboard>/q",
                     "interactions": "",

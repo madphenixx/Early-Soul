@@ -35864,6 +35864,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnnemiVol
       objectReference: {fileID: 0}
+    - target: {fileID: 4389352089810341296, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
+      propertyPath: maxSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389352089810341296, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
+      propertyPath: minSpawnTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9135247510194935451, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

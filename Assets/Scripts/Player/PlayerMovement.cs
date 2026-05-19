@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             direction = ctx.ReadValue<float>();
         }
 
-        else 
+        else if (ctx.canceled && GameManager.movementAllowed)
         {
             direction = 0;
             playerAnimator.SetBool("isWalking", false);

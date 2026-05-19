@@ -181,3 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   explosion: {fileID: 4766895689783932529, guid: 2b239599ffbdb424eb05ae24169429da, type: 3}
   speed: 10
+  time: 1

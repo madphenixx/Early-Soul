@@ -47,16 +47,16 @@ public class ReaperMovements : MonoBehaviour
 
     void Move(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled)
+        if (!ctx.canceled && DialogueManager.dialogueActive == false)
         {
+            playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
-             playerAnimator.SetTrigger("isWalking");
         }
 
-        else
+        else if (ctx.canceled)
         {
             direction = 0;
-             playerAnimator.SetTrigger("stopWalking");
+            playerAnimator.SetBool("isWalking", false);
         }
     }
 

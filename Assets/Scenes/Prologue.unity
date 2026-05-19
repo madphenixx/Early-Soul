@@ -1368,7 +1368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7433e7c1187ed747bede3a9aea5b38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceAspectRatio
-  targetAspect: 1.7777778
 --- !u!1 &528341205
 GameObject:
   m_ObjectHideFlags: 0
@@ -24095,7 +24094,6 @@ MonoBehaviour:
   smoothSpeed: 0.125
   shakeForce: 0.003
   shakeTimer: 1
-  time: 0
   isFollowing: 1
   isZooming: 0
   isShaking: 0
@@ -26595,7 +26593,7 @@ MonoBehaviour:
   cible: {fileID: 4304698705029787973}
   playerAnimator: {fileID: 8551685455918564960}
   speed: 10
-  maxDistanceApproach: 7
+  maxDistanceApproach: 8
   distanceApproach: -4
   direction: 0
 --- !u!50 &8551685455918564959

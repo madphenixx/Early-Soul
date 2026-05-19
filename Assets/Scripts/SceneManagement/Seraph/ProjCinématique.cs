@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ProjCinématique : MonoBehaviour
@@ -10,8 +11,11 @@ public class ProjCinématique : MonoBehaviour
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
 
+    private Coroutine coroutine = null;
+
     [Header("Settings")]
     [SerializeField] private float speed = 10;
+    [SerializeField] private float time;
 
     void Start()
     {
@@ -35,12 +39,19 @@ public class ProjCinématique : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Boat"))
+        if (collision.gameObject.CompareTag("Boat") && coroutine == null)
         {
             Vector3 spawnPosEx = new Vector3(transform.position.x - 2f, transform.position.y);
             Instantiate(explosion, spawnPosEx, Quaternion.identity);
-            SeraphManager.boatTouched = true;
-            Destroy(gameObject);
+            spriteRenderer.enabled = false;
+            coroutine = StartCoroutine(NextScene(time));
         }
+    }
+
+    private IEnumerator NextScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SeraphManager.boatTouched = true;
+        Destroy(gameObject);
     }
 }
