@@ -5497,7 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   musiqueCombat: {fileID: 1577767294}
-  "musiqueSc\xE8ne": {fileID: 1533251303}
+  musiqueScene: {fileID: 1533251303}
 --- !u!1 &644962069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1118660994456968640, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
@@ -17314,7 +17314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   musiqueCombat: {fileID: 1577767294}
-  "musiqueSc\xE8ne": {fileID: 1533251303}
+  musiqueScene: {fileID: 1533251303}
   tutoObject: {fileID: 1146857498}
   gate: {fileID: 2027384666}
   interactions:

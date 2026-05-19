@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,19 +10,56 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource[] sfxSource;
 
-    public float musicVolume;
-    public float sfxVolume;
+    [SerializeField] private float fadeDuration = 0.25f;
+
+    private bool isFading;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Update()
     {
-        for (int i = 0; i < sfxSource.Length; i++)
+        if (!isFading)
         {
-            //musicSource[i].volume = PlayerPrefs.GetFloat("volume");
+            for (int i = 0; i < musicSource.Length; i++)
+            {
+                musicSource[i].volume = PlayerPrefs.GetFloat("volume");
+            }
+
+            for (int i = 0; i < sfxSource.Length; i++)
+            {
+                sfxSource[i].volume = PlayerPrefs.GetFloat("SFXvolume");
+            }
+        }
+    }
+
+    public void SwapTrack(AudioSource prevClip, AudioSource nextClip)
+    {
+        StartCoroutine(FadeTrack(prevClip,nextClip));
+    }
+
+    public IEnumerator FadeTrack(AudioSource prevClip, AudioSource nextClip)
+    {
+        isFading = true;
+        float timeToFade = fadeDuration;
+        float timeRelaxed = 0;
+
+        nextClip.Play();
+
+        while(timeRelaxed < timeToFade)
+        {
+            nextClip.volume = Mathf.Lerp(0,PlayerPrefs.GetFloat("volume"), timeRelaxed/timeToFade);
+            prevClip.volume = Mathf.Lerp(PlayerPrefs.GetFloat("volume"), 0, timeRelaxed/timeToFade);
+            timeRelaxed += Time.deltaTime;
+            yield return null;
         }
 
-        for (int i = 0; i < sfxSource.Length; i++)
-        {
-            sfxSource[i].volume = PlayerPrefs.GetFloat("SFXvolume");
-        }
+        prevClip.Stop();
+        isFading = false;
     }
 }

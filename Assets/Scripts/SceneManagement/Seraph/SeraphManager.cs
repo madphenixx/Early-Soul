@@ -6,7 +6,7 @@ public class SeraphManager : MonoBehaviour
 {
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
-    [SerializeField] private AudioSource musiqueScène;
+    [SerializeField] private AudioSource musiqueScene;
 
     [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
@@ -34,7 +34,7 @@ public class SeraphManager : MonoBehaviour
     private void Awake()
     {
         musiqueCombat.Stop();
-        musiqueScène.Stop();
+        musiqueScene.Stop();
     }
 
     void Start()
@@ -63,7 +63,7 @@ public class SeraphManager : MonoBehaviour
             }
 
             GameManager.canAttack = false;
-            musiqueScène.Play();
+            musiqueScene.Play();
         }
     }
 

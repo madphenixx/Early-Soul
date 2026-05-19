@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator comboTime()
     {
-        while (combo == comboArch)
+        if (combo == comboArch)
         {
             yield return new WaitForSeconds(comboMaxDuration);
 
@@ -113,6 +113,11 @@ public class GameManager : MonoBehaviour
             comboText.text = "Combo : 0";
             multiplicateurText.text = "x1";
             comboArch = combo;
+        }
+
+        else
+        {
+            yield return null;
         }
     }
 

@@ -19,7 +19,7 @@ public class ThroneManager : MonoBehaviour
 
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
-    [SerializeField] private AudioSource musiqueScène;
+    [SerializeField] private AudioSource musiqueScene;
 
     [Header("Settings")]
     public static bool throneStarted = false;
@@ -28,7 +28,7 @@ public class ThroneManager : MonoBehaviour
     private void Awake()
     {
         musiqueCombat.Stop();
-        musiqueScène.Pause();
+        musiqueScene.Pause();
     }
 
     void Start()
@@ -58,7 +58,7 @@ public class ThroneManager : MonoBehaviour
             }
 
 
-            musiqueScène.Play();
+            musiqueScene.Play();
             //throne.SetActive(false);
             //startDistance.SetActive(false);
             bossUI.SetActive(false);
@@ -99,9 +99,6 @@ public class ThroneManager : MonoBehaviour
             PlayerMovement.isInvicible = true;
 
             End();
-
-            musiqueScène.Play();
-            musiqueCombat.Stop();
         }
 
         if (boss.Length == 0 && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex && endStarted == false)
@@ -114,6 +111,7 @@ public class ThroneManager : MonoBehaviour
     private void End()
     {
         endStarted = true;
+        AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
 
         Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);

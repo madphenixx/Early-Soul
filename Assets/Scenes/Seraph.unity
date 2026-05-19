@@ -14822,7 +14822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeraphManager
   musiqueCombat: {fileID: 553422474}
-  "musiqueSc\xE8ne": {fileID: 7256618308460923599}
+  musiqueScene: {fileID: 7256618308460923599}
   tutoObject: {fileID: 1804459663}
   seraph: {fileID: 3138119206829371016, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
   seraphCine: {fileID: 3138119206829371016, guid: 6bdc1f166d4c3f54f9465ce3c8baa3f4, type: 3}
@@ -32407,7 +32407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeraphStart
   musiqueCombat: {fileID: 553422474}
-  "musiqueSc\xE8ne": {fileID: 7256618308460923599}
+  musiqueScene: {fileID: 7256618308460923599}
 --- !u!212 &1484659985
 SpriteRenderer:
   serializedVersion: 2
@@ -51942,7 +51942,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 202867500182954695, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_Name
-      value: "Musique Sc\xE8ne"
+      value: Musique Scene
       objectReference: {fileID: 0}
     - target: {fileID: 1711599773666356315, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_PlayOnAwake

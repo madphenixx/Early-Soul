@@ -6,7 +6,7 @@ public class ArchangelManager : MonoBehaviour
 {
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
-    [SerializeField] private AudioSource musiqueScène;
+    [SerializeField] private AudioSource musiqueScene;
 
     [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
@@ -23,7 +23,7 @@ public class ArchangelManager : MonoBehaviour
     private void Awake()
     {
         musiqueCombat.Stop();
-        musiqueScène.Stop();
+        musiqueScene.Stop();
     }
 
     void Start()
@@ -52,7 +52,7 @@ public class ArchangelManager : MonoBehaviour
             }
 
             GameManager.canAttack = false;
-            musiqueScène.Play();
+            musiqueScene.Play();
         }
     }
 
@@ -77,8 +77,6 @@ public class ArchangelManager : MonoBehaviour
 
         if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
-            musiqueCombat.Stop();
-            musiqueScène.Play();
             End();
         }
 
@@ -90,6 +88,8 @@ public class ArchangelManager : MonoBehaviour
 
     private void End()
     {
+        AudioManager.instance.FadeTrack(musiqueCombat,musiqueScene);
+
         endStarted = true;
         Debug.Log("this is the end...");
 

@@ -7546,7 +7546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   musiqueCombat: {fileID: 1969214530}
-  "musiqueSc\xE8ne": {fileID: 617605352}
+  musiqueScene: {fileID: 617605352}
 --- !u!1 &515968033
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,7 +7861,7 @@ GameObject:
   - component: {fileID: 617605351}
   - component: {fileID: 617605352}
   m_Layer: 0
-  m_Name: "Musique Sc\xE8ne"
+  m_Name: Musique Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11619,7 +11619,7 @@ MonoBehaviour:
   - {fileID: 1884157497}
   goodbyes: {fileID: 2296489149768908675, guid: 7bf0c6c3a94f28443a17b5a0acca1be4, type: 3}
   musiqueCombat: {fileID: 1969214530}
-  "musiqueSc\xE8ne": {fileID: 617605352}
+  musiqueScene: {fileID: 617605352}
 --- !u!1 &1507003711
 GameObject:
   m_ObjectHideFlags: 0
@@ -14008,7 +14008,7 @@ PrefabInstance:
     - target: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 1dbaf0e99c2b8514ca7640a8f7b319a2, type: 3}
+      objectReference: {fileID: 8300000, guid: 793733e6a6b91944d9b010e30fa2e3c5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

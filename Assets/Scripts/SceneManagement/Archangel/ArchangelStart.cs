@@ -4,19 +4,18 @@ public class ArchangelStart : MonoBehaviour
 {
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
-    [SerializeField] private AudioSource musiqueScène;
+    [SerializeField] private AudioSource musiqueScene;
     private void Awake()
     {
         musiqueCombat.Stop();
-        musiqueScène.Stop();
+        musiqueScene.Stop();
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            musiqueScène.Pause();
-            musiqueCombat.Play();
+            AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
             ArchangelManager.archangelStarted = true;
         }
     }

@@ -5,7 +5,7 @@ public class ThroneStart : MonoBehaviour
 {
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
-    [SerializeField] private AudioSource musiqueScène;
+    [SerializeField] private AudioSource musiqueScene;
 
     //[SerializeField] private GameObject throne;
     private Coroutine shake;
@@ -13,17 +13,17 @@ public class ThroneStart : MonoBehaviour
     private void Awake()
     {
         musiqueCombat.Stop();
-        musiqueScène.Stop();
+        musiqueScene.Stop();
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && ThroneManager.throneStarted == false)
         {
-            musiqueCombat.Play();
-            musiqueScène.Pause();
-
             ThroneManager.throneStarted = true;
+
+            AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
+
             //if (shake == null)
             //{
             //    shake = StartCoroutine(BossStart());
