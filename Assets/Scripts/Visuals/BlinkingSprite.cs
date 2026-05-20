@@ -3,6 +3,9 @@ using System.Collections;
 
 public class BlinkingSprite : MonoBehaviour
 {
+    [Header("Sound")]
+    [SerializeField] private AudioSource sound;
+    
     private SpriteRenderer image;
 
     [Header("Sprites")]
@@ -31,6 +34,7 @@ public class BlinkingSprite : MonoBehaviour
     {
         int time = Random.Range(1, 5);
         yield return new WaitForSeconds(time);
+        sound.Play();
         image.sprite = sprite2;
         
         StartCoroutine(Glitch1());

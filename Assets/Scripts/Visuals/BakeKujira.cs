@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class BakeKujira : MonoBehaviour
 {
-    public AudioSource[] whaleSounds;
+    [SerializeField] private AudioSource whaleSource;
+    [SerializeField] private AudioClip[] whaleSounds;
 
     private Animator animator;
 
@@ -16,6 +17,7 @@ public class BakeKujira : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        whaleSource = GetComponent<AudioSource>();
         StartCoroutine(AnimationCoolDown1());
     }
 
@@ -33,7 +35,10 @@ public class BakeKujira : MonoBehaviour
     private IEnumerator AnimationCoolDown2()
     {
         int randInt = Random.Range(0, whaleSounds.Length);
-        whaleSounds[randInt].Play();
+
+        whaleSource.clip = whaleSounds[randInt];
+
+        whaleSource.Play();
 
         yield return new WaitForSeconds(cooldown);
 
