@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7728443077878049931}
   - component: {fileID: 8754542356105414839}
   - component: {fileID: 5114469965408884789}
+  - component: {fileID: 7932568769856077146}
   m_Layer: 0
   m_Name: BossAOE
   m_TagString: EnnemiAttack
@@ -183,3 +184,25 @@ MonoBehaviour:
   speed: 0.7
   duration: 2
   isLeftOne: 1
+--- !u!95 &7932568769856077146
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766587246430527401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bde18c80435d19f45bf1320788bf1ad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
