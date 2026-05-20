@@ -14,11 +14,19 @@ public class ArchangelManager : MonoBehaviour
     [SerializeField] private GameObject[] interactions;
     private GameObject[] ennemies;
 
+    [SerializeField] private Transform player;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject postFightDialogue;
+    [SerializeField] private GameObject archangel;
 
+    [Header("Settings")]
+    [SerializeField] private int maxVagues = 3;
+    private int currentVague = 1;
     public static bool archangelStarted = false;
     private bool endStarted = false;
+    [SerializeField] private int maxEnnemies = 5;
+    private int currentEnnemiesNumber = 0;
 
     private void Awake()
     {
@@ -30,6 +38,7 @@ public class ArchangelManager : MonoBehaviour
     {
         archangelStarted = false;
         gate.isEnabled = false;
+        player = GameObject.Find("Player").GetComponent<Transform>();
 
         if (PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
@@ -59,6 +68,8 @@ public class ArchangelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ennemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
+
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex && EnnemiSol.startAttack == false)
         {
             GameManager.canAttack = false;
@@ -75,15 +86,34 @@ public class ArchangelManager : MonoBehaviour
 
         ennemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
 
-        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague < maxVagues)
+        {
+            currentVague += 1;
+            NewVague();
+        }
+
+        if (ennemies.Length == 0 && currentVague >= maxVagues  && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             End();
         }
 
-        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             SceneManager.LoadScene("VictoryScreen");
         }  
+    }
+
+    private void NewVague()
+    {
+        while (currentEnnemiesNumber < maxEnnemies)
+        {
+            currentEnnemiesNumber += 1;
+            float spawnX = Random.Range(player.position.x + 7, player.position.x + 11);
+
+            Vector3 spawnPos = new Vector3(spawnX, 0.36f);
+
+            Instantiate(archangel, spawnPos, Quaternion.identity);
+        }
     }
 
     private void End()

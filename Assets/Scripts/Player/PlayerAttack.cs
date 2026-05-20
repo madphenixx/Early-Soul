@@ -107,13 +107,13 @@ public class PlayerAttack : MonoBehaviour
 
             if (PlayerMovement.facingRight)
             {
-                spawnPos = new Vector2(transform.position.x + 1, transform.position.y + 0.6f);
+                spawnPos = new Vector3(transform.position.x + 1, transform.position.y + 0.6f, transform.position.z + 0.2f);
                 Instantiate(meleeRange, spawnPos, Quaternion.identity);
             }
 
             else
             {
-                spawnPos = new Vector2(transform.position.x - 1, transform.position.y + 0.6f);
+                spawnPos = new Vector3(transform.position.x - 1, transform.position.y + 0.6f, transform.position.z + 0.2f);
                 GameObject meleeObj = Instantiate(meleeRange, spawnPos, Quaternion.identity);
                 meleeObj.GetComponent<SpriteRenderer>().flipX = false;
 

@@ -85,7 +85,7 @@ public class SeraphManager : MonoBehaviour
 
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
 
-        if (ennemies.Length == 0 && currentVague < 3)
+        if (ennemies.Length == 0 && currentVague < maxVagues)
         {
             currentVague += 1;
             NewVague();
