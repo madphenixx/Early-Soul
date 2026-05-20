@@ -22,7 +22,7 @@ public class ThroneStart : MonoBehaviour
         {
             ThroneManager.throneStarted = true;
 
-            AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
+            AudioManager.instance.SwapTrack(musiqueScene, musiqueCombat);
 
             //if (shake == null)
             //{

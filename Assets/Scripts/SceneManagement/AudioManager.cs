@@ -1,18 +1,19 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] public static AudioManager instance;
+    public static AudioManager instance;
 
     [SerializeField] private AudioSource[] musicSource;
 
     [SerializeField] private AudioSource[] sfxSource;
 
-    [SerializeField] private float fadeDuration = 0.25f;
+    public float fadeDuration = 1.5f;
 
-    private bool isFading;
+    public bool isFading;
 
     private void Awake()
     {
@@ -40,11 +41,28 @@ public class AudioManager : MonoBehaviour
 
     public void SwapTrack(AudioSource prevClip, AudioSource nextClip)
     {
+        Debug.Log("aaaaasssssaaaaaaaaa");
         StartCoroutine(FadeTrack(prevClip,nextClip));
+        //AudioManager.instance.isFading = true;
+        //float timeToFade = AudioManager.instance.fadeDuration;
+        //float timeRelaxed = 0;
+
+        //nextClip.Play();
+
+        //while (timeRelaxed < timeToFade)
+        //{
+        //    nextClip.volume = Mathf.Lerp(0, PlayerPrefs.GetFloat("volume"), timeRelaxed / timeToFade);
+        //    prevClip.volume = Mathf.Lerp(PlayerPrefs.GetFloat("volume"), 0, timeRelaxed / timeToFade);
+        //    timeRelaxed += Time.deltaTime;
+        //}
+
+        //prevClip.Stop();
+        //AudioManager.instance.isFading = false;
     }
 
     public IEnumerator FadeTrack(AudioSource prevClip, AudioSource nextClip)
     {
+        Debug.Log("aaaaaaaaaaaaaa");
         isFading = true;
         float timeToFade = fadeDuration;
         float timeRelaxed = 0;

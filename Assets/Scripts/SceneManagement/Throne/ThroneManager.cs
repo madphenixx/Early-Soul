@@ -111,7 +111,7 @@ public class ThroneManager : MonoBehaviour
     private void End()
     {
         endStarted = true;
-        AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
+        AudioManager.instance.SwapTrack(musiqueCombat, musiqueScene);
 
         Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);

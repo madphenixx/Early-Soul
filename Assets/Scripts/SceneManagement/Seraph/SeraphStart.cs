@@ -15,7 +15,7 @@ public class SeraphStart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Boat"))
         {
-            AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
+            AudioManager.instance.SwapTrack(musiqueScene, musiqueCombat);
             SeraphManager.seraphStarted = true;
             GameManager.canAttack = true;
         }

@@ -11,11 +11,11 @@ public class ArchangelStart : MonoBehaviour
         musiqueScene.Stop();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            AudioManager.instance.FadeTrack(musiqueScene, musiqueCombat);
+            AudioManager.instance.SwapTrack(musiqueScene, musiqueCombat);
             ArchangelManager.archangelStarted = true;
         }
     }

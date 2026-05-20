@@ -13994,6 +13994,10 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: fadeDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: musicSource.Array.size
       value: 2
       objectReference: {fileID: 0}

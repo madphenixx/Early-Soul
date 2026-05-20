@@ -88,7 +88,7 @@ public class ArchangelManager : MonoBehaviour
 
     private void End()
     {
-        AudioManager.instance.FadeTrack(musiqueCombat,musiqueScene);
+        AudioManager.instance.SwapTrack(musiqueCombat,musiqueScene);
 
         endStarted = true;
         Debug.Log("this is the end...");

@@ -31,6 +31,17 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Confined;
+
+        if (PlayerPrefs.HasKey("volume") == false)
+        {
+            PlayerPrefs.SetFloat("volume", 0.5f);
+        }
+        
+        if (PlayerPrefs.HasKey("SFXvolume") == false)
+        {
+            PlayerPrefs.SetFloat("SFXvolume", 0.5f);
+        }
+
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
         SFXSlider.value = PlayerPrefs.GetFloat("SFXvolume");
 
