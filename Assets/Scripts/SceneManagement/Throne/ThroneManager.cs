@@ -20,6 +20,7 @@ public class ThroneManager : MonoBehaviour
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
     [SerializeField] private AudioSource musiqueScene;
+    [SerializeField] private AudioSource musiqueEnd;
 
     [Header("Settings")]
     public static bool throneStarted = false;
@@ -28,6 +29,7 @@ public class ThroneManager : MonoBehaviour
     private void Awake()
     {
         musiqueCombat.Stop();
+        musiqueEnd.Stop();
         musiqueScene.Pause();
     }
 
@@ -111,7 +113,8 @@ public class ThroneManager : MonoBehaviour
     private void End()
     {
         endStarted = true;
-        AudioManager.instance.SwapTrack(musiqueCombat, musiqueScene);
+        AudioManager.instance.SwapTrack(musiqueCombat, musiqueEnd);
+        musiqueScene.Stop();
 
         Transform playerTr = GameObject.Find("Player").GetComponent<Transform>();
         Vector3 spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);

@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     public void SwapTrack(AudioSource prevClip, AudioSource nextClip)
     {
-        Debug.Log("aaaaasssssaaaaaaaaa");
+        //Debug.Log("aaaaasssssaaaaaaaaa");
         StartCoroutine(FadeTrack(prevClip,nextClip));
         //AudioManager.instance.isFading = true;
         //float timeToFade = AudioManager.instance.fadeDuration;
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
 
     public IEnumerator FadeTrack(AudioSource prevClip, AudioSource nextClip)
     {
-        Debug.Log("aaaaaaaaaaaaaa");
+        //Debug.Log("aaaaaaaaaaaaaa");
         isFading = true;
         float timeToFade = fadeDuration;
         float timeRelaxed = 0;
