@@ -15178,7 +15178,7 @@ MonoBehaviour:
   - {fileID: 784664718}
   - {fileID: 590816774}
   - {fileID: 372309212}
-  min: 4
+  min: 7
   max: 30
   cooldown: 5
 --- !u!95 &613896620
@@ -15832,6 +15832,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: type
+      value: 
+      objectReference: {fileID: 7256618308460923600}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: spacebar
+      value: 
+      objectReference: {fileID: 7256618308460923601}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaName
       value: 
@@ -23114,7 +23122,7 @@ MonoBehaviour:
   - {fileID: 784664718}
   - {fileID: 590816774}
   - {fileID: 372309212}
-  min: 17
+  min: 7
   max: 30
   cooldown: 5
 --- !u!95 &1006098031
@@ -23251,7 +23259,7 @@ MonoBehaviour:
   - {fileID: 784664718}
   - {fileID: 590816774}
   - {fileID: 372309212}
-  min: 4
+  min: 7
   max: 30
   cooldown: 5
 --- !u!95 &1013716091
@@ -25365,7 +25373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   whaleSounds: []
-  min: 4
+  min: 7
   max: 30
   cooldown: 5
 --- !u!1001 &1172788541
@@ -34179,7 +34187,7 @@ MonoBehaviour:
   - {fileID: 784664718}
   - {fileID: 590816774}
   - {fileID: 372309212}
-  min: 6
+  min: 7
   max: 30
   cooldown: 5
 --- !u!1001 &1653849312
@@ -52166,6 +52174,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 634155680}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClicSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52899,6 +52935,16 @@ Transform:
 --- !u!82 &7256618308460923599 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 7256618308460923595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7256618308460923600 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1285800473738314076, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 7256618308460923595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7256618308460923601 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3365494005516533036, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 7256618308460923595}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

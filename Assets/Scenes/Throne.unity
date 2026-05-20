@@ -7894,7 +7894,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c5dcd6f9887199b4dade7f179fb234ae, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -11393,6 +11393,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1038872975}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClicSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398604629760973216, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7307163166944044190, guid: 182f93b445c47a04b88cefc4bca186e9, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -14014,6 +14042,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 793733e6a6b91944d9b010e30fa2e3c5, type: 3}
+    - target: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14043,6 +14075,16 @@ Transform:
 --- !u!82 &1969214530 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1969214526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1969214531 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1285800473738314076, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1969214526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1969214532 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3365494005516533036, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 1969214526}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1974680925
@@ -14589,6 +14631,14 @@ PrefabInstance:
       value: DialogueManager
       objectReference: {fileID: 0}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: type
+      value: 
+      objectReference: {fileID: 1969214531}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: spacebar
+      value: 
+      objectReference: {fileID: 1969214532}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaName
       value: 
       objectReference: {fileID: 924349472}
@@ -14673,7 +14723,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4053f50d26331a141b11d0c6d0d83615, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

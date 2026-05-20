@@ -19,6 +19,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueCanvas;
     private Sprite currentAvatar;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource type;
+    [SerializeField] private AudioSource spacebar;
+
     private GameObject player;
 
     [Header("All characters")]
@@ -213,14 +217,17 @@ public class DialogueManager : MonoBehaviour
 
     void DialogueEnter(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled)
+        if (!ctx.canceled && dialogueActive == true)
         {
+            type.Pause();
+            spacebar.Play();
             dialogueNext = true;
         }
     }
 
     private IEnumerator typeWriterEffect(string line, Text diaText)
     {
+        type.Play();
         diaText.text="";
         canContinueText = false;
         yield return new WaitForSeconds(0.5f);
@@ -233,11 +240,12 @@ public class DialogueManager : MonoBehaviour
                 dialogueNext = false;
                 break;
             }
-            
+
             diaText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        type.Pause();
         canContinueText = true;
     }
 

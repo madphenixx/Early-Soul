@@ -24844,11 +24844,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2644324893038489525, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 519.7759
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2644324893038489525, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 120.17432
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2644324893038489525, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24886,6 +24886,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: musicSource.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'musicSource.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 202867500182954695, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
@@ -24900,6 +24908,16 @@ AudioSource:
 --- !u!82 &1530304957 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 9187476762060358080, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1530304955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1530304958 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3365494005516533036, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1530304955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1530304959 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1285800473738314076, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 1530304955}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556526584
@@ -25574,6 +25592,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: type
+      value: 
+      objectReference: {fileID: 1530304959}
+    - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
+      propertyPath: spacebar
+      value: 
+      objectReference: {fileID: 1530304958}
     - target: {fileID: 8934696794482496990, guid: 71ad5ac5515cc974eb78cb9d1f4a2bff, type: 3}
       propertyPath: charaName
       value: 
