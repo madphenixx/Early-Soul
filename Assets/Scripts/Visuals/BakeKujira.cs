@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BakeKujira : MonoBehaviour
 {
+    public AudioSource[] whaleSounds;
+
     private Animator animator;
 
     [Header("Settings")]
@@ -30,6 +32,9 @@ public class BakeKujira : MonoBehaviour
 
     private IEnumerator AnimationCoolDown2()
     {
+        int randInt = Random.Range(0, whaleSounds.Length);
+        whaleSounds[randInt].Play();
+
         yield return new WaitForSeconds(cooldown);
 
         animator.SetBool("Swim", false);
