@@ -6,6 +6,9 @@ public class ReaperMovements : MonoBehaviour
     [Header("Controls")]
     [SerializeField] private InputActionReference moveRef;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource footsteps;
+
     [SerializeField] private Animator playerAnimator;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -29,6 +32,8 @@ public class ReaperMovements : MonoBehaviour
         moveRef.action.started += Move;
         moveRef.action.performed += Move;
         moveRef.action.canceled += Move;
+
+        footsteps.Pause();
     }
 
     private void FixedUpdate()
@@ -47,16 +52,18 @@ public class ReaperMovements : MonoBehaviour
 
     void Move(InputAction.CallbackContext ctx)
     {
+        if (ctx.canceled || DialogueManager.dialogueActive == true)
+        {
+            direction = 0;
+            playerAnimator.SetBool("isWalking", false);
+            footsteps.Pause();
+        }
+
         if (!ctx.canceled && DialogueManager.dialogueActive == false)
         {
             playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
-        }
-
-        else if (ctx.canceled)
-        {
-            direction = 0;
-            playerAnimator.SetBool("isWalking", false);
+            footsteps.Play();
         }
     }
 

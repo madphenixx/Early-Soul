@@ -88,8 +88,8 @@ public class ArchangelManager : MonoBehaviour
 
         if (ennemies.Length == 0 && currentVague < maxVagues)
         {
-            currentVague += 1;
             NewVague();
+            currentVague += 1;
         }
 
         if (ennemies.Length == 0 && currentVague >= maxVagues  && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
