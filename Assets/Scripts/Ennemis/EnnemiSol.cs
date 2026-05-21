@@ -71,6 +71,11 @@ public class EnnemiSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (currentState == null && ArchangelManager.currentVague == 2)
+        //{
+        //    currentState = stateApproche;
+        //}
+
         if (currentState == null && startAttack == true)
         {
             currentState = stateApproche;

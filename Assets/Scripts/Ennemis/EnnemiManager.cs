@@ -42,6 +42,12 @@ public class EnnemiManager : MonoBehaviour
             }
         }
 
+        if (attacker == null && allEnnemies.Length > 0)
+        {
+            allEnnemies[0].GetComponent<EnnemiSol>().isAttacker = true;
+            attacker = allEnnemies[0].GetComponent<EnnemiSol>();
+        }
+
         if (attacker != null)
         {
             attacker.isAttacker = true;

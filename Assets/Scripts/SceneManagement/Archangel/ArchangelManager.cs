@@ -21,12 +21,12 @@ public class ArchangelManager : MonoBehaviour
     [SerializeField] private GameObject archangel;
 
     [Header("Settings")]
-    [SerializeField] private int maxVagues = 3;
-    private int currentVague = 1;
+    //[SerializeField] private int maxVagues = 2;
+    //public static int currentVague = 1;
     public static bool archangelStarted = false;
     private bool endStarted = false;
-    [SerializeField] private int maxEnnemies = 5;
-    private int currentEnnemiesNumber = 0;
+    //[SerializeField] private int maxEnnemies = 5;
+    //private int currentEnnemiesNumber = 0;
 
     private void Awake()
     {
@@ -86,35 +86,36 @@ public class ArchangelManager : MonoBehaviour
 
         ennemies = GameObject.FindGameObjectsWithTag("EnnemiSol");
 
-        if (ennemies.Length == 0 && currentVague < maxVagues)
-        {
-            NewVague();
-            currentVague += 1;
-        }
+        //if (ennemies.Length == 0 && currentVague == 1)
+        //{
+        //    NewVague();
+        //}
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues  && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0  && endStarted == false && PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex)
         {
             End();
         }
 
-        if (ennemies.Length == 0 && currentVague >= maxVagues && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
+        if (ennemies.Length == 0 && endStarted == false && PlayerPrefs.GetInt("progress") >= SceneManager.GetActiveScene().buildIndex)
         {
             SceneManager.LoadScene("VictoryScreen");
         }  
     }
 
-    private void NewVague()
-    {
-        while (currentEnnemiesNumber < maxEnnemies)
-        {
-            currentEnnemiesNumber += 1;
-            float spawnX = Random.Range(player.position.x + 7, player.position.x + 11);
+    //private void NewVague()
+    //{
+    //    while (currentEnnemiesNumber < maxEnnemies)
+    //    {
+    //        currentEnnemiesNumber += 1;
+    //        float spawnX = Random.Range(player.position.x + 7, player.position.x + 11);
 
-            Vector3 spawnPos = new Vector3(spawnX, 0.36f);
+    //        Vector3 spawnPos = new Vector3(spawnX, 0.36f);
 
-            Instantiate(archangel, spawnPos, Quaternion.identity);
-        }
-    }
+    //        Instantiate(archangel, spawnPos, Quaternion.identity);
+    //    }
+
+    //    currentVague += 1;
+    //}
 
     private void End()
     {
