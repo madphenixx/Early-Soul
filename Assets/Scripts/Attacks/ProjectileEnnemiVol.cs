@@ -64,6 +64,21 @@ public class ProjectileEnnemiVol : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.CompareTag("Boat") && PlayerMovement.isInvicible == false && BoatMovements.isInvicible == false)
+        {
+            GameManager.pv += -baseAttack;
+            GameManager.pvSlider.value = GameManager.pv;
+
+            GameManager.combo = 0;
+            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
+            GameManager.multiplicateurText.text = "x1";
+
+            GameManager.score = GameManager.score - 10;
+            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
+
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
