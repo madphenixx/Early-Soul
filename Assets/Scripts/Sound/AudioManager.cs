@@ -90,4 +90,29 @@ public class AudioManager : MonoBehaviour
         prevClip.Stop();
         isFading = false;
     }
+
+    //public void FadeAudio(AudioSource clip)
+    //{
+    //    StartCoroutine(FadeClip(clip));
+    //}
+
+    //public IEnumerator FadeClip(AudioSource clip)
+    //{
+    //    //Debug.Log("aaaaaaaaaaaaaa");
+    //    isFading = true;
+    //    float timeToFade = fadeDuration * 0.5f;
+    //    float timeRelaxed = 0;
+
+    //    clip.Play();
+
+    //    while (timeRelaxed < timeToFade)
+    //    {
+    //        clip.volume = Mathf.Lerp(PlayerPrefs.GetFloat("volume"), 0, timeRelaxed / timeToFade);
+    //        timeRelaxed += Time.deltaTime;
+    //        yield return null;
+    //    }
+
+    //    clip.Stop();
+    //    isFading = false;
+    //}
 }

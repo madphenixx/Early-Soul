@@ -73,7 +73,7 @@ public class LucyPrologue : MonoBehaviour
 
         if (direction == 0)
         {
-            walkTrans.Play();
+            //walkTrans.Play();
             walk.Pause();
             playerAnimator.SetBool("isWalking", false);
         }

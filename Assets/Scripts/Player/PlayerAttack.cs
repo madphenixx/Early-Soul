@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private InputActionReference meleeRef;
     [SerializeField] private InputActionReference parryRef;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource hexCharge;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject meleeRange;
@@ -92,6 +95,7 @@ public class PlayerAttack : MonoBehaviour
             }
 
             hex.SetTrigger("isDistance");
+            hexCharge.Play();
             
             Instantiate(projectile, spawnPos, Quaternion.identity);
             

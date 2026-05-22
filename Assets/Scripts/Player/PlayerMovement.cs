@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource walk;
     [SerializeField] private AudioSource walkTrans;
+    [SerializeField] private AudioSource dash;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -46,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("isWalking", false);
         playerAnimator = GetComponent<Animator>();
         walk.Pause();
+        walkTrans.Pause();
+        dash.Pause();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -132,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             direction = 0;
             playerAnimator.SetBool("isWalking", false);
             walk.Pause();
-            walkTrans.Play();
+            //walkTrans.Play();
         }
     }
 
@@ -216,6 +219,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.started)
         {
+            dash.Play();
             playerSpeed = playerSpeed * dashSpeed;
             StartCoroutine(DashTime());
         }
@@ -249,6 +253,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.started)
         {
+            dash.Play();
             isDodging = true;
             playerSpeed = basePlayerSpeed * dodgeSpeed;
 
