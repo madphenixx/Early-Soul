@@ -1,14 +1,15 @@
-using System.Collections;
-using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using JetBrains.Annotations;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
     [SerializeField] private AudioSource[] musicSource;
-
     [SerializeField] private AudioSource[] sfxSource;
 
     public float fadeDuration = 1.5f;
@@ -35,6 +36,15 @@ public class AudioManager : MonoBehaviour
             for (int i = 0; i < sfxSource.Length; i++)
             {
                 sfxSource[i].volume = PlayerPrefs.GetFloat("SFXvolume");
+            }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            GameObject[] ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+            for (int i = 0; i < ennemies.Length; i++)
+            {
+                ennemies[i].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SFXvolume");
             }
         }
     }

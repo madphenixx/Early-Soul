@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class EnnemiVol : MonoBehaviour
 {
+    [Header("Audio")]
     [SerializeField] private AudioSource projSource;
     [SerializeField] private AudioClip[] projSounds;
 

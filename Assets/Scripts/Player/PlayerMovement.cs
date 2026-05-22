@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference dodgeRef;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource footsteps;
+    [SerializeField] private AudioSource walk;
+    [SerializeField] private AudioSource walkTrans;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         direction = 0;
         playerAnimator.SetBool("isWalking", false);
         playerAnimator = GetComponent<Animator>();
+        walk.Pause();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -121,12 +123,16 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
+            walk.Pause();
+            walkTrans.Play();
         }
 
         else if (ctx.canceled)
         {
             direction = 0;
             playerAnimator.SetBool("isWalking", false);
+            walk.Play();
+            walkTrans.Play();
         }
     }
 
