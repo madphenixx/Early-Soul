@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("isWalking", true);
             direction = ctx.ReadValue<float>();
-            walk.Pause();
+            walk.Play();
             walkTrans.Play();
         }
 
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction = 0;
             playerAnimator.SetBool("isWalking", false);
-            walk.Play();
+            walk.Pause();
             walkTrans.Play();
         }
     }
