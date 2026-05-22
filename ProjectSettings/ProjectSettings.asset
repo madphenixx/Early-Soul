@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: ReaperSoul Interactive
+  companyName: RotCoffee Studio
   productName: Early Soul
   defaultCursor: {fileID: 2800000, guid: 56ff38e36ebdcc84bbc9c8d4e5f05338, type: 3}
   cursorHotspot: {x: 0, y: 0}
@@ -303,7 +303,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 3ca4ffa3c2879ff45984afcaaaeda208, type: 3}
+      m_Icon: {fileID: 2800000, guid: 6a7f8212e769f5d42b19d2664fb38820, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

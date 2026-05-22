@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 4174417312876041188}
   - component: {fileID: 8023934272422668660}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -590,15 +590,15 @@ RectTransform:
   m_GameObject: {fileID: 3049129244072509588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0058234, y: 0.84612, z: 0}
+  m_LocalScale: {x: 1.005823, y: 0.84612, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7813411212795458730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.132, y: -0.0054023}
-  m_SizeDelta: {x: 1975.326, y: 1276.6}
+  m_AnchoredPosition: {x: -0.0023043, y: 0.006771803}
+  m_SizeDelta: {x: 1908.7, y: 1276.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4174417312876041188
 CanvasRenderer:
@@ -855,8 +855,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3822075083670036804}
   - {fileID: 222743975086664155}
+  - {fileID: 3822075083670036804}
   - {fileID: 5183734544443664773}
   - {fileID: 2718607962553043418}
   - {fileID: 6172820208044183246}
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 3298337734821386227}
   - component: {fileID: 3011106215622574426}
   m_Layer: 5
-  m_Name: Black
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,15 +1172,15 @@ RectTransform:
   m_GameObject: {fileID: 7598392379305991949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0058234, y: 0.84612, z: 0}
+  m_LocalScale: {x: 1.005832, y: 0.8461118, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7813411212795458730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0023043, y: 0.006771803}
-  m_SizeDelta: {x: 1908.7, y: 1276.6}
+  m_AnchoredPosition: {x: 12.132, y: -0.0054023}
+  m_SizeDelta: {x: 1975.326, y: 1276.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3298337734821386227
 CanvasRenderer:
@@ -1313,7 +1313,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetVolumeSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
