@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource hexCharge;
+    [SerializeField] private AudioSource distanceAttack;
     [SerializeField] private AudioSource meleeSound;
 
     [Header("Prefabs")]
@@ -45,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        distanceAttack = GameObject.Find("Distance").GetComponent<AudioSource>();
         wasFalse = false;
 
         distanceRef.action.started += DistanceAttack;
@@ -96,7 +98,8 @@ public class PlayerAttack : MonoBehaviour
 
             hex.SetTrigger("isDistance");
             hexCharge.Play();
-            
+            distanceAttack.Play();
+
             Instantiate(projectile, spawnPos, Quaternion.identity);
             
             distTime = StartCoroutine(DistanceCooldown());
