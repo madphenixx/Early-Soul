@@ -4,9 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class EnnemiSol : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource walk;
+    [SerializeField] private AudioSource def;
+    [SerializeField] private AudioSource atk;
+    [SerializeField] private AudioClip[] atkSounds;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject meleeRange;
-
     private GameObject player;
 
     [SerializeField] private Animator enemyAnimator;
@@ -55,6 +60,8 @@ public class EnnemiSol : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        walk.Stop();
+
         startAttack = false;
         currentState = null;
         
@@ -82,6 +89,11 @@ public class EnnemiSol : MonoBehaviour
 
         if (currentState == stateApproche)
         {
+            if (!walk.isPlaying)
+            {
+                walk.Play();
+            }
+
             enemyAnimator.SetBool("isAttacking", false);
             enemyAnimator.SetBool("isDefensive", false);
             enemyAnimator.SetBool("isApproaching", true);
@@ -92,6 +104,11 @@ public class EnnemiSol : MonoBehaviour
 
         else if (currentState == stateAttaque)
         {
+            if (!walk.isPlaying)
+            {
+                walk.Play();
+            }
+
             moveCount = 0;
             enemyAnimator.SetBool("isAttacking", true);
             enemyAnimator.SetBool("isDefensive", false);
@@ -101,6 +118,8 @@ public class EnnemiSol : MonoBehaviour
 
         else if (currentState == stateDefense)
         {
+            walk.Pause();
+
             enemyAnimator.SetBool("isAttacking", false);
             enemyAnimator.SetBool("isDefensive", true);
             enemyAnimator.SetBool("isApproaching", false);
@@ -160,7 +179,12 @@ public class EnnemiSol : MonoBehaviour
         {
             moveCount += 1;
             direction = 0;
-            
+
+            if (!def.isPlaying)
+            {
+                def.Play();
+            }
+
             currentState = stateDefense;
         }
 
@@ -190,6 +214,11 @@ public class EnnemiSol : MonoBehaviour
             tookDamage = false;
             parryTime = false;
 
+            if (!def.isPlaying)
+            {
+                def.Play();
+            }
+
             currentState = stateDefense;
         }
     }
@@ -200,6 +229,11 @@ public class EnnemiSol : MonoBehaviour
         {
             tookDamage = false;
             parryTime = false;
+
+            if (!def.isPlaying)
+            {
+                def.Play();
+            }
 
             currentState = stateDefense;
         }
@@ -301,6 +335,15 @@ public class EnnemiSol : MonoBehaviour
     private IEnumerator TimeState(string state)
     {
         yield return new WaitForSeconds(reactivityTime);
+
+        if (state == stateDefense)
+        {
+            if (!def.isPlaying)
+            {
+                def.Play();
+            }
+        }
+
         currentState = state;
         stateRoutine = null;
     }
@@ -322,6 +365,13 @@ public class EnnemiSol : MonoBehaviour
 
     private void Attack()
     {
+        if (!atk.isPlaying)
+        {
+            int randInt = Random.Range(0, atkSounds.Length);
+            atk.clip = atkSounds[randInt];
+            atk.Play();
+        }
+        
         spawnPos = new Vector2(transform.position.x, transform.position.y);
         GameObject attack = Instantiate(meleeRange, spawnPos, Quaternion.identity, transform);
         attack.GetComponent<MeleeEnnemi>().attacker = gameObject;

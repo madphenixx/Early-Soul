@@ -51,7 +51,10 @@ public class AudioManager : MonoBehaviour
         GameObject[] arrows = GameObject.FindGameObjectsWithTag("PlayerAttack");
         for (int i = 0; i < arrows.Length; i++)
         {
-            arrows[i].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SFXvolume");
+            if (arrows[i].TryGetComponent<AudioSource>(out AudioSource audS))
+            {
+                audS.volume = PlayerPrefs.GetFloat("SFXvolume");
+            }
         }
     }
 
