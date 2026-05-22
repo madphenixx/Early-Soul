@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
+  explosion: {fileID: 2732245306143296290, guid: 084c97d39ed6aa5488a603d11fc651d4, type: 3}
   pv: 5
 --- !u!95 &3701384738592073199
 Animator:

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ClassEnnemi : MonoBehaviour
 {
+    [SerializeField] private GameObject explosion;
     private SpriteRenderer spriteRenderer;
 
     private Coroutine bossRoutine;
@@ -38,6 +39,8 @@ public class ClassEnnemi : MonoBehaviour
         if (pv <= 0 && gameObject.CompareTag("Boss") == false)
         {
             GameManager.score += 50;
+            Vector3 spawnPos = new Vector3(transform.position.x + 1 , transform.position.y + 2);
+            Instantiate(explosion, spawnPos, Quaternion.identity);
             Destroy(gameObject);
         }
 

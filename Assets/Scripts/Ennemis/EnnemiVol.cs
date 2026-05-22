@@ -66,13 +66,4 @@ public class EnnemiVol : MonoBehaviour
             Instantiate(projectile, spawnPos, Quaternion.identity);
         }
     }
-
-    void OnDisable()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
-            Instantiate(explosion, spawnPos, Quaternion.identity);
-        }
-    }
 }

@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
+  explosion: {fileID: 1850735877733832066, guid: 89ff0b4cfa7be094ea48ee6378cf8987, type: 3}
   pv: 16
 --- !u!114 &4137720246801729026
 MonoBehaviour:
@@ -365,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiSol
   meleeRange: {fileID: 1973499519178047179, guid: 3dafc04166df72f40919f665c796cc07, type: 3}
-  explosion: {fileID: 1850735877733832066, guid: 89ff0b4cfa7be094ea48ee6378cf8987, type: 3}
   enemyAnimator: {fileID: 1333765353851101369}
   reactivityTime: 0
   minMeleeTime: 0

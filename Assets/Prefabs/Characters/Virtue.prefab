@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
+  explosion: {fileID: 6639526688992322976, guid: cdfce916fdec9d2439ec3377e6747ee7, type: 3}
   pv: 3
 --- !u!114 &2114966172941255345
 MonoBehaviour:

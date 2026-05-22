@@ -32,13 +32,4 @@ public class Virtue : MonoBehaviour
             projDroit.GetComponent<ProjectileVirtue>().isLeftOne = false;
         }
     }
-
-    void OnDisable()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 4)
-        {
-            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y);
-            Instantiate(explosion, spawnPos, Quaternion.identity);
-        }
-    }
 }
