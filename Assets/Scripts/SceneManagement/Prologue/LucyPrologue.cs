@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LucyPrologue : MonoBehaviour
 {
+    [SerializeField] private AudioSource walk;
+    [SerializeField] private AudioSource walkTrans;
+
     [SerializeField] private GameObject cible;
     
     [SerializeField] private Animator playerAnimator;
@@ -18,6 +21,12 @@ public class LucyPrologue : MonoBehaviour
     
     [Header("Debug: booleans")]
     public static bool facingRight = false; 
+
+    void Awake()
+    {
+        walk.Stop();
+        walkTrans.Stop();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
@@ -38,6 +47,8 @@ public class LucyPrologue : MonoBehaviour
 
         if (distance > maxDistanceApproach && DialogueManager.dialogueActive == false)
         {
+            walkTrans.Play();
+            walk.Play();
             playerAnimator.SetBool("isWalking", true);
 
             if (cible.transform.position.x < transform.position.x)
@@ -53,6 +64,8 @@ public class LucyPrologue : MonoBehaviour
 
         else if (distance - distanceApproach < maxDistanceApproach)
         {
+            walkTrans.Play();
+            walk.Pause();
             direction = 0;
         }
 
@@ -60,6 +73,8 @@ public class LucyPrologue : MonoBehaviour
 
         if (direction == 0)
         {
+            walkTrans.Play();
+            walk.Pause();
             playerAnimator.SetBool("isWalking", false);
         }
     }

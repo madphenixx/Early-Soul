@@ -14876,6 +14876,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7256618308460923596}
     - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      propertyPath: pausingSound
+      value: 
+      objectReference: {fileID: 2085049984}
+    - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 932842375}
@@ -41689,6 +41693,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &2085049984 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6501017694383737640, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 7256618308460923595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2086870027
 GameObject:
   m_ObjectHideFlags: 0

@@ -16161,6 +16161,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 3365494005516533036, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 1502190596}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1502190601 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6501017694383737640, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1502190596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1514038117
 GameObject:
   m_ObjectHideFlags: 0
@@ -17350,8 +17355,6 @@ MonoBehaviour:
   player: {fileID: 0}
   postFightDialogue: {fileID: 9969133049167327, guid: 5af003693e051634e80f5f64f08d5a49, type: 3}
   archangel: {fileID: 2040199318221650861, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-  maxVagues: 2
-  maxEnnemies: 2
 --- !u!1 &1780010309
 GameObject:
   m_ObjectHideFlags: 0
@@ -20847,6 +20850,10 @@ PrefabInstance:
       propertyPath: sliderSound
       value: 
       objectReference: {fileID: 1502190597}
+    - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      propertyPath: pausingSound
+      value: 
+      objectReference: {fileID: 1502190601}
     - target: {fileID: 7784254715353436009, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: volumeSlider
       value: 

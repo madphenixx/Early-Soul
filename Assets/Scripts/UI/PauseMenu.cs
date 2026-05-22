@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider SFXSlider;
 
     [Header("Sons")]
+    [SerializeField] private AudioSource pausingSound;
     [SerializeField] private AudioSource clickSound;
     [SerializeField] private AudioSource sliderSound;
 
@@ -54,6 +55,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!ctx.canceled)
         {
+            pausingSound.Play();
             isPaused = !isPaused;
             if (isPaused)
             {
@@ -75,6 +77,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        pausingSound.Play();
         pauseMenuObject.SetActive(false);
         optionsMenuObject.SetActive(false);
         Time.timeScale = 1.0f;
