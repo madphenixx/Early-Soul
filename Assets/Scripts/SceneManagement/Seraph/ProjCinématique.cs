@@ -1,8 +1,10 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ProjCinématique : MonoBehaviour
 {
+    [SerializeField] private AudioSource sound;
     [SerializeField] private GameObject explosion;
     private GameObject cible;
     
@@ -28,6 +30,8 @@ public class ProjCinématique : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
+        sound = GetComponent<AudioSource>();
+        sound.Play();
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
     }

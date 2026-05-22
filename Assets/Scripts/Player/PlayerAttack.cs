@@ -105,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
 
     void MeleeAttack(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true && SceneManager.GetActiveScene().buildIndex != 2)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canMelee == true && SceneManager.GetActiveScene().buildIndex != 2 && isParrying == false)
         {
             // EnnemiManager.playerAttacking = true;
 
@@ -131,7 +131,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Parry(InputAction.CallbackContext ctx)
     {
-        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true)
+        if (!ctx.canceled && PauseMenu.isPaused == false && canParry == true && isMeleeing == false)
         {
             if (PlayerMovement.facingRight)
             {
