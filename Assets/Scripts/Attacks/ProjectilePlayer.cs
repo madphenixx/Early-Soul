@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource distanceAttack;
+
     [Header("Debug: detection")]
     private GameObject[] allEnnemiesBase;
     private GameObject[] allEnnemiesGround;
@@ -18,7 +21,7 @@ public class ProjectilePlayer : MonoBehaviour
 
     [Header("Settings")]
     public int baseAttack = 1;
-    [SerializeField] private float distanceMin = 40;
+    public float distanceMin = 40;
     [SerializeField] private float speed = 10;
     [SerializeField] private float duration = 10;
 
@@ -64,6 +67,8 @@ public class ProjectilePlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
+        distanceAttack = GetComponent<AudioSource>();
+        distanceAttack.Play();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ProjectileDestroy());

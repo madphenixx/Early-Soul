@@ -47,6 +47,12 @@ public class AudioManager : MonoBehaviour
                 ennemies[i].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SFXvolume");
             }
         }
+
+        GameObject[] arrows = GameObject.FindGameObjectsWithTag("PlayerAttack");
+        for (int i = 0; i < arrows.Length; i++)
+        {
+            arrows[i].GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SFXvolume");
+        }
     }
 
     public void SwapTrack(AudioSource prevClip, AudioSource nextClip)
