@@ -6236,11 +6236,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4207038351988583543, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
   m_PrefabInstance: {fileID: 4010721909483795786}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &758372874 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1088852359401272128, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
-  m_PrefabInstance: {fileID: 4010721909483795786}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &759488099 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1112627163065965555, guid: 6de96875cedd82141b3e1b0c5304d9ed, type: 3}
@@ -21044,10 +21039,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1629278446091435343, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 758372874}
     - target: {fileID: 3347080079921448248, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

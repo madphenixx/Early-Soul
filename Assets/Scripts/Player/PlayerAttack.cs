@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource hexCharge;
+    [SerializeField] private AudioSource meleeSound;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
@@ -122,7 +123,9 @@ public class PlayerAttack : MonoBehaviour
 
             }
 
-                meleeTime = StartCoroutine(MeleeCooldown()); 
+            meleeSound.Play();
+
+            meleeTime = StartCoroutine(MeleeCooldown()); 
         }
     }
 

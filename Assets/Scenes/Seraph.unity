@@ -7885,6 +7885,7 @@ PrefabInstance:
     - {fileID: 8607094809061858157, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4859508722209412462, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+    - {fileID: 6885319743324020478, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
@@ -52250,6 +52251,7 @@ MonoBehaviour:
   meleeRef: {fileID: -3806868234933470170, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   parryRef: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hexCharge: {fileID: 381625284}
+  meleeSound: {fileID: 0}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
   parry: {fileID: 8284948745768713064, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}
