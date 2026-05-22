@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ProjectilePlayer : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource distanceAttack;
+    [SerializeField] private AudioClip[] projSounds;
+
     [Header("Debug: detection")]
     private GameObject[] allEnnemiesBase;
     private GameObject[] allEnnemiesGround;
@@ -59,6 +63,9 @@ public class ProjectilePlayer : MonoBehaviour
                 distanceMin = distanceB;
             }
         }
+
+        distanceAttack = GetComponent<AudioSource>();
+        distanceAttack.Stop();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
@@ -71,6 +78,7 @@ public class ProjectilePlayer : MonoBehaviour
         if (cible == null)
         {
             Destroy(gameObject);
+            distanceAttack.Stop();
         }
 
         else
@@ -82,7 +90,14 @@ public class ProjectilePlayer : MonoBehaviour
             
             launchDir = cible.transform.position - gameObject.transform.position;
             launchDirNorm = launchDir.normalized;
+            int randInt = Random.Range(0, projSounds.Length);
+
+            distanceAttack.clip = projSounds[randInt];
+
+            distanceAttack.Play(); ;
         }
+
+        
     }
 
     void FixedUpdate()
