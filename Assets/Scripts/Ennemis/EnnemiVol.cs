@@ -3,10 +3,13 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class EnnemiVol : MonoBehaviour
 {
+    [SerializeField] private AudioSource projSource;
+    [SerializeField] private AudioClip[] projSounds;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject explosion;
-    private GameObject player;
+    [SerializeField] private GameObject player;
 
     [Header("Settings")]
     [SerializeField] private float minDistance = 50f;
@@ -25,9 +28,11 @@ public class EnnemiVol : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
+        projSource = GetComponent<AudioSource>();
+        projSource.Pause();
         canAttack = false;
         health = gameObject.GetComponent<ClassEnnemi>().pv;
-        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -53,6 +58,10 @@ public class EnnemiVol : MonoBehaviour
             yield return new WaitForSeconds(spawnTime);
 
             spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            int randInt = Random.Range(0, projSounds.Length);
+
+            projSource.clip = projSounds[randInt];
+            projSource.Play();
             Instantiate(projectile, spawnPos, Quaternion.identity);
         }
     }

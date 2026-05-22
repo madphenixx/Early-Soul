@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InputActionReference dashRef;
     [SerializeField] private InputActionReference dodgeRef;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource footsteps;
+
     [SerializeField] private Animator playerAnimator;
 
     private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb;
+    //private Rigidbody2D rb;
     
     [Header("Settings: Movements")]
     [SerializeField] private float playerSpeed = 10;
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         moveRef.action.started += Move;

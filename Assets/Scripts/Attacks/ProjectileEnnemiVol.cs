@@ -3,9 +3,6 @@ using System.Collections;
 
 public class ProjectileEnnemiVol : MonoBehaviour
 {
-    [SerializeField] private AudioSource projSource;
-    [SerializeField] private AudioClip[] projSounds;
-
     private GameObject cible;
     
     private SpriteRenderer spriteRenderer;
@@ -21,7 +18,6 @@ public class ProjectileEnnemiVol : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created 
     void Start()
     {
-        projSource = GetComponent<AudioSource>();
         cible = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,11 +30,6 @@ public class ProjectileEnnemiVol : MonoBehaviour
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
-
-        int randInt = Random.Range(0, projSounds.Length);
-
-        projSource.clip = projSounds[randInt];
-        projSource.Play();
     }
 
     void FixedUpdate()
