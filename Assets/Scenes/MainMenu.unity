@@ -6818,8 +6818,8 @@ MonoBehaviour:
   sfxSource:
   - {fileID: 663814978}
   - {fileID: 1659256201}
-  musicVolume: 0
-  sfxVolume: 0
+  fadeDuration: 1.5
+  isFading: 0
 --- !u!1 &717727037
 GameObject:
   m_ObjectHideFlags: 0
@@ -9090,7 +9090,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 90
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
