@@ -21288,18 +21288,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-      propertyPath: atkSounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-      propertyPath: 'atkSounds.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 1ee99a435536d194a9751c138ebc30c6, type: 3}
-    - target: {fileID: 4137720246801729026, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
-      propertyPath: 'atkSounds.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ab19fce0f0b9a624e9c197c8c0d2f9dc, type: 3}
     - target: {fileID: 5610935046679159660, guid: efe8128f9b87e7b48bd887d3f0f26785, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
