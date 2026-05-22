@@ -5560,6 +5560,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: sfxSource.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[2]'
+      value: 
+      objectReference: {fileID: 880493543}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[3]'
+      value: 
+      objectReference: {fileID: 880493542}
     - target: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: Loop
       value: 1
@@ -5573,6 +5585,16 @@ PrefabInstance:
 --- !u!82 &880493541 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 9187476762060358080, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 880493540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &880493542 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1285800473738314076, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 880493540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &880493543 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3365494005516533036, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 880493540}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &889508879
