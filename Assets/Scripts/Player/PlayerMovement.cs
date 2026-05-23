@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walk;
     [SerializeField] private AudioSource walkTrans;
     [SerializeField] private AudioSource dash;
+    [SerializeField] private AudioSource tookDamage;
 
     [SerializeField] private Animator playerAnimator;
 
@@ -182,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator BlinkingDamage()
     {
-
+        tookDamage.Play();
         spriteRenderer.material.color = new Color(1f, 1f, 1f, 0.2f);
 
         yield return new WaitForSeconds(0.1f);

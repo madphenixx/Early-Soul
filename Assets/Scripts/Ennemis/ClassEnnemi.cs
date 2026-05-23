@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ClassEnnemi : MonoBehaviour
 {
+    [SerializeField] private AudioSource bossDeath;
     [SerializeField] private GameObject explosion;
     private SpriteRenderer spriteRenderer;
 
@@ -62,6 +63,7 @@ public class ClassEnnemi : MonoBehaviour
 
     private IEnumerator DeathBoss()
     {
+        bossDeath.Play();
         gameObject.GetComponent<Animator>().SetTrigger("isDead");
 
         yield return new WaitForSeconds(1.5f);
