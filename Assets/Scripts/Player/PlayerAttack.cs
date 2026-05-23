@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource hexCharge;
     [SerializeField] private AudioSource meleeSound;
+    [SerializeField] private AudioSource paradeSource;
+    [SerializeField] private AudioClip[] paradeClips;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject projectile;
@@ -156,6 +158,11 @@ public class PlayerAttack : MonoBehaviour
             //{
                 parryTime = StartCoroutine(ParryCooldown());
             //}
+
+            int randInt = Random.Range(0, paradeClips.Length);
+            paradeSource.clip = paradeClips[randInt];
+            paradeSource.Play();
+
         }
 
         else if (ctx.canceled && reaper != null)

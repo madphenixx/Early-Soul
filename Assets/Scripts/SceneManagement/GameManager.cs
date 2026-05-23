@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource death;
+
     //Ne pas oublier d'équilibrer et de mettre à jour la valeur max du slider
     public static Slider pvSlider;
     public static Text scoreText;
@@ -143,6 +146,8 @@ public class GameManager : MonoBehaviour
         PlayerMovement.isInvicible = true;
 
         playerAnimator.SetTrigger("isDead");
+
+        death.Play();
 
         yield return new WaitForSeconds(1.5f);
 

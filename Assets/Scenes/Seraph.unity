@@ -7899,6 +7899,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 7417685917158179825, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
   m_PrefabInstance: {fileID: 381625282}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &381625285 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6553508791311067385, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 381625282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &398984469
 GameObject:
   m_ObjectHideFlags: 0
@@ -15007,6 +15012,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1699440177681930868, guid: ce3cff77476f132468060f390a830fda, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 11288f10d230c73409e373288f0a4d15, type: 3}
     - target: {fileID: 1965554917074469802, guid: ce3cff77476f132468060f390a830fda, type: 3}
       propertyPath: comboMaxDuration
       value: 5
@@ -15125,6 +15134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeraphManager
   musiqueCombat: {fileID: 553422474}
   musiqueScene: {fileID: 7256618308460923599}
+  death: {fileID: 1796825636}
   tutoObject: {fileID: 1804459663}
   seraph: {fileID: 3138119206829371016, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
   seraphCine: {fileID: 3138119206829371016, guid: 6bdc1f166d4c3f54f9465ce3c8baa3f4, type: 3}
@@ -35113,6 +35123,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &1796825636 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1699440177681930868, guid: ce3cff77476f132468060f390a830fda, type: 3}
+  m_PrefabInstance: {fileID: 634155679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1803447996
 GameObject:
   m_ObjectHideFlags: 0
@@ -52381,6 +52396,10 @@ MonoBehaviour:
   parryRef: {fileID: 1647975893626733713, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hexCharge: {fileID: 381625284}
   meleeSound: {fileID: 0}
+  paradeSource: {fileID: 381625285}
+  paradeClips:
+  - {fileID: 8300000, guid: ed8b1dbd7b5658b4aa64adbc1dfe9b2f, type: 3}
+  - {fileID: 8300000, guid: eb25dedf04953524db8afe8deff80cd4, type: 3}
   projectile: {fileID: 6416484918145470398, guid: 0a1f137f8282721428a5e3f7a3ab86db, type: 3}
   meleeRange: {fileID: 1973499519178047179, guid: 7fc04dd717e4c244598292785d2136d3, type: 3}
   parry: {fileID: 8284948745768713064, guid: 0754cd2a1e42c1148888833c52867d08, type: 3}

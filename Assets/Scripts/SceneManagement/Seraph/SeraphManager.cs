@@ -7,6 +7,7 @@ public class SeraphManager : MonoBehaviour
     [Header("Sons")]
     [SerializeField] private AudioSource musiqueCombat;
     [SerializeField] private AudioSource musiqueScene;
+    [SerializeField] private AudioSource death;
 
     [Header("Objects")]
     [SerializeField] private GameObject tutoObject;
@@ -107,6 +108,8 @@ public class SeraphManager : MonoBehaviour
             GameManager.canAttack = true;
 
             Vector3 spawnPos = new Vector3(player.position.x, player.position.y);
+
+            death.Play();
 
             Instantiate(gate, spawnPos, Quaternion.identity);
         }

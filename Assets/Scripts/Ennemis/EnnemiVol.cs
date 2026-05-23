@@ -59,10 +59,11 @@ public class EnnemiVol : MonoBehaviour
             yield return new WaitForSeconds(spawnTime);
 
             spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-            int randInt = Random.Range(0, projSounds.Length);
 
+            int randInt = Random.Range(0, projSounds.Length);
             projSource.clip = projSounds[randInt];
             projSource.Play();
+            
             Instantiate(projectile, spawnPos, Quaternion.identity);
         }
     }
