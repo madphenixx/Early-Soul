@@ -7,6 +7,10 @@ public class BoatMovements : MonoBehaviour
     [Header("Controls")]
     [SerializeField] private InputActionReference moveRef;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource move;
+    [SerializeField] private AudioSource stop;
+
     [Header("Effects")]
     [SerializeField] private ParticleSystem swoosh;
     [SerializeField] private ParticleSystem swooshFront;
@@ -30,6 +34,9 @@ public class BoatMovements : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        move.Stop();
+        stop.Stop();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerTransform = GetComponent<Transform>();
 
@@ -80,6 +87,8 @@ public class BoatMovements : MonoBehaviour
         {
             direction = ctx.ReadValue<Vector2>();
             swoosh.gameObject.SetActive(true);
+            move.Play();
+            stop.Stop();
 
             if (direction.x == 1)
             {
@@ -102,6 +111,8 @@ public class BoatMovements : MonoBehaviour
             swooshBack.gameObject.SetActive(false);
             swooshFrontBottom.gameObject.SetActive(false);
             swooshBackBottom.gameObject.SetActive(false);
+            stop.Play();
+            move.Pause();
         }
     }
 
