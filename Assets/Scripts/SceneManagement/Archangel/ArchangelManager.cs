@@ -81,6 +81,7 @@ public class ArchangelManager : MonoBehaviour
             EnnemiSol.startAttack = true;
 
             tutoObject.SetActive(true);
+            Tutorial.isActive = true;
             Time.timeScale = 0f;
         }
 

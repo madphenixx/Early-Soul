@@ -10,7 +10,7 @@ public class Tutorial : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject tutoObject;
 
-    private bool isActive;
+    public static bool isActive;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +22,7 @@ public class Tutorial : MonoBehaviour
 
     public void TurnOffTuto()
     {
+        isActive = false;
         Time.timeScale = 1f;
         tutoObject.SetActive(false);
     }

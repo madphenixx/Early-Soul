@@ -5833,6 +5833,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!82 &154186906 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6553508791311067385, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &165111960
 GameObject:
   m_ObjectHideFlags: 0
@@ -7186,6 +7191,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &468173428 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7890879318133467625, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &468991433
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,6 +7648,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &526076424 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6112359405813787188, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &531572722
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,6 +7994,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &618378358 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8566806928750923557, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629968352
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,6 +8186,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &675502489 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8940184748489886716, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &719969677
 GameObject:
   m_ObjectHideFlags: 0
@@ -9628,7 +9653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7417685917158179825, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12933,6 +12958,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616376312}
   m_CullTransparentMesh: 1
+--- !u!82 &1628817820 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 558408575406601169, guid: 46c149e912d1c764d8d2c4bb81897561, type: 3}
+  m_PrefabInstance: {fileID: 1061206662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629474267
 GameObject:
   m_ObjectHideFlags: 0
@@ -14176,9 +14206,41 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: sfxSource.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: musicSource.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1628817820}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[6]'
+      value: 
+      objectReference: {fileID: 618378358}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[7]'
+      value: 
+      objectReference: {fileID: 526076424}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[8]'
+      value: 
+      objectReference: {fileID: 675502489}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[9]'
+      value: 
+      objectReference: {fileID: 468173428}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[10]'
+      value: 
+      objectReference: {fileID: 154186906}
+    - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+      propertyPath: 'sfxSource.Array.data[11]'
+      value: 
+      objectReference: {fileID: 6326454025750996297}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: 'musicSource.Array.data[1]'
       value: 

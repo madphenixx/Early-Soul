@@ -34,11 +34,17 @@ public class ProjCinématique : MonoBehaviour
         sound.Play();
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
+        sound.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
     void FixedUpdate()
     {
         rb.linearVelocity = launchDirNorm * speed;
+    }
+
+    void Update()
+    {
+        sound.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
     void OnTriggerEnter2D(Collider2D collision)

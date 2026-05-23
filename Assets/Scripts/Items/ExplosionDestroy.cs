@@ -24,8 +24,13 @@ public class ExplosionDestroy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        explosion.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
+    void Update()
+    {
+        explosion.volume = PlayerPrefs.GetFloat("SFXvolume");
+    }
     private IEnumerator Destroy()
     {
         yield return new WaitForSeconds(lifetime);

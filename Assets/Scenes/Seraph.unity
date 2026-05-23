@@ -25445,11 +25445,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
---- !u!82 &1172788542 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8864518768914953354, guid: 3343e3f05ecc5c2418e7c31232766671, type: 3}
-  m_PrefabInstance: {fileID: 1172788541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1192419291
 GameObject:
   m_ObjectHideFlags: 0
@@ -53063,7 +53058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: sfxSource.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: musicSource.Array.size
@@ -53108,7 +53103,7 @@ PrefabInstance:
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: 'sfxSource.Array.data[11]'
       value: 
-      objectReference: {fileID: 1172788542}
+      objectReference: {fileID: 381625285}
     - target: {fileID: 7346322599260309335, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: 'sfxSource.Array.data[12]'
       value: 

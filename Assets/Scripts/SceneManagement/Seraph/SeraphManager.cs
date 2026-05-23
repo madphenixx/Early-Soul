@@ -131,6 +131,7 @@ public class SeraphManager : MonoBehaviour
 
     private void End()
     {
+        PlayerMovement.isInvicible = true;
         endStarted = true;
         Debug.Log("this is the end...");
 

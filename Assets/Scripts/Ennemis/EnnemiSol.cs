@@ -82,9 +82,14 @@ public class EnnemiSol : MonoBehaviour
         //    currentState = stateApproche;
         //}
 
-        if (currentState == null && startAttack == true)
+        if (currentState == null && startAttack == true && DialogueManager.dialogueActive == false && Tutorial.isActive == false)
         {
             currentState = stateApproche;
+        }
+
+        if (DialogueManager.dialogueActive == true || Tutorial.isActive == true)
+        {
+            walk.Pause();
         }
 
         if (currentState == stateApproche)

@@ -36,10 +36,12 @@ public class AOEProjectileBoss : MonoBehaviour
         }
 
         aoeBoss.Play();
+        aoeBoss.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
     void FixedUpdate()
     {
+        aoeBoss.volume = PlayerPrefs.GetFloat("SFXvolume");
         rb.linearVelocity = launchDir * speed;
     }
 

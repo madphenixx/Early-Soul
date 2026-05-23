@@ -36,11 +36,16 @@ public class ProjectileVirtue : MonoBehaviour
         }
 
         aoeVirtue.Play();
+        aoeVirtue.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
     void FixedUpdate()
     {
         rb.linearVelocity = launchDir * speed;
+    }
+    void Update()
+    {
+        aoeVirtue.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

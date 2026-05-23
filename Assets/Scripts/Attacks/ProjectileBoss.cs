@@ -27,6 +27,12 @@ public class ProjectileBoss : MonoBehaviour
         launchDirNorm = launchDir.normalized;
 
         projBoss.Play();
+        projBoss.volume = PlayerPrefs.GetFloat("SFXvolume");
+    }
+
+    void Update()
+    {
+        projBoss.volume = PlayerPrefs.GetFloat("SFXvolume");
     }
 
     void FixedUpdate()
