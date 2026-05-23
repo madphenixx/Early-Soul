@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AOEProjectileBoss : MonoBehaviour
 {
+    [SerializeField] private AudioSource aoeBoss;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Vector2 launchDir;
@@ -32,6 +34,8 @@ public class AOEProjectileBoss : MonoBehaviour
         {
             launchDir = new Vector2(10, 0);
         }
+
+        aoeBoss.Play();
     }
 
     void FixedUpdate()

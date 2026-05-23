@@ -5,6 +5,7 @@ public class ProjectileBoss : MonoBehaviour
 {
     private GameObject cible;
 
+    [SerializeField] private AudioSource projBoss;
     private Rigidbody2D rb;
     private Vector2 launchDir;
     private Vector2 launchDirNorm;
@@ -24,6 +25,8 @@ public class ProjectileBoss : MonoBehaviour
 
         launchDir = cible.transform.position - gameObject.transform.position;
         launchDirNorm = launchDir.normalized;
+
+        projBoss.Play();
     }
 
     void FixedUpdate()

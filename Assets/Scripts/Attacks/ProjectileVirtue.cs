@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ProjectileVirtue : MonoBehaviour
 {   
+    [SerializeField] private AudioSource aoeVirtue;
+
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private Vector2 launchDir;
@@ -32,6 +34,8 @@ public class ProjectileVirtue : MonoBehaviour
         {
             launchDir = new Vector2(10, 0);
         }
+
+        aoeVirtue.Play();
     }
 
     void FixedUpdate()
