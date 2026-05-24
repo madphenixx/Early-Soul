@@ -14,7 +14,7 @@ public class Virtue : MonoBehaviour
 
     void Start()
     {
-        // StartCoroutine(FadeIn(GetComponent<SpriteRenderer>()));
+        StartCoroutine(FadeIn(GetComponent<SpriteRenderer>()));
         StartCoroutine(LaunchProjectiles());
     }
 
@@ -33,16 +33,16 @@ public class Virtue : MonoBehaviour
         }
     }
 
-    // private IEnumerator FadeIn(SpriteRenderer image)
-    // {
-    //     float elapsedTime = 0.0f;
-    //     Color c = image.color;
-    //     while (elapsedTime < 0.5f)
-    //     {
-    //         yield return null;
-    //         elapsedTime += Time.deltaTime ;
-    //         c.a = Mathf.Clamp01(elapsedTime / 0.5f);
-    //         image.color = c;
-    //     }
-    // }
+    private IEnumerator FadeIn(SpriteRenderer image)
+    {
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < 0.5f)
+        {
+            yield return null;
+            elapsedTime += Time.deltaTime ;
+            c.a = Mathf.Clamp01(elapsedTime / 0.5f);
+            image.color = c;
+        }
+    }
 }

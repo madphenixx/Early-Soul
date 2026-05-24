@@ -40,7 +40,7 @@ public class ClassEnnemi : MonoBehaviour
         if (pv <= 0 && gameObject.CompareTag("Boss") == false)
         {
             GameManager.score += 50;
-            Vector3 spawnPos = new Vector3(transform.position.x + 1 , transform.position.y + 2);
+            Vector3 spawnPos = new Vector3(transform.position.x , transform.position.y);
             Instantiate(explosion, spawnPos, Quaternion.identity);
             Destroy(gameObject);
         }
