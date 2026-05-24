@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Unity.Services.Authentication;
 
 public class MainMenu : MonoBehaviour
 {
