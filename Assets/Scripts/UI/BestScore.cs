@@ -17,9 +17,9 @@ public class BestScore : MonoBehaviour
 
     void Start()
     {
-        scene = PlayerPrefs.GetInt("savedScene");
         bestScoreText = GameObject.Find("BestScore").GetComponent<Text>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
+        scene = PlayerPrefs.GetInt("savedScene");
 
         bestScores.Add(new LocalScoreClass(0, PlayerPrefs.GetString("dateScore1" + scene.ToString()), PlayerPrefs.GetInt("bestScore1" + scene.ToString())));
         bestScores.Add(new LocalScoreClass(0, PlayerPrefs.GetString("dateScore2" + scene.ToString()), PlayerPrefs.GetInt("bestScore2" + scene.ToString())));
