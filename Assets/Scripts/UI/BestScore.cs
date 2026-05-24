@@ -33,7 +33,7 @@ public class BestScore : MonoBehaviour
         //bestScores.Add(PlayerPrefs.GetInt("bestScore4" + scene.ToString()));
         //bestScores.Add(PlayerPrefs.GetInt("bestScore5" + scene.ToString()));
 
-        bestScoreText.text = "Best Score: " + PlayerPrefs.GetInt("bestScore1" + scene.ToString());
+        bestScoreText.text = "Best Score : " + PlayerPrefs.GetInt("bestScore1" + scene.ToString());
 
         if (SceneManager.GetActiveScene().name == "DeathScreen" || SceneManager.GetActiveScene().name == "VictoryScreen")
         {
@@ -44,7 +44,7 @@ public class BestScore : MonoBehaviour
 
     void OnDisable()
     {
-        if (PlayerPrefs.GetInt("currentScore") > PlayerPrefs.GetInt("bestScore5" + scene.ToString())  && SceneManager.GetActiveScene().name != "DeathScreen" && SceneManager.GetActiveScene().name != "VictoryScreen")
+        if (PlayerPrefs.GetInt("currentScore") > PlayerPrefs.GetInt("bestScore5" + scene.ToString()) && SceneManager.GetActiveScene().name != "DeathScreen" && SceneManager.GetActiveScene().name != "VictoryScreen")
         {
             string date = DateTime.Now.ToString("dd/MM/yyyy ") + DateTime.Now.ToString("HH:mm");
             bestScores.Add(new LocalScoreClass(0, date, PlayerPrefs.GetInt("currentScore")));
