@@ -944,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037043765}
   - component: {fileID: 1037043766}
+  - component: {fileID: 1037043767}
   m_Layer: 5
   m_Name: EndMenu
   m_TagString: Untagged
@@ -980,6 +981,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndDeathMenu
   clickSound: {fileID: 1688433826}
+--- !u!114 &1037043767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037043763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aa685e7956dfa4aa2391662dbe7b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicMenu
+  musiqueMenu: {fileID: 1688433827}
 --- !u!1 &1298930775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: Loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
       propertyPath: m_Resource
@@ -1484,6 +1498,11 @@ PrefabInstance:
 --- !u!82 &1688433826 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 9187476762060358080, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
+  m_PrefabInstance: {fileID: 1688433825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1688433827 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8016111298723922875, guid: f2948812b5f26e44da87a7721e101af0, type: 3}
   m_PrefabInstance: {fileID: 1688433825}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1827626027

@@ -26,7 +26,7 @@ public class EnnemiVol : MonoBehaviour
 
     public static bool canAttack = false;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player");
         projSource = GetComponent<AudioSource>();
