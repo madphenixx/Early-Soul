@@ -44,13 +44,12 @@ public class GameManager : MonoBehaviour
         canAttack = true;
         movementAllowed = true;
         pv = 10;
+        PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
-
         playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
         spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         pvSlider = GameObject.Find("PVPlayer").GetComponent<Slider>();
