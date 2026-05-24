@@ -43,8 +43,6 @@ public class ProjectileEnnemiVol : MonoBehaviour
         Vector3 dirRot = transform.rotation.eulerAngles;
         dirRot.z = dirRot.z + 90;
         transform.rotation = Quaternion.Euler(dirRot);
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,20 +62,20 @@ public class ProjectileEnnemiVol : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Boat") && PlayerMovement.isInvicible == false && BoatMovements.isInvicible == false)
-        {
-            GameManager.pv += -baseAttack;
-            GameManager.pvSlider.value = GameManager.pv;
+        // if (collision.gameObject.CompareTag("Boat") && PlayerMovement.isInvicible == false && BoatMovements.isInvicible == false)
+        // {
+        //     GameManager.pv += -baseAttack;
+        //     GameManager.pvSlider.value = GameManager.pv;
 
-            GameManager.combo = 0;
-            GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
-            GameManager.multiplicateurText.text = "x1";
+        //     GameManager.combo = 0;
+        //     GameManager.comboText.text = "Combo : " + GameManager.combo.ToString();
+        //     GameManager.multiplicateurText.text = "x1";
 
-            GameManager.score = GameManager.score - 10;
-            GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
+        //     GameManager.score = GameManager.score - 10;
+        //     GameManager.scoreText.text = "Score : " + GameManager.score.ToString();
 
-            Destroy(gameObject);
-        }
+        //     Destroy(gameObject);
+        // }
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
