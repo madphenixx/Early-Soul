@@ -5662,6 +5662,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6380993965739420199, guid: 60c620845b05f5548a51c34d32454043, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6919389654158126032, guid: 60c620845b05f5548a51c34d32454043, type: 3}
       propertyPath: m_Name
       value: CacheUI

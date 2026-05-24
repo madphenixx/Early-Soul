@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PrologueManager : MonoBehaviour
 {
+    [Header("Sons")]
+    [SerializeField] private AudioSource spawnLucy;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject dialogueLucy;
     [SerializeField] private GameObject lucy;
@@ -17,6 +20,8 @@ public class PrologueManager : MonoBehaviour
 
     void Start()
     {
+        spawnLucy.Stop();
+
         PlayerPrefs.SetInt("savedScene", SceneManager.GetActiveScene().buildIndex);
         
         if (PlayerPrefs.GetInt("progress") < SceneManager.GetActiveScene().buildIndex || PlayerPrefs.HasKey("progress") == false)
@@ -40,7 +45,7 @@ public class PrologueManager : MonoBehaviour
             {
                 fade = StartCoroutine(FadeIn(lucyRe));
             }
-            
+            spawnLucy.Play();
             Instantiate(dialogueLucy, spawnPos, Quaternion.identity);
             dialogueLucyPlay = true;
         }

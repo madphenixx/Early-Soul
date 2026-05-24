@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
+    [Header("Sons")]
+    [SerializeField] private AudioSource spawnVirtue;
+
     [Header("UI Elements")]
     [SerializeField] private Slider slBoss;
     [SerializeField] private GameObject bossUi;
@@ -68,6 +71,7 @@ public class Boss : MonoBehaviour
 
     void Awake()
     {
+        spawnVirtue.Stop();
         currentState = null;
     }
 
@@ -258,6 +262,7 @@ public class Boss : MonoBehaviour
         }
 
         Instantiate(virtue, spawnPos, Quaternion.identity);
+        spawnVirtue.Play();
         spawnRoutine = null;
     }
 
