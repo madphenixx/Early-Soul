@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class PrologueManager : MonoBehaviour
@@ -6,6 +7,8 @@ public class PrologueManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject dialogueLucy;
     [SerializeField] private GameObject lucy;
+
+    private Coroutine fade;
 
     private Vector3 spawnPos;
 
@@ -32,8 +35,26 @@ public class PrologueManager : MonoBehaviour
             spawnPos = new Vector3(playerTr.position.x, playerTr.position.y, -1);
 
             lucy.SetActive(true);
+            SpriteRenderer lucyRe = lucy.GetComponent<SpriteRenderer>();
+            if (fade == null)
+            {
+                fade = StartCoroutine(FadeIn(lucyRe));
+            }
+            
             Instantiate(dialogueLucy, spawnPos, Quaternion.identity);
             dialogueLucyPlay = true;
+        }
+    }
+    private IEnumerator FadeIn(SpriteRenderer image)
+    {
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < 1)
+        {
+            yield return null;
+            elapsedTime += Time.deltaTime ;
+            c.a = Mathf.Clamp01(elapsedTime / 1);
+            image.color = c;
         }
     }
 }
