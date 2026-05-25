@@ -354,8 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf382de9bfd40bd8f5700e468c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClassEnnemi
+  bossDeath: {fileID: 0}
   explosion: {fileID: 1850735877733832066, guid: 89ff0b4cfa7be094ea48ee6378cf8987, type: 3}
-  pv: 16
+  pv: 30
 --- !u!114 &4137720246801729026
 MonoBehaviour:
   m_ObjectHideFlags: 0
