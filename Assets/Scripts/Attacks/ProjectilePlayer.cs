@@ -117,7 +117,7 @@ public class ProjectilePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemi"))
         {
-            float produit = 1 + (GameManager.combo * 0.5f);
+            float produit = 1 + (GameManager.combo * 0.1f);
             Slider slEnnemi = collision.gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Slider>();
 
             GameManager.combo += 1;
